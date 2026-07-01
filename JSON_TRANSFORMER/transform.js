@@ -1,7 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 
-const json = JSON.parse(fs.readFileSync('qcm_qcm-cloud-computing.json', 'utf8'));
-const html = fs.readFileSync('docker-qcm-podcast.html', 'utf8');
+const jsonFilePath = './qcm_cloud_computing/qcm_qcm-cloud-computing.json';
+const jsonDir = path.dirname(jsonFilePath);
+const jsonName = path.basename(jsonFilePath, '.json');
+
+const json = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
+const html = fs.readFileSync('./template/template.html', 'utf8');
 
 const newQCM = [];
 for (const part of json) {
@@ -32,7 +37,7 @@ newHtml = newHtml.replace(/<style>([\s\S]*?)<\/style>/, (match, p1) => {
   cssContent = p1.trim();
   return '<link rel="stylesheet" href="style.css">';
 });
-if (cssContent) fs.writeFileSync('style.css', cssContent);
+if (cssContent) fs.writeFileSync(path.join(jsonDir, 'style.css'), cssContent);
 
 // Extraction du JS principal (uniquement la logique, pas les données)
 let jsContent = "";
@@ -40,7 +45,8 @@ newHtml = newHtml.replace(/(\/\/ ═══════════════�
   jsContent = p1.trim();
   return '</script>\n<script src="app.js"></script>\n</body>';
 });
-if (jsContent) fs.writeFileSync('app.js', jsContent);
+if (jsContent) fs.writeFileSync(path.join(jsonDir, 'app.js'), jsContent);
 
-fs.writeFileSync('qcm-cloud-computing.html', newHtml);
-console.log("Les fichiers qcm-cloud-computing.html, style.css et app.js ont été générés avec succès !");
+const outputHtmlPath = path.join(jsonDir, `${jsonName}_enrichi.html`);
+fs.writeFileSync(outputHtmlPath, newHtml);
+console.log(`Les fichiers ${jsonName}_enrichi.html, style.css et app.js ont été générés dans le dossier ${jsonDir} !`);
