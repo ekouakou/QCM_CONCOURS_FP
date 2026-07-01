@@ -1,0 +1,1604 @@
+const QCM = [
+  {
+    "num": "Q1",
+    "partie": "Partie 1",
+    "q": "Que fait-on pendant une réunion de revue de Sprint?",
+    "choices": {
+      "A": "L’équipe discute des améliorations qui peuvent être appliquées pour les Sprints à venir.",
+      "B": "Présenter la performance du projet aux parties prenantes.",
+      "C": "Inspecter les progrès vers l’objectif du Sprint",
+      "D": "Discuter des aspects architecturaux et techniques du projet"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 1",
+    "q": "Qu’est-ce qu’une revue de Sprint ?",
+    "choices": {
+      "A": "Activité visant à planifier le prochain Sprint",
+      "B": "Activité pour demander l’approbation du travail effectué",
+      "C": "Activité visant à améliorer les processus de Scrum",
+      "D": "Activité d’introspection et d’adaptation"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 1",
+    "q": "Lequel des éléments suivants est livré à la fin du Sprint ?",
+    "choices": {
+      "A": "Un document contenant les cas de test pour le sprint en cours",
+      "B": "Une conception architecturale de la solution",
+      "C": "Un incrément du logiciel réalisé",
+      "D": "Des Wireframes pour l’interface utilisateur"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 1",
+    "q": "Le Backlog de produit doit être ordonné sur la base de ___________",
+    "choices": {
+      "A": "La valeur des articles à livrer",
+      "B": "La complexité des éléments à livrer",
+      "C": "La taille des articles livrés",
+      "D": "Le risque associé aux articles"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 1",
+    "q": "Dans un environnement Agile, quelle est la principale responsabilité d’un testeur ?",
+    "choices": {
+      "A": "Créer des scénarios de test et des cas de test",
+      "B": "Trouver des bogues",
+      "C": "Créer des scripts d’automatisation",
+      "D": "Envoyer des rapports d’exécution des tests aux parties prenantes",
+      "E": "Le rôle de testeur n’existe pas dans Scrum"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 1",
+    "q": "Quand une cérémonie de rétrospective Sprint est-elle effectuée ?",
+    "choices": {
+      "A": "Chaque fois que l’équipe le suggère",
+      "B": "A la fin de chaque Sprint",
+      "C": "Chaque fois que nécessaire",
+      "D": "Chaque fois que le Product Owner le suggère",
+      "E": "Chaque fois que le Scrum Master le suggère"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 1",
+    "q": "Quand un Sprint peut-il être annulé ?",
+    "choices": {
+      "A": "Les éléments du Sprint ne sont plus nécessaires",
+      "B": "Le Sprint ne peut jamais être annulé",
+      "C": "Lorsque le développeur n’est pas en mesure de terminer le travail",
+      "D": "Les informations nécessaires pour démarrer le développement ne sont pas disponibles",
+      "E": "Lorsque le Product Owner décide"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 1",
+    "q": "Que doit faire une équipe de développement lors d’une réunion de planification de sprint lorsqu’elle se rend compte qu’elle a sélectionné plus d’éléments qu’elle ne peut en réaliser dans un sprint ?",
+    "choices": {
+      "A": "Faire appel à d’autres développeurs",
+      "B": "Demander de l’aide aux autres membres de l’équipe Scrum",
+      "C": "Faire des heures supplémentaires",
+      "D": "Informer le Product Owner",
+      "E": "Prendre un appel pour supprimer certains des éléments du Sprint Backlog"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 1",
+    "q": "Qui est responsable de la mesure de la performance du projet ?",
+    "choices": {
+      "A": "Le Scrum Master",
+      "B": "Responsable de la livraison",
+      "C": "Product Owner",
+      "D": "L’équipe de développement",
+      "E": "L’équipe Scrum"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 1",
+    "q": "Quelles sont les principales responsabilités d’une équipe de développement?",
+    "choices": {
+      "A": "Développer les éléments du Sprint Backlog",
+      "B": "Estimer les éléments à récupérer pour le prochain Sprint",
+      "C": "Contrôler la performance du projet et envoyer un rapport aux parties prenantes.",
+      "D": "Créer de nouveaux éléments du Backlog de produit",
+      "E": "Donner des tâches aux éléments du sprint en cours"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 2",
+    "q": "Dans Scrum, quand un Sprint est-il terminé ?",
+    "choices": {
+      "A": "Lorsque tous les éléments du Sprint Backlog sont terminés.",
+      "B": "Lorsque le Product Owner le suggère",
+      "C": "Lorsque toutes les tâches du Sprint Backlog sont terminées.",
+      "D": "Lorsque les tests finaux sont terminés",
+      "E": "Lorsque la timebox de Sprint se termine"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 2",
+    "q": "Qu’entend-on par équipe de développement interfonctionnelle?",
+    "choices": {
+      "A": "Chacun des membres de l’équipe de développement doit être interfonctionnel.",
+      "B": "Le développeur doit être capable de créer des cas de test et de les exécuter.",
+      "C": "L’équipe de développement doit collaborer avec les autres équipes de développement.",
+      "D": "L’équipe de développement est composée de développeurs et de testeurs.",
+      "E": "L’équipe de développement doit avoir toutes les compétences nécessaires pour livrer l’incrément réalisé."
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 2",
+    "q": "Qui doit nécessairement assister à la réunion du Daily Standup ?",
+    "choices": {
+      "A": "L’équipe de développement",
+      "B": "L’équipe Scrum",
+      "C": "L’équipe de développement et le Product Owner",
+      "D": "L’équipe de développement et le Scrum Master",
+      "E": "L’équipe Scrum et les parties prenantes"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 2",
+    "q": "Que se passe-t-il lorsque tous les éléments du Sprint ne peuvent pas être achevés ?",
+    "choices": {
+      "A": "Le sprint doit être prolongé",
+      "B": "Le Sprint se termine avec les éléments terminés",
+      "C": "Le sprint doit être annulé",
+      "D": "Les éléments non terminés du Sprint doivent être retirés du Sprint Backlog.",
+      "E": "Commencez le prochain Sprint en commençant par les éléments non terminés."
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 2",
+    "q": "Quelle doit être la taille de l’équipe de développement ?",
+    "choices": {
+      "A": "6+-2",
+      "B": "6+-3",
+      "C": "6+-4",
+      "D": "5+-4",
+      "E": "5+-3"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 2",
+    "q": "Quelles activités font partie de l’affinement du Backlog de produit?",
+    "choices": {
+      "A": "Estimer les éléments du Backlog de produit",
+      "B": "L’ordonnancement des éléments du Backlog de produit",
+      "C": "La création des tâches",
+      "D": "Brainstorming sur les éléments du Backlog de produit"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 2",
+    "q": "Laquelle des activités suivantes n’est pas soumise à un calendrier?",
+    "choices": {
+      "A": "Sprint Rétrospectif",
+      "B": "Sprint",
+      "C": "Revue de sprint (Sprint Review)",
+      "D": "Scrum quotidienne",
+      "E": "Affinement du Backlog de produit"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 2",
+    "q": "Pourquoi Agile ?",
+    "choices": {
+      "A": "Pas de chef de projet",
+      "B": "Pas de risque d’échec",
+      "C": "Pas d’équipes localisées",
+      "D": "Faible coût"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 2",
+    "q": "La démo implique quelles valeurs Agile & Scrum ?",
+    "choices": {
+      "A": "Fonctionnement du logiciel",
+      "B": "Collaboration avec les clients",
+      "C": "Les deux"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 2",
+    "q": "Lequel ne fait pas partie du Manifeste Agile ?",
+    "choices": {
+      "A": "Attentivité continue",
+      "B": "Maximiser l’utilisation",
+      "C": "Livraison rapide et continue de la valeur commerciale",
+      "D": "Travailler ensemble au quotidien"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 3",
+    "q": "Quelles sont les responsabilités du Scrum Master ?",
+    "choices": {
+      "A": "Supprimer les obstacles",
+      "B": "Assurer la direction du processus",
+      "C": "Les deux",
+      "D": "Aucun de ces éléments"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 3",
+    "q": "Il y a eu un problème dans votre projet et votre responsable n’a cessé de demander « pourquoi ? ». Que fait-il ?",
+    "choices": {
+      "A": "Il exécute la collaboration.",
+      "B": "Il exécute les « Cinq pourquoi », un outil de résolution de problème.",
+      "C": "Il utilise l’outil « Get your attention »."
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 3",
+    "q": "Le développement itératif n’est PAS une bonne idée pour le ___________",
+    "choices": {
+      "A": "Développement back end",
+      "B": "Développement front-end",
+      "C": "Développement de middleware",
+      "D": "Développement de logiciels"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 3",
+    "q": "Toutes les barrières, tous les obstacles et toutes les interférences sont éliminés par le ___________",
+    "choices": {
+      "A": "Product Owner",
+      "B": "Scrum Master",
+      "C": "Chef de projet",
+      "D": "Équipe de développement"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 3",
+    "q": "Lequel de ces éléments n’est pas un pilier de Scrum ?",
+    "choices": {
+      "A": "Focus",
+      "B": "Adaptation",
+      "C": "Transparence",
+      "D": "Inspection"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 3",
+    "q": "Le Backlog de produit doit être organisé sur la base de ________",
+    "choices": {
+      "A": "La valeur des éléments à livrer",
+      "B": "La complexité des produits à livrer",
+      "C": "Taille des produits à livrer",
+      "D": "Le risque associé aux produits"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 3",
+    "q": "Quel est le concept clé derrière Agile ?",
+    "choices": {
+      "A": "Plan driven",
+      "B": "Grands lots",
+      "C": "Test à la fin",
+      "D": "Axé sur la valeur et la qualité"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 3",
+    "q": "Quelle est la durée idéale d’un Sprint ?",
+    "choices": {
+      "A": "1-4 semaines",
+      "B": "3 mois",
+      "C": "6 semaines",
+      "D": "1 à 2 mois"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 3",
+    "q": "Laquelle de ces propositions n’est pas un événement de Sprint ?",
+    "choices": {
+      "A": "Planification d’un Sprint",
+      "B": "Stand Up quotidien",
+      "C": "Revue du Sprint",
+      "D": "Clôture du Sprint"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 3",
+    "q": "Quelles sont les valeurs du Scrum?",
+    "choices": {
+      "A": "Courage, Concentration, Engagement, Respect, Transparence",
+      "B": "Courage, Concentration, Engagement, Respect, Non-transparence",
+      "C": "Courage, Concentration, Indépendance, Respect, Non-transparence",
+      "D": "Courage, Concentration, Indépendance, Respect, Transparence"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 4",
+    "q": "Lequel de ces éléments n’est pas une caractéristique des équipes Scrum?",
+    "choices": {
+      "A": "Auto-organisation",
+      "B": "Experts",
+      "C": "Polyvalents",
+      "D": "Méchant"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 4",
+    "q": "Qui peut être un utilisateur mandataire(User Proxy)?",
+    "choices": {
+      "A": "Scrum Master",
+      "B": "Coach agile",
+      "C": "Développeur",
+      "D": "Product Owner"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 4",
+    "q": "Qui est responsable de la définition des fonctionnalités, de la gestion des contributions des utilisateurs finaux et de la gestion des parties prenantes ?",
+    "choices": {
+      "A": "Scrum Master",
+      "B": "Product Owner",
+      "C": "Équipe de développement"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Product Owner est responsable de la définition des fonctionnalités, de la gestion des contributions des utilisateurs finaux et de la gestion des parties prenantes (stakeholders).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 4",
+    "q": "Comment le Backlog de produit est-il organisé ?",
+    "choices": {
+      "A": "Les éléments sont disposés de manière aléatoire",
+      "B": "Les éléments les plus récentes sont placées en tête de liste, suivies des plus anciennes.",
+      "C": "Les éléments articles en haut, les petits éléments en bas",
+      "D": "Les éléments de haute priorité en haut, suivis par les éléments de basse priorité."
+    },
+    "correct": "D",
+    "explanation": "<p>Les éléments de haute priorité en haut, suivis par les éléments de basse priorité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 4",
+    "q": "Quels sont les principaux rôles de Scrum ?",
+    "choices": {
+      "A": "Product owner, Scrum master et l’équipe de développement",
+      "B": "Coach agile, Scrum master et l’équipe de développement",
+      "C": "Product owner, Scrum master et Sponsor d’affaires",
+      "D": "Partenaires de contrôle, Scrum master et l’équipe de développement"
+    },
+    "correct": "A",
+    "explanation": "<p>Les principaux rôles de Scrum sont: Product owner, Scrum master et l’équipe de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 4",
+    "q": "Qui est chargé de veiller à ce que les valeurs et les piliers de la méthode Scrum soient respectés à tout moment?",
+    "choices": {
+      "A": "Product Owner",
+      "B": "Scrum Master",
+      "C": "Équipe de développement",
+      "D": "Chaque membre"
+    },
+    "correct": "B",
+    "explanation": "<p>Scrum Master est chargé de veiller à ce que les valeurs et les piliers de la méthode Scrum soient respectés à tout moment.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 4",
+    "q": "Qui n’a pas l’habitude d’interagir avec un BA(Business Analyst) dans un projet Agile?",
+    "choices": {
+      "A": "Product Owner",
+      "B": "Scrum Master",
+      "C": "Équipe de développement",
+      "D": "Équipe de support opérationnel"
+    },
+    "correct": "D",
+    "explanation": "<p>Équipe de support opérationnel n’a pas l’habitude d’interagir avec un BA(Business Analyst) dans un projet Agile. Les Business Analyst aident les entreprises à améliorer les processus, les produits, les services et les logiciels grâce à l’analyse des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 4",
+    "q": "Quel backlog contient les user stories sur lesquelles une équipe peut travailler ?",
+    "choices": {
+      "A": "Le backlog de l’équipe",
+      "B": "Le backlog du système",
+      "C": "Le backlog du produit",
+      "D": "Le backlog du programme"
+    },
+    "correct": "A",
+    "explanation": "<p>Le backlog de l’équipe contient les user stories sur lesquelles une équipe peut travailler.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 4",
+    "q": "Comment rédiger les User Stories ?",
+    "choices": {
+      "A": "Le système doit _______",
+      "B": "Étant donné_______quand_______alors_______",
+      "C": "En tant que_______, je souhaite_______, afin de_______",
+      "D": "Si les entrées_______alors les sorties_______"
+    },
+    "correct": "C",
+    "explanation": "<p>User Story est une description courte et simple d’une fonctionnalité présentée du point de vue de la personne qui désire cette nouvelle fonctionnalité, généralement un utilisateur ou un client du système. Les user stories suivent généralement un modèle simple :En tant que <type d’utilisateur>, je souhaite <un objectif> afin de <une raison></p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 4",
+    "q": "Quels sont les différents événements Scrum?",
+    "choices": {
+      "A": "Stand-up, codage en groupe, affinement du backlog, rétrospective du Sprint.",
+      "B": "Scrum quotidienne, codage en groupe, affinement du backlog, rétrospective du Sprint.",
+      "C": "Scrum quotidienne, revue du Sprint, affinement du backlog, rétrospective du Sprint.",
+      "D": "Scrum quotidienne, revue du Sprint, planification du Sprint, rétrospective du Sprint."
+    },
+    "correct": "D",
+    "explanation": "<p>Scrum quotidienne, revue du Sprint, planification du Sprint, rétrospective du Sprint.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 5",
+    "q": "Que sont les exigences pour Scrum ?",
+    "choices": {
+      "A": "Utilisation de JIRA",
+      "B": "Être discipliné dans l’application du processus",
+      "C": "Avoir un Scrum Master distinct",
+      "D": "Avoir des sprints de 2 semaines"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 5",
+    "q": "Qu’est-ce qu’un MVP dans Agile?",
+    "choices": {
+      "A": "Minimum Valuable Product",
+      "B": "Maximum Valued Project",
+      "C": "Maximum Viable Project",
+      "D": "Minimum Viable Product"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 5",
+    "q": "Où pouvez-vous voir la progression de votre équipe Scrum?",
+    "choices": {
+      "A": "Scrum boards",
+      "B": "Backlog",
+      "C": "Backlog de sprint",
+      "D": "Backlog boards"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 5",
+    "q": "Le Scrum Master est quel type de leader?",
+    "choices": {
+      "A": "Maître",
+      "B": "Humble",
+      "C": "Puissant",
+      "D": "Servant"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 5",
+    "q": "Comment mesurer le succès d’une équipe Scrum ?",
+    "choices": {
+      "A": "Vélocité",
+      "B": "Agilité",
+      "C": "Valeur commerciale",
+      "D": "Nombre de membres de l’équipe"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 5",
+    "q": "Que faut-il avoir quand on applique Scrum ?",
+    "choices": {
+      "A": "Vélocité",
+      "B": "Produit",
+      "C": "Agile",
+      "D": "Plan de projet"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 5",
+    "q": "Quel est l’un des trois rôles dans Scrum ?",
+    "choices": {
+      "A": "Chef d’équipe",
+      "B": "Coache",
+      "C": "Responsable",
+      "D": "Product Owner"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 5",
+    "q": "Combien de temps doit durer un Scrum/Stand-up quotidien ?",
+    "choices": {
+      "A": "1 heure",
+      "B": "Une demi-journée",
+      "C": "5 minutes",
+      "D": "15 minutes"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 5",
+    "q": "Un logiciel fonctionnel mieux que ______________",
+    "choices": {
+      "A": "Suivre un plan",
+      "B": "Une Documentation complète",
+      "C": "Individus et interactions",
+      "D": "Processus et outils"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 5",
+    "q": "Nous devons ajouter ________ lorsque nous créons une User Story.",
+    "choices": {
+      "A": "Critères d’acceptation",
+      "B": "Backlog de sprint",
+      "C": "Documentation",
+      "D": "Backlog de produit"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 1",
+    "q": "Lequel des éléments suivants n’est pas un objectif du gestion de projet?",
+    "choices": {
+      "A": "Maintenir les coûts globaux dans les limites du budget",
+      "B": "Livrer le logiciel au client dans les délais convenus.",
+      "C": "Maintenir une équipe de développement heureuse et performante",
+      "D": "Éviter les plaintes des clients"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 1",
+    "q": "Les chefs de projet doivent évaluer les risques qui peuvent affecter un projet.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 1",
+    "q": "Lequel des éléments suivants n’est pas considéré comme un risque dans la gestion de projet ?",
+    "choices": {
+      "A": "Les retards dans les spécifications",
+      "B": "La concurrence entre les produits",
+      "C": "Les tests",
+      "D": "La mobilité du personnel"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 1",
+    "q": "Le processus que chaque chef de projet suit pendant la durée de vie d’un projet est connu sous le nom de __________",
+    "choices": {
+      "A": "Gestion de projet",
+      "B": "Cycle de vie du chef de projet",
+      "C": "Cycle de vie du projet"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 1",
+    "q": "Lequel/lesquels des éléments suivants est/sont les principaux paramètres que vous devez utiliser lors du calcul des coûts d’un projet de développement de logiciels?",
+    "choices": {
+      "A": "Les frais de déplacement et de formation",
+      "B": "Les coûts du matériel et des logiciels",
+      "C": "Les coûts de l’effort (coûts de rémunération des ingénieurs et des chefs de projet)",
+      "D": "Tous les paramètres mentionnés"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 1",
+    "q": "La planification de la qualité est le processus d’élaboration d’un plan de qualité pour ________",
+    "choices": {
+      "A": "une équipe",
+      "B": "un projet",
+      "C": "les clients",
+      "D": "le chef de projet"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 1",
+    "q": "Laquelle des activités suivantes est incorrecte pour la gestion de configuration d’un système logiciel?",
+    "choices": {
+      "A": "La gestion des stages",
+      "B": "La gestion des changements",
+      "C": "Gestion des versions",
+      "D": "Gestion du système"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 1",
+    "q": "Une relation indépendante doit exister entre l’attribut qui peut être mesuré et l’attribut de qualité externe.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 1",
+    "q": "Laquelle des raisons suivantes explique que les logiciels soient livrés en retard?",
+    "choices": {
+      "A": "Des exigences changeantes du client qui ne sont pas prises en compte dans les changements de calendrier",
+      "B": "Des difficultés techniques qui n’auraient pas pu être prévues à l’avance.",
+      "C": "Difficultés humaines qui n’auraient pas pu être prévues à l’avance"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 1",
+    "q": "Laquelle des activités suivantes permet de répartir l’effort estimé sur la durée prévue du projet en l’attribuant à des tâches d’ingénierie logicielle spécifiques?",
+    "choices": {
+      "A": "Planification macroscopique du logiciel",
+      "B": "Planification du projet",
+      "C": "Planification détaillée du logiciel"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 2",
+    "q": "Chaque tâche programmée doit être assignée à un membre spécifique de l’équipe, c’est ce qu’on appelle __________.",
+    "choices": {
+      "A": "Compartimentage",
+      "B": "Responsabilités définies",
+      "C": "Résultats définis",
+      "D": "Résultats définis"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 2",
+    "q": "Un calendrier qui a été défini à un degré de résolution permettant de suivre l’avancement et de contrôler le projet est appelé __________.",
+    "choices": {
+      "A": "le suivi du projet",
+      "B": "Planification de projet",
+      "C": "Réseau de projet",
+      "D": "Suivi de projet"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 2",
+    "q": "Qu’est-ce qui évalue le risque associé à la technologie à mettre en œuvre dans le cadre de la portée du projet ?",
+    "choices": {
+      "A": "Définition de la portée du concept",
+      "B": "Planification préliminaire du concept",
+      "C": "L’évaluation du risque technologique",
+      "D": "La réaction du client au concept"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 2",
+    "q": "Parmi les éléments suivants, quels sont ceux qui permettent d’établir le calendrier des projets de génie logiciel ?",
+    "choices": {
+      "A": "Une date de fin pour le lancement d’un système informatique a déjà été établie.",
+      "B": "Les efforts sont répartis de manière à utiliser au mieux les ressources, et une date de fin est définie après une analyse minutieuse.",
+      "C": "Les deux"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 2",
+    "q": "Parmi les éléments suivants, lequel/lesquels est/sont les principes de base de la planification des projets logiciels?",
+    "choices": {
+      "A": "Compartimentage, interdépendance, allocation de temps",
+      "B": "Validation de l’effort",
+      "C": "Responsabilités définies, résultats définis, étapes définies.",
+      "D": "Tout ce qui est mentionné ci-dessus"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 2",
+    "q": "Quel que soit le modèle de processus choisi, le travail effectué par une équipe logicielle est réalisé par le biais d’un _______.",
+    "choices": {
+      "A": "Ensemble de systèmes",
+      "B": "Ensemble de tâches",
+      "C": "Ensemble de développement",
+      "D": "Tout ce qui est mentionné ci-dessus"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 2",
+    "q": "Afin de développer un calendrier de projet, un ensemble de tâches doit être distribué sur la ligne de temps du projet.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 2",
+    "q": "Les projets de développement de concepts sont lancés lorsque le potentiel d’une nouvelle technologie doit être exploré.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 2",
+    "q": "____ détermine la portée globale du projet.",
+    "choices": {
+      "A": "Définition du concept",
+      "B": "Évaluation des risques technologiques",
+      "C": "Preuve du concept",
+      "D": "Aucun des éléments mentionnés ci-dessus"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 2",
+    "q": "____ met en œuvre la représentation du concept d’une manière qui peut être examinée par un client.",
+    "choices": {
+      "A": "Mise en œuvre d’une idée",
+      "B": "Définition de la portée du concept",
+      "C": "Évaluation des risques technologiques",
+      "D": "Tous les éléments mentionnés ci-dessus"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 3",
+    "q": "Les risques sont ceux qui peuvent être découverts après une évaluation minutieuse du plan du projet?",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 3",
+    "q": "Lequel des éléments suivants n’est pas un critère d’adaptation pour les projets logiciels ?",
+    "choices": {
+      "A": "La taille du projet",
+      "B": "Plaintes des clients",
+      "C": "Personnel du projet",
+      "D": "Criticité de la mission"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 3",
+    "q": "L’analyse et la gestion des risques sont une série d’étapes qui aident une équipe logicielle à comprendre et à gérer l’incertitude?",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 3",
+    "q": "Les risques liés au projet menacent le ____.",
+    "choices": {
+      "A": "Plan du projet",
+      "B": "Développement du projet",
+      "C": "Suivi du projet",
+      "D": "Aucun des éléments mentionnés ci-dessus"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 3",
+    "q": "Un risque est un problème potentiel – il peut se produire ou non.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 3",
+    "q": "Laquelle des méthodes suivantes est une méthode de planification de projet qui peut être appliquée au développement de logiciels ?",
+    "choices": {
+      "A": "PERT",
+      "B": "CPM",
+      "C": "CMM",
+      "D": "PERT et CPM"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 3",
+    "q": "Une technique permettant de réaliser une analyse quantitative du progrès est connue sous le nom de _____.",
+    "choices": {
+      "A": "BCWS",
+      "B": "EVA",
+      "C": "BAC",
+      "D": "CBSE"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 3",
+    "q": "Les risques techniques menacent le ____ du logiciel.",
+    "choices": {
+      "A": "Développement du système",
+      "B": "Qualité et respect des délais",
+      "C": "Intégration du système",
+      "D": "Tous les éléments mentionnés ci-dessus"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 3",
+    "q": "L’identification des risques est une tentative systématique de spécifier les menaces qui pèsent sur le ____.",
+    "choices": {
+      "A": "Intégration du projet",
+      "B": "Maintenance du projet",
+      "C": "Plan de projet",
+      "D": "Hiérarchie du projet"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 3",
+    "q": "Quelle est la répartition recommandée de l’effort pour un projet?",
+    "choices": {
+      "A": "40-20-40",
+      "B": "50-20-30",
+      "C": "30-40-30",
+      "D": "50-30-20"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 4",
+    "q": "Les risques spécifiques à un produit ne peuvent être identifiés que par ceux qui ont une bonne compréhension de la technologie?",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 4",
+    "q": "Un projet comporte généralement un tableau chronologique qui a été développé par ________",
+    "choices": {
+      "A": "Henry Gantt",
+      "B": "Rasmus Lerdorf",
+      "C": "James Gosling",
+      "D": "Aucune des personnes mentionnées"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 4",
+    "q": "Qui interagit avec le logiciel une fois qu’il est mis en production?",
+    "choices": {
+      "A": "Les utilisateurs finaux",
+      "B": "Le client",
+      "C": "Les chefs de projet (techniques)",
+      "D": "Les cadres supérieurs"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 4",
+    "q": "Parmi les éléments suivants, quels sont les composants et les facteurs de risque?",
+    "choices": {
+      "A": "Risque de performance et risque de coût",
+      "B": "Risque lié au support",
+      "C": "Risque lié au planning",
+      "D": "Tous les éléments mentionnés ci-dessus"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 4",
+    "q": "Lequel des éléments suivants n’est pas un trait de caractère efficace du chef de projet?",
+    "choices": {
+      "A": "La résolution de problèmes",
+      "B": "Identité du manager",
+      "C": "L’influence et l’esprit d’équipe",
+      "D": "Aucun des éléments mentionnés"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 4",
+    "q": "Des engagements sur des estimations de temps et de ressources irréalistes peuvent entraîner ________",
+    "choices": {
+      "A": "Un retard du projet",
+      "B": "Un travail de mauvaise qualité",
+      "C": "L’échec du projet"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 4",
+    "q": "Parmi les éléments suivants, lequel est/sont la projection des risques, classer chaque risque.",
+    "choices": {
+      "A": "Établir une échelle qui reflète la probabilité perçue d’un risque, délimiter les conséquences du risque.",
+      "B": "Estimer l’impact du risque sur le projet et le produit",
+      "C": "Évaluer l’exactitude globale de la projection des risques afin d’éviter tout malentendu.",
+      "D": "Tous les éléments mentionnés ci-dessus"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 4",
+    "q": "Si une équipe logicielle adopte une approche proactive du risque, l’évitement est toujours la meilleure stratégie.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 4",
+    "q": "Lequel des éléments suivants n’est pas un facteur de projet à prendre en compte lors de la planification de la structure des équipes de génie logiciel?",
+    "choices": {
+      "A": "La difficulté du problème à résoudre",
+      "B": "La grande frustration causée par des facteurs personnels, commerciaux ou technologiques qui entraîne des frictions entre les membres de l’équipe",
+      "C": "Le degré de sociabilité requis pour le projet",
+      "D": "La rigidité de la date de livraison"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 4",
+    "q": "Les tendances technologiques apparaissent lorsque ___ sont extrapolées pour répondre aux besoins de l’industrie et sont façonnées par la demande du marché.",
+    "choices": {
+      "A": "Tendances en matière de systèmes",
+      "B": "Tendances de la recherche",
+      "C": "Les deux",
+      "D": "Aucun des éléments mentionnés ci-dessus"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 5",
+    "q": "La connectivité et la collaboration ont donné naissance à ____.",
+    "choices": {
+      "A": "Équipes de logiciels",
+      "B": "Tests de logiciels",
+      "C": "Ingénierie logicielle",
+      "D": "Aucun des éléments mentionnés ci-dessus"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 5",
+    "q": "Quelle activité se trouve au cœur de l’analyse des besoins en logiciels ?",
+    "choices": {
+      "A": "Décomposition du problème",
+      "B": "Le compartimentage",
+      "C": "Élaboration du problème",
+      "D": "Toutes ces activités"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 5",
+    "q": "Parmi les paramètres suivants, lesquels interviennent dans le calcul du coût total d’un projet de développement de logiciel?",
+    "choices": {
+      "A": "Les coûts du matériel et des logiciels",
+      "B": "Les coûts de l’effort",
+      "C": "Les frais de déplacement et de formation",
+      "D": "Tous ces paramètres"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 5",
+    "q": "Lequel des coûts suivants ne fait pas partie du coût total de l’effort?",
+    "choices": {
+      "A": "Les coûts de mise en réseau et de communication",
+      "B": "Les coûts de chauffage et d’éclairage des bureaux",
+      "C": "Les coûts de la nourriture à l’heure du déjeuner",
+      "D": "Les coûts du personnel de support"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 5",
+    "q": "Qu’est-ce qui est lié à la fonctionnalité globale du logiciel livré?",
+    "choices": {
+      "A": "Les mesures liées aux fonctions",
+      "B": "Les mesures liées au produit",
+      "C": "Mesures liées à la taille"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 5",
+    "q": "Il est souvent difficile d’estimer la taille d’un projet à un stade initial, lorsque seul un cahier des charges est disponible.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux",
+      "C": "Peut-être!",
+      "D": "Je ne sais pas!"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 5",
+    "q": "Quel modèle suppose que les systèmes sont créés à partir de composants réutilisables, de scripts ou de programmation de bases de données?",
+    "choices": {
+      "A": "Un modèle de composition d’applications",
+      "B": "Un modèle de post-architecture",
+      "C": "Un modèle de réutilisation",
+      "D": "Un modèle de conception anticipée"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 5",
+    "q": "Lequel des éléments suivants n’est pas un axe efficace de gestion de projet logiciel?",
+    "choices": {
+      "A": "Personnes",
+      "B": "Produit",
+      "C": "Popularité",
+      "D": "Processus"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 5",
+    "q": "Lequel des éléments suivants n’est pas une activité du chef de projet ?",
+    "choices": {
+      "A": "Le contrôle du projet",
+      "B": "La gestion de projet",
+      "C": "La planification du projet",
+      "D": "La conception du projet"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 5",
+    "q": "Qui fournit les compétences techniques nécessaires pour concevoir un produit ou une application ?",
+    "choices": {
+      "A": "Les spécialistes",
+      "B": "Les chefs de projet",
+      "C": "Les cadres supérieurs"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  }
+];

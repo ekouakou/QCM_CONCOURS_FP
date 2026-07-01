@@ -1,0 +1,4439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Securite Informatique QCM — Podcast de Révision</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="topbar">
+    <div class="logo">
+      <svg viewBox="0 0 50 40" fill="none">
+        <rect x="1" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="12" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="23" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="12" y="3" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="23" y="3" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <path d="M34 22c2-8 12-8 14-2" stroke="#2188ff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M34 22H8c-4 0-7 2.5-7 7s3 7 7 7h28c4 0 7-3 7-7" stroke="#2188ff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Securite Informatique QCM
+    </div>
+    <span class="badge">Podcast de Révision · 23 questions</span>
+    <div class="topbar-right">
+      <div class="pw">
+        <span id="progressText">0 / 23</span>
+        <div class="pt"><div class="pf" id="progressFill" style="width:0%"></div></div>
+      </div>
+      <div class="score-b">Score : <span id="scoreDisplay">0 / 0</span></div>
+      <button class="export-btn" onclick="showExportModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exporter
+      </button>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-overlay" id="exportModal" style="display:none" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h2>📤 Exporter le cours complet</h2>
+    <p>Choisissez le format d'export. Le document contiendra toutes les questions avec leurs explications détaillées, l'analyse des propositions incorrectes, et les résumés à retenir.</p>
+    <div class="modal-btns">
+      <button class="mbtn" onclick="exportHTML()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <div>
+          <div>Fichier HTML</div>
+          <div class="mbtn-desc">Page web autonome, lisible dans tout navigateur</div>
+        </div>
+      </button>
+      <button class="mbtn" onclick="exportPrint()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <div>
+          <div>Imprimer / PDF</div>
+          <div class="mbtn-desc">Ouvre la boîte d'impression — choisissez "Enregistrer en PDF"</div>
+        </div>
+      </button>
+    </div>
+    <button class="mclose" onclick="closeModal()">Annuler</button>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// DONNÉES — 23 questions complètes (toutes les parties du JSON)
+// ════════════════════════════════════════════════════════════════
+const QCM = [
+  {
+    "num": "Q1",
+    "partie": "Partie 1",
+    "q": "Dans la sécurité informatique, _______ signifie que les systèmes actifs informatique ne peuvent être modifiés que par les personnes autorisées.",
+    "choices": {
+      "A": "La confidentialité",
+      "B": "L’intégrité",
+      "C": "La disponibilité",
+      "D": "L’authenticité"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 1",
+    "q": "Dans la sécurité informatique, _______ signifie que les informations contenues dans un système informatique ne sont accessibles en lecture que par les personnes autorisées.",
+    "choices": {
+      "A": "La confidentialité",
+      "B": "L’intégrité",
+      "C": "La disponibilité",
+      "D": "L’authenticité"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 1",
+    "q": "Les types de menaces pour la sécurité d’un système informatique ou d’un réseau sont _______ ?",
+    "choices": {
+      "A": "Interruption",
+      "B": "Interception",
+      "C": "Modification",
+      "D": "Création",
+      "E": "Fabrication"
+    },
+    "correct": "E",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 1",
+    "q": "Lequel des programmes suivants est un programme malveillant indépendant qui ne nécessite aucun d’autre programme?",
+    "choices": {
+      "A": "Porte à piège",
+      "B": "Cheval de Troie",
+      "C": "Virus",
+      "D": "Ver"
+    },
+    "correct": "D",
+    "explanation": "<p>Un ver informatique est un programme informatique malveillant indépendant qui se réplique afin de se propager sur d’autres ordinateurs. Souvent, il utilise un réseau informatique pour se répandre, en s’appuyant sur les défaillances de sécurité de l’ordinateur cible pour y accéder.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 1",
+    "q": "Le _______ est un code qui reconnaît une séquence d’entrée spéciale ou qui est déclenché par une séquence d’événements improbable.",
+    "choices": {
+      "A": "Porte à piège",
+      "B": "Cheval de Troie",
+      "C": "Bombe logique",
+      "D": "Virus"
+    },
+    "correct": "A",
+    "explanation": "<p>Porte à piège (Trap doors), également appelées backdoors, sont des fragments de code incorporés dans des programmes par le ou les programmeurs pour permettre un accès rapide ultérieurement, souvent au cours de la phase de test ou de débogage. Si un programmeur inattentif laisse ce code ou oublie de le supprimer, une faille de sécurité potentielle est introduite.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 1",
+    "q": "Le _______ est un code incorporé dans un programme légitime configuré pour «exploser» lorsque certaines conditions sont remplies.",
+    "choices": {
+      "A": "Porte à piège",
+      "B": "Cheval de Troie",
+      "C": "Bombe logique",
+      "D": "Virus"
+    },
+    "correct": "C",
+    "explanation": "<p>Une bombe logique(ou logic bomb) est un morceau de code inséré dans un système d’exploitation ou une application logicielle qui implémente une fonction malveillante après un certain temps, ou si des conditions spécifiques sont remplies.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 1",
+    "q": "Lequel des programmes malveillants suivants ne se réplique pas automatiquement?",
+    "choices": {
+      "A": "Cheval de Troie",
+      "B": "Virus",
+      "C": "Ver",
+      "D": "Zombie"
+    },
+    "correct": "A",
+    "explanation": "<p>Cheval de Troie est un programme informatique malveillant qui se présente comme un logiciel légitime. Également appelé Trojan horse, il cache les logiciels malveillants dans un fichier sur un aspect normal.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 1",
+    "q": "________ est une forme de virus explicitement conçue pour éviter la détection par des logiciels antivirus.",
+    "choices": {
+      "A": "Virus furtif",
+      "B": "Virus polymorphe",
+      "C": "Virus parasite",
+      "D": "Virus de macro"
+    },
+    "correct": "A",
+    "explanation": "<p>Le virus furtif est un virus informatique qui utilise divers mécanismes pour éviter la détection par un logiciel antivirus.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 1",
+    "q": "En informatique, ________ est un système de sécurité réseau qui surveille et contrôle le trafic réseau entrant et sortant sur la base de règles de sécurité prédéterminées.",
+    "choices": {
+      "A": "Switch",
+      "B": "Spyware",
+      "C": "Packet Tracer",
+      "D": "Firewall(pare-feu)"
+    },
+    "correct": "D",
+    "explanation": "<p>Un Firewall(pare-feu) est un type de système de sécurité informatique. Il contrôle le flux de données d’un ordinateur ou d’un réseau à l’autre et est principalement destiné à protéger un système informatique ou un réseau contre l’accès d’un intrus, en particulier via l’internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 1",
+    "q": "Un virus informatique est un(e) ________",
+    "choices": {
+      "A": "Bactérie",
+      "B": "Matériel",
+      "C": "Logiciel",
+      "D": "Erreur"
+    },
+    "correct": "C",
+    "explanation": "<p>Un virus informatique est un logiciel malveillant qui, lorsqu’il est exécuté, se reproduit en modifiant d’autres programmes informatiques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Partie 1",
+    "q": "Lequel des cas suivants est une attaque dans laquelle l’utilisateur reçoit une quantité indésirable d’e-mails ?",
+    "choices": {
+      "A": "Email bombing",
+      "B": "Ping storm",
+      "C": "Smurfing",
+      "D": "Spoofing"
+    },
+    "correct": "A",
+    "explanation": "<p>Email bombing: Il s’agit d’une attaque contre votre boîte de réception qui consiste à envoyer des quantités massives de courriels à votre adresse. Parfois, ces messages sont complètement inutiles, mais le plus souvent, il s’agit de courriels de confirmation pour des newsletters et des inscriptions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Partie 1",
+    "q": "Lequel des énoncés suivants est correct en ce qui concerne la politique en matière de mots de passe?",
+    "choices": {
+      "A": "En général, la longueur du mot de passe doit être supérieure à 8 caractères.",
+      "B": "Le mot de passe doit contenir des majuscules, des minuscules, des chiffres et des caractères spéciaux.",
+      "C": "Il doit y avoir des mots de passe différents pour chaque compte de connexion."
+    },
+    "correct": "D",
+    "explanation": "<p>Toutes les réponses sont correctes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Partie 1",
+    "q": "DDoS signifie ___________________.",
+    "choices": {
+      "A": "Distributed Denial of Service",
+      "B": "Distributed Disc operating Service",
+      "C": "Dynamic Denial of Service"
+    },
+    "correct": "A",
+    "explanation": "<p>DDoS signifie « Distributed Denial-of-Service » (attaque par déni de service distribué) et il s’agit d’une cybercriminalité au cours de laquelle l’attaquant submerge un serveur avec du trafic internet afin d’empêcher les utilisateurs d’accéder aux services en ligne connectés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q14",
+    "partie": "Partie 1",
+    "q": "_________, ce type d’attaque est réalisé par des pirates informatiques sans l’utilisation d’un logiciel.",
+    "choices": {
+      "A": "Les scripts inter-sites (Cross-Site Scripting)",
+      "B": "Empoisonnement ARP",
+      "C": "Injection SQL",
+      "D": "Ingénierie sociale"
+    },
+    "correct": "D",
+    "explanation": "<p>L’ingénierie sociale est une tactique qui consiste à manipuler, influencer ou tromper une victime afin de prendre le contrôle d’un système informatique ou de voler des informations personnelles et financières. Elle utilise la manipulation psychologique pour amener les utilisateurs à commettre des erreurs de sécurité ou à divulguer des informations sensibles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q15",
+    "partie": "Partie 1",
+    "q": "Il s’agit d’un type d’attaque qui consiste à exécuter un programme sur votre serveur afin de contourner l’autorisation.",
+    "choices": {
+      "A": "DoS",
+      "B": "Phishing",
+      "C": "Backdoor",
+      "D": "Sniffing"
+    },
+    "correct": "C",
+    "explanation": "<p>L’attaque de Backdoor est une méthode pour contourner les systèmes de sécurité existants d’une organisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q16",
+    "partie": "Partie 1",
+    "q": "Identifier le terme qui indique que seuls les utilisateurs autorisés sont en mesure d’accéder à l’information.",
+    "choices": {
+      "A": "Confidentialité",
+      "B": "Intégrité",
+      "C": "Disponibilité",
+      "D": "Authenticité"
+    },
+    "correct": "C",
+    "explanation": "<p>La disponibilité consiste à garantir un accès fiable à l’information par toute personne autorisée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q17",
+    "partie": "Partie 1",
+    "q": "Le cryptage des données est principalement utilisé pour garantir la confidentialité.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>L’objectif du cryptage des données est de protéger la confidentialité des données numériques lorsqu’elles sont stockées sur des systèmes informatiques et transmises via l’internet ou d’autres réseaux informatiques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q18",
+    "partie": "Partie 1",
+    "q": "Identifier le port utilisé pour se connecter à Active Directory dans Windows 2000.",
+    "choices": {
+      "B": "443",
+      "D": "389"
+    },
+    "correct": "D",
+    "explanation": "<p>Le port utilisé pour se connecter à Active Directory dans Windows 2000 est 389.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q19",
+    "partie": "Partie 1",
+    "q": "Choisissez parmi les techniques suivantes, qui sont utilisées pour cacher des informations à l’intérieur d’une image.",
+    "choices": {
+      "A": "Calcul de l’image",
+      "B": "Stéganographie",
+      "C": "Les rootkits",
+      "D": "Cartographie de bitmaps"
+    },
+    "correct": "B",
+    "explanation": "<p>Une technique de stéganographie consiste à cacher des informations sensibles dans un fichier ou un message ordinaire, non secret, de manière à ce qu’elles ne soient pas détectées. L’information sensible sera ensuite extraite du fichier ou du message ordinaire à sa destination, évitant ainsi d’être détectée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q20",
+    "partie": "Partie 1",
+    "q": "Identifiez parmi les éléments suivants celui qui est utilisé pour éviter le piratage basé sur le navigateur.",
+    "choices": {
+      "A": "Suppression des logiciels publicitaires dans le navigateur",
+      "B": "Mode Incognito dans le navigateur",
+      "C": "Anti-malware dans le navigateur",
+      "D": "Accès à distance au navigateur"
+    },
+    "correct": "D",
+    "explanation": "<p>Si un utilisateur établit une navigation à distance en isolant la session de navigation, les cybercriminels ne pourront pas infecter le système et le navigateur avec des logiciels malveillants, ce qui réduit la surface d’attaque.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q21",
+    "partie": "Partie 1",
+    "q": "Dans quelle catégorie se situe le fait de compromettre des informations confidentielles ?",
+    "choices": {
+      "A": "Menace",
+      "B": "Bug",
+      "C": "Attaque",
+      "D": "Vulnérabilité"
+    },
+    "correct": "A",
+    "explanation": "<p>Compromettre des informations confidentielles signifie extraire des données sensibles d’un système de manière illégale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q22",
+    "partie": "Partie 1",
+    "q": "Dans quelle catégorie se situe l’absence de politique de contrôle d’accès ?",
+    "choices": {
+      "A": "Menace",
+      "B": "Bug",
+      "C": "Attaque",
+      "D": "Vulnérabilité"
+    },
+    "correct": "D",
+    "explanation": "<p>Les politiques de contrôle d’accès sont incorporées à un système de sécurité pour restreindre l’accès non autorisé à tout système logique ou physique. Chaque programme de mise en conformité en matière de sécurité doit en faire un élément fondamental. Les systèmes qui en sont dépourvus sont vulnérables.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q23",
+    "partie": "Partie 1",
+    "q": "Identifiez le terme qui indique la violation du principe si l’ordinateur n’est plus accessible.",
+    "choices": {
+      "A": "Confidentialité",
+      "B": "Intégrité",
+      "C": "Disponibilité",
+      "D": "Contrôle d’accès"
+    },
+    "correct": "C",
+    "explanation": "<p>La disponibilité consiste à affirmer qu’un système informatique est disponible ou accessible par un utilisateur autorisé à tout moment.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q24",
+    "partie": "Partie 1",
+    "q": "Quel est le protocole le plus utilisé pour la sécurité Wi-fi ?",
+    "choices": {
+      "A": "WPS",
+      "B": "WPA",
+      "C": "WPA2",
+      "D": "Les deux"
+    },
+    "correct": "C",
+    "explanation": "<p>WEP, WPA et WPA2 sont des protocoles de sécurité Wi-Fi qui sécurisent les connexions sans fil. Ils cachent vos données et protègent vos communications, tout en empêchant les pirates d’accéder à votre réseau. En général, le WPA2 est le meilleur choix, même s’il consomme plus de puissance de traitement pour protéger votre réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q25",
+    "partie": "Partie 1",
+    "q": "Forme complète de TCP/IP ?",
+    "choices": {
+      "A": "Transmission Control Protocol/ internet protocol",
+      "B": "Transfer Control Protocol/ internet protocol",
+      "C": "Transaction Control protocol/ internet protocol",
+      "D": "Transmission Contribution protocol/ internet protocol"
+    },
+    "correct": "A",
+    "explanation": "<p>TCP/IP signifie (Transmission Control Protocol / Internet Protocol).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q26",
+    "partie": "Partie 1",
+    "q": "Le message codé est connu sous le nom de _____________",
+    "choices": {
+      "A": "Texte en clair",
+      "B": "Texte chiffré",
+      "C": "Clé"
+    },
+    "correct": "B",
+    "explanation": "<p>Le texte chiffré est un texte crypté transformé à l’aide d’un algorithme de cryptage.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q27",
+    "partie": "Partie 1",
+    "q": "Dans PGP, le message est crypté à l’aide de _____________",
+    "choices": {
+      "A": "CAST",
+      "B": "IDEA",
+      "C": "3DES"
+    },
+    "correct": "D",
+    "explanation": "<p>PGP utilise le système de clé publique dans lequel chaque utilisateur possède une clé de cryptage unique connue publiquement et une clé privée qu’il est le seul à connaître. Un message est chiffré lorsqu’un utilisateur l’envoie à quelqu’un à l’aide de sa clé publique, puis déchiffré lorsque le destinataire l’ouvre à l’aide de sa clé privée. CAST, IDEA et 3DES sont des algorithmes de chiffrement utilisés par PGP.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q28",
+    "partie": "Partie 1",
+    "q": "Dans IDEA, la taille de la clé est ________.",
+    "choices": {
+      "A": "128 octets",
+      "B": "128 bits",
+      "C": "256 octets",
+      "D": "256 bits"
+    },
+    "correct": "B",
+    "explanation": "<p>IDEA utilise une clé de 128 bits, généralement considérée comme sûre, mais il est toujours théoriquement possible de casser la clé si un attaquant dispose d’une puissance de calcul suffisante. C’est pourquoi des tailles de clés plus longues sont souvent utilisées dans les algorithmes de cryptage modernes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q29",
+    "partie": "Partie 1",
+    "q": "Lequel des éléments suivants utilise la fonction de hachage cryptographique?",
+    "choices": {
+      "A": "MD5",
+      "B": "RSA",
+      "C": "DES"
+    },
+    "correct": "A",
+    "explanation": "<p>MD5 (message-digest algorithm) est un protocole cryptographique utilisé pour l’authentification des messages ainsi que pour la vérification du contenu et les signatures numériques. MD5 est basé sur une fonction de hachage qui vérifie qu’un fichier que vous avez envoyé correspond au fichier reçu par la personne à qui vous l’avez envoyé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q30",
+    "partie": "Partie 1",
+    "q": "Quelle partie de la suite IPSec est utilisée pour l’authentification ?",
+    "choices": {
+      "B": "ESP"
+    },
+    "correct": "C",
+    "explanation": "<p>IPSec utilise deux protocoles distincts, Authentication Header (AH) et Encapsulating Security Payload (ESP), qui sont définis par l’IETF. Le protocole AH fournit un mécanisme d’authentification unique. AH assure l’intégrité des données, et l’authentification de l’origine des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q31",
+    "partie": "Partie 1",
+    "q": "La cryptanalyse est utilisée __________",
+    "choices": {
+      "A": "pour trouver une insécurité dans un schéma cryptographique",
+      "B": "pour augmenter la vitesse",
+      "C": "pour crypter les données",
+      "D": "pour créer de nouveaux algorithmes de chiffrement"
+    },
+    "correct": "A",
+    "explanation": "<p>La cryptanalyse est un domaine d’étude dans lequel on tente intentionnellement de violer un système cryptographique afin d’en découvrir les failles et les insécurités. Elle est utilisée pour s’assurer que le système est le moins vulnérable aux attaques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q32",
+    "partie": "Partie 1",
+    "q": "En mode _______, IPSec protège l’ensemble du paquet IP, y compris l’en-tête IP d’origine.",
+    "choices": {
+      "A": "soit",
+      "B": "tunnel",
+      "C": "Soit"
+    },
+    "correct": "B",
+    "explanation": "<p>En mode tunnel, IPSec ajoute des bits de contrôle dans les paquets pour crypter l’ensemble du paquet entre les points d’extrémité IPSec. Le chiffrement permet de sécuriser la communication entre les deux points d’extrémité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q33",
+    "partie": "Partie 1",
+    "q": "Une connexion HTTP utilise le port ____ tandis que HTTPS utilise le port ____ et fait appel à SSL.",
+    "choices": {
+      "A": "80; 23",
+      "B": "443; 80",
+      "C": "80; 443",
+      "D": "23; 80"
+    },
+    "correct": "C",
+    "explanation": "<p>HTTP utilise le port 80 tandis que HTTPS utilise le port 443 avec SSL.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q35",
+    "partie": "Partie 1",
+    "q": "Une signature numérique est __________________.",
+    "choices": {
+      "A": "une chaîne de bits indiquant l’identité d’un correspondant",
+      "B": "l’identification unique d’un expéditeur",
+      "C": "l’authentification d’un document électronique en l’associant de manière unique à une clé que seul l’expéditeur connaît",
+      "D": "une signature cryptée de l’expéditeur"
+    },
+    "correct": "C",
+    "explanation": "<p>Une signature numérique est une technique mathématique utilisée pour valider l’authenticité et l’intégrité d’un document, d’un message ou d’un logiciel numérique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q36",
+    "partie": "Partie 1",
+    "q": "Un ___________ est une extension de l’intranet privé d’une entreprise sur un réseau public tel que l’internet, créant ainsi une connexion privée sécurisée.",
+    "choices": {
+      "A": "HTTPS",
+      "B": "VPN",
+      "C": "IPSec",
+      "D": "Firewall"
+    },
+    "correct": "B",
+    "explanation": "<p>VPN est l’abréviation de « virtual private network » (réseau privé virtuel) – un service qui vous aide à rester privé en ligne en cryptant la connexion entre votre appareil et l’internet. Cette connexion sécurisée fournit un tunnel privé pour vos données et vos communications lorsque vous utilisez des réseaux publics.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q37",
+    "partie": "Partie 1",
+    "q": "Une signature numérique nécessite un ____________.",
+    "choices": {
+      "A": "un système à clé privée",
+      "B": "un système à clé partagée",
+      "C": "un système à clé publique",
+      "D": "tous ces systèmes"
+    },
+    "correct": "C",
+    "explanation": "<p>Les signatures numériques fonctionnent grâce aux deux clés cryptographiques de la cryptographie à clé publique qui s’authentifient mutuellement. Pour le cryptage et le décryptage, la personne qui crée la signature numérique utilise une clé privée pour crypter les données liées à la signature. Le seul moyen de décrypter ces données est d’utiliser la clé publique du créateur de la signature.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q38",
+    "partie": "Partie 1",
+    "q": "Pretty Good Privacy (PGP) est utilisé dans __________.",
+    "choices": {
+      "A": "la sécurité du navigateur",
+      "B": "la sécurité des e-mails",
+      "C": "sécurité ftp",
+      "D": "sécurité wifi"
+    },
+    "correct": "B",
+    "explanation": "<p>Pretty Good Privacy (PGP) est un programme de sécurité utilisé pour décrypter et crypter les messages électroniques et les authentifier grâce à des signatures numériques et au cryptage des fichiers.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q39",
+    "partie": "Partie 1",
+    "q": "Que faut-il pour déjouer une attaque cross-site script avec des cookies ?",
+    "choices": {
+      "A": "captchas",
+      "B": "machines virtuelles",
+      "C": "proxies",
+      "D": "pare-feu"
+    },
+    "correct": "A",
+    "explanation": "<p>Une attaque par cross-site script se produit lorsque le pirate trompe une application ou un site web légitime pour qu’il accepte une requête comme provenant d’une source fiable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q40",
+    "partie": "Partie 1",
+    "q": "Le mode _______ est normalement utilisé lorsque nous avons besoin d’une protection des données d’hôte à hôte (de bout en bout).",
+    "choices": {
+      "A": "soit",
+      "B": "tunnel",
+      "C": "Soit"
+    },
+    "correct": "A",
+    "explanation": "<p>En mode transport, seule la charge utile (les données réelles) du paquet IP d’origine est cryptée et/ou authentifiée. L’en-tête IP d’origine reste intact et le nouvel en-tête IPsec est ajouté. Ce mode est souvent utilisé pour la communication de bout en bout entre deux hôtes ou appareils au sein d’un réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q41",
+    "partie": "Partie 1",
+    "q": "La plate-forme de base des services Web est une combinaison de _____ et _______.",
+    "choices": {
+      "A": "css + http",
+      "B": "xml + htmls",
+      "C": "xml + http",
+      "D": "css + java"
+    },
+    "correct": "C",
+    "explanation": "<p>Les services web utilisent des technologies standardisées telles que XML et HTTP.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q42",
+    "partie": "Partie 1",
+    "q": "Quel est l’avantage de créer une zone démilitarisée(DMZ) avec deux pare-feu?",
+    "choices": {
+      "A": "Vous pouvez contrôler la destination du trafic dans trois réseaux.",
+      "B": "Vous pouvez effectuer un filtrage de paquets avec état",
+      "C": "Vous pouvez faire de l’équilibrage de charge",
+      "D": "Amélioration des performances du réseau"
+    },
+    "correct": "C",
+    "explanation": "<p>Double pare-feu : Le déploiement de deux pare-feu avec une zone démilitarisée entre eux est généralement une option plus sûre. Le premier pare-feu n’autorise que le trafic externe vers la zone démilitarisée, et le deuxième n’autorise que le trafic allant de la zone démilitarisée vers le réseau interne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q43",
+    "partie": "Partie 1",
+    "q": "Quelles sont les deux principales catégories de cross-site scripting ?",
+    "choices": {
+      "A": "Basé sur le domaine et persistant",
+      "B": "Traditionnels et basés sur les domaines",
+      "C": "Traditionnelle et non persistante",
+      "D": "Non persistant et persistant"
+    },
+    "correct": "D",
+    "explanation": "<p>Les attaques XSS (cross-site scripting) peuvent généralement être classées en deux catégories principales : les attaques non persistantes (« reflétées ») et les attaques persistantes (« stockées »).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q44",
+    "partie": "Partie 1",
+    "q": "Pourquoi un pirate informatique utiliserait-il un serveur proxy ?",
+    "choices": {
+      "A": "Pour créer une connexion plus forte avec la cible.",
+      "B": "Pour créer un serveur fantôme sur le réseau.",
+      "C": "Pour obtenir une connexion d’accès à distance",
+      "D": "Pour dissimuler une activité malveillante sur le réseau."
+    },
+    "correct": "D",
+    "explanation": "<p>Les pirates utilisent les serveurs proxy pour dissimuler des activités malveillantes sur le réseau, telles que des attaques DDoS et des tentatives d’hameçonnage. Les pirates peuvent également infecter un proxy avec des logiciels malveillants afin que des utilisateurs peu méfiants installent le logiciel malveillant sur leur machine lorsqu’ils utilisent le proxy. C’est pourquoi il est dangereux d’utiliser les services de proxy gratuits proposés sur internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q45",
+    "partie": "Partie 1",
+    "q": "IPSec est conçu pour assurer la sécurité au niveau de la _________",
+    "choices": {
+      "A": "couche transport",
+      "B": "couche réseau",
+      "C": "couche application",
+      "D": "couche session"
+    },
+    "correct": "B",
+    "explanation": "<p>IPSec est conçu pour assurer la sécurité au niveau de la couche réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q46",
+    "partie": "Partie 1",
+    "q": "Quel est le composant inclus dans IPSec ?",
+    "choices": {
+      "A": "En-tête d’authentification (AH)",
+      "B": "Charge utile de sécurité encapsulante (ESP)",
+      "C": "échange de clés internet (IKE)",
+      "D": "Tous les composants mentionnés"
+    },
+    "correct": "D",
+    "explanation": "<p>IPSec se compose des éléments suivants: Encapsulation de la charge utile de sécurité (ESP) En-tête d’authentification (AH) Échange de clés Internet (IKE)</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q47",
+    "partie": "Partie 1",
+    "q": "Qu’est-ce qu’un pare-feu ?",
+    "choices": {
+      "A": "Les pare-feu sont des dispositifs de sécurité basés sur le réseau qui contrôlent le flux du trafic entrant et sortant.",
+      "B": "Le pare-feu est un programme qui crypte tous les programmes qui accèdent à l’internet.",
+      "C": "Un pare-feu est un programme qui empêche d’autres programmes d’utiliser l’internet",
+      "D": "Le pare-feu est une interface qui se déconnecte automatiquement de l’internet lorsqu’une menace apparaît."
+    },
+    "correct": "A",
+    "explanation": "<p>Les pare-feu sont des dispositifs de sécurité basés sur le réseau qui contrôlent le flux du trafic entrant et sortant.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q48",
+    "partie": "Partie 1",
+    "q": "SSL signifie ?",
+    "choices": {
+      "A": "Secured Socket Layer",
+      "B": "Secured Shell Layer",
+      "C": "System Socket Layer",
+      "D": "System Secured Layer"
+    },
+    "correct": "A",
+    "explanation": "<p>SSL signifie Secured Socket Layer.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q49",
+    "partie": "Partie 1",
+    "q": "Quelle est l’activité la plus importante dans le piratage d’un système ?",
+    "choices": {
+      "A": "La collecte d’informations",
+      "B": "Déchiffrer les mots de passe",
+      "C": "L’escalade des privilèges",
+      "D": "Dissimuler des traces"
+    },
+    "correct": "B",
+    "explanation": "<p>Les mots de passe sont la clé de l’accès à un système, ce qui fait du craquage du mot de passe la partie la plus importante du piratage d’un système.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q50",
+    "partie": "Partie 1",
+    "q": "Le DNS peut utiliser les services de ________ en utilisant le port 53 bien connu.",
+    "choices": {
+      "A": "TCP",
+      "B": "UDP",
+      "D": "Aucun des deux"
+    },
+    "correct": "C",
+    "explanation": "<p>Le DNS a toujours été conçu pour utiliser à la fois UDP et TCP sur le port 53, UDP étant par défaut, et basculer sur TCP lorsqu’il n’est pas en mesure de communiquer sur UDP, généralement lorsque la taille du paquet est trop importante pour être transmise dans un seul paquet UDP.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 2",
+    "q": "______ est un programme qui peut infecter d’autres programmes en les modifiant. Cette modification inclut une copie du programme viral, qui peut ensuite infecter d’autres programmes.",
+    "choices": {
+      "A": "Ver",
+      "B": "Virus",
+      "C": "Zombie",
+      "D": "Porte dérobée(Trap doors)"
+    },
+    "correct": "B",
+    "explanation": "<p>Un virus est un type de logiciel malveillant (malware) composé de petits morceaux de code associés à des programmes légitimes. Lorsque ce programme est exécuté, le virus est exécuté.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 2",
+    "q": "______ sont utilisés dans les attaques par déni de service, généralement contre des sites Web ciblés.",
+    "choices": {
+      "A": "Ver",
+      "B": "Virus",
+      "C": "Zombie",
+      "D": "Cheval de Troie"
+    },
+    "correct": "C",
+    "explanation": "<p>Un zombie est un ordinateur qui s’est implanté avec un démon qui le met sous le contrôle d’un pirate informatique malveillant à l’insu du propriétaire de l’ordinateur. Les zombies sont utilisés par des pirates informatiques malveillants pour lancer des attaques par déni de service.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 2",
+    "q": "Le type de codage dans lequel la manipulation de flux de bits sans tenir compte de la signification des bits est appelé_________?",
+    "choices": {
+      "A": "Codage de destination",
+      "B": "Codage entropique",
+      "C": "Codage de source",
+      "D": "Codage différentiel"
+    },
+    "correct": "B",
+    "explanation": "<p>Le codage entropique est un type de codage sans perte. Le codage de Huffman est un type de codage entropique. Le codage entropique apparaît partout dans les systèmes numériques modernes. Il s’agit d’un élément essentiel de la compression des données, qui est généralement nécessaire, en particulier pour l’Internet, la vidéo, l’audio, la communication, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 2",
+    "q": "Le protocole utilisé pour sécuriser les e-mails?",
+    "choices": {
+      "A": "POP",
+      "B": "PGP",
+      "C": "SNMP",
+      "D": "HTTP"
+    },
+    "correct": "B",
+    "explanation": "<p>PGP est utilisé pour signer, chiffrer et déchiffrer des textes, des e-mails, des fichiers, des répertoires et des partitions de disque entières, ainsi que pour renforcer la sécurité des communications par e-mail.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 2",
+    "q": "L’art de casser des chiffres est connu comme ____?",
+    "choices": {
+      "A": "Cryptologie",
+      "B": "Cryptographie",
+      "C": "Cryptanalyse",
+      "D": "Cryptage"
+    },
+    "correct": "C",
+    "explanation": "<p>Les cryptanalystes cherchent à déchiffrer les textes chiffrés sans connaître la source du texte en clair, la clé de chiffrement ou l’algorithme utilisé pour le chiffrer; Cryptanalysts cible également le hachage sécurisé, les signatures numériques et d’autres algorithmes cryptographiques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 2",
+    "q": "Lequel des énoncés suivants est correct?",
+    "choices": {
+      "A": "Caractère – représenté par un complément",
+      "B": "Caractère – représenté par le complément de deux",
+      "C": "Caractère – représenté par Unicode",
+      "D": "Integer – représenté par ASCII"
+    },
+    "correct": "C",
+    "explanation": "<p>Unicode est une norme de codage de caractères, publiée par le consortium Unicode. Les ordinateurs stockent des numéros qui représentent un caractère. Unicode fournit un numéro unique pour chaque caractère.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 2",
+    "q": "______ est un exemple d’algorithme de clé publique.",
+    "choices": {
+      "A": "RSA",
+      "B": "DES",
+      "C": "IREA",
+      "D": "RC5"
+    },
+    "correct": "A",
+    "explanation": "<p>RSA est un algorithme utilisé pour chiffrer et déchiffrer les messages. C’est un algorithme cryptographique asymétrique. Asymétrique signifie qu’il y a deux clés différentes. C’est ce qu’on appelle aussi la cryptographie à clé publique, car l’une des clés peut être donnée à n’importe qui.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 2",
+    "q": "Le chiffre de César est représenté par _______?",
+    "choices": {
+      "A": "C = (p + 3) mod3",
+      "B": "C = (p + 26) mod3",
+      "C": "C = (p – 3) mod26",
+      "D": "C = (p + 3) mod26"
+    },
+    "correct": "D",
+    "explanation": "<p>Le chiffre de César est l’un des premiers chiffrements connus. Il s’agit d’un type de chiffrement de substitution dans lequel chaque lettre est «décalée» vers un certain nombre d’endroits en bas de l’alphabet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 3",
+    "q": "Le ______ s’attache aux fichiers exécutables et se réplique, lorsque le programme infecté est exécuté, en recherchant d’autres fichiers exécutables à infecter.",
+    "choices": {
+      "A": "Virus furtif",
+      "B": "Virus polymorphe",
+      "C": "Virus parasite",
+      "D": "Virus de macro"
+    },
+    "correct": "C",
+    "explanation": "<p>Les virus parasites s’attachent à des programmes, également appelés exécutables. Lorsqu’un utilisateur lance un programme contenant un virus parasite, le virus est lancé en premier. Pour dissimuler sa présence à l’utilisateur, le virus déclenche ensuite l’ouverture du programme d’origine. Parce que le système d’exploitation comprend qu’il fait partie du programme, le virus parasite bénéficie des mêmes droits que le programme auquel le virus est attaché. Ces droits permettent au virus de se répliquer, de s’installer en mémoire ou de libérer sa charge utile. En l’absence de logiciel antivirus, seule la charge utile peut éveiller les soupçons de l’utilisateur normal. Un célèbre virus parasite appelé Jérusalem a le pouvoir de ralentir le système et, éventuellement, de supprimer tous les programmes lancés par l’utilisateur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 3",
+    "q": "Nombre de tours dans l’algorithme DES(Data Encryption Standard) est ______?",
+    "choices": {
+      "A": "8 tours",
+      "B": "12 tours",
+      "C": "16 tours",
+      "D": "24 tours"
+    },
+    "correct": "C",
+    "explanation": "<p>Le DES utilise la structure de Feistel avec 16 tours.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 3",
+    "q": "________ transforme le message en format qui ne peut pas être lu par les pirates.",
+    "choices": {
+      "A": "Décryptage",
+      "B": "Cryptage",
+      "C": "Transformation"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Cryptage est un moyen de transformer les données de telle sorte que seules les personnes approuvées puissent les déchiffrer, puis les transformer en quelque chose de compréhensible.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 3",
+    "q": "Quel est le numéro de port pour HTTPS (HTTP Secure)?",
+    "choices": {
+      "B": "443",
+      "C": "445",
+      "D": "444"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 3",
+    "q": "Le chiffrement et le déchiffrement des données est la responsabilité de quelle couche?",
+    "choices": {
+      "A": "Couche de session",
+      "B": "Couche réseau",
+      "C": "Couche de transport",
+      "D": "Couche de présentation"
+    },
+    "correct": "D",
+    "explanation": "<p>La couche présentation se préoccupe de préserver le sens des informations dans un réseau. La couche présentation peut représenter les données de différentes manières (par exemple, le chiffrement), mais le destinataire reconvertit le codage dans sa signification originale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 3",
+    "q": "Quel est l’algorithme d’échange de clé utilisé dans le paramètre d’une suite cryptographique(Cipher Suite)?",
+    "choices": {
+      "A": "RSA",
+      "B": "Fixed Diffie-Hellman",
+      "C": "Ephemeral Diffie-Hellman"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 3",
+    "q": "Le message de certificat est requis pour toute méthode d’échange de clé convenue, sauf __________.",
+    "choices": {
+      "A": "Ephemeral Diffie-Hellman",
+      "B": "Anonymous Diffie-Hellman",
+      "C": "Fixed Diffie-Hellman",
+      "D": "RSA"
+    },
+    "correct": "B",
+    "explanation": "<p>Le message de certificat est requis pour toute méthode d’échange de clé convenue, à l’exception de Anonymous Diffie-Hellman. Anonymous Diffie-Hellman utilise Diffie-Hellman, mais sans authentification. Comme les clés utilisées dans l’échange ne sont pas authentifiées, le protocole est susceptible d’attaques de type Man-in-the-Middle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 3",
+    "q": "MD5 est une fonction de hachage largement utilisée pour produire une valeur de hachage de ___",
+    "choices": {
+      "A": "64 bits",
+      "B": "128 bits",
+      "C": "512 bits",
+      "D": "1024 bits"
+    },
+    "correct": "B",
+    "explanation": "<p>L’algorithme MD5 est une fonction de hachage très répandue qui produit une valeur de hachage de 128 bits. Bien que l’algorithme MD5 ait été initialement conçu pour être utilisé comme fonction de hachage cryptographique, il s’est avéré qu’il présentait de nombreuses vulnérabilités. Il peut encore être utilisé comme somme de contrôle pour vérifier l’intégrité des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 3",
+    "q": "Les pare-feu sont utilisés pour __________",
+    "choices": {
+      "A": "Le routage",
+      "B": "La sécurité",
+      "C": "Le tunneling",
+      "D": "Le contrôle de congestion"
+    },
+    "correct": "B",
+    "explanation": "<p>Les pare-feu offrent une protection contre les cyber-attaquants extérieurs en protégeant votre ordinateur ou votre réseau contre le trafic réseau malveillant ou inutile. Les pare-feu peuvent également empêcher les logiciels malveillants d’accéder à un ordinateur ou à un réseau via l’internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 3",
+    "q": "_________ est utilisé pour valider l’identité de l’expéditeur du message auprès du destinataire.",
+    "choices": {
+      "A": "Cryptage",
+      "B": "Décryptage",
+      "C": "Certificat numérique"
+    },
+    "correct": "C",
+    "explanation": "<p>Les certificats numériques permettent à un utilisateur de vérifier à qui un certificat est émis ainsi que son émetteur. Les certificats numériques sont utilisé par SSL pour la cryptographie à clé publique. La cryptographie à clé publique utilise deux clés: une clé privée et une clé publique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 4",
+    "q": "Lorsque vous vous connectez à un service en ligne, vous êtes invité à fournir une sorte d’identification, telle que votre nom, numéro de compte et le mot de passe. Quel est le nom donné à ce bref dialogue?",
+    "choices": {
+      "A": "Procédure de sécurité",
+      "B": "Procédure de connexion",
+      "C": "Procédure de sauvegarde",
+      "D": "Procédure d’identification"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 4",
+    "q": "La signature DSS utilise quel algorithme de hachage?",
+    "choices": {
+      "A": "MD5",
+      "B": "SHA-2",
+      "C": "SHA-1",
+      "D": "N’utilise pas d’algorithme de hachage"
+    },
+    "correct": "C",
+    "explanation": "<p>La signature numériques DSS utilise SHA-1. Digital Signature Standard (DSS) sont utilisées pour détecter les modifications non autorisées des données et pour authentifier l’identité du signataire.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 4",
+    "q": "________ est une forme de virus explicitement conçue pour éviter la détection par des logiciels antivirus.",
+    "choices": {
+      "A": "Virus furtif",
+      "B": "Virus polymorphe",
+      "C": "Virus parasite",
+      "D": "Virus de macro"
+    },
+    "correct": "A",
+    "explanation": "<p>Le virus furtif est un virus informatique qui utilise divers mécanismes pour éviter la détection par un logiciel antivirus.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 4",
+    "q": "Une partie du virus polymorphe, généralement appelée ________, crée un chiffrement aléatoire et une clé permettant de chiffrer le reste du virus.",
+    "choices": {
+      "A": "moteur mutuel",
+      "B": "moteur de mutation",
+      "C": "moteur multiple",
+      "D": "moteur polymorphe"
+    },
+    "correct": "B",
+    "explanation": "<p>Le virus polymorphe utilise son moteur de mutation dénommé MtE (the Mutation Engine) pour générer une nouvelle routine de déchiffrement chaque fois qu’il infecte un nouveau programme.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 4",
+    "q": "Pourquoi utiliser le tunnel HTTP ?",
+    "choices": {
+      "A": "Pour identifier les serveurs proxy",
+      "B": "L’activité web n’est pas analysée",
+      "C": "Pour contourner un pare-feu",
+      "D": "HTTP est un protocole facile à utiliser"
+    },
+    "correct": "C",
+    "explanation": "<p>Le tunneling via HTTP est principalement utilisé pour éviter les pare-feux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 4",
+    "q": "Dans le DNS, les noms sont définis dans une structure __________.",
+    "choices": {
+      "A": "une liste linéaire",
+      "B": "un arbre inversé",
+      "C": "un graphe",
+      "D": "Aucun"
+    },
+    "correct": "B",
+    "explanation": "<p>La hiérarchie DNS ressemble à un arbre inversé, avec le domaine racine au sommet et les sous-domaines aux niveaux inférieurs. Le domaine racine est représenté par un point (.) et contient tous les TLD.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 4",
+    "q": "Un _________ est un programme qui prend le contrôle d’un autre ordinateur connecté sur Internet, puis utilise cet ordinateur pour lancer des attaques.",
+    "choices": {
+      "A": "Ver",
+      "B": "Zombie",
+      "C": "Virus",
+      "D": "Porte dérobée (Trap doors)"
+    },
+    "correct": "B",
+    "explanation": "<p>Un zombie est un ordinateur ou un appareil infecté par un logiciel malveillant et contrôlé à distance par un pirate informatique. Les zombies peuvent être utilisés pour lancer des attaques en ligne ou envoyer des spams ou des courriels d’hameçonnage pour infecter d’autres appareils.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 4",
+    "q": "La signature RSA utilise quel algorithme de hachage?",
+    "choices": {
+      "A": "MD5",
+      "B": "SHA-1",
+      "C": "MD5 et SHA-1",
+      "D": "Porte dérobée (Trap doors)"
+    },
+    "correct": "C",
+    "explanation": "<p>Le hache MD5 et SHA-1 est concaténé puis chiffré avec la clé privée du serveur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 4",
+    "q": "Identifiez le premier virus informatique parmi les suivants.",
+    "choices": {
+      "A": "Zombie",
+      "B": "Blaster",
+      "C": "Sasser",
+      "D": "Creeper"
+    },
+    "correct": "D",
+    "explanation": "<p>Le virus Creeper était un ver, c’est-à-dire un type de virus qui se propage en se répliquant et en sautant d’un appareil à l’autre. La cible de ce virus spécifique était les ordinateurs de Digital Equipment Corporation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 4",
+    "q": "Quelle est la taille d’une signature RSA après les traitements MD5 et SHA-1?",
+    "choices": {
+      "A": "42 octets",
+      "B": "32 octets",
+      "C": "36 octets",
+      "D": "48 octets"
+    },
+    "correct": "C",
+    "explanation": "<p>La taille est de 36 octets après les traitements MD5 et SHA-1.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 5",
+    "q": "Lequel des éléments suivants est considéré comme un élément de la sécurité informatique?",
+    "choices": {
+      "A": "Sécurité des réseaux",
+      "B": "Sécurité opérationnelle",
+      "C": "Sécurité des applications"
+    },
+    "correct": "D",
+    "explanation": "<p>La sécurité opérationnelle est un processus que les organisations mettent en œuvre pour éviter que des informations sensibles ne tombent entre de mauvaises mains.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 5",
+    "q": "Pourquoi utilise-t-on le temps de réponse et le temps de transmission ?",
+    "choices": {
+      "A": "Pour mesurer la fiabilité",
+      "B": "Pour mesurer la sécurité",
+      "C": "Pour mesurer la longévité",
+      "D": "Pour mesurer les performances"
+    },
+    "correct": "C",
+    "explanation": "<p>La latence d’un réseau, le temps de réponse et le temps de transmission sont des concepts connexes souvent utilisés pour décrire les performances d’un réseau. Cependant, ils ont chacun une signification légèrement différente et sont utilisés pour mesurer différents aspects de la performance d’un réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 5",
+    "q": "Qu’est-ce qui est transformé à l’aide d’algorithmes de chiffrement ?",
+    "choices": {
+      "A": "Texte scalaire",
+      "B": "Texte complexe",
+      "C": "Texte en clair"
+    },
+    "correct": "C",
+    "explanation": "<p>Les algorithmes de chiffrement, sont des systèmes permettant de chiffrer et de déchiffrer des données. Un algorithme de chiffrement convertit le message original, appelé texte en clair, en texte chiffré à l’aide d’une clé qui détermine la manière de procéder.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 5",
+    "q": "Identifiez le logiciel malveillant qui ne se réplique pas ou ne se clone pas par le biais d’une infection ?",
+    "choices": {
+      "A": "Trojans (Cheval de Troie)",
+      "B": "Vers",
+      "C": "Rootkits",
+      "D": "Virus"
+    },
+    "correct": "A",
+    "explanation": "<p>Contrairement aux virus, les chevaux de Troie ne se reproduisent pas, mais ils peuvent être tout aussi destructeurs. Les chevaux de Troie ouvrent également une porte dérobée sur votre ordinateur, donnant des ordres à des acteurs malveillants ou permettant à des utilisateurs/programmes malveillants d’accéder à votre système. Cela entraîne le vol d’informations confidentielles et personnelles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 5",
+    "q": "Choisir les caractéristiques qui violent la cybersécurité.",
+    "choices": {
+      "A": "Exploit",
+      "B": "Attaque",
+      "C": "Respect des règles"
+    },
+    "correct": "B",
+    "explanation": "<p>L’attaque viole la cybersécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 5",
+    "q": "Identifier la forme juridique du piratage informatique.",
+    "choices": {
+      "A": "Cracking",
+      "B": "Piratage non éthique",
+      "C": "Piratage éthique",
+      "D": "Hacktivism"
+    },
+    "correct": "C",
+    "explanation": "<p>Le piratage éthique est un processus de détection des vulnérabilités dans une application, un système ou l’infrastructure d’une organisation qu’un pirate peut utiliser pour exploiter un individu ou une organisation. Ils utilisent ce processus pour prévenir les cyberattaques et les failles de sécurité en s’introduisant légalement dans les systèmes et en recherchant les points faibles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 5",
+    "q": "Le terme « Malware » signifie ____________",
+    "choices": {
+      "A": "Multipurpose software",
+      "B": "Malfunctioned software",
+      "C": "Malicious software",
+      "D": "Malfunctioning of security"
+    },
+    "correct": "C",
+    "explanation": "<p>Le terme « Malware » signifie Malicious software.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 5",
+    "q": "Identifier le cryptage de sécurité le moins fort.",
+    "choices": {
+      "A": "WEP",
+      "B": "WPA2",
+      "C": "WPA3",
+      "D": "WPA2"
+    },
+    "correct": "A",
+    "explanation": "<p>WEP a révélé que la clé de cryptage de 40 bits utilisée dans WEP était vulnérable et peu sûre. Parmi tous les autres protocoles de sécurité Wi-Fi, le WEP est considéré comme le moins sûr.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 5",
+    "q": "Identifiez le protocole qui n’est pas sécurisé.",
+    "choices": {
+      "A": "SFTP",
+      "B": "SSL",
+      "C": "HTTPS",
+      "D": "SMTP"
+    },
+    "correct": "D",
+    "explanation": "<p>SMTP (abréviation de Simple Mail Transfer Protocol) est un protocole standard de transmission des e-mails.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 5",
+    "q": "Lequel des éléments suivants n’est pas une méthode sécurisée de transfert de courrier ?",
+    "choices": {
+      "A": "POP3",
+      "B": "SSMTP",
+      "C": "Mail utilisant PGP",
+      "D": "S/MIME"
+    },
+    "correct": "A",
+    "explanation": "<p>POP (Post Office Protocol) est un protocole simple qui récupère le courrier mis à jour et stocké pour vous par le serveur. S/MIME (Secure/Multipurpose Internet Mail Extensions), SSMTP (Secure-Simple Mail Transfer Protocol) et PGP (Pretty Good Privacy) sont des exemples de protocoles et de méthodes permettant de sécuriser les échanges de courrier.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 6",
+    "q": "__________ est un ensemble de conventions et de règles établies pour la communication entre deux ou plusieurs dispositifs se trouvant sur le même réseau ?",
+    "choices": {
+      "A": "Les politiques de sécurité",
+      "B": "Protocoles",
+      "C": "Réseau sans fil",
+      "D": "Algorithmes de réseau"
+    },
+    "correct": "B",
+    "explanation": "<p>Les protocoles de réseau sont conçus avec des mécanismes permettant d’identifier les appareils et d’établir des connexions entre eux. De plus, des règles propres sont définies quant à la manière dont les paquets de données seront envoyés et reçus.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 6",
+    "q": "TSL (Transport Layer Security) est un protocole cryptographique utilisé pour sécuriser les connexions HTTP/HTTPS.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>TLS, devenu SSL (Secure Socket Layer), est l’un des protocoles cryptographiques les plus répandus pour sécuriser les réseaux informatique pendant la communication.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 6",
+    "q": "HTTPS signifie en anglais « _________ ».",
+    "choices": {
+      "A": "Hypertexts Transfer Protocol Secured",
+      "B": "Secured Hyper Text Transfer Protocol",
+      "C": "Hyperlinked Text Transfer Protocol Secured",
+      "D": "Hyper Text Transfer Protocol Secure"
+    },
+    "correct": "D",
+    "explanation": "<p>Hyper Text Transfer Protocol Secure (HTTPS) est un protocole de sécurité qui garantit la sécurité lorsque des données sont envoyées du navigateur au serveur et vice versa. Il indique que toutes les communications entre le navigateur et le serveur sont cryptées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 6",
+    "q": "SSL se focalise principalement sur __________",
+    "choices": {
+      "A": "l’intégrité et l’authenticité",
+      "B": "l’intégrité et la non-répudiation",
+      "C": "l’authenticité et la confidentialité",
+      "D": "confidentialité et intégrité"
+    },
+    "correct": "A",
+    "explanation": "<p>SSL se focalise principalement sur le respect de l’intégrité des données. Il maintient également l’authenticité, ce qui aide les clients à se sentir en sécurité lorsqu’ils communiquent sur l’internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 6",
+    "q": "Dans le protocole SSL, qu’est-ce qui est utilisé pour authentifier un message ?",
+    "choices": {
+      "A": "MAC (Message Access Code)",
+      "B": "MAC (Message Authentication Code)",
+      "C": "MAC (Machine Authentication Code)",
+      "D": "MAC (Machine Access Code)"
+    },
+    "correct": "A",
+    "explanation": "<p>Pour l’authentification en SSL, un message court connu sous le nom de MAC (Message Authentication Code) est utilisé pour authentifier un message ; l’expéditeur et le destinataire doivent utiliser la même clé pour commencer à communiquer.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 6",
+    "q": "__________ est utilisé pour crypter les données au niveau de la couche réseau.",
+    "choices": {
+      "A": "IPSec",
+      "B": "HTTPS",
+      "C": "SMTP",
+      "D": "S/MIME"
+    },
+    "correct": "A",
+    "explanation": "<p>IPSec (Secure Internet Protocol) est utilisé pour sécuriser les données au niveau du réseau en utilisant trois protocoles différents. Il s’agit de l’Encapsulation Secure Payload (ESP), de l’En-tête d’authentification (EA) et de l’Échange de clés Internet (IKE).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 6",
+    "q": "S/MIME signifie _______________________.",
+    "choices": {
+      "A": "Secure/Multimedia Internet Mailing Extensions",
+      "B": "Secure/Multipurpose Internet Mailing Extensions",
+      "C": "Secure/Multimedia Internet Mail Extensions",
+      "D": "Secure/Multipurpose Internet Mail Extensions"
+    },
+    "correct": "D",
+    "explanation": "<p>Secure/Multipurpose Internet Mail Extensions est le protocole le plus populaire utilisé pour envoyer des messages cryptés qui sont signés numériquement. Dans ce protocole, le cryptage est effectué avec une signature numérique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 6",
+    "q": "Les utilisateurs peuvent voir une icône de cadenas dans la barre d’adresse du navigateur lorsqu’il y a une connexion _______.",
+    "choices": {
+      "A": "HTTP",
+      "B": "HTTPS",
+      "C": "SMTP",
+      "D": "SFTP"
+    },
+    "correct": "B",
+    "explanation": "<p>Lorsque la connexion HTTPS (Hyper Text Transfer Protocol Secure) est établie, un certificat de validation étendu est installé sur le site web pour des raisons de sécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 6",
+    "q": "Pourquoi le certificat SSL a-t-il été exigé dans le cadre du protocole HTTP ?",
+    "choices": {
+      "A": "Pour affaiblir la sécurité",
+      "B": "Pour accélérer la circulation des informations",
+      "C": "Pour crypter les données envoyées via le protocole HTTP",
+      "D": "Pour l’envoi et la réception de courriers électroniques non cryptés"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans le cas d’une connexion HTTP, les données sont envoyées en texte clair, ce qui est facilement lisible par les pirates, en particulier lorsqu’il s’agit de détails de cartes de crédit et d’informations personnelles. Mais avec l’incorporation du certificat SSL, la communication devient sécurisée et les données envoyées et reçues sont cryptées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 6",
+    "q": "SFTP signifie ________.",
+    "choices": {
+      "A": "Secure File Transfer Protocol",
+      "B": "Secured File Transfer Protocol",
+      "C": "Secure Folder Transfer Protocol",
+      "D": "Secure File Transferring Protocol"
+    },
+    "correct": "A",
+    "explanation": "<p>Il s’agit d’un FTP sécurisé, où la communication est sécurisée à l’aide de SSH (Secure Shell), ce qui permet de transférer des fichiers en toute sécurité dans les systèmes locaux et distants.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 7",
+    "q": "PCT signifie en anglais ________.",
+    "choices": {
+      "A": "Private Connecting Technology",
+      "B": "Personal Communication Technology",
+      "C": "Private Communication Technique",
+      "D": "Private Communication Technology"
+    },
+    "correct": "D",
+    "explanation": "<p>La technologie de communication privée (PCT) est similaire à SSL, sauf que la taille du message est plus petite dans le cas de la PCT. Elle prend en charge différents algorithmes de cryptage tels que DES, RSA, Diffie-Hellman, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 7",
+    "q": "La dernière version de TLS est ________",
+    "choices": {
+      "A": "version 1.4",
+      "B": "version 1.2",
+      "C": "version 2.1",
+      "D": "version 1.3"
+    },
+    "correct": "D",
+    "explanation": "<p>La dernière version standard de TLS est la version 1.3. La version 1.4 est encore en cours de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 7",
+    "q": "L’abréviation de SIP est __________.",
+    "choices": {
+      "A": "Session Initiation Protocol",
+      "B": "Secured Initiation Protocol",
+      "C": "Secure Initiation Protocol",
+      "D": "Session Integration Protocol"
+    },
+    "correct": "A",
+    "explanation": "<p>Le protocole d’initiation de session est un protocole important utilisé pour démarrer, maintenir et mettre fin à toute session en temps réel sur l’internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 7",
+    "q": "Dans lequel des cas suivants le protocole d’initiation de session n’est-il pas utilisé ?",
+    "choices": {
+      "A": "Messagerie instantanée",
+      "B": "Voix sur LTE (VoLTE)",
+      "C": "Téléphonie sur internet",
+      "D": "Transfert de données"
+    },
+    "correct": "D",
+    "explanation": "<p>Le protocole d’initiation de session est utilisé pour maintenir une session en temps réel. Il est utilisé pour les applications vocales, vidéo et de messagerie afin de contrôler les sessions de communication multimédia.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 7",
+    "q": "SRTP se traduit par la phrase suivante : « ________ ».",
+    "choices": {
+      "A": "Secure Relay Transport Protocol",
+      "B": "Secure Real-time Transferring Protocol",
+      "C": "Secure Real-time Transport Protocol",
+      "D": "Secure Real-time Transportation Protocol"
+    },
+    "correct": "C",
+    "explanation": "<p>Le protocole de transport sécurisé en temps réel (Secure Real-time Transport Protocol) est un protocole de diffusion multimédia en temps réel avec cryptage pour l’intégrité et l’authentification des messages. Il est principalement utilisé dans les systèmes de divertissement, les médias en streaming et les sites.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 7",
+    "q": "ESP se traduit par la phrase suivante : « ________ ».",
+    "choices": {
+      "A": "Encapsulating Security Payload",
+      "B": "Encapsulating Secure Protocol",
+      "C": "Encrypted Secure Payload",
+      "D": "Encapsulating Secure Payload"
+    },
+    "correct": "D",
+    "explanation": "<p>L’encapsulation de données sécurisées (Encapsulating Secure Payload) est un type spécial de protocole utilisé pour l’intégrité, l’authentification et la confidentialité des données des paquets réseau dans le protocole IPSec (Secure Internet Protocol).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 7",
+    "q": "__________ est l’entité chargée de délivrer les certificats numériques.",
+    "choices": {
+      "A": "Certificate Authority (CA)",
+      "B": "Cert Authority (CA)",
+      "C": "Certificate Authorization (CA)",
+      "D": "Cert Authorization (CA)"
+    },
+    "correct": "A",
+    "explanation": "<p>Les certificats numériques sont utilisés pour certifier la propriété d’une clé publique et l’entité qui émet ces certificats est Certificate Authority.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 7",
+    "q": "IKE est l’abréviation de Internet Key Exchange (échange de clés Internet).",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Internet Key Exchange est un protocole de sécurité utilisé pour établir une association de sécurité dans le protocole IPSec. IKE = Protocole de gestion (KMP) + association de sécurité (SA).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 7",
+    "q": "________ est toute action susceptible de compromettre la sécurité informatique.",
+    "choices": {
+      "A": "Menace",
+      "B": "Vulnérabilité",
+      "C": "Exploitation",
+      "D": "Attaque"
+    },
+    "correct": "A",
+    "explanation": "<p>La menace peut être définie comme un danger potentiel qui peut conduire à une violation de la sécurité informatique et qui peut causer des dommages au système ou au réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 8",
+    "q": "L’existence d’une faiblesse dans un système ou un réseau est appelée _______.",
+    "choices": {
+      "A": "Menace",
+      "B": "Vulnérabilité",
+      "C": "Exploitation",
+      "D": "Attaque"
+    },
+    "correct": "B",
+    "explanation": "<p>La vulnérabilité est le terme utilisé pour définir la faiblesse d’un réseau ou d’un système qui peut être exploitée par un attaquant. L’exploitation de la faiblesse peut conduire à un événement inattendu et indésirable en matière de sécurité informatique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 8",
+    "q": "________ est un moyen de violer la sécurité en utilisant la vulnérabilité de ce système.",
+    "choices": {
+      "A": "Menace",
+      "B": "Vulnérabilité",
+      "C": "Exploitation",
+      "D": "Attaque"
+    },
+    "correct": "C",
+    "explanation": "<p>Un exploit peut être une donnée, un morceau de code, un programme, une séquence de commandes ou tout logiciel qui utilise la vulnérabilité ou la faille d’un système et aide les attaquants ou les cybercriminels à provoquer un comportement imprévu.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 8",
+    "q": "________ automatise une action ou une attaque de manière à ce que les tâches répétitives soient effectuées à un rythme plus rapide.",
+    "choices": {
+      "A": "Auto-bots",
+      "B": "Cookie-bots",
+      "C": "Robots",
+      "D": "Bots"
+    },
+    "correct": "D",
+    "explanation": "<p>Les bots sont un ensemble de codes écrits qui permettent d’effectuer des tâches répétitives beaucoup plus rapidement que les humains.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 8",
+    "q": "________ est une technique d’attaque qui se produit lorsque des données excessives sont écrites dans un bloc de mémoire.",
+    "choices": {
+      "A": "Over buffering",
+      "B": "Buffering",
+      "C": "Buffer overflow",
+      "D": "Memory full"
+    },
+    "correct": "C",
+    "explanation": "<p>Le débordement de la mémoire tampon (ou Buffer overflow) est une faille qui se produit dans la mémoire lorsque des données excessives sont écrites, ce qui fait que la mémoire tampon allouée se bloque.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 8",
+    "q": "IP se traduit en anglais par __________",
+    "choices": {
+      "A": "Internet Program",
+      "B": "Internet Protocol",
+      "C": "Intuition Programs",
+      "D": "Internet Pathway"
+    },
+    "correct": "B",
+    "explanation": "<p>IP est l’abréviation de Internet Protocol. Il s’agit d’une adresse unique ou d’un identifiant de tout ordinateur ou appareil sur l’internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 8",
+    "q": "____________ est un scénario dans lequel des informations sont consultées sans autorisation.",
+    "choices": {
+      "A": "Infiltration de données",
+      "B": "Piratage de données",
+      "C": "Compromission de l’information",
+      "D": "Violation de données"
+    },
+    "correct": "D",
+    "explanation": "<p>On parle de violation de données lorsqu’un événement se produit et que des informations sensibles sont consultées sans autorisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 8",
+    "q": "____________ est une tentative de voler, d’espionner, d’endommager ou de détruire des systèmes informatiques, des réseaux ou les informations qui y sont associées.",
+    "choices": {
+      "A": "Cyber-sécurité",
+      "B": "Cyberattaque",
+      "C": "Piratage numérique",
+      "D": "Sécurité informatique"
+    },
+    "correct": "B",
+    "explanation": "<p>La cyberattaque peut être définie comme une tentative de vol, d’espionnage, d’endommagement ou de destruction de différents composants du cyberespace, tels que les systèmes informatiques, les périphériques associés, les systèmes de réseau et les informations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 8",
+    "q": "__________ est la pratique mise en œuvre pour espionner quelqu’un en utilisant la technologie pour recueillir des informations sensibles.",
+    "choices": {
+      "A": "Cyber espionage",
+      "B": "Cyber-spy",
+      "C": "Digital Spying",
+      "D": "Spyware"
+    },
+    "correct": "A",
+    "explanation": "<p>Le cyberespionnage est une pratique pratiquée par des pirates informatiques éthiques et non éthiques pour espionner d’autres personnes afin de recueillir des informations confidentielles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 8",
+    "q": "____________ est le moyen ou la technique par lequel la majorité des malwares s’installent dans notre système.",
+    "choices": {
+      "A": "Click",
+      "B": "Redirection",
+      "C": "Téléchargement",
+      "D": "Injection de périphériques USB"
+    },
+    "correct": "C",
+    "explanation": "<p>Téléchargement des logiciels gratuits provenant de source inconnue s’agit d’une action dangereuse qui a lieu dans le cyberespace et qui permet aux attaquants de placer leurs malwares dans le système de la victime.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 8",
+    "q": "_________ est une approche de piratage dans laquelle les cybercriminels conçoivent de faux sites ou de fausses pages pour tromper ou gagner du trafic.",
+    "choices": {
+      "A": "Cyber-reproduction",
+      "B": "Imitation",
+      "C": "Duplication de site web",
+      "D": "Pharming"
+    },
+    "correct": "D",
+    "explanation": "<p>La technique et l’approche par lesquelles les cybercriminels développent de fausses pages web et de faux sites pour tromper les gens et leur voler des informations personnelles telles que l’identifiant et le mot de passe de connexion, ainsi que des informations personnelles, est connue sous le nom de Pharming.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 9",
+    "q": "Lorsque vous réservez des billets en ligne en introduisant votre carte, les détails de la carte sont stockés sur ______.",
+    "choices": {
+      "A": "Un système de base de données",
+      "B": "Un système de point de vente",
+      "C": "Des serveurs",
+      "D": "Disques durs"
+    },
+    "correct": "B",
+    "explanation": "<p>Le système de point de vente est un système dans lequel le détaillant ou l’entreprise stocke les données financières et les détails des cartes du système de commerce électronique ou des transactions commerciales en ligne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 9",
+    "q": "L’intrusion dans les points de vente ne concerne pas les données financières et les informations relatives aux cartes de crédit.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>L’intrusion dans les points de vente est une attaque qui porte sur les données financières et les informations relatives aux cartes de crédit, lorsque le système de paiement de l’entreprise ou du détaillant est compromis et que les informations financières du client sont mises en danger.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 9",
+    "q": "_______ sont des exploits fatals où la vulnérabilité est connue et trouvée par les cybercriminels, mais pas connue et corrigée par le propriétaire de l’application ou de l’entreprise.",
+    "choices": {
+      "A": "Attaques inconnues",
+      "B": "Attaques secrètes",
+      "C": "Exploits d’élite",
+      "D": "Exploits de type Zero-day"
+    },
+    "correct": "D",
+    "explanation": "<p>Les exploits de type Zero-day sont utilisés pour attaquer un système dès que les cybercriminels ont connaissance de la faiblesse ou le jour où les faiblesses sont découvertes dans un système. Les pirates exploitent ces types de vulnérabilités avant que le propriétaire ne publie le correctif ou ne corrige le problème.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 9",
+    "q": "PS2 et DVI sont des exemples de ports logiques.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>PS2 et DVI sont des exemples de ports physiques. Les ports physiques peuvent être touchés et vus à l’œil.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 9",
+    "q": "Les ports physiques sont généralement appelés ___________",
+    "choices": {
+      "A": "prises",
+      "B": "câbles",
+      "C": "interfaces",
+      "D": "prises matérielles"
+    },
+    "correct": "C",
+    "explanation": "<p>Les ports physiques sont des connexions qui relient deux systèmes pour leurs interactions. LAN, PS2 et DVI sont des exemples de ports physiques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 9",
+    "q": "____________ sont des numéros logiques attribués aux connexions logiques.",
+    "choices": {
+      "A": "Ports logiques",
+      "B": "Ports physiques",
+      "C": "Câbles de réseau",
+      "D": "Adresse IP"
+    },
+    "correct": "A",
+    "explanation": "<p>Les ports logiques sont les points terminaux d’une connexion logique. Les numéros sont pré-attribués par l’IANA (Internet Assigned Numbers Authority) et s’étendent de de 0 à 65536.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 9",
+    "q": "Le nombre de ports logiques est compris entre ____ et ____.",
+    "choices": {
+      "A": "0, 255",
+      "B": "0, 65536",
+      "C": "1, 65536",
+      "D": "1, 65535"
+    },
+    "correct": "B",
+    "explanation": "<p>Les ports logiques sont les points terminaux d’une connexion logique. Les numéros sont pré-attribués par l’IANA (Internet Assigned Numbers Authority) et s’étendent de de 0 à 65536.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 9",
+    "q": "Les ports logiques sont également connus sous le nom de __________.",
+    "choices": {
+      "A": "numérotation virtuelle",
+      "B": "ports numérotés",
+      "C": "ports virtuels",
+      "D": "ports de protocole réseau"
+    },
+    "correct": "C",
+    "explanation": "<p>Les ports logiques sont également appelés ports virtuels et font partie du réseau TCP/IP. Les numéros de ports sont pré-attribués par l’IANA (Internet Assigned Numbers Authority) et vont de 0 à 65536.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 9",
+    "q": "Les ports virtuels permettent aux logiciels de partager sans interférence toutes les ressources matérielles.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Les ports virtuels, également connus sous le nom de ports logiques, permettent à différentes applications de se partager les ressources matérielles sans interférence. Le trafic réseau est automatiquement géré par les routeurs utilisant ces ports.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 10",
+    "q": "___________ est le type de pare-feu connecté entre l’appareil et le réseau qui se connecte à l’internet.",
+    "choices": {
+      "A": "Pare-feu matériel",
+      "B": "Pare-feu logiciel",
+      "C": "Pare-feu dynamique (Stateful Inspection Firewall)",
+      "D": "Pare-feu Linux"
+    },
+    "correct": "A",
+    "explanation": "<p>Un pare-feu matériel est un dispositif physique qui ressemble à un serveur et qui filtre le trafic vers un ordinateur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 10",
+    "q": "_________ est un logiciel qui s’installe par le biais d’une connexion internet ou qui est fourni par défaut avec les systèmes d’exploitation.",
+    "choices": {
+      "A": "Pare-feu matériel",
+      "B": "Pare-feu logiciel",
+      "C": "Pare-feu dynamique (Stateful Inspection Firewall)",
+      "D": "Pare-feu Linux"
+    },
+    "correct": "B",
+    "explanation": "<p>Les pare-feux logiciels sont des types de pare-feux qui sont installés dans le système à l’aide d’une connexion internet lorsque nous installons des applications normales et que nous les mettons à jour. Certains éditeurs de systèmes d’exploitation fournissent des pare-feu par défaut avec leurs systèmes d’exploitation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 10",
+    "q": "________ a besoin d’un certain contrôle du flux de données sur chaque port logique.",
+    "choices": {
+      "A": "Antivirus",
+      "B": "Pare-feu de réseau",
+      "C": "Systèmes de détection d’intrusion (IDS)",
+      "D": "Anti-malware"
+    },
+    "correct": "B",
+    "explanation": "<p>Pour des raisons de sécurité, le pare-feu réseau exerce un contrôle supplémentaire sur le trafic de données passant par chaque port logique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 10",
+    "q": "Le port logique est associé au type de protocole utilisé ainsi qu’à l’adresse IP de l’hôte.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Lors d’une communication, le port logique est associé au type de protocole utilisé ainsi qu’à l’adresse IP de l’hôte. Les numéros de ports logiques sont pré-attribués par l’IANA (Internet Assigned Numbers Authority) et sont compris entre 0 et 65536.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 10",
+    "q": "Le pare-feu examine chaque ____________ qui entre ou sort du réseau interne.",
+    "choices": {
+      "A": "les e-mails des utilisateurs",
+      "B": "les mises à jour",
+      "C": "connexions",
+      "D": "paquets de données"
+    },
+    "correct": "D",
+    "explanation": "<p>Les pare-feux examinent chaque paquet de données qui entre ou sort du réseau interne, ce qui empêche tout accès non autorisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 11",
+    "q": "Parmi les attaques suivantes, laquelle est protégée par un pare-feu ?",
+    "choices": {
+      "A": "Social Engineering",
+      "B": "L’hameçonnage",
+      "C": "Le déni de service (DoS)",
+      "D": "Creep"
+    },
+    "correct": "C",
+    "explanation": "<p>Les pare-feu sont utilisés pour protéger le réseau informatique et restreindre le trafic illicite. L’attaque par déni de service (DoS) est l’une de ces attaques automatisées à laquelle un pare-feu correctement paramétré et mis à jour peut résister et qu’il peut empêcher d’être exécutée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 11",
+    "q": "Les pare-feu de filtrage de paquets sont déployés sur ________",
+    "choices": {
+      "A": "les routeurs",
+      "B": "les switchs",
+      "C": "les hubs",
+      "D": "les répéteurs"
+    },
+    "correct": "A",
+    "explanation": "<p>Les pare-feu de filtrage de paquets sont déployés sur les routeurs qui aident à connecter le réseau interne au monde entier via l’internet.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 11",
+    "q": "Quels sont les numéros de port pour le service IPSec ?",
+    "choices": {
+      "A": "51, 52",
+      "B": "23, 24",
+      "C": "49, 50",
+      "D": "50, 51"
+    },
+    "correct": "D",
+    "explanation": "<p>Les numéros de port 50 et 51 sont les numéros de port logiques pour le service IPSec. IPSec est une suite de protocoles standard utilisés entre deux points de communication qui permettent d’assurer l’authentification, la confidentialité et l’intégrité des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 11",
+    "q": "Dans la couche ______________ du modèle OSI, des pare-feu filtrant les paquets sont mis en œuvre.",
+    "choices": {
+      "A": "Couche application",
+      "B": "Couche session",
+      "C": "Couche présentation",
+      "D": "Couche réseau"
+    },
+    "correct": "D",
+    "explanation": "<p>Dans la couche réseau, qui est la troisième couche du modèle OSI (Open Systems Interconnection), des pare-feu filtrant les paquets sont mis en œuvre.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 11",
+    "q": "__________ définit les règles de filtrage des paquets du pare-feu.",
+    "choices": {
+      "A": "Protocoles",
+      "B": "Liste de contrôle d’accès (Access Control List – ACL)",
+      "C": "Politiques",
+      "D": "Ports"
+    },
+    "correct": "B",
+    "explanation": "<p>La liste de contrôle d’accès est un tableau contenant des règles qui indiquent au système de pare-feu de fournir l’accès approprié. Il vérifie tous les paquets et les compare aux règles définies par l’administrateur du réseau dans le pare-feu filtrant les paquets.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 11",
+    "q": "Parmi les numéros de port suivants, quels sont les numéros de port pour le DHCP ?",
+    "choices": {
+      "A": "66, 67",
+      "B": "67, 68",
+      "C": "65, 66",
+      "D": "68, 69"
+    },
+    "correct": "B",
+    "explanation": "<p>Les numéros de port 67 et 68 sont les numéros de port logiques pour le service DHCP (Dynamic Host Configuration Protocol). Ce service permet de fournir automatiquement des hôtes IP (Internet Protocol) ainsi que des informations de configuration connexes telles que le masque de sous-réseau et la passerelle par défaut.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 11",
+    "q": "Lorsqu’un paquet ne remplit pas les critères de l’ACL, il est _________.",
+    "choices": {
+      "A": "renvoyé",
+      "B": "abandonné",
+      "C": "détruit",
+      "D": "accusé de réception"
+    },
+    "correct": "B",
+    "explanation": "<p>Dans le pare-feu avec filtrage de paquets, lorsqu’un paquet de données ne respecte pas les règles définies par la liste de contrôle d’accès, le paquet est abandonné et les fichiers logs sont mis à jour dans le pare-feu.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 11",
+    "q": "Les administrateurs réseaux peuvent créer leurs propres règles ACL basées sur _______ ________ et _______.",
+    "choices": {
+      "A": "Adresse, protocoles et attributs des paquets",
+      "B": "Adresse, protocoles et politiques de sécurité",
+      "C": "Adresse, politiques et attributs des paquets",
+      "D": "La topologie du réseau, les protocoles et les paquets de données"
+    },
+    "correct": "A",
+    "explanation": "<p>Les administrateurs réseaux peuvent créer leurs propres règles ACL basées sur des attributs d’adresses, de protocoles et de paquets. Cela se fait généralement lorsque des paquets de données d’un type spécifique et personnalisé doivent passer à travers le filtrage du pare-feu.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 12",
+    "q": "L’un des avantages du pare-feu de type « Packet Filtering » est le suivant: __________",
+    "choices": {
+      "A": "Plus efficace",
+      "B": "Moins complexe",
+      "C": "Moins coûteux",
+      "D": "Très rapide"
+    },
+    "correct": "C",
+    "explanation": "<p>Les pare-feu avec filtrage de paquets sont plus avantageux parce qu’ils sont moins coûteux, qu’ils utilisent moins de ressources et qu’ils sont utilisés efficacement dans les petits réseaux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 12",
+    "q": "Pourquoi est-il important de savoir quel service utilise quel numéro de port ?",
+    "choices": {
+      "A": "Pour la sécurité de la base de données",
+      "B": "Pour rendre compte de la sécurité des données aux auditeurs",
+      "C": "Pour comprendre quelles données passent par un trafic sécurisé et lesquelles ne le sont pas",
+      "D": "Pour vérifier le trafic de données non utilisé"
+    },
+    "correct": "C",
+    "explanation": "<p>Si un analyste de sécurité ou un pirate éthique sait quel port est ouvert et par quel port passent les données, il sera en mesure de savoir quelles données sont cryptées et lesquelles ne le sont pas. Cela permet également de sécuriser un système en fermant les ports logiques afin que les pirates ne puissent pas y accéder.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 12",
+    "q": "Quel est le numéro de port pour POP3 ?",
+    "choices": {
+      "A": "110",
+      "B": "111",
+      "C": "112",
+      "D": "113"
+    },
+    "correct": "A",
+    "explanation": "<p>Le numéro de port 110 est le numéro de port logique pour le service Post Office Protocol-3. Ce protocole vérifie périodiquement notre boîte aux lettres pour synchroniser nos derniers courriels avec ceux du serveur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 12",
+    "q": "Les pare-feu à filtrage de paquets fonctionnent efficacement dans les réseaux _________.",
+    "choices": {
+      "A": "très simples",
+      "B": "plus petits",
+      "C": "grand",
+      "D": "très grand complexe"
+    },
+    "correct": "B",
+    "explanation": "<p>Les pare-feu à filtrage de paquets sont installés dans des routeurs qui relient le système de réseau interne au réseau extérieur par l’intermédiaire d’Internet. Ils sont efficaces si le réseau interne est de petite taille.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 12",
+    "q": "Quel est le numéro de port de SNMP ?",
+    "choices": {
+      "A": "160",
+      "B": "161",
+      "C": "162",
+      "D": "163"
+    },
+    "correct": "B",
+    "explanation": "<p>Le numéro de port 161 est le numéro de port logique pour le service SNMP (Simple Network Management Protocol). Il s’agit d’un protocole de couche d’application qui permet de gérer et de surveiller les appareils du réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 12",
+    "q": "Les pare-feu à filtrage de paquets sont vulnérables à __________",
+    "choices": {
+      "A": "aux vulnérabilités matérielles",
+      "B": "l’hameçonnage(phishing)",
+      "C": "l’usurpation d’identité(spoofing)",
+      "D": "MiTM"
+    },
+    "correct": "C",
+    "explanation": "<p>L’un des principaux inconvénients de la technique de filtrage des paquets est qu’elle ne peut pas prendre en charge les règles complexes et qu’elle est parfois vulnérable aux attaques par usurpation d’identité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 12",
+    "q": "VPN signifie en anglais _______________.",
+    "choices": {
+      "A": "Virtual Protocol Networking",
+      "B": "Virtual Private Network",
+      "C": "Virtual Protocol Network",
+      "D": "Visual Private Network"
+    },
+    "correct": "B",
+    "explanation": "<p>Un réseau privé virtuel (VPN – Virtual Private Network) est une technique utilisée dans les réseaux ou d’autres réseaux intermédiaires pour connecter des ordinateurs et les rendre isolés des réseaux informatiques distants, en maintenant un tunnel de sécurité et de confidentialité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 12",
+    "q": "_________ est l’un des systèmes d’exploitation Linux les plus sécurisés qui offre l’anonymat et une option incognito pour sécuriser les données des utilisateurs.",
+    "choices": {
+      "A": "Fedora",
+      "B": "Tails",
+      "C": "Ubuntu",
+      "D": "OpenSUSE"
+    },
+    "correct": "B",
+    "explanation": "<p>Si un utilisateur est à la recherche de solutions de sécurité basées sur Linux, Tails est l’un des systèmes d’exploitation basés sur Linux les plus populaires qui offre l’anonymat et une option incognito pour sécuriser les données de l’utilisateur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 12",
+    "q": "Lequel des systèmes d’exploitation suivants ne fait pas partie de la liste des systèmes d’exploitation Linux sécurisés ?",
+    "choices": {
+      "A": "Qubes OS",
+      "B": "Tails",
+      "C": "Tin Hat",
+      "D": "Ubuntu"
+    },
+    "correct": "D",
+    "explanation": "<p>Qubes OS, Tails OS et Tin Hat sont parmi les systèmes d’exploitation Linux les plus sécurisés qui offrent une expérience Linux rapide et sécurisée tout en maintenant l’anonymat des utilisateurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 13",
+    "q": "Laquelle des affirmations suivantes n’est pas vraie pour définir les systèmes VPN ?",
+    "choices": {
+      "A": "Des protocoles utilisés pour l’acheminement du trafic par tunnel.",
+      "B": "Les VPN fournissent une connexion de site à site ou un accès à distance",
+      "C": "La sécurisation du réseau contre les bots et les logiciels malveillants",
+      "D": "Niveaux de sécurité fournis pour l’envoi et la réception de données en privé"
+    },
+    "correct": "C",
+    "explanation": "<p>Les systèmes VPN disposent de protocoles spécifiques pour le tunnelage du trafic, la connectivité d’accès à distance sécurisée ainsi que pour garantir tous les niveaux de sécurité qu’ils fournissent pour la communication de données privées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 13",
+    "q": "______ est un système d’exploitation basé sur Debian-Linux qui dispose de 2 VM (machines virtuelles) permettant de protéger les données des utilisateurs.",
+    "choices": {
+      "A": "Fedora",
+      "B": "Ubuntu",
+      "C": "Whonix",
+      "D": "Kubuntu"
+    },
+    "correct": "C",
+    "explanation": "<p>Whonix est un système d’exploitation basé sur Debian-Linux qui possède 2 VM (machines virtuelles) qui aident à protéger les données des utilisateurs. Une VM est une passerelle Tor qui fonctionne sous Debian, tandis que l’autre est une station de travail.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 13",
+    "q": "Quels types de protocoles sont utilisés dans les VPN ?",
+    "choices": {
+      "A": "Protocoles au niveau applicatif",
+      "B": "Protocoles de tunnellisation",
+      "C": "Protocoles de réseau",
+      "D": "Protocoles de messagerie"
+    },
+    "correct": "B",
+    "explanation": "<p>Tous les VPN sont constitués d’une combinaison de protocoles de tunnellisation et de techniques de cryptage pour maintenir la confidentialité et la sécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 13",
+    "q": "Les VPN utilisent des techniques de cryptage pour maintenir la sécurité et la confidentialité des communications à distance via un réseau public.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Tous les VPN sont constitués d’une combinaison de protocoles de tunnellisation et de techniques de cryptage pour maintenir la confidentialité et la sécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 13",
+    "q": "Subgraph OS est une distribution Linux basée sur Debian qui offre un anonymat total et est approuvée par Edward Snowden.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Subgraph OS est une distribution Linux sécurisée basée sur Debian qui offre un anonymat absolu et qui a été approuvée par Edward Snowden. Il aide les utilisateurs à vivre une expérience numérique anonyme grâce à une fonction de protection des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 13",
+    "q": "Le compte ______ d’un système UNIX permet d’effectuer des tâches administratives.",
+    "choices": {
+      "A": "root",
+      "B": "admin",
+      "C": "utilisateur",
+      "D": "client"
+    },
+    "correct": "A",
+    "explanation": "<p>Le compte « root » d’un système UNIX permet d’exécuter des fonctions administratives dans le système. Les autres comptes du système ne sont pas privilégiés, c’est-à-dire que les autres comptes n’ont pas d’autres droits que celui d’accéder aux fichiers ayant l’autorisation appropriée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 13",
+    "q": "Dans votre système Linux, vous devez vous connecter avec votre compte root pour gérer n’importe quelle fonctionnalité de votre système.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>Essayez d’éviter de vous connecter en tant qu’utilisateur root. Dans votre système Linux, vous n’avez pas besoin de vous connecter avec votre compte root pour gérer n’importe quelle fonctionnalité de votre système. Pour les tâches administratives, vous pouvez utiliser l’outil ou la commande « sudo » ou « su » qui donne les privilèges de l’utilisateur root.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 13",
+    "q": "Pour une connexion sécurisée, les VPN d’accès à distance s’appuient sur ____ et _____.",
+    "choices": {
+      "A": "SSH, SSL",
+      "B": "IPSec, SSH",
+      "C": "L2TP, SSL",
+      "D": "IPSec, SSL"
+    },
+    "correct": "D",
+    "explanation": "<p>Un VPN d’accès à distance s’appuie généralement sur le protocole SSL (Secure Sockets Layer) ou sur le protocole IPsec pour assurer une connexion sécurisée sur un réseau public.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 14",
+    "q": "Un ______ peut masquer l’activité de navigation d’un utilisateur.",
+    "choices": {
+      "A": "Pare-feu",
+      "B": "Antivirus",
+      "C": "Mode Incognito",
+      "D": "VPN"
+    },
+    "correct": "D",
+    "explanation": "<p>Les VPN sont utilisés pour dissimuler les activités de navigation de l’utilisateur et maintenir l’anonymat. Cela permet également d’éviter la fuite des données de navigation personnelles de l’utilisateur et de protéger ses habitudes de navigation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 14",
+    "q": "Dans un système basé sur Linux, les comptes peuvent être membres d’un ou de plusieurs groupes.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Dans un système basé sur Linux, les comptes peuvent être membres d’un ou plusieurs groupes. Si un groupe est assigné à l’accès aux ressources, il faut garder à l’esprit, pour des raisons de sécurité, que tous les membres de ce groupe y ont automatiquement accès.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 14",
+    "q": "_______ masque votre adresse IP.",
+    "choices": {
+      "A": "Pare-feu",
+      "B": "Antivirus",
+      "C": "Mode Incognito",
+      "D": "VPN"
+    },
+    "correct": "D",
+    "explanation": "<p>Les VPN sont utilisés pour dissimuler les activités de navigation de l’utilisateur et maintenir l’anonymat.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 14",
+    "q": "MAC signifie en anglais _______________.",
+    "choices": {
+      "A": "Machine Access Control",
+      "B": "Mandatory Accounts Control",
+      "C": "Mode Access Controlling",
+      "D": "Mandatory Access Control"
+    },
+    "correct": "D",
+    "explanation": "<p>Les systèmes de contrôle d’accès obligatoire(Mandatory Access Control) permettent de séparer un ordinateur et son système d’exploitation en plusieurs petites parties indépendantes. En effet, l’utilisateur d’un système ne peut utiliser que les parties du système pour lesquelles il a reçu une autorisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 14",
+    "q": "_______ sont également utilisés pour cacher la localisation physique de l’utilisateur.",
+    "choices": {
+      "A": "Pare-feu",
+      "B": "Antivirus",
+      "C": "Mode Incognito",
+      "D": "VPN"
+    },
+    "correct": "D",
+    "explanation": "<p>Les VPN sont utilisés pour cacher votre localisation physique, ce qui permet de garder l’anonymat. L’adresse IP, vos activités de navigation, la recherche de sites et votre emplacement physique peuvent être retracés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 14",
+    "q": "_________ dans un système est accordé pour que les utilisateurs puissent utiliser les parties du système qui leur sont réservées et pour lesquelles ils ont reçu un accès.",
+    "choices": {
+      "A": "Machine Access Control",
+      "B": "Mandatory Accounts Control",
+      "C": "Mode Access Controlling",
+      "D": "Mandatory Access Control"
+    },
+    "correct": "D",
+    "explanation": "<p>Les systèmes de contrôle d’accès obligatoire(Mandatory Access Control) permettent de séparer un ordinateur et son système d’exploitation en plusieurs petites parties indépendantes. En effet, l’utilisateur d’un système ne peut utiliser que les parties du système pour lesquelles il a reçu une autorisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 14",
+    "q": "En utilisant le VPN, nous pouvons __________",
+    "choices": {
+      "A": "Accéder à des sites bloqués géographiquement",
+      "B": "Compromettre le système de quelqu’un d’autre à distance",
+      "C": "Cacher nos données personnelles dans le cloud",
+      "D": "Crypter les fichiers de notre disque local lors de leur transfert"
+    },
+    "correct": "A",
+    "explanation": "<p>Grâce au VPN, les utilisateurs peuvent accéder et se connecter à des sites qui sont bloqués par les fournisseurs d’accès à Internet en fonction d’une localisation géographique spécifique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 14",
+    "q": "DTE signifie en anglais ______________.",
+    "choices": {
+      "A": "Domain & Type Enforcing",
+      "B": "Domain & Type Enforcement",
+      "C": "DNS & Type Enforcement",
+      "D": "DNS & Type Enforcing"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Domain & Type Enforcement est une technique de contrôle d’accès dans la technologie et dans les systèmes d’exploitation comme Linux, qui permet de limiter l’accès des programmes en cours d’exécution à un nombre restreint d’utilisateurs, ou uniquement à ceux qui ont la permission d’y accéder.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 14",
+    "q": "Un(e) __________ est un segment séquentiel de l’emplacement mémoire alloué pour contenir des données telles qu’une chaîne de caractères ou un tableau d’entiers.",
+    "choices": {
+      "A": "pile",
+      "B": "file d’attente",
+      "C": "stockage externe",
+      "D": "tampon(buffer)"
+    },
+    "correct": "D",
+    "explanation": "<p>Une mémoire tampon est un segment séquentiel de l’emplacement mémoire qui est alloué pour contenir des données telles qu’une chaîne de caractères ou un tableau d’entiers. La mémoire tampon ne peut traiter des données que si un nombre limité de données est inséré.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 14",
+    "q": "Les attaquants ciblent généralement les ____________ pour obtenir l’adresse IP d’un utilisateur cible ou victime.",
+    "choices": {
+      "A": "sites web",
+      "B": "pages web",
+      "C": "traqueur d’adresses IP",
+      "D": "e-mails"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 15",
+    "q": "Quels sont les langages de script Web couramment utilisés par les pirates pour obtenir diverses informations auprès des internautes ?",
+    "choices": {
+      "A": "Tcl et C#",
+      "B": "C++ et HTML",
+      "C": "HTML et Python",
+      "D": "Perl et JavaScript"
+    },
+    "correct": "D",
+    "explanation": "<p>Les attaquants utilisent différents langages de script, tels que Perl et JavaScript, qui sont programmés pour récupérer non seulement l’adresse IP du site, mais aussi les informations personnelles des autres utilisateurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 15",
+    "q": "Une attaque par débordement de mémoire tampon (Buffer-overflow attack) peut avoir lieu si une machine peut exécuter un code résidant dans le segment data/pile.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Une attaque par débordement de mémoire tampon peut se produire si le programmeur ne procède pas à des tests de contrôle des limites ou si une machine peut exécuter un code résidant dans le segment data/pile.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 15",
+    "q": "_________ est la première phase du piratage éthique.",
+    "choices": {
+      "A": "Empoisonnement du cache DNS",
+      "B": "Footprinting",
+      "C": "Empoisonnement du cache ARP",
+      "D": "Enumération"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Footprinting est la première phase du piratage éthique qui consiste à rassembler des informations dans le but de pirater ou d’attaquer une victime ou un système. L’attaquant tente de découvrir le plus grand nombre possible de moyens d’attaque. Le Footprinting est également connu sous le nom de Reconnaissance.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 15",
+    "q": "Le débordement de mémoire tampon basé sur _____ est complexe à exécuter et c’est l’attaque la moins fréquente.",
+    "choices": {
+      "A": "basé sur la mémoire",
+      "B": "basé sur la file d’attente",
+      "C": "basé sur la pile",
+      "D": "basé sur le tas"
+    },
+    "correct": "D",
+    "explanation": "<p>Les attaques de débordement de mémoire tampon basées sur le tas sont difficiles à exécuter et c’est l’attaque la moins fréquente. Elles attaquent l’application en inondant l’espace mémoire réservé à un programme.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 15",
+    "q": "L’attaque par énumération a pour but d’obtenir des informations. Lequel des éléments suivants ne peut pas être obtenu par énumération ?",
+    "choices": {
+      "A": "Les tables IP",
+      "B": "Les données SNMP, si elles ne sont pas sécurisées de manière appropriée",
+      "C": "Les discussions privées",
+      "D": "La liste des stratégies relatives aux noms d’utilisateur et aux mots de passe"
+    },
+    "correct": "C",
+    "explanation": "<p>L’attaque par énumération est une technique d’acquisition d’informations utilisée dans le cadre du piratage éthique pour obtenir des données concernant la table IP de la victime, des données SNMP, des listes de noms d’utilisateur et de mots de passe de différents systèmes, etc. mais pas des conversations privées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 15",
+    "q": "Les débordements de mémoire tampon basés sur _______, qui sont plus fréquents chez les attaquants.",
+    "choices": {
+      "A": "basé sur la mémoire",
+      "B": "basé sur la file d’attente",
+      "C": "basé sur la pile",
+      "D": "basé sur le tas"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans le cas des débordements de mémoire tampon basés sur la pile, qui sont les plus courants parmi les types de débordements de mémoire tampon, ils exploitent les applications en inondant la pile, c’est-à-dire l’espace mémoire dans lequel les utilisateurs saisissent les données de l’extérieur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 15",
+    "q": "enum4linux est utilisé pour énumérer _______________",
+    "choices": {
+      "A": "les systèmes Linux",
+      "B": "les systèmes Windows",
+      "C": "systèmes Android",
+      "D": "systèmes Mac"
+    },
+    "correct": "A",
+    "explanation": "<p>enum4linux est implémenté pour énumérer les systèmes Linux. Grâce à cela, l’attaquant peut examiner et établir les noms d’utilisateur présents sur un hôte cible.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 15",
+    "q": "En l’absence de contrôle des limites, le programme se termine anormalement et conduit à l’erreur de ___________.",
+    "choices": {
+      "A": "logique",
+      "B": "segmentation",
+      "C": "temps de compilation",
+      "D": "syntaxe"
+    },
+    "correct": "B",
+    "explanation": "<p>Dans le cas d’un débordement de mémoire tampon, l’absence de contrôle des limites entraîne une fin anormale du programme et une erreur de segmentation. Parfois, l’application sur laquelle l’attaque a été effectuée est bloquée ou suspendue et se ferme soudainement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 15",
+    "q": "______ est utilisé pour essayer de deviner les noms d’utilisateur en utilisant le service SMTP.",
+    "choices": {
+      "A": "smtp-user-enum",
+      "B": "smtp-enum",
+      "C": "snmp-enum",
+      "D": "snmp-user-enum"
+    },
+    "correct": "A",
+    "explanation": "<p>smtp-user-enum est utilisé pour essayer de deviner les noms d’utilisateur en utilisant le service SMTP. Ainsi, un attaquant peut examiner et établir les noms d’utilisateur présents sur un hôte cible.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 15",
+    "q": "Un hacker éthique doit être capable de comprendre le problème, d’avoir des connaissances en informatique et de savoir comment fonctionne la technologie.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Un hacker éthique doit être capable de comprendre le problème, d’avoir des connaissances en informatique et de savoir comment fonctionne la technologie. Il doit également savoir deviner et sécuriser les mots de passe, renifler le trafic réseau et rechercher les vulnérabilités.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 16",
+    "q": "_________, persévérance et être au courant des dernières mises à jour technologiques et de leurs failles sont quelques-unes des principales qualités que tout pirate éthique doit posséder.",
+    "choices": {
+      "A": "Manque de compréhension",
+      "B": "Faibles compétences en programmation",
+      "C": "Une grande patience",
+      "D": "Faible persévérance"
+    },
+    "correct": "C",
+    "explanation": "<p>Une grande patience, persévérance et être au courant des dernières mises à jour technologiques et de leurs failles sont quelques-unes des principales qualités que tout pirate éthique doit posséder.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 16",
+    "q": "___________ permet à un pirate d’ouvrir un morceau de programme ou d’application et de le reconstruire avec d’autres fonctions et capacités.",
+    "choices": {
+      "A": "Social engineering",
+      "B": "Reverse engineering",
+      "C": "Implantation de logiciels malveillants",
+      "D": "Injection de code"
+    },
+    "correct": "B",
+    "explanation": "<p>Le reverse engineering est la technique utilisée pour permettre à un hacker d’ouvrir un morceau de programme ou d’application (généralement dans un langage de bas niveau tel que le langage d’assemblage) et de le reconstruire avec d’autres caractéristiques et capacités.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 16",
+    "q": "Dans une application qui utilise le tas, la mémoire pour les données est allouée _________",
+    "choices": {
+      "A": "logiquement",
+      "B": "dynamiquement",
+      "C": "statiquement",
+      "D": "au début du programme"
+    },
+    "correct": "B",
+    "explanation": "<p>Dans une application qui utilise le tas, la mémoire utilisée par l’application est allouée dynamiquement au moment de l’exécution. L’accès à ces mémoires est comparativement plus lent que les mémoires qui utilisent la pile.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 16",
+    "q": "Dans une application qui utilise la pile, la mémoire pour les données est allouée _________.",
+    "choices": {
+      "A": "logiquement",
+      "B": "dynamiquement",
+      "C": "statiquement",
+      "D": "au début du programme"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans les applications qui utilisent la pile, la mémoire utilisée par l’application est allouée au début de l’appel de fonction et la mémoire est libérée à la fin du programme. L’accès aux valeurs de la pile est très rapide.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 16",
+    "q": "Un code malicieux peut être introduit dans le/la _______ lors d’une attaque __________.",
+    "choices": {
+      "A": "pile, buffer-overflow",
+      "B": "file d’attente, buffer-overflow",
+      "C": "carte mémoire, buffer-overflow",
+      "D": "lecteur externe, buffer-overflow"
+    },
+    "correct": "A",
+    "explanation": "<p>Un code malicieux peut être inséré dans la pile lors d’une attaque par débordement de mémoire tampon (buffer-overflow). Le débordement peut être utilisé pour écraser le pointeur de retour de sorte que le flux de contrôle passe au code malicieux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 16",
+    "q": "Pour éviter que votre système ne soit soumis à une attaque d’énumération, vous devez désactiver tous les services.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Pour éviter que votre système ne soit soumis à une attaque d’énumération, il est recommandé de désactiver tous les services qui ne sont pas utilisés. Cela réduit le potentiel que votre système soit énuméré par le système d’exploitation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 16",
+    "q": "Lequel des éléments suivants ne fait pas partie des compétences intellectuelles des pirates informatiques?",
+    "choices": {
+      "A": "La pensée créative",
+      "B": "La capacité à résoudre des problèmes",
+      "C": "La persévérance",
+      "D": "Le potentiel pour attaquer intelligemment"
+    },
+    "correct": "D",
+    "explanation": "<p>Tout pirate informatique doit posséder un ensemble de compétences intangibles telles que la pensée créative pour trouver une nouvelle façon de pénétrer dans un système, des compétences en matière de résolution de problèmes pour mettre fin à toute attaque active et la persévérance, en essayant différentes façons sans perdre espoir.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 16",
+    "q": "Même nos e-mails contiennent l’adresse IP de l’expéditeur, ce qui facilite une attaque d’énumération. Nous pouvons obtenir cette adresse IP à partir de ___________ à l’intérieur de l’e-mail.",
+    "choices": {
+      "A": "Option « transférer »",
+      "B": "Option « Afficher l’original »",
+      "C": "Option « Afficher l’intégralité de l’e-mail »",
+      "D": "Option « Voir l’original »"
+    },
+    "correct": "B",
+    "explanation": "<p>Il est possible de connaître l’adresse IP de l’expéditeur de votre e-mail en ouvrant l’e-mail, en cliquant sur le bouton « Plus » et en sélectionnant l’option « Afficher l’original ». De cette manière, on peut trouver l’adresse IP et procéder à une énumération.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 16",
+    "q": "Les variables créées dynamiquement lors de l’appel d’une fonction (telle que malloc()) sont créées sous la forme d’une structure de données du ________.",
+    "choices": {
+      "A": "tableau",
+      "B": "file d’attente",
+      "C": "pile",
+      "D": "tas"
+    },
+    "correct": "D",
+    "explanation": "<p>Les variables créées dynamiquement lors de l’appel d’une fonction (telle que malloc()) sont créées sous la forme d’une structure de données du tas. Dans le cas d’un débordement basé sur le tas, la mémoire tampon est placée dans la partie inférieure du tas, écrasant toutes les variables générées dynamiquement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 16",
+    "q": "Pourquoi les langages de programmation sont-ils importants pour les hackers éthiques et les professionnels de la sécurité ?",
+    "choices": {
+      "A": "Uniquement pour écrire des malware",
+      "B": "Pour résoudre des problèmes et construire des outils et des programmes",
+      "C": "Pour enseigner la programmation",
+      "D": "Pour développer des programmes destinés à nuire à autrui"
+    },
+    "correct": "B",
+    "explanation": "<p>Il est important que les pirates et les professionnels de la sécurité comprennent un langage de programmation afin de pouvoir comprendre le fonctionnement d’un virus, d’un logiciel espion ou d’un autre logiciel malveillant, ou d’écrire leur propre code de défense pour résoudre un problème. Aujourd’hui, les outils de sécurité et les logiciels malveillants sont développés par des professionnels de la sécurité hautement qualifiés et compétents.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 17",
+    "q": "Les tests de débordement de mémoire tampon dans un système peuvent être effectués manuellement et de deux manières différentes.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Les tests de débordement de mémoire tampon dans un système peuvent être effectués manuellement, de deux manières différentes. La première consiste à examiner le code et à vérifier si le contrôle des limites a été correctement intégré ou non. L’autre méthode consiste à créer une version exécutable du produit, à alimenter l’application avec une grande quantité de données et à vérifier qu’il n’y a pas de comportement anormal.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 17",
+    "q": "La compréhension de ___________ est également importante pour accéder à un système par le biais de réseaux.",
+    "choices": {
+      "A": "systèmes d’exploitation",
+      "B": "serveurs de messagerie",
+      "C": "réseau",
+      "D": "matériel"
+    },
+    "correct": "C",
+    "explanation": "<p>Une bonne compréhension des réseaux est très importante pour les pirates qui tentent d’accéder à un système par le biais des réseaux. Le fonctionnement de TCP/IP, les topologies et les protocoles utilisés sont autant de choses qu’un pirate ou un professionnel de la sécurité doit impérativement comprendre.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 17",
+    "q": "Sauvegarder les mots de passe dans le navigateur est une bonne habitude.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>Sauvegarder dans le navigateur les mots de passe de vos différents comptes d’utilisateur et services web n’est pas une bonne habitude. Tous les navigateurs ne sauvegardent pas ces mots de passe dans un format crypté. Chrome vous permet de voir ces mots de passe si vous connaissez le mot de passe du système, ce qui peut entraîner une faille de sécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 17",
+    "q": "Lequel des éléments suivants n’est pas une caractéristique de l’attaque par dictionnaire ?",
+    "choices": {
+      "A": "Très rapide",
+      "B": "Gain de temps",
+      "C": "Facile à réaliser",
+      "D": "Très difficile et inefficace"
+    },
+    "correct": "D",
+    "explanation": "<p>Une attaque par dictionnaire consiste à casser un système ou un serveur protégé par un mot de passe en entrant simplement et automatiquement chaque mot d’un dictionnaire comme mot de passe.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 17",
+    "q": "Lequel des éléments suivants fait partie des avantages de l’attaque par dictionnaire ?",
+    "choices": {
+      "A": "Elle prend beaucoup de temps",
+      "B": "Modérément efficace",
+      "C": "Très rapide",
+      "D": "Complexe à mettre en œuvre"
+    },
+    "correct": "C",
+    "explanation": "<p>Une attaque par dictionnaire est très rapide.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 17",
+    "q": "L’attaque par force brute est ______________",
+    "choices": {
+      "A": "rapide",
+      "B": "inefficace",
+      "C": "lente",
+      "D": "Complexe à mettre en œuvre"
+    },
+    "correct": "C",
+    "explanation": "<p>En fait, le temps qu’il faut pour pénétrer par force brute dans un système est une métrique utile pour évaluer le niveau de sécurité du système. En revanche, les attaques par force brute sont très lentes, car elles doivent parfois passer par toutes les combinaisons possibles de caractères avant d’atteindre leur but.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 17",
+    "q": "Pour pirater une base de données ou accéder à des données et les manipuler, lequel des langages suivants le pirate doit-il connaître ?",
+    "choices": {
+      "A": "HTML",
+      "B": "SQL",
+      "C": "Tcl"
+    },
+    "correct": "B",
+    "explanation": "<p>Pour pirater une base de données ou accéder à des données et les manipuler, un pirate doit connaître le langage SQL (Structured Query Language). Pour un pirate, si vous avez accédé à une base de données pendant une courte période et que vous souhaitez modifier des données spécifiques, vous devez écrire une requête SQL appropriée pour rechercher ou mettre en œuvre votre manipulation plus rapidement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 17",
+    "q": "La collecte d’informations sur un système, une personne, une organisation ou un réseau n’est pas importante.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>La collecte d’informations sur un système, une personne, une organisation ou un réseau est importante pour qu’un pirate informatique puisse bien connaître le système cible ou la victime.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 18",
+    "q": "Lequel de ces moyens n’est pas un moyen utilisé pour voler des informations sur les e-mails ?",
+    "choices": {
+      "A": "Le vol de cookies",
+      "B": "Reverse Engineering",
+      "C": "L’hameçonnage de mots de passe",
+      "D": "Social Engineering"
+    },
+    "correct": "B",
+    "explanation": "<p>Il y a trois façons différentes de voler des informations sur les emails. Il s’agit du vol de cookies, de l’ingénierie sociale et de la technique d’hameçonnage par mot de passe. Reverse Engineering n’est pas un moyen de voler des informations d’email.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 18",
+    "q": "_________ est la méthode permettant de protéger les informations sensibles contenues dans les communications et les comptes de messagerie électronique contre tout accès non officiel, toute perte ou toute compromission.",
+    "choices": {
+      "A": "Sécurité des e-mails",
+      "B": "Piratage des e-mails",
+      "C": "Protection des e-mails",
+      "D": "Sauvegarde des e-mails"
+    },
+    "correct": "A",
+    "explanation": "<p>La sécurité des e-mails est la méthode permettant de protéger les informations sensibles contenues dans les communications et les comptes e-mail contre tout accès non officiel, toute perte ou toute compromission.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 18",
+    "q": "__________ est une technologie réputée pour la diffusion de malwares, les problèmes de spam et les attaques par hameçonnage.",
+    "choices": {
+      "A": "Cloud",
+      "B": "VPN",
+      "C": "Site web",
+      "D": "Email"
+    },
+    "correct": "D",
+    "explanation": "<p>Les e-mails sont des supports technologiques réputés pour la diffusion de malwares, en raison des problèmes de spam et d’attaques par hameçonnage, et pour inciter les destinataires à divulguer des informations sensibles en ouvrant des pièces jointes et/ou en cliquant sur des liens hypertextes qui, en arrière-plan, installent des malwares sur l’appareil de la victime.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 18",
+    "q": "Lequel de ces éléments n’est pas une méthode appropriée pour la sécurité des emails ?",
+    "choices": {
+      "A": "Utiliser un mot de passe fort",
+      "B": "Utiliser le cryptage des e-mails",
+      "C": "Filtres anti-spam et analyseurs de malware",
+      "D": "Cliquer sur des liens inconnus pour les explorer"
+    },
+    "correct": "D",
+    "explanation": "<p>L’utilisation de mots de passe forts et le cryptage des e-mails, ainsi que la mise en place de filtres anti-spam et l’installation d’analyseurs de malware sont quelques-unes des méthodes appropriées pour la sécurité des e-mails.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 18",
+    "q": "Si un site web utilise un cookie, ou si un navigateur contient le cookie, à chaque fois que vous visitez ce site web, le navigateur transfère le cookie à ce site web.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Si un site web utilise un cookie, ou si un navigateur contient le cookie, à chaque fois que vous visitez ce site web, le navigateur transfère le cookie à ce site web. Cela permet d’initier une attaque par vol de cookie.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 18",
+    "q": "Les cookies stockés qui contiennent toutes vos données personnelles sur ce site web peuvent être volés par _______ à l’aide de _______ ou de trojans.",
+    "choices": {
+      "A": "attaquants, malware",
+      "B": "pirates, antivirus",
+      "C": "testeurs de pénétration, malware",
+      "D": "testeurs de pénétration, virus"
+    },
+    "correct": "A",
+    "explanation": "<p>Si un site web utilise un cookie ou si un navigateur contient un cookie, à chaque fois que vous visitez ce site web, le navigateur transfère le cookie à ce site web. Ce cookie stocké, qui contient toutes vos données personnelles concernant ce site web, peut être dérobé par des pirates utilisant des malwares ou des trojans.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 18",
+    "q": "Si les données stockées dans le ______ ne sont pas cryptées, après le vol du ______, les pirates peuvent voir des informations telles que le nom d’utilisateur et le mot de passe stockés dans le ______.",
+    "choices": {
+      "A": "mémoire",
+      "B": "disque dur",
+      "C": "file d’attente",
+      "D": "cookies"
+    },
+    "correct": "D",
+    "explanation": "<p>Si les données stockées dans le cookies ne sont pas cryptées, après le vol du cookies, les pirates peuvent voir des informations telles que le nom d’utilisateur et le mot de passe stockés dans le cookies.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 18",
+    "q": "Lequel des éléments suivants est un type d’intrusion ou de stratégie d’attaque non technique ?",
+    "choices": {
+      "A": "L’ingénierie inverse",
+      "B": "L’analyse des malwares",
+      "C": "L’ingénierie sociale",
+      "D": "L’écriture de malware"
+    },
+    "correct": "C",
+    "explanation": "<p>L’ingénierie sociale est une technique d’intrusion ou d’attaque non technique qui s’appuie fortement sur l’interaction humaine. Elle consiste à tromper les utilisateurs cibles pour qu’ils enfreignent les mesures de sécurité habituelles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 18",
+    "q": "_________ est la technique utilisée pour inciter les utilisateurs à divulguer leur nom d’utilisateur et leur mot de passe par le biais de fausses pages.",
+    "choices": {
+      "A": "Ingénierie sociale",
+      "B": "Phishing",
+      "C": "Vol de cookies",
+      "D": "Vers"
+    },
+    "correct": "B",
+    "explanation": "<p>Le phishing est la technique utilisée pour inciter les utilisateurs à divulguer leur nom d’utilisateur et leur mot de passe par le biais de fausses pages.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 18",
+    "q": "En utilisant le piratage des emails, les pirates illicites peuvent envoyer et propager des virus, des______, des _____ et des emails de spam.",
+    "choices": {
+      "A": "chevaux de Troie, redirection d’URL nuisibles",
+      "B": "antivirus, patchs",
+      "C": "logiciels piratés, redirection d’URL nuisibles",
+      "D": "malware, correctifs de sécurité"
+    },
+    "correct": "A",
+    "explanation": "<p>En utilisant le piratage des emails, les pirates illicites peuvent envoyer et diffuser des malwares, des chevaux de Troie, des virus, des vers, des redirections d’URL malveillantes qui peuvent conduire les destinataires cibles vers des pages web infectées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 19",
+    "q": "_______ est la pratique et les précautions prises pour protéger les informations précieuses contre l’accès, l’enregistrement, la divulgation ou la destruction non autorisés.",
+    "choices": {
+      "A": "Sécurité du réseau",
+      "B": "Sécurité des bases de données",
+      "C": "Sécurité de l’information",
+      "D": "Sécurité physique"
+    },
+    "correct": "C",
+    "explanation": "<p>La sécurité de l’information est un processus ou un ensemble de processus utilisés pour protéger des informations précieuses contre l’altération, la destruction, la suppression ou la divulgation par des utilisateurs non autorisés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 19",
+    "q": "Parmi les options ci-dessous, laquelle n’est pas une menace pour la sécurité de l’information ?",
+    "choices": {
+      "A": "Accident",
+      "B": "L’écoute clandestine",
+      "C": "Fuite d’informations",
+      "D": "Mot de passe par défaut non modifié"
+    },
+    "correct": "D",
+    "explanation": "<p>Les accidents, les écoutes et les fuites d’informations font partie des menaces pour la sécurité de l’information, tandis que le fait de ne pas changer le mot de passe par défaut d’un système, d’un matériel ou d’un logiciel quelconque entre dans la catégorie des vulnérabilités que l’utilisateur peut causer à son système.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 19",
+    "q": "Parmi les options ci-dessous, laquelle n’est pas une vulnérabilité pour la sécurité de l’information ?",
+    "choices": {
+      "A": "L’élimination des supports de stockage sans effacer les données",
+      "B": "L’inondation",
+      "C": "Absence des derniers correctifs et mises à jour",
+      "D": "Mot de passe par défaut non modifié"
+    },
+    "correct": "B",
+    "explanation": "<p>Les inondations font partie des catastrophes naturelles qui constituent une menace pour toute information et n’agissent pas comme une vulnérabilité pour tout système.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 19",
+    "q": "Parmi les technologies de sécurité de l’information suivantes, laquelle est utilisée pour éviter le piratage des navigateurs ?",
+    "choices": {
+      "A": "Anti-malware dans les navigateurs",
+      "B": "Accès à distance aux navigateurs",
+      "C": "Le dispositif de suppression des logiciels publicitaires dans les navigateurs",
+      "D": "Le mode « Incognito » dans un navigateur"
+    },
+    "correct": "B",
+    "explanation": "<p>Les cybercriminels ciblent les navigateurs pour violer la sécurité de l’information. Si un utilisateur établit une navigation à distance en isolant la session de navigation de l’utilisateur final, les cybercriminels ne pourront pas infecter le système en même temps que le navigateur avec des malwares, réduisant ainsi la surface d’attaque.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 19",
+    "q": "La corruption d’informations confidentielles est considérée comme ______.",
+    "choices": {
+      "A": "Bug",
+      "B": "Menace",
+      "C": "Vulnérabilité",
+      "D": "Attaque"
+    },
+    "correct": "B",
+    "explanation": "<p>Les menaces sont tout ce qui peut endommager ou nuire à un système informatique, à un individu ou à toute information. La corruption d’informations confidentielles consiste à extraire des données sensibles d’un système par des moyens illégaux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 19",
+    "q": "L’absence de politique de contrôle d’accès est une _______.",
+    "choices": {
+      "A": "Bug",
+      "B": "Menace",
+      "C": "Vulnérabilité",
+      "D": "Attaque"
+    },
+    "correct": "B",
+    "explanation": "<p>Les politiques de contrôle d’accès sont associées à un système de sécurité afin de restreindre l’accès non autorisé à tout système logique ou physique. Chaque programme de sécurité doit en faire un élément indispensable. Les systèmes qui en sont dépourvus sont vulnérables.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 19",
+    "q": "Toute menace potentielle concernant une information ne peut être _________.",
+    "choices": {
+      "A": "réduite",
+      "B": "transférée",
+      "C": "protégée",
+      "D": "ignorée"
+    },
+    "correct": "D",
+    "explanation": "<p>Lorsqu’une menace vient frapper un système, des mesures de protection peuvent être mises en œuvre, externalisées, distribuées ou transférées vers un autre système, protégées à l’aide d’outils et de techniques de sécurité, mais elles ne peuvent être ignorées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 19",
+    "q": "Les e-mails frauduleux sont de faux e-mails qui semblent légitimes et qui vous demandent vos coordonnées bancaires. Vous répondez à ces e-mails en mettant à jour vos informations confidentielles.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Oui, les e-mails frauduleux sont de faux e-mails qui semblent légitimes et qui demandent vos coordonnées bancaires et répondent à ces e-mails avec des informations confidentielles mises à jour. Les utilisateurs de messagerie électronique doivent rester vigilants face à ces fraudes électroniques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 19",
+    "q": "Les e-mails frauduleux sont de faux e-mails qui semblent légitimes et qui vous demandent vos coordonnées bancaires confidentielles telles que _________, ________ et vos mots de passe.",
+    "choices": {
+      "A": "carte de crédit, nom de l’antivirus",
+      "B": "carte de crédit, identifiant de connexion",
+      "C": "téléphone portable, nom de l’antivirus",
+      "D": "modèle de voiture, identifiant de compte"
+    },
+    "correct": "B",
+    "explanation": "<p>Les e-mails frauduleux sont de faux e-mails qui semblent légitimes et qui vous demandent vos coordonnées bancaires confidentielles telles que carte de crédit, identifiant de connexion et vos mots de passe.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 19",
+    "q": "__________ est un outil de débogage et d’exploration.",
+    "choices": {
+      "A": "Netdog",
+      "B": "Netcat",
+      "C": "Tcpdump",
+      "D": "BackTrack"
+    },
+    "correct": "B",
+    "explanation": "<p>Netcat est un utilitaire Unix simple qui permet de lire et d’écrire des données à travers des connexions réseau, en utilisant le protocole TCP ou UDP. Il est couramment utilisé comme outil de débogage et d’exploration et est disponible gratuitement pour Windows et Mac OS.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 20",
+    "q": "_________ est un analyseur de paquets par ligne de commande très répandu.",
+    "choices": {
+      "A": "Wireshark",
+      "B": "Snort",
+      "C": "Metasploit",
+      "D": "Tcpdump"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 20",
+    "q": "Nmap est l’abréviation de Network Mapper.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Nmap est l’abréviation de Network Mapper. Il s’agit d’un outil de ligne de commande Linux open-source utilisé pour analyser les adresses IP et les ports d’un réseau et pour détecter les applications installées. Nmap permet aux administrateurs de réseau de savoir quels appareils fonctionnent sur leur réseau, de découvrir les ports et les services ouverts et de détecter les vulnérabilités.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 20",
+    "q": "_____ est un outil populaire utilisé pour découvrir des réseaux ainsi que pour l’audit de sécurité.",
+    "choices": {
+      "A": "Ettercap",
+      "B": "Metasploit",
+      "C": "Nmap",
+      "D": "Burp Suit"
+    },
+    "correct": "C",
+    "explanation": "<p>Nmap est l’abréviation de Network Mapper. Il s’agit d’un outil de ligne de commande Linux open-source utilisé pour analyser les adresses IP et les ports d’un réseau et pour détecter les applications installées. Nmap permet aux administrateurs de réseau de savoir quels appareils fonctionnent sur leur réseau, de découvrir les ports et les services ouverts et de détecter les vulnérabilités.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 20",
+    "q": "Lequel de ces éléments Nmap ne vérifie pas ?",
+    "choices": {
+      "A": "Les services que proposent les différents hôtes",
+      "B": "Le système d’exploitation sur lequel ils fonctionnent",
+      "C": "Le type de pare-feu utilisé",
+      "D": "Le type d’antivirus utilisé"
+    },
+    "correct": "D",
+    "explanation": "<p>Nmap ne détecte pas le type d’antivirus utilisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 20",
+    "q": "Lequel des éléments suivants concerne la détection des intrusions dans les réseaux et l’analyse du trafic en temps réel ?",
+    "choices": {
+      "A": "John the Ripper",
+      "B": "Nessus",
+      "C": "Snort",
+      "D": "WireShark"
+    },
+    "correct": "C",
+    "explanation": "<p>SNORT est un système de détection d’intrusion (IDS) et de prévention d’intrusion (IPS) puissant et open-source qui permet d’analyser le trafic réseau en temps réel et de journaliser les paquets de données. SNORT utilise un langage basé sur des règles qui combine des méthodes d’inspection des anomalies, des protocoles et des signatures pour détecter les activités potentiellement malveillantes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 20",
+    "q": "Wireshark est un outil ____________.",
+    "choices": {
+      "A": "d’analyse des protocoles réseau",
+      "B": "de sécurité des connexions réseau",
+      "C": "d’analyse des connexions",
+      "D": "de défense contre le filtrage de paquets malveillants"
+    },
+    "correct": "A",
+    "explanation": "<p>Wireshark est un analyseur de réseau open source très utilisé qui permet de capturer et d’afficher en temps réel les détails du trafic réseau. Il est particulièrement utile pour résoudre les problèmes de réseau, analyser les protocoles de réseau et assurer la sécurité du réseau. Les réseaux doivent être surveillés pour garantir leur bon fonctionnement et leur sécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 20",
+    "q": "Parmi les outils mentionnés ci-dessous, lequel est utilisé pour le piratage du Wi-Fi ?",
+    "choices": {
+      "A": "Wireshark",
+      "B": "Nessus",
+      "C": "Aircrack-ng",
+      "D": "Snort"
+    },
+    "correct": "C",
+    "explanation": "<p>Aircrack-ng est une suite d’outils permettant d’évaluer la sécurité des réseaux WiFi : monitoring, attacking, testing, et cracking. La suite teste la force des mots de passe utilisés pour les réseaux WiFi. Tous les outils sont en ligne de commande, ce qui permet d’utiliser des scripts complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 20",
+    "q": "_________ est une méthode malicieuse utilisée par les pirates informatiques pour inciter un utilisateur à cliquer sur quelque chose de différent de ce qu’il attend.",
+    "choices": {
+      "A": "Click-hacking",
+      "B": "Click-fraud",
+      "C": "Clickjacking",
+      "D": "Utiliser des liens torrents"
+    },
+    "correct": "C",
+    "explanation": "<p>Le clickjacking est une méthode malicieuse utilisée par les cybercriminels pour inciter un utilisateur à cliquer sur quelque chose d’autre qui n’a rien à voir avec ce qu’il souhaite. Le simple clic redirige généralement la personne vers un site étrange à partir duquel des fichiers infectés sont téléchargés dans le système de la personne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 20",
+    "q": "L’attaque par clickjacking peut entraîner la fuite ou le vol des __________ confidentielles de la victime.",
+    "choices": {
+      "A": "informations",
+      "B": "documents",
+      "C": "fichiers pdf",
+      "D": "fichiers multimédias"
+    },
+    "correct": "A",
+    "explanation": "<p>A travers le clickjacking, le système de la personne peut être compromis par un programme infecté, des trojans ou des logiciels espions qui ont été téléchargés automatiquement en arrière-plan lorsque l’utilisateur est tombé dans le piège d’un attaquant.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 20",
+    "q": "Chaque employé de l’entreprise doit avoir des connaissances de base en matière de sécurité informatique, de types de piratage et de la manière dont ils sont effectués.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Chaque employé de l’entreprise doit avoir des connaissances de base en matière de sécurité informatique, de types de piratage et de la manière dont ils sont effectués. Chaque employé sera ainsi conscient des diverses activités malveillantes et pourra en référer à ses supérieurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 21",
+    "q": "L’utilisation de _______________ peut amener des fichiers externes, des vers et des virus dans les systèmes internes.",
+    "choices": {
+      "A": "ordinateur portable",
+      "B": "iPod",
+      "C": "clé USB",
+      "D": "smart-watch"
+    },
+    "correct": "C",
+    "explanation": "<p>L’utilisation des clés USB pour transférer les tâches effectuées à domicile vers les systèmes professionnels peut entraîner l’apparition de vers et de virus (si votre système personnel est infecté par des logiciels malveillants ou des programmes infectés) et peut nuire à vos systèmes professionnels.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 21",
+    "q": "Le ____________ prend le contrôle des paramètres du navigateur de votre système et l’attaque redirige les sites web que vous visitez vers d’autres sites web de son choix.",
+    "choices": {
+      "A": "Vol de cookies",
+      "B": "Browser hacking",
+      "C": "Browser Hijacker",
+      "D": "MiTM"
+    },
+    "correct": "C",
+    "explanation": "<p>Le « Browser hijacking » est une technique qui prend le contrôle des paramètres du navigateur de votre système et l’attaque redirige les sites web que vous visitez vers d’autres sites web de son choix.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 21",
+    "q": "Laquelle des données suivantes n’est pas pertinente ici, si vous supprimez le cache, les cookies et l’historique du navigateur ?",
+    "choices": {
+      "A": "Les prédictions de la barre d’adresse",
+      "B": "Mots de passe enregistrés",
+      "C": "Les plugins du navigateur",
+      "D": "Le contenu du panier d’achat"
+    },
+    "correct": "C",
+    "explanation": "<p>L’effacement des cookies, du cache et de l’historique du navigateur peut supprimer des données telles que les prédictions de la barre d’adresse, les mots de passe enregistrés et le contenu du panier d’achat. De cette manière, les pirates ne pourront pas prendre vos données par le biais du Browser Hacking ou du vol de cookies.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 21",
+    "q": "_______ est la technique permettant d’obtenir l’autorisation d’une entreprise d’utiliser, de fabriquer et de vendre un ou plusieurs produits dans une zone de marché définie.",
+    "choices": {
+      "A": "Licence d’algorithme",
+      "B": "Licence de code",
+      "C": "Licence d’objet",
+      "D": "Licence de produit"
+    },
+    "correct": "D",
+    "explanation": "<p>La licence de produit est la technique qui consiste à obtenir l’autorisation d’une entreprise ou d’une organisation d’utiliser, de fabriquer et de vendre un ou plusieurs produits dans une zone de marché définie. L’entreprise le fait pour des raisons de sécurité et perçoit généralement une redevance de la part de ses utilisateurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 21",
+    "q": "Lequel des éléments suivants ne fait pas partie des mesures de sécurité pour les entreprises en Cloud?",
+    "choices": {
+      "A": "Pare-feu",
+      "B": "Antivirus",
+      "C": "Équilibreur de charge",
+      "D": "Chiffrement"
+    },
+    "correct": "B",
+    "explanation": "<p>Pour assurer la sécurité et le bon fonctionnement du service en Cloud, des pare-feu, des mécanismes de cryptage et des répartiteurs de charge sont utilisés, mais l’antivirus n’est pas utilisé à des fins de sécurité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 21",
+    "q": "Il est important de limiter ____________ à toutes les données et informations et de limiter l’autorisation d’installer des logiciels.",
+    "choices": {
+      "A": "la charge de travail",
+      "B": "l’accès des employés",
+      "C": "l’autorisation de l’administrateur",
+      "D": "l’installation d’applications non désirées"
+    },
+    "correct": "B",
+    "explanation": "<p>Il est important de limiter l’accès des employés à toutes les données et informations et de limiter l’autorisation d’installer des logiciels. Dans le cas contraire, tout employé ayant des intentions illicites peut installer des programmes qui sont soit des versions piratées, soit qui peuvent endommager le réseau interne de l’entreprise.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 21",
+    "q": "Si vous travaillez sur le système/ordinateur portable de votre entreprise et qu’une fenêtre contextuelle apparaît soudainement pour vous demander de mettre à jour votre application de sécurité, vous devez l’ignorer.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>Si vous travaillez sur le système ou l’ordinateur portable de votre entreprise et qu’une fenêtre pop-up apparaît soudainement pour vous demander de mettre à jour votre application de sécurité, vous devez le vérifier une fois avec le responsable ou le service technique si vous pensez que c’est la première fois, sinon vous ne devez pas ignorer la mise à jour des applications de sécurité de votre système.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 21",
+    "q": "Lequel des systèmes suivants n’est pas un système d’exploitation mobile ?",
+    "choices": {
+      "A": "Windows",
+      "B": "Palm",
+      "C": "Mango",
+      "D": "Android"
+    },
+    "correct": "C",
+    "explanation": "<p>Un système d’exploitation pour téléphone mobile/smartphone est un logiciel qui permet aux smartphones, tablettes, téléphones portables et autres appareils d’exécuter des applications et des programmes en interne. Palm OS, Windows OS et Android OS sont quelques exemples de systèmes d’exploitation mobiles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 21",
+    "q": "______ sont des petits fichiers qui sont téléchargés sur votre système lorsque vous visitez un site web.",
+    "choices": {
+      "A": "Cookies",
+      "B": "Caches",
+      "C": "Bots",
+      "D": "Crawlers"
+    },
+    "correct": "A",
+    "explanation": "<p>Les cookies sont de petits fichiers qui sont téléchargés sur votre système lorsque vous visitez un site web. Ils jouent un rôle très important dans le piratage et le fait d’effacer les cookies, le cache et l’historique du navigateur peut permettre de supprimer des données telles que les prédictions de la barre d’adresse, les mots de passe enregistrés et le contenu du panier d’achat, de sorte que les pirates ne puissent pas les voler.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 21",
+    "q": "Les _______ du navigateur est un fichier Internet temporaire qui aide le navigateur à télécharger des images, des données et des documents Web pour une performance et une visualisation rapides par la suite.",
+    "choices": {
+      "A": "Cookies",
+      "B": "Caches",
+      "C": "Historique",
+      "D": "Crawlers"
+    },
+    "correct": "B",
+    "explanation": "<p>Les caches des navigateurs sont des fichiers internet impermanents qui aident les navigateurs à télécharger des images, des données et des documents web pour une performance et une visualisation rapides à l’avenir.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 22",
+    "q": "Le système d’exploitation des téléphones mobiles contient des API ouvertes qui peuvent être _______ attaquées.",
+    "choices": {
+      "A": "utiles pour",
+      "B": "vulnérables",
+      "C": "facile à",
+      "D": "destiné à"
+    },
+    "correct": "B",
+    "explanation": "<p>Les systèmes d’exploitation des téléphones mobiles contiennent des API ouvertes qui peuvent être vulnérables à différentes attaques. Le système d’exploitation dispose d’un certain nombre de mécanismes de connectivité par lesquels les attaquants peuvent diffuser des malwares.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 22",
+    "q": "___________ se propage par le biais de réseaux et de technologies telles que les SMS, le Bluetooth, les supports sans fil, les USB et l’infrarouge pour affecter les téléphones mobiles.",
+    "choices": {
+      "A": "Vers",
+      "B": "Antivirus",
+      "C": "Malware",
+      "D": "Zombie"
+    },
+    "correct": "C",
+    "explanation": "<p>Les malwares se propagent par le biais de réseaux et de technologies telles que les SMS, le Bluetooth, les supports sans fil, les USB et l’infrarouge pour affecter les téléphones mobiles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 22",
+    "q": "_________ est la protection des smartphones, téléphones portables, tablettes et autres appareils technologiques portables, ainsi que des réseaux auxquels ils se connectent, contre les menaces et les bugs.",
+    "choices": {
+      "A": "Sécurité du système d’exploitation",
+      "B": "Sécurité des bases de données",
+      "C": "Sécurité des clouds",
+      "D": "Sécurité mobile"
+    },
+    "correct": "D",
+    "explanation": "<p>La sécurité mobile est la protection des smartphones, des téléphones portables, des tablettes et d’autres appareils technologiques portables, ainsi que des réseaux auxquels ils se connectent, contre les menaces et les bugs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 22",
+    "q": "La sécurité mobile est également connue sous le nom de _______.",
+    "choices": {
+      "A": "Sécurité du système d’exploitation",
+      "B": "Sécurité des bases de données",
+      "C": "Sécurité des clouds",
+      "D": "Sécurité sans fil"
+    },
+    "correct": "D",
+    "explanation": "<p>La sécurité mobile, également connue sous le nom de sécurité sans fil, est la protection des smartphones, des téléphones portables, des tablettes et d’autres appareils technologiques portables, ainsi que des réseaux auxquels ils se connectent, contre les menaces et les bugs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 22",
+    "q": "Les DDoS dans les systèmes mobiles attendent que le propriétaire du ________ déclenche l’attaque.",
+    "choices": {
+      "A": "vers",
+      "B": "virus",
+      "C": "Botnets(réseaux de zombies)",
+      "D": "programmes"
+    },
+    "correct": "C",
+    "explanation": "<p>Les botnets installés sur des appareils mobiles infectés attendent les instructions de leur propriétaire. Après avoir reçu les instructions du propriétaire, il lance une attaque DDoS. Il en résulte un échec dans la connexion des appels ou la transmission des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 22",
+    "q": "Les autorisations des applications peuvent poser des problèmes, car certaines applications peuvent accéder secrètement à votre carte mémoire ou à vos données de contact.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Les autorisations des applications peuvent poser des problèmes, car certaines applications peuvent accéder secrètement à votre carte mémoire ou à vos données de contact. Presque toutes les applications demandent aujourd’hui ce type d’autorisation. Veillez donc à effectuer une enquête approfondie sur ces applications avant d’autoriser un tel accès.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 22",
+    "q": "Activez _____________ lorsque vous en avez besoin, sinon désactivez-le pour des raisons de sécurité.",
+    "choices": {
+      "A": "Flash Light",
+      "B": "Mises à jour des applications",
+      "C": "Bluetooth",
+      "D": "Rotation"
+    },
+    "correct": "C",
+    "explanation": "<p>Activez le Bluetooth lorsque vous en avez besoin, sinon désactivez-le pour des raisons de sécurité. En effet, il existe divers outils et vulnérabilités susceptibles d’accéder à votre smartphone par le biais du Bluetooth.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 22",
+    "q": "Quels types de données sont volés par les cybercriminels dans la plupart des cas ?",
+    "choices": {
+      "A": "Les données qui seront payantes une fois vendues",
+      "B": "Les données qui n’ont aucune valeur",
+      "C": "Les données telles que les noms d’utilisateur et les mots de passe uniquement",
+      "D": "Les données anciennes"
+    },
+    "correct": "A",
+    "explanation": "<p>En général, les cybercriminels volent les données qui sont confidentielles et qui ont une valeur ajoutée une fois qu’elles sont vendues sur le marché noir ou sur différents sites du « deep web ». Aujourd’hui encore, différentes entreprises achètent des données clients à grande échelle pour les analyser et en tirer profit.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 22",
+    "q": "Parmi les entreprises et les organisations, lesquelles ne deviennent pas les principales cibles des attaquants pour le vol de données ?",
+    "choices": {
+      "A": "Les entreprises commerciales",
+      "B": "Le secteur médical et les soins de santé",
+      "C": "Les agences gouvernementales et secrètes",
+      "D": "Les ONG"
+    },
+    "correct": "D",
+    "explanation": "<p>Les attaquants ciblent les grandes organisations et les entreprises qui se composent de sociétés commerciales, de sociétés financières, de sociétés médicales et de soins de santé, d’agences gouvernementales et secrètes, de secteurs bancaires. Ces entreprises possèdent des informations précieuses qui peuvent leur coûter très cher, c’est pourquoi les pirates informatiques ne s’intéressent qu’à ces entreprises.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 22",
+    "q": "Essayez de ne pas garder les mots de passe ________, en particulier les empreintes digitales pour votre smartphone, car cela peut conduire à un piratage physique si vous n’êtes pas conscient ou si vous dormez.",
+    "choices": {
+      "A": "Biométrique",
+      "B": "Basé sur le code PIN",
+      "C": "Alphanumérique",
+      "D": "Court"
+    },
+    "correct": "A",
+    "explanation": "<p>Essayez de ne pas garder de mots de passe biométriques, en particulier l’empreinte digitale pour votre smartphone contenant des données très confidentielles, car n’importe qui peut effectuer un piratage physique si vous n’êtes pas conscient ou si vous dormez.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 23",
+    "q": "Lequel des éléments suivants n’est pas un objectif du scan ?",
+    "choices": {
+      "A": "Détection du système actif fonctionnant sur le réseau",
+      "B": "La découverte de l’adresse IP du système cible",
+      "C": "Découvrir les services fonctionnant sur le système cible",
+      "D": "Détection des logiciels espions dans un système"
+    },
+    "correct": "D",
+    "explanation": "<p>La détection du système actif fonctionnant sur le réseau, la découverte de l’adresse IP du système cible et la découverte des services fonctionnant sur le système cible sont quelques-uns des objectifs du scan.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 23",
+    "q": "______ est une faiblesse qui peut être exploitée par des attaquants.",
+    "choices": {
+      "A": "Système avec virus",
+      "B": "Système sans pare-feu",
+      "C": "Système avec des vulnérabilités",
+      "D": "Système avec un mot de passe fort"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans le domaine de la cybersécurité, un système présentant des vulnérabilités est une faiblesse qui peut être exploitée par les cybercriminels et les attaquants pour leur propre bénéfice. Pour ce faire, ils utilisent des outils et des techniques spécifiques afin de s’introduire dans le système par le biais des vulnérabilités.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 23",
+    "q": "Les risques et les vulnérabilités sont identiques.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "B",
+    "explanation": "<p>Le risque et la vulnérabilité ne peuvent pas être utilisés de manière interchangeable. Le risque peut être défini comme le potentiel d’impact qui peut résulter de l’exploitation de la vulnérabilité. Il existe des vulnérabilités qui ne présentent pas de risque, appelées « vulnérabilités sans risque ».</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 23",
+    "q": "Pour découvrir le système d’exploitation fonctionnant sur le système cible, le scan a un terme spécifique. De quoi s’agit-il ?",
+    "choices": {
+      "A": "Footprinting",
+      "B": "Fingerprinting",
+      "C": "Screen-printing",
+      "D": "Port-printing"
+    },
+    "correct": "B",
+    "explanation": "<p>Fingerprinting est le nom de ce type spécifique de scan pour découvrir le système d’exploitation fonctionnant sur le système cible dans un réseau, ce qui fait partie de la technique de scan du système d’exploitation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 23",
+    "q": "Lequel de ces éléments n’est pas une méthode du scan ?",
+    "choices": {
+      "A": "Recherche de systèmes actifs",
+      "B": "Recherche de ports ouverts",
+      "C": "Identifier les malwares dans le système",
+      "D": "Identification des services"
+    },
+    "correct": "C",
+    "explanation": "<p>La recherche de systèmes actifs, de ports ouverts et l’identification des services fonctionnant sur les systèmes sont quelques-unes des étapes et des méthodologies utilisées pour effectuer le scan.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 23",
+    "q": "Le scan ICMP est utilisé pour scanner ________.",
+    "choices": {
+      "A": "les systèmes ouverts",
+      "B": "les systèmes actifs",
+      "C": "les systèmes défectueux",
+      "D": "les systèmes en panne"
+    },
+    "correct": "B",
+    "explanation": "<p>Le scan consiste à vérifier la présence de systèmes actifs, à identifier les ports ouverts et les services en cours d’exécution sur les systèmes, autant d’étapes et de méthodologies utilisées pour le scan. Le scan ICMP est utilisé pour vérifier les systèmes actifs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 23",
+    "q": "L’attribut ________ est utilisé pour ajuster la valeur du délai d’attente du ping.",
+    "choices": {
+      "A": "-time",
+      "D": "-temps"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 23",
+    "q": "Le scan de ______ est une procédure permettant d’identifier les hôtes actifs sur votre réseau.",
+    "choices": {
+      "A": "Réseau",
+      "B": "Port",
+      "C": "Vulnérabilité",
+      "D": "Système"
+    },
+    "correct": "A",
+    "explanation": "<p>Le scan de réseau est une procédure permettant d’identifier les hôtes actifs sur votre réseau. Elle est effectuée dans l’intention d’attaquer votre système ou à des fins de sécurité par des pirates éthiques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 23",
+    "q": "L’antivirus ou le logiciel de protection du PC permet de détecter les virus et les trojans.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>L’antivirus ou le logiciel de protection du PC aide à détecter les virus et les chevaux de Troie, à condition que l’antivirus ou l’application de protection soit à jour.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 23",
+    "q": "Un attaquant peut utiliser un outil de « force brute » automatique pour compromettre votre ____________.",
+    "choices": {
+      "A": "nom d’utilisateur",
+      "B": "identifiant de l’employé",
+      "C": "nom du système / du PC",
+      "D": "mot de passe"
+    },
+    "correct": "D",
+    "explanation": "<p>Dans la plupart des cas, l’attaquant utilise des outils automatisés de force brute pour compromettre votre code PIN ou votre mot de passe. Cela facilite l’obtention de votre mot de passe en combinant différentes lettres dans le but de procéder par essais et erreurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Partie 23",
+    "q": "L’attaquant utilisera différents bots (PC zombies) pour interroger votre système et le nom de l’attaque est ______.",
+    "choices": {
+      "A": "Distributed Denial-of-Service (DDoS)",
+      "B": "Permanent Denial-of-Service (PDoS)",
+      "C": "Denial-of-Service (DoS)",
+      "D": "Controlled Denial-of-Service (CDoS)"
+    },
+    "correct": "A",
+    "explanation": "<p>Dans ce cas, l’attaquant utilise plusieurs PC et inonde la bande passante/les ressources du système de la victime (généralement un ou plusieurs serveurs web). L’attaque utilise des PC zombies et chacun des PC est contrôlé à distance par l’attaquant.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Partie 23",
+    "q": "Des hackers illicites peuvent pénétrer dans votre espace personnel, votre chambre ou votre cabine pour voler votre ordinateur portable, votre clé USB, vos documents ou d’autres éléments afin de manipuler vos informations confidentielles.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Des hackers illicites peuvent pénétrer dans votre espace personnel, votre chambre ou votre cabine pour voler votre ordinateur portable, votre clé USB, vos documents ou d’autres éléments afin de manipuler vos informations confidentielles. Ce type de hacking fait partie du piratage physique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Partie 23",
+    "q": "Certains cookies sont conçus pour suivre vos habitudes de navigation et vous adresser des publicités.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Les cookies sont de petits fichiers qui sont téléchargés sur votre système lorsque vous visitez un site web. Certains cookies sont conçus pour suivre vos habitudes de navigation et cibler des publicités pertinentes pour l’utilisateur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q14",
+    "partie": "Partie 23",
+    "q": "Garder les habitudes de navigation et cibler des publicités spécifiques pour vous est tout à fait inoffensif, mais cela peut nuire à votre vie privée en ligne.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Certains cookies sont conçus pour suivre vos habitudes de navigation et cibler des publicités pertinentes pour l’utilisateur. Le fait de suivre les habitudes de navigation et de cibler des publicités spécifiques pour les utilisateurs est inoffensif, mais cela peut nuire à la protection de votre vie privée en ligne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  }
+];
+
+// ════════════════════════════════════════════════════════════════
+// ÉTAT
+// ════════════════════════════════════════════════════════════════
+let state = {
+  current: 0,
+  answers: new Array(QCM.length).fill(null),
+  revealed: new Array(QCM.length).fill(false)
+};
+
+// ════════════════════════════════════════════════════════════════
+// SIDEBAR
+// ════════════════════════════════════════════════════════════════
+function renderSidebar() {
+  const parties = {};
+  QCM.forEach((q,i) => {
+    if (!parties[q.partie]) parties[q.partie] = [];
+    parties[q.partie].push({q,i});
+  });
+  let html = '<div class="sb-title">Questions (' + QCM.length + ')</div>';
+  for (const [p, items] of Object.entries(parties)) {
+    html += `<div class="pg"><div class="pl">${p}</div>`;
+    items.forEach(({q,i}) => {
+      let cls = '';
+      if (i === state.current) cls = ' active';
+      else if (state.answers[i]) cls = state.answers[i] === q.correct ? ' correct' : ' wrong';
+      const dot = state.answers[i] ? '<div class="qs"></div>' : '';
+      html += `<div class="qi${cls}" onclick="goTo(${i})"><div class="qn">${i+1}</div><span>${q.num}</span>${dot}</div>`;
+    });
+    html += '</div>';
+  }
+  document.getElementById('sidebar').innerHTML = html;
+}
+
+// ════════════════════════════════════════════════════════════════
+// PROGRESS
+// ════════════════════════════════════════════════════════════════
+function renderProgress() {
+  const answered = state.answers.filter(Boolean).length;
+  const correct = state.answers.filter((a,i) => a === QCM[i].correct).length;
+  const pct = Math.round((answered / QCM.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = answered + ' / ' + QCM.length;
+  document.getElementById('scoreDisplay').textContent = correct + ' / ' + answered;
+}
+
+// ════════════════════════════════════════════════════════════════
+// MAIN RENDER
+// ════════════════════════════════════════════════════════════════
+function renderMain() {
+  const q = QCM[state.current];
+  const answered = state.answers[state.current];
+  const revealed = state.revealed[state.current];
+
+  let choicesHtml = '';
+  Object.entries(q.choices).forEach(([k,v]) => {
+    let cls = '', icon = '';
+    if (answered) {
+      if (k === q.correct) { cls = ' correct disabled'; icon = '<span class="ci">✓</span>'; }
+      else if (k === answered) { cls = ' wrong disabled'; icon = '<span class="ci">✗</span>'; }
+      else cls = ' ndis disabled';
+    }
+    choicesHtml += `<div class="choice${cls}" onclick="selectChoice('${k}')">
+      <div class="cl">${k}</div>
+      <div class="ct">${v}</div>
+      ${icon}
+    </div>`;
+  });
+
+  let expHtml = '';
+  if (revealed) {
+    const isCorrect = answered === q.correct;
+    const wrongItemsHtml = (q.wrongAnalysis || []).map(w => `
+      <div class="witem">
+        <div class="wh"><div class="wl">${w.l}</div><div class="wlbl">Proposition ${w.l} — Pourquoi incorrecte</div></div>
+        <div class="et">${w.t}</div>
+      </div>`).join('');
+    const summaryHtml = q.summary.map(s => `
+      <div class="si-row"><div class="sa">→</div><div class="st">${s}</div></div>`).join('');
+
+    expHtml = `<div class="explanation">
+      <div class="ab${isCorrect ? '' : ' wa'}">
+        <div class="ai">${isCorrect ? '✅' : '❌'}</div>
+        <div>
+          <div class="albl">${isCorrect ? 'Bonne réponse !' : 'Mauvaise réponse'}</div>
+          <div class="ac">La bonne réponse est la <strong>Proposition ${q.correct}</strong> : ${q.choices[q.correct]}</div>
+        </div>
+      </div>
+      <div class="eb">
+        <div class="ebt blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Explication détaillée</div>
+        <div class="et">${q.explanation}</div>
+      </div>
+      ${wrongItemsHtml ? `<div class="eb"><div class="ebt red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>Analyse des propositions incorrectes</div><div class="wi">${wrongItemsHtml}</div></div>` : ''}
+      <div class="eb">
+        <div class="ebt purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Ce que l'examinateur cherche à vérifier</div>
+        <div class="et"><p>${q.examiner}</p></div>
+      </div>
+      <div class="eb">
+        <div class="ebt yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Ce qu'il faut retenir</div>
+        <div class="sl">${summaryHtml}</div>
+      </div>
+    </div>`;
+  }
+
+  const revealDisplay = answered && !revealed ? 'block' : 'none';
+
+  document.getElementById('main').innerHTML = `
+    <div class="q-header">
+      <span class="pt-tag">${q.partie}</span>
+      <span class="qn-tag">${q.num} · ${state.current+1} / ${QCM.length}</span>
+    </div>
+    <div class="qcard">
+      <div class="qtext">${q.q}</div>
+      <div class="choices">${choicesHtml}</div>
+    </div>
+    <div class="reveal-s" id="revealS" style="display:${revealDisplay}">
+      <button class="reveal-btn" onclick="revealAnswer()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Voir l'explication complète du cours
+      </button>
+    </div>
+    ${expHtml}
+    <div class="nav">
+      <button class="nb" onclick="goTo(${state.current-1})" ${state.current===0?'disabled':''}>← Précédent</button>
+      ${state.current < QCM.length-1
+        ? `<button class="nb primary" onclick="goTo(${state.current+1})">Suivant →</button>`
+        : `<button class="nb primary" onclick="showResults()">Voir les résultats 🎉</button>`}
+    </div>`;
+  document.getElementById('main').scrollTop = 0;
+}
+
+// ════════════════════════════════════════════════════════════════
+// INTERACTIONS
+// ════════════════════════════════════════════════════════════════
+function selectChoice(k) {
+  if (state.answers[state.current]) return;
+  state.answers[state.current] = k;
+  renderAll();
+}
+function revealAnswer() {
+  state.revealed[state.current] = true;
+  renderAll();
+}
+function goTo(i) {
+  if (i < 0 || i >= QCM.length) return;
+  state.current = i;
+  renderAll();
+}
+function renderAll() {
+  renderSidebar();
+  renderMain();
+  renderProgress();
+}
+
+// ════════════════════════════════════════════════════════════════
+// RÉSULTATS
+// ════════════════════════════════════════════════════════════════
+function showResults() {
+  const correct = state.answers.filter((a,i) => a === QCM[i].correct).length;
+  const answered = state.answers.filter(Boolean).length;
+  const pct = Math.round((correct / QCM.length) * 100);
+  const emoji = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📚';
+  const msg = pct >= 80 ? 'Excellent ! Vous maîtrisez les fondamentaux de Docker.' : pct >= 60 ? 'Bon résultat ! Quelques révisions suffiront pour consolider.' : 'Continuez à réviser avec les explications — vous progressez !';
+  document.getElementById('main').innerHTML = `
+    <div class="splash">
+      <div class="splash-icon">${emoji}</div>
+      <h1>Quiz terminé !</h1>
+      <p>${msg}</p>
+      <div class="splash-stats">
+        <div class="sc"><div class="sn g">${correct}</div><div class="sl2">Bonnes réponses</div></div>
+        <div class="sc"><div class="sn r">${answered-correct}</div><div class="sl2">Mauvaises réponses</div></div>
+        <div class="sc"><div class="sn">${QCM.length-answered}</div><div class="sl2">Non répondues</div></div>
+        <div class="sc"><div class="sn b">${pct}%</div><div class="sl2">Score final</div></div>
+      </div>
+      <button class="restart-btn" onclick="restart()">🔄 Recommencer le quiz</button>
+    </div>`;
+}
+function restart() {
+  state = { current:0, answers:new Array(QCM.length).fill(null), revealed:new Array(QCM.length).fill(false) };
+  renderAll();
+}
+
+// ════════════════════════════════════════════════════════════════
+// EXPORT MODAL
+// ════════════════════════════════════════════════════════════════
+function showExportModal() { document.getElementById('exportModal').style.display='flex'; }
+function closeModal() { document.getElementById('exportModal').style.display='none'; }
+
+function buildExportContent() {
+  let html = '';
+  QCM.forEach((q, i) => {
+    const choicesHtml = Object.entries(q.choices).map(([k,v]) =>
+      `<div class="ec ${k===q.correct?'ecorrect':''}"><span class="ek">${k}</span> ${v}${k===q.correct?' ✓':''}</div>`
+    ).join('');
+    const wrongHtml = (q.wrongAnalysis||[]).map(w =>
+      `<div class="ew"><strong>Proposition ${w.l} :</strong> ${w.t}</div>`
+    ).join('');
+    const summaryHtml = q.summary.map(s => `<li>${s}</li>`).join('');
+    html += `<div class="eq">
+      <div class="eq-header"><span class="eq-num">Question ${i+1}</span><span class="eq-tag">${q.partie} · ${q.num}</span></div>
+      <div class="eq-q">${q.q}</div>
+      <div class="eq-choices">${choicesHtml}</div>
+      <div class="eq-section eq-answer"><strong>✅ Bonne réponse :</strong> Proposition ${q.correct} — ${q.choices[q.correct]}</div>
+      <div class="eq-section">
+        <div class="eq-section-title">📖 Explication détaillée</div>
+        <div class="eq-text">${q.explanation}</div>
+      </div>
+      ${wrongHtml ? `<div class="eq-section"><div class="eq-section-title">❌ Analyse des propositions incorrectes</div>${wrongHtml}</div>` : ''}
+      <div class="eq-section">
+        <div class="eq-section-title">🎓 Ce que l'examinateur cherche à vérifier</div>
+        <div class="eq-text"><p>${q.examiner}</p></div>
+      </div>
+      <div class="eq-section eq-summary">
+        <div class="eq-section-title">⭐ Ce qu'il faut retenir</div>
+        <ul>${summaryHtml}</ul>
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+function exportHTML() {
+  const content = buildExportContent();
+  const blob = new Blob([`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Securite Informatique QCM — Cours Complet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f6f8fa;color:#1f2328;line-height:1.6;padding:0}
+.cover{background:linear-gradient(135deg,#0d1117 0%,#1a2332 50%,#0d1117 100%);color:#fff;padding:60px 40px;text-align:center}
+.cover h1{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.cover p{font-size:16px;color:#8b949e;margin-bottom:24px}
+.cover .meta{display:inline-flex;gap:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 28px;font-size:14px}
+.cover .meta span{color:#58a6ff;font-weight:600}
+.container{max-width:900px;margin:0 auto;padding:40px 24px}
+.eq{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:28px;margin-bottom:28px;page-break-inside:avoid}
+.eq-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eq-num{font-size:12px;font-weight:700;background:#0969da;color:#fff;padding:3px 10px;border-radius:20px}
+.eq-tag{font-size:12px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;padding:3px 10px;border-radius:20px}
+.eq-q{font-size:17px;font-weight:600;color:#1f2328;margin-bottom:18px;line-height:1.5}
+.eq-choices{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.ec{display:flex;gap:10px;padding:10px 14px;border-radius:6px;border:1px solid #d0d7de;background:#f6f8fa;font-size:14px;line-height:1.5}
+.ec.ecorrect{background:#dafbe1;border-color:#2da44e;font-weight:600;color:#1a7f37}
+.ek{font-weight:700;min-width:18px;flex-shrink:0}
+.eq-section{margin-top:16px;padding-top:16px;border-top:1px solid #eaecef}
+.eq-answer{background:#dafbe1;border:1px solid #2da44e;border-radius:8px;padding:12px 16px;margin-top:16px;font-size:14px;color:#1a7f37}
+.eq-section-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#57606a;margin-bottom:10px}
+.eq-text{font-size:14px;line-height:1.8;color:#444c56}
+.eq-text p{margin-bottom:10px}.eq-text p:last-child{margin-bottom:0}
+.eq-text strong{color:#1f2328;font-weight:600}
+.eq-text code,.eq-text em code,.ew code{font-family:'SF Mono','Fira Code',monospace;font-size:12.5px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 5px;border-radius:4px;color:#0969da}
+.ew{background:#fff5f5;border-left:3px solid #d1242f;padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:8px;font-size:14px;line-height:1.7;color:#444c56}
+.ew strong{color:#d1242f}
+.eq-summary{background:#fffbee;border:1px solid #d4a72c;border-radius:8px;padding:16px}
+.eq-summary ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.eq-summary li{font-size:14px;line-height:1.6;color:#1f2328;padding-left:20px;position:relative}
+.eq-summary li::before{content:"→";position:absolute;left:0;color:#d4a72c;font-weight:700}
+.eq-summary li code{font-family:'SF Mono','Fira Code',monospace;font-size:12.5px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 5px;border-radius:4px;color:#0969da}
+@media print{body{background:#fff}.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}.eq{break-inside:avoid}}
+</style></head><body>
+<div class="cover">
+  <h1>🐳 Securite Informatique QCM — Cours Complet</h1>
+  <p>Podcast de révision · Explications détaillées pour l'oral et les certifications</p>
+  <div class="meta">
+    <div><span>${QCM.length}</span> questions</div>
+    <div><span>5</span> parties</div>
+    <div>Généré le <span>${new Date().toLocaleDateString('fr-FR')}</span></div>
+  </div>
+</div>
+<div class="container">${content}</div>
+</body></html>`], {type:'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'docker-qcm-cours-complet.html';
+  a.click();
+  closeModal();
+}
+
+function exportPrint() {
+  const content = buildExportContent();
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Securite Informatique QCM — Cours Complet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:#1f2328;line-height:1.6;padding:20px}
+.cover{background:linear-gradient(135deg,#0d1117,#1a2332);color:#fff;padding:40px;text-align:center;border-radius:10px;margin-bottom:32px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover h1{font-size:28px;font-weight:800;margin-bottom:8px}
+.cover p{font-size:14px;color:#8b949e;margin-bottom:16px}
+.cover .meta{display:inline-flex;gap:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 20px;font-size:13px;color:#58a6ff;font-weight:600}
+.eq{border:1px solid #d0d7de;border-radius:8px;padding:22px;margin-bottom:22px;break-inside:avoid}
+.eq-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.eq-num{font-size:11px;font-weight:700;background:#0969da;color:#fff;padding:2px 8px;border-radius:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-tag{font-size:11px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;padding:2px 8px;border-radius:20px}
+.eq-q{font-size:16px;font-weight:600;margin-bottom:14px;line-height:1.5}
+.eq-choices{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.ec{display:flex;gap:8px;padding:8px 12px;border-radius:5px;border:1px solid #d0d7de;font-size:13px;line-height:1.5}
+.ec.ecorrect{background:#dafbe1;border-color:#2da44e;font-weight:600;color:#1a7f37;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ek{font-weight:700;min-width:16px;flex-shrink:0}
+.eq-section{margin-top:14px;padding-top:14px;border-top:1px solid #eaecef}
+.eq-answer{background:#dafbe1;border:1px solid #2da44e;border-radius:6px;padding:10px 14px;margin-top:14px;font-size:13px;color:#1a7f37;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#57606a;margin-bottom:8px}
+.eq-text{font-size:13px;line-height:1.75;color:#444c56}
+.eq-text p{margin-bottom:8px}.eq-text p:last-child{margin-bottom:0}
+.eq-text strong{color:#1f2328}
+.eq-text code,.ew code{font-family:monospace;font-size:12px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 4px;border-radius:3px;color:#0969da}
+.ew{background:#fff5f5;border-left:3px solid #d1242f;padding:8px 12px;margin-bottom:7px;font-size:13px;line-height:1.7;color:#444c56;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ew strong{color:#d1242f}
+.eq-summary{background:#fffbee;border:1px solid #d4a72c;border-radius:6px;padding:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-summary ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.eq-summary li{font-size:13px;line-height:1.6;padding-left:18px;position:relative}
+.eq-summary li::before{content:"→";position:absolute;left:0;color:#d4a72c;font-weight:700}
+.eq-summary li code{font-family:monospace;font-size:12px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 4px;border-radius:3px;color:#0969da}
+</style></head><body>
+<div class="cover">
+  <h1>🐳 Securite Informatique QCM — Cours Complet</h1>
+  <p>Podcast de révision · Explications détaillées</p>
+  <div class="meta"><span>${QCM.length} questions</span> &nbsp;·&nbsp; <span>5 parties</span> &nbsp;·&nbsp; <span>${new Date().toLocaleDateString('fr-FR')}</span></div>
+</div>
+${content}
+<script>window.onload=function(){window.print()}<\/script>
+</body></html>`);
+  win.document.close();
+  closeModal();
+}
+
+// ════════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════════
+renderAll();
+</script>
+</body>
+</html>

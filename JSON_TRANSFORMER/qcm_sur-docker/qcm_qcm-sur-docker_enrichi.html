@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sur Docker QCM — Podcast de Révision</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="topbar">
+    <div class="logo">
+      <svg viewBox="0 0 50 40" fill="none">
+        <rect x="1" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="12" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="23" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="12" y="3" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="23" y="3" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <path d="M34 22c2-8 12-8 14-2" stroke="#2188ff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M34 22H8c-4 0-7 2.5-7 7s3 7 7 7h28c4 0 7-3 7-7" stroke="#2188ff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Sur Docker QCM
+    </div>
+    <span class="badge">Podcast de Révision · 23 questions</span>
+    <div class="topbar-right">
+      <div class="pw">
+        <span id="progressText">0 / 23</span>
+        <div class="pt"><div class="pf" id="progressFill" style="width:0%"></div></div>
+      </div>
+      <div class="score-b">Score : <span id="scoreDisplay">0 / 0</span></div>
+      <button class="export-btn" onclick="showExportModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exporter
+      </button>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-overlay" id="exportModal" style="display:none" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h2>📤 Exporter le cours complet</h2>
+    <p>Choisissez le format d'export. Le document contiendra toutes les questions avec leurs explications détaillées, l'analyse des propositions incorrectes, et les résumés à retenir.</p>
+    <div class="modal-btns">
+      <button class="mbtn" onclick="exportHTML()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <div>
+          <div>Fichier HTML</div>
+          <div class="mbtn-desc">Page web autonome, lisible dans tout navigateur</div>
+        </div>
+      </button>
+      <button class="mbtn" onclick="exportPrint()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <div>
+          <div>Imprimer / PDF</div>
+          <div class="mbtn-desc">Ouvre la boîte d'impression — choisissez "Enregistrer en PDF"</div>
+        </div>
+      </button>
+    </div>
+    <button class="mclose" onclick="closeModal()">Annuler</button>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// DONNÉES — 23 questions complètes (toutes les parties du JSON)
+// ════════════════════════════════════════════════════════════════
+const QCM = [
+  {
+    "num": "Q5",
+    "partie": "Partie 1",
+    "q": "Qu’est-ce qu’un Dockerfile ?",
+    "choices": {
+      "A": "Une image Docker qui est construite en exécutant une commande Docker.",
+      "B": "Un fichier texte qui contient toutes les commandes nécessaires pour construire une image donnée.",
+      "C": "Une instance en cours d’exécution d’une image Docker",
+      "D": "Un site web où vous pouvez télécharger des images Docker."
+    },
+    "correct": "B",
+    "explanation": "<p>Dockerfile est un fichier texte qui contient toutes les commandes nécessaires pour construire une image donnée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 1",
+    "q": "Lequel des énoncés suivants décrit correctement un conteneur Docker ?",
+    "choices": {
+      "A": "Un fichier texte décrivant les dépendances d’une application.",
+      "B": "Une images Docker.",
+      "C": "Une instance d’une application créée à partir d’une image Docker.",
+      "D": "Un package composé d’une application et de toutes ses dépendances."
+    },
+    "correct": "C",
+    "explanation": "<p>Un conteneur Docker est une instance d’une application créée à partir d’une image Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 1",
+    "q": "Un conteneur Docker est une instance d’une image avec une configuration spécifique.",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 1",
+    "q": "Laquelle des propositions suivantes explique la relation entre une image Docker et un conteneur Docker ?",
+    "choices": {
+      "A": "Un conteneur Docker est utilisé pour démarrer une image Docker.",
+      "B": "Un conteneur Docker est une instance en cours d’exécution d’une image.",
+      "C": "Un conteneur Docker est une collection de couches d’images.",
+      "D": "Un conteneur Docker est constitué de deux ou plusieurs images qui partagent un environnement d’exécution commun."
+    },
+    "correct": "B",
+    "explanation": "<p>Un conteneur Docker est une instance en cours d’exécution d’une image.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 2",
+    "q": "Quelle instruction doit apparaître en premier dans le fichier Dockerfile ?",
+    "choices": {
+      "A": "IMAGE",
+      "B": "ENV",
+      "C": "FROM",
+      "D": "RUN"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 2",
+    "q": "Le registre Docker est un endroit où l’on peut stocker et distribuer des ________ Docker.",
+    "choices": {
+      "A": "fichiers",
+      "B": "images",
+      "C": "codes"
+    },
+    "correct": "B",
+    "explanation": "<p>Le registre Docker est un endroit où l’on peut stocker et distribuer des images Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 2",
+    "q": "Quel est le but d’une image ?",
+    "choices": {
+      "A": "Fournir un processus traditionnel pour une application.",
+      "B": "Fournir la configuration réseau pour la pile réseau d’une application.",
+      "C": "Fournir le système de fichiers pour une application.",
+      "D": "Fournir un processus isolé pour une application."
+    },
+    "correct": "C",
+    "explanation": "<p>Une image fournit le système de fichiers pour une application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 2",
+    "q": "Laquelle des affirmations suivantes est vraie à propos de l’architecture de Docker?",
+    "choices": {
+      "A": "L’architecture est de type client-serveur.",
+      "B": "Les conteneurs Docker sont exécutés en tant que root.",
+      "C": "Le démon doit être exécuté en tant que root."
+    },
+    "correct": "D",
+    "explanation": "<p>Toutes les réponses sont vraies.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 2",
+    "q": "Sur quels concepts de base Docker repose-t-il ?",
+    "choices": {
+      "A": "Images et conteneurs",
+      "B": "Images et machines virtuelles",
+      "C": "Images et archives",
+      "D": "Vmware et VirtualBox"
+    },
+    "correct": "A",
+    "explanation": "<p>Docker repose sur le concept d’images et des conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 2",
+    "q": "Cette commande Dockerfile spécifie l’image de base à utiliser lors de la création d’une image Docker.",
+    "choices": {
+      "A": "BASE",
+      "B": "CMD",
+      "C": "ADD",
+      "D": "FROM"
+    },
+    "correct": "D",
+    "explanation": "<p>La commande « FROM » spécifie l’image de base à utiliser lors de la création d’une image Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 2",
+    "q": "Lequel des éléments suivants n’est pas une directive Dockerfile recommandée ?",
+    "choices": {
+      "A": "MAINTAINER",
+      "B": "COPY",
+      "C": "LABEL",
+      "D": "FROM"
+    },
+    "correct": "A",
+    "explanation": "<p>Selon la documentation officielle de Docker, l’instruction MAINTAINER est dépréciée. Il est préférable d’utiliser l’instruction LABEL pour définir l’auteur des images générées. L’instruction LABEL est plus flexible, permet de définir des métadonnées et peut être facilement visualisée avec la commande docker inspect .</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 2",
+    "q": "Laquelle des interfaces réseau suivantes est créée lorsque vous installez le runtime Docker sur l’hôte Docker ?",
+    "choices": {
+      "A": "Docker1",
+      "B": "Docker0",
+      "C": "eth0",
+      "D": "eth1"
+    },
+    "correct": "B",
+    "explanation": "<p>Docker0 est créée lorsque vous installez le runtime Docker sur l’hôte Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 2",
+    "q": "Lequel des éléments suivants n’est pas un composant de l’architecture Docker?",
+    "choices": {
+      "A": "Docker Registry",
+      "B": "Docker Runtime",
+      "C": "Docker Engine",
+      "D": "Docker Machine"
+    },
+    "correct": "D",
+    "explanation": "<p>Docker Machine n’est pas un composant de l’architecture Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 3",
+    "q": "Quel format Docker utilise-t-il pour exporter les images ?",
+    "choices": {
+      "A": "zip",
+      "B": "tar",
+      "C": "iso",
+      "D": "rar"
+    },
+    "correct": "B",
+    "explanation": "<p>Docker utilise le format ‘tar’ pour exporter les images.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 3",
+    "q": "Laquelle des propositions suivantes décrit le mieux une image Docker ?",
+    "choices": {
+      "A": "Une template en lecture seule pour démarrer un ou plusieurs conteneurs.",
+      "B": "Un volume de données qui peut être monté à l’intérieur d’un conteneur.",
+      "C": "Un instantané ponctuel d’un conteneur utilisé pour les sauvegardes.",
+      "D": "Un modèle en lecture-écriture pour démarrer un ou plusieurs conteneurs."
+    },
+    "correct": "B",
+    "explanation": "<p>Une image Docker est une template en lecture seule pour démarrer un ou plusieurs conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 4",
+    "q": "A quoi sert la commande docker exec ?",
+    "choices": {
+      "A": "Permet d’exécuter des processus en dehors d’un conteneur.",
+      "B": "Vous permet d’exécuter des processus dans un conteneur.",
+      "C": "C’est similaire à l’installation d’un logiciel.",
+      "D": "Vous permet d’exécuter des processus dans de nouveaux conteneurs."
+    },
+    "correct": "B",
+    "explanation": "<p>La commande docker exec vous permet d’exécuter des processus dans un conteneur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 4",
+    "q": "Quel option peut être utilisé pour définir un Dockerfile personnalisé (tel que mydockerfile.node) lors de la création d’une image personnalisée ?",
+    "choices": {
+      "A": "-customfile"
+    },
+    "correct": "C",
+    "explanation": "<p>L’option -f peut être utilisé pour définir un Dockerfile personnalisé (tel que mydockerfile.node) lors de la création d’une image personnalisée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 4",
+    "q": "Commande pour créer un cluster dans Docker ?",
+    "choices": {
+      "A": "apache mesos",
+      "B": "docker swarm",
+      "C": "K8s"
+    },
+    "correct": "D",
+    "explanation": "<p>Toutes les réponses ci-dessus vous permet de créer un cluster dans Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 5",
+    "q": "Quel service de Docker hébergé dans le nuage offre des capacités de registre pour le contenu public et privé ?",
+    "choices": {
+      "A": "Docker Images",
+      "B": "Docker Compose",
+      "C": "Docker Alpine",
+      "D": "Docker Hub"
+    },
+    "correct": "D",
+    "explanation": "<p>Docker Hub est un service fourni par Docker pour trouver et partager des images de conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 5",
+    "q": "Qu’est-ce qui est utilisé pour convertir un groupe d’hôtes Docker en un seul hôte Docker virtuel ?",
+    "choices": {
+      "A": "Docker Images",
+      "B": "Docker Compose",
+      "C": "Docker Swarm",
+      "D": "Docker Hub"
+    },
+    "correct": "C",
+    "explanation": "<p>Docker Swarm est utilisé pour convertir un groupe d’hôtes Docker en un seul hôte Docker virtuel.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 5",
+    "q": "Quel est la template utilisé pour décrire le build d’une image ?",
+    "choices": {
+      "A": "Docker Logs",
+      "B": "Docker Documents",
+      "C": "DockerFile",
+      "D": "Docker Stream"
+    },
+    "correct": "C",
+    "explanation": "<p>DockerFile est la template utilisé pour décrire le build d’une image.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 5",
+    "q": "Plusieurs conteneurs fonctionnant sur une seule machine partagent tous les mêmes ressources(CPU, RAM, etc…)",
+    "choices": {
+      "A": "Vrai",
+      "B": "Faux"
+    },
+    "correct": "A",
+    "explanation": "<p>Plusieurs conteneurs peuvent fonctionner sur la même machine et partager le noyau du système d’exploitation avec d’autres conteneurs, chacun s’exécutant comme un processus isolé dans l’espace utilisateur. Les conteneurs occupent moins d’espace que les VM (les images de conteneurs font généralement quelques dizaines de Mo), peuvent gérer davantage d’applications et nécessitent moins de VM et de systèmes d’exploitation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 5",
+    "q": "Quelle est l’adresse IP par défaut de l’hôte Docker ?",
+    "choices": {
+      "A": "10.10.10.10",
+      "B": "172.17.0.0/16",
+      "C": "0.0.0.0",
+      "D": "127.0.0.1"
+    },
+    "correct": "B",
+    "explanation": "<p>172.17.0.0/16 est l’adresse IP par défaut de l’hôte Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  }
+];
+
+// ════════════════════════════════════════════════════════════════
+// ÉTAT
+// ════════════════════════════════════════════════════════════════
+let state = {
+  current: 0,
+  answers: new Array(QCM.length).fill(null),
+  revealed: new Array(QCM.length).fill(false)
+};
+
+// ════════════════════════════════════════════════════════════════
+// SIDEBAR
+// ════════════════════════════════════════════════════════════════
+function renderSidebar() {
+  const parties = {};
+  QCM.forEach((q,i) => {
+    if (!parties[q.partie]) parties[q.partie] = [];
+    parties[q.partie].push({q,i});
+  });
+  let html = '<div class="sb-title">Questions (' + QCM.length + ')</div>';
+  for (const [p, items] of Object.entries(parties)) {
+    html += `<div class="pg"><div class="pl">${p}</div>`;
+    items.forEach(({q,i}) => {
+      let cls = '';
+      if (i === state.current) cls = ' active';
+      else if (state.answers[i]) cls = state.answers[i] === q.correct ? ' correct' : ' wrong';
+      const dot = state.answers[i] ? '<div class="qs"></div>' : '';
+      html += `<div class="qi${cls}" onclick="goTo(${i})"><div class="qn">${i+1}</div><span>${q.num}</span>${dot}</div>`;
+    });
+    html += '</div>';
+  }
+  document.getElementById('sidebar').innerHTML = html;
+}
+
+// ════════════════════════════════════════════════════════════════
+// PROGRESS
+// ════════════════════════════════════════════════════════════════
+function renderProgress() {
+  const answered = state.answers.filter(Boolean).length;
+  const correct = state.answers.filter((a,i) => a === QCM[i].correct).length;
+  const pct = Math.round((answered / QCM.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = answered + ' / ' + QCM.length;
+  document.getElementById('scoreDisplay').textContent = correct + ' / ' + answered;
+}
+
+// ════════════════════════════════════════════════════════════════
+// MAIN RENDER
+// ════════════════════════════════════════════════════════════════
+function renderMain() {
+  const q = QCM[state.current];
+  const answered = state.answers[state.current];
+  const revealed = state.revealed[state.current];
+
+  let choicesHtml = '';
+  Object.entries(q.choices).forEach(([k,v]) => {
+    let cls = '', icon = '';
+    if (answered) {
+      if (k === q.correct) { cls = ' correct disabled'; icon = '<span class="ci">✓</span>'; }
+      else if (k === answered) { cls = ' wrong disabled'; icon = '<span class="ci">✗</span>'; }
+      else cls = ' ndis disabled';
+    }
+    choicesHtml += `<div class="choice${cls}" onclick="selectChoice('${k}')">
+      <div class="cl">${k}</div>
+      <div class="ct">${v}</div>
+      ${icon}
+    </div>`;
+  });
+
+  let expHtml = '';
+  if (revealed) {
+    const isCorrect = answered === q.correct;
+    const wrongItemsHtml = (q.wrongAnalysis || []).map(w => `
+      <div class="witem">
+        <div class="wh"><div class="wl">${w.l}</div><div class="wlbl">Proposition ${w.l} — Pourquoi incorrecte</div></div>
+        <div class="et">${w.t}</div>
+      </div>`).join('');
+    const summaryHtml = q.summary.map(s => `
+      <div class="si-row"><div class="sa">→</div><div class="st">${s}</div></div>`).join('');
+
+    expHtml = `<div class="explanation">
+      <div class="ab${isCorrect ? '' : ' wa'}">
+        <div class="ai">${isCorrect ? '✅' : '❌'}</div>
+        <div>
+          <div class="albl">${isCorrect ? 'Bonne réponse !' : 'Mauvaise réponse'}</div>
+          <div class="ac">La bonne réponse est la <strong>Proposition ${q.correct}</strong> : ${q.choices[q.correct]}</div>
+        </div>
+      </div>
+      <div class="eb">
+        <div class="ebt blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Explication détaillée</div>
+        <div class="et">${q.explanation}</div>
+      </div>
+      ${wrongItemsHtml ? `<div class="eb"><div class="ebt red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>Analyse des propositions incorrectes</div><div class="wi">${wrongItemsHtml}</div></div>` : ''}
+      <div class="eb">
+        <div class="ebt purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Ce que l'examinateur cherche à vérifier</div>
+        <div class="et"><p>${q.examiner}</p></div>
+      </div>
+      <div class="eb">
+        <div class="ebt yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Ce qu'il faut retenir</div>
+        <div class="sl">${summaryHtml}</div>
+      </div>
+    </div>`;
+  }
+
+  const revealDisplay = answered && !revealed ? 'block' : 'none';
+
+  document.getElementById('main').innerHTML = `
+    <div class="q-header">
+      <span class="pt-tag">${q.partie}</span>
+      <span class="qn-tag">${q.num} · ${state.current+1} / ${QCM.length}</span>
+    </div>
+    <div class="qcard">
+      <div class="qtext">${q.q}</div>
+      <div class="choices">${choicesHtml}</div>
+    </div>
+    <div class="reveal-s" id="revealS" style="display:${revealDisplay}">
+      <button class="reveal-btn" onclick="revealAnswer()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Voir l'explication complète du cours
+      </button>
+    </div>
+    ${expHtml}
+    <div class="nav">
+      <button class="nb" onclick="goTo(${state.current-1})" ${state.current===0?'disabled':''}>← Précédent</button>
+      ${state.current < QCM.length-1
+        ? `<button class="nb primary" onclick="goTo(${state.current+1})">Suivant →</button>`
+        : `<button class="nb primary" onclick="showResults()">Voir les résultats 🎉</button>`}
+    </div>`;
+  document.getElementById('main').scrollTop = 0;
+}
+
+// ════════════════════════════════════════════════════════════════
+// INTERACTIONS
+// ════════════════════════════════════════════════════════════════
+function selectChoice(k) {
+  if (state.answers[state.current]) return;
+  state.answers[state.current] = k;
+  renderAll();
+}
+function revealAnswer() {
+  state.revealed[state.current] = true;
+  renderAll();
+}
+function goTo(i) {
+  if (i < 0 || i >= QCM.length) return;
+  state.current = i;
+  renderAll();
+}
+function renderAll() {
+  renderSidebar();
+  renderMain();
+  renderProgress();
+}
+
+// ════════════════════════════════════════════════════════════════
+// RÉSULTATS
+// ════════════════════════════════════════════════════════════════
+function showResults() {
+  const correct = state.answers.filter((a,i) => a === QCM[i].correct).length;
+  const answered = state.answers.filter(Boolean).length;
+  const pct = Math.round((correct / QCM.length) * 100);
+  const emoji = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📚';
+  const msg = pct >= 80 ? 'Excellent ! Vous maîtrisez les fondamentaux de Docker.' : pct >= 60 ? 'Bon résultat ! Quelques révisions suffiront pour consolider.' : 'Continuez à réviser avec les explications — vous progressez !';
+  document.getElementById('main').innerHTML = `
+    <div class="splash">
+      <div class="splash-icon">${emoji}</div>
+      <h1>Quiz terminé !</h1>
+      <p>${msg}</p>
+      <div class="splash-stats">
+        <div class="sc"><div class="sn g">${correct}</div><div class="sl2">Bonnes réponses</div></div>
+        <div class="sc"><div class="sn r">${answered-correct}</div><div class="sl2">Mauvaises réponses</div></div>
+        <div class="sc"><div class="sn">${QCM.length-answered}</div><div class="sl2">Non répondues</div></div>
+        <div class="sc"><div class="sn b">${pct}%</div><div class="sl2">Score final</div></div>
+      </div>
+      <button class="restart-btn" onclick="restart()">🔄 Recommencer le quiz</button>
+    </div>`;
+}
+function restart() {
+  state = { current:0, answers:new Array(QCM.length).fill(null), revealed:new Array(QCM.length).fill(false) };
+  renderAll();
+}
+
+// ════════════════════════════════════════════════════════════════
+// EXPORT MODAL
+// ════════════════════════════════════════════════════════════════
+function showExportModal() { document.getElementById('exportModal').style.display='flex'; }
+function closeModal() { document.getElementById('exportModal').style.display='none'; }
+
+function buildExportContent() {
+  let html = '';
+  QCM.forEach((q, i) => {
+    const choicesHtml = Object.entries(q.choices).map(([k,v]) =>
+      `<div class="ec ${k===q.correct?'ecorrect':''}"><span class="ek">${k}</span> ${v}${k===q.correct?' ✓':''}</div>`
+    ).join('');
+    const wrongHtml = (q.wrongAnalysis||[]).map(w =>
+      `<div class="ew"><strong>Proposition ${w.l} :</strong> ${w.t}</div>`
+    ).join('');
+    const summaryHtml = q.summary.map(s => `<li>${s}</li>`).join('');
+    html += `<div class="eq">
+      <div class="eq-header"><span class="eq-num">Question ${i+1}</span><span class="eq-tag">${q.partie} · ${q.num}</span></div>
+      <div class="eq-q">${q.q}</div>
+      <div class="eq-choices">${choicesHtml}</div>
+      <div class="eq-section eq-answer"><strong>✅ Bonne réponse :</strong> Proposition ${q.correct} — ${q.choices[q.correct]}</div>
+      <div class="eq-section">
+        <div class="eq-section-title">📖 Explication détaillée</div>
+        <div class="eq-text">${q.explanation}</div>
+      </div>
+      ${wrongHtml ? `<div class="eq-section"><div class="eq-section-title">❌ Analyse des propositions incorrectes</div>${wrongHtml}</div>` : ''}
+      <div class="eq-section">
+        <div class="eq-section-title">🎓 Ce que l'examinateur cherche à vérifier</div>
+        <div class="eq-text"><p>${q.examiner}</p></div>
+      </div>
+      <div class="eq-section eq-summary">
+        <div class="eq-section-title">⭐ Ce qu'il faut retenir</div>
+        <ul>${summaryHtml}</ul>
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+function exportHTML() {
+  const content = buildExportContent();
+  const blob = new Blob([`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Sur Docker QCM — Cours Complet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f6f8fa;color:#1f2328;line-height:1.6;padding:0}
+.cover{background:linear-gradient(135deg,#0d1117 0%,#1a2332 50%,#0d1117 100%);color:#fff;padding:60px 40px;text-align:center}
+.cover h1{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.cover p{font-size:16px;color:#8b949e;margin-bottom:24px}
+.cover .meta{display:inline-flex;gap:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 28px;font-size:14px}
+.cover .meta span{color:#58a6ff;font-weight:600}
+.container{max-width:900px;margin:0 auto;padding:40px 24px}
+.eq{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:28px;margin-bottom:28px;page-break-inside:avoid}
+.eq-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eq-num{font-size:12px;font-weight:700;background:#0969da;color:#fff;padding:3px 10px;border-radius:20px}
+.eq-tag{font-size:12px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;padding:3px 10px;border-radius:20px}
+.eq-q{font-size:17px;font-weight:600;color:#1f2328;margin-bottom:18px;line-height:1.5}
+.eq-choices{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.ec{display:flex;gap:10px;padding:10px 14px;border-radius:6px;border:1px solid #d0d7de;background:#f6f8fa;font-size:14px;line-height:1.5}
+.ec.ecorrect{background:#dafbe1;border-color:#2da44e;font-weight:600;color:#1a7f37}
+.ek{font-weight:700;min-width:18px;flex-shrink:0}
+.eq-section{margin-top:16px;padding-top:16px;border-top:1px solid #eaecef}
+.eq-answer{background:#dafbe1;border:1px solid #2da44e;border-radius:8px;padding:12px 16px;margin-top:16px;font-size:14px;color:#1a7f37}
+.eq-section-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#57606a;margin-bottom:10px}
+.eq-text{font-size:14px;line-height:1.8;color:#444c56}
+.eq-text p{margin-bottom:10px}.eq-text p:last-child{margin-bottom:0}
+.eq-text strong{color:#1f2328;font-weight:600}
+.eq-text code,.eq-text em code,.ew code{font-family:'SF Mono','Fira Code',monospace;font-size:12.5px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 5px;border-radius:4px;color:#0969da}
+.ew{background:#fff5f5;border-left:3px solid #d1242f;padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:8px;font-size:14px;line-height:1.7;color:#444c56}
+.ew strong{color:#d1242f}
+.eq-summary{background:#fffbee;border:1px solid #d4a72c;border-radius:8px;padding:16px}
+.eq-summary ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.eq-summary li{font-size:14px;line-height:1.6;color:#1f2328;padding-left:20px;position:relative}
+.eq-summary li::before{content:"→";position:absolute;left:0;color:#d4a72c;font-weight:700}
+.eq-summary li code{font-family:'SF Mono','Fira Code',monospace;font-size:12.5px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 5px;border-radius:4px;color:#0969da}
+@media print{body{background:#fff}.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}.eq{break-inside:avoid}}
+</style></head><body>
+<div class="cover">
+  <h1>🐳 Sur Docker QCM — Cours Complet</h1>
+  <p>Podcast de révision · Explications détaillées pour l'oral et les certifications</p>
+  <div class="meta">
+    <div><span>${QCM.length}</span> questions</div>
+    <div><span>5</span> parties</div>
+    <div>Généré le <span>${new Date().toLocaleDateString('fr-FR')}</span></div>
+  </div>
+</div>
+<div class="container">${content}</div>
+</body></html>`], {type:'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'docker-qcm-cours-complet.html';
+  a.click();
+  closeModal();
+}
+
+function exportPrint() {
+  const content = buildExportContent();
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Sur Docker QCM — Cours Complet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:#1f2328;line-height:1.6;padding:20px}
+.cover{background:linear-gradient(135deg,#0d1117,#1a2332);color:#fff;padding:40px;text-align:center;border-radius:10px;margin-bottom:32px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover h1{font-size:28px;font-weight:800;margin-bottom:8px}
+.cover p{font-size:14px;color:#8b949e;margin-bottom:16px}
+.cover .meta{display:inline-flex;gap:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 20px;font-size:13px;color:#58a6ff;font-weight:600}
+.eq{border:1px solid #d0d7de;border-radius:8px;padding:22px;margin-bottom:22px;break-inside:avoid}
+.eq-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.eq-num{font-size:11px;font-weight:700;background:#0969da;color:#fff;padding:2px 8px;border-radius:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-tag{font-size:11px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;padding:2px 8px;border-radius:20px}
+.eq-q{font-size:16px;font-weight:600;margin-bottom:14px;line-height:1.5}
+.eq-choices{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.ec{display:flex;gap:8px;padding:8px 12px;border-radius:5px;border:1px solid #d0d7de;font-size:13px;line-height:1.5}
+.ec.ecorrect{background:#dafbe1;border-color:#2da44e;font-weight:600;color:#1a7f37;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ek{font-weight:700;min-width:16px;flex-shrink:0}
+.eq-section{margin-top:14px;padding-top:14px;border-top:1px solid #eaecef}
+.eq-answer{background:#dafbe1;border:1px solid #2da44e;border-radius:6px;padding:10px 14px;margin-top:14px;font-size:13px;color:#1a7f37;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#57606a;margin-bottom:8px}
+.eq-text{font-size:13px;line-height:1.75;color:#444c56}
+.eq-text p{margin-bottom:8px}.eq-text p:last-child{margin-bottom:0}
+.eq-text strong{color:#1f2328}
+.eq-text code,.ew code{font-family:monospace;font-size:12px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 4px;border-radius:3px;color:#0969da}
+.ew{background:#fff5f5;border-left:3px solid #d1242f;padding:8px 12px;margin-bottom:7px;font-size:13px;line-height:1.7;color:#444c56;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ew strong{color:#d1242f}
+.eq-summary{background:#fffbee;border:1px solid #d4a72c;border-radius:6px;padding:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-summary ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.eq-summary li{font-size:13px;line-height:1.6;padding-left:18px;position:relative}
+.eq-summary li::before{content:"→";position:absolute;left:0;color:#d4a72c;font-weight:700}
+.eq-summary li code{font-family:monospace;font-size:12px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 4px;border-radius:3px;color:#0969da}
+</style></head><body>
+<div class="cover">
+  <h1>🐳 Sur Docker QCM — Cours Complet</h1>
+  <p>Podcast de révision · Explications détaillées</p>
+  <div class="meta"><span>${QCM.length} questions</span> &nbsp;·&nbsp; <span>5 parties</span> &nbsp;·&nbsp; <span>${new Date().toLocaleDateString('fr-FR')}</span></div>
+</div>
+${content}
+<script>window.onload=function(){window.print()}<\/script>
+</body></html>`);
+  win.document.close();
+  closeModal();
+}
+
+// ════════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════════
+renderAll();
+</script>
+</body>
+</html>

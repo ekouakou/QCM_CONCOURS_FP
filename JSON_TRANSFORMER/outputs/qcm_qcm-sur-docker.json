@@ -1,0 +1,308 @@
+[
+  {
+    "url": "https://waytolearnx.com/2022/06/qcm-sur-docker-exercices-questions-quiz-partie-1.html",
+    "title": "QCM sur Docker | Exercices, Questions, Quiz – Partie 1",
+    "partie": 1,
+    "questions_count": 4,
+    "questions": [
+      {
+        "number": "5",
+        "question": "Qu’est-ce qu’un Dockerfile ?",
+        "choices": {
+          "A": "Une image Docker qui est construite en exécutant une commande Docker.",
+          "B": "Un fichier texte qui contient toutes les commandes nécessaires pour construire une image donnée.",
+          "C": "Une instance en cours d’exécution d’une image Docker",
+          "D": "Un site web où vous pouvez télécharger des images Docker."
+        },
+        "correct_answer": "B",
+        "explanation": "Dockerfile est un fichier texte qui contient toutes les commandes nécessaires pour construire une image donnée."
+      },
+      {
+        "number": "6",
+        "question": "Lequel des énoncés suivants décrit correctement un conteneur Docker ?",
+        "choices": {
+          "A": "Un fichier texte décrivant les dépendances d’une application.",
+          "B": "Une images Docker.",
+          "C": "Une instance d’une application créée à partir d’une image Docker.",
+          "D": "Un package composé d’une application et de toutes ses dépendances."
+        },
+        "correct_answer": "C",
+        "explanation": "Un conteneur Docker est une instance d’une application créée à partir d’une image Docker."
+      },
+      {
+        "number": "8",
+        "question": "Un conteneur Docker est une instance d’une image avec une configuration spécifique.",
+        "choices": {
+          "A": "Vrai",
+          "B": "Faux"
+        },
+        "correct_answer": "A",
+        "explanation": ""
+      },
+      {
+        "number": "10",
+        "question": "Laquelle des propositions suivantes explique la relation entre une image Docker et un conteneur Docker ?",
+        "choices": {
+          "A": "Un conteneur Docker est utilisé pour démarrer une image Docker.",
+          "B": "Un conteneur Docker est une instance en cours d’exécution d’une image.",
+          "C": "Un conteneur Docker est une collection de couches d’images.",
+          "D": "Un conteneur Docker est constitué de deux ou plusieurs images qui partagent un environnement d’exécution commun."
+        },
+        "correct_answer": "B",
+        "explanation": "Un conteneur Docker est une instance en cours d’exécution d’une image."
+      }
+    ]
+  },
+  {
+    "url": "https://waytolearnx.com/2022/06/qcm-sur-docker-exercices-questions-quiz-partie-2.html",
+    "title": "QCM sur Docker | Exercices, Questions, Quiz – Partie 2",
+    "partie": 2,
+    "questions_count": 9,
+    "questions": [
+      {
+        "number": "1",
+        "question": "Quelle instruction doit apparaître en premier dans le fichier Dockerfile ?",
+        "choices": {
+          "A": "IMAGE",
+          "B": "ENV",
+          "C": "FROM",
+          "D": "RUN"
+        },
+        "correct_answer": "C",
+        "explanation": ""
+      },
+      {
+        "number": "2",
+        "question": "Le registre Docker est un endroit où l’on peut stocker et distribuer des ________ Docker.",
+        "choices": {
+          "A": "fichiers",
+          "B": "images",
+          "C": "codes"
+        },
+        "correct_answer": "B",
+        "explanation": "Le registre Docker est un endroit où l’on peut stocker et distribuer des images Docker."
+      },
+      {
+        "number": "3",
+        "question": "Quel est le but d’une image ?",
+        "choices": {
+          "A": "Fournir un processus traditionnel pour une application.",
+          "B": "Fournir la configuration réseau pour la pile réseau d’une application.",
+          "C": "Fournir le système de fichiers pour une application.",
+          "D": "Fournir un processus isolé pour une application."
+        },
+        "correct_answer": "C",
+        "explanation": "Une image fournit le système de fichiers pour une application."
+      },
+      {
+        "number": "4",
+        "question": "Laquelle des affirmations suivantes est vraie à propos de l’architecture de Docker?",
+        "choices": {
+          "A": "L’architecture est de type client-serveur.",
+          "B": "Les conteneurs Docker sont exécutés en tant que root.",
+          "C": "Le démon doit être exécuté en tant que root."
+        },
+        "correct_answer": "D",
+        "explanation": "Toutes les réponses sont vraies."
+      },
+      {
+        "number": "5",
+        "question": "Sur quels concepts de base Docker repose-t-il ?",
+        "choices": {
+          "A": "Images et conteneurs",
+          "B": "Images et machines virtuelles",
+          "C": "Images et archives",
+          "D": "Vmware et VirtualBox"
+        },
+        "correct_answer": "A",
+        "explanation": "Docker repose sur le concept d’images et des conteneurs."
+      },
+      {
+        "number": "7",
+        "question": "Cette commande Dockerfile spécifie l’image de base à utiliser lors de la création d’une image Docker.",
+        "choices": {
+          "A": "BASE",
+          "B": "CMD",
+          "C": "ADD",
+          "D": "FROM"
+        },
+        "correct_answer": "D",
+        "explanation": "La commande « FROM » spécifie l’image de base à utiliser lors de la création d’une image Docker."
+      },
+      {
+        "number": "8",
+        "question": "Lequel des éléments suivants n’est pas une directive Dockerfile recommandée ?",
+        "choices": {
+          "A": "MAINTAINER",
+          "B": "COPY",
+          "C": "LABEL",
+          "D": "FROM"
+        },
+        "correct_answer": "A",
+        "explanation": "Selon la documentation officielle de Docker, l’instruction MAINTAINER est dépréciée. Il est préférable d’utiliser l’instruction LABEL pour définir l’auteur des images générées. L’instruction LABEL est plus flexible, permet de définir des métadonnées et peut être facilement visualisée avec la commande docker inspect ."
+      },
+      {
+        "number": "9",
+        "question": "Laquelle des interfaces réseau suivantes est créée lorsque vous installez le runtime Docker sur l’hôte Docker ?",
+        "choices": {
+          "A": "Docker1",
+          "B": "Docker0",
+          "C": "eth0",
+          "D": "eth1"
+        },
+        "correct_answer": "B",
+        "explanation": "Docker0 est créée lorsque vous installez le runtime Docker sur l’hôte Docker."
+      },
+      {
+        "number": "10",
+        "question": "Lequel des éléments suivants n’est pas un composant de l’architecture Docker?",
+        "choices": {
+          "A": "Docker Registry",
+          "B": "Docker Runtime",
+          "C": "Docker Engine",
+          "D": "Docker Machine"
+        },
+        "correct_answer": "D",
+        "explanation": "Docker Machine n’est pas un composant de l’architecture Docker."
+      }
+    ]
+  },
+  {
+    "url": "https://waytolearnx.com/2022/06/qcm-sur-docker-exercices-questions-quiz-partie-3.html",
+    "title": "QCM sur Docker | Exercices, Questions, Quiz – Partie 3",
+    "partie": 3,
+    "questions_count": 2,
+    "questions": [
+      {
+        "number": "7",
+        "question": "Quel format Docker utilise-t-il pour exporter les images ?",
+        "choices": {
+          "A": "zip",
+          "B": "tar",
+          "C": "iso",
+          "D": "rar"
+        },
+        "correct_answer": "B",
+        "explanation": "Docker utilise le format ‘tar’ pour exporter les images."
+      },
+      {
+        "number": "8",
+        "question": "Laquelle des propositions suivantes décrit le mieux une image Docker ?",
+        "choices": {
+          "A": "Une template en lecture seule pour démarrer un ou plusieurs conteneurs.",
+          "B": "Un volume de données qui peut être monté à l’intérieur d’un conteneur.",
+          "C": "Un instantané ponctuel d’un conteneur utilisé pour les sauvegardes.",
+          "D": "Un modèle en lecture-écriture pour démarrer un ou plusieurs conteneurs."
+        },
+        "correct_answer": "B",
+        "explanation": "Une image Docker est une template en lecture seule pour démarrer un ou plusieurs conteneurs."
+      }
+    ]
+  },
+  {
+    "url": "https://waytolearnx.com/2022/06/qcm-sur-docker-exercices-questions-quiz-partie-4.html",
+    "title": "QCM sur Docker | Exercices, Questions, Quiz – Partie 4",
+    "partie": 4,
+    "questions_count": 3,
+    "questions": [
+      {
+        "number": "6",
+        "question": "A quoi sert la commande docker exec ?",
+        "choices": {
+          "A": "Permet d’exécuter des processus en dehors d’un conteneur.",
+          "B": "Vous permet d’exécuter des processus dans un conteneur.",
+          "C": "C’est similaire à l’installation d’un logiciel.",
+          "D": "Vous permet d’exécuter des processus dans de nouveaux conteneurs."
+        },
+        "correct_answer": "B",
+        "explanation": "La commande docker exec vous permet d’exécuter des processus dans un conteneur."
+      },
+      {
+        "number": "7",
+        "question": "Quel option peut être utilisé pour définir un Dockerfile personnalisé (tel que mydockerfile.node) lors de la création d’une image personnalisée ?",
+        "choices": {
+          "A": "-customfile"
+        },
+        "correct_answer": "C",
+        "explanation": "L’option -f peut être utilisé pour définir un Dockerfile personnalisé (tel que mydockerfile.node) lors de la création d’une image personnalisée."
+      },
+      {
+        "number": "8",
+        "question": "Commande pour créer un cluster dans Docker ?",
+        "choices": {
+          "A": "apache mesos",
+          "B": "docker swarm",
+          "C": "K8s"
+        },
+        "correct_answer": "D",
+        "explanation": "Toutes les réponses ci-dessus vous permet de créer un cluster dans Docker."
+      }
+    ]
+  },
+  {
+    "url": "https://waytolearnx.com/2022/06/qcm-sur-docker-exercices-questions-quiz-partie-5.html",
+    "title": "QCM sur Docker | Exercices, Questions, Quiz – Partie 5",
+    "partie": 5,
+    "questions_count": 5,
+    "questions": [
+      {
+        "number": "1",
+        "question": "Quel service de Docker hébergé dans le nuage offre des capacités de registre pour le contenu public et privé ?",
+        "choices": {
+          "A": "Docker Images",
+          "B": "Docker Compose",
+          "C": "Docker Alpine",
+          "D": "Docker Hub"
+        },
+        "correct_answer": "D",
+        "explanation": "Docker Hub est un service fourni par Docker pour trouver et partager des images de conteneurs."
+      },
+      {
+        "number": "2",
+        "question": "Qu’est-ce qui est utilisé pour convertir un groupe d’hôtes Docker en un seul hôte Docker virtuel ?",
+        "choices": {
+          "A": "Docker Images",
+          "B": "Docker Compose",
+          "C": "Docker Swarm",
+          "D": "Docker Hub"
+        },
+        "correct_answer": "C",
+        "explanation": "Docker Swarm est utilisé pour convertir un groupe d’hôtes Docker en un seul hôte Docker virtuel."
+      },
+      {
+        "number": "3",
+        "question": "Quel est la template utilisé pour décrire le build d’une image ?",
+        "choices": {
+          "A": "Docker Logs",
+          "B": "Docker Documents",
+          "C": "DockerFile",
+          "D": "Docker Stream"
+        },
+        "correct_answer": "C",
+        "explanation": "DockerFile est la template utilisé pour décrire le build d’une image."
+      },
+      {
+        "number": "4",
+        "question": "Plusieurs conteneurs fonctionnant sur une seule machine partagent tous les mêmes ressources(CPU, RAM, etc…)",
+        "choices": {
+          "A": "Vrai",
+          "B": "Faux"
+        },
+        "correct_answer": "A",
+        "explanation": "Plusieurs conteneurs peuvent fonctionner sur la même machine et partager le noyau du système d’exploitation avec d’autres conteneurs, chacun s’exécutant comme un processus isolé dans l’espace utilisateur. Les conteneurs occupent moins d’espace que les VM (les images de conteneurs font généralement quelques dizaines de Mo), peuvent gérer davantage d’applications et nécessitent moins de VM et de systèmes d’exploitation."
+      },
+      {
+        "number": "5",
+        "question": "Quelle est l’adresse IP par défaut de l’hôte Docker ?",
+        "choices": {
+          "A": "10.10.10.10",
+          "B": "172.17.0.0/16",
+          "C": "0.0.0.0",
+          "D": "127.0.0.1"
+        },
+        "correct_answer": "B",
+        "explanation": "172.17.0.0/16 est l’adresse IP par défaut de l’hôte Docker."
+      }
+    ]
+  }
+]

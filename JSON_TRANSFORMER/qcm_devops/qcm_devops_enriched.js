@@ -1,0 +1,4190 @@
+const QCM = [
+  {
+    "num": "Q1",
+    "partie": "Partie 2",
+    "q": "Quelle est la principale caractéristique de l’automatisation dans un environnement DevOps ?",
+    "choices": {
+      "A": "Réduire le besoin d’outils de gestion de versions",
+      "B": "Augmenter la taille des équipes",
+      "C": "Réduire les erreurs humaines et améliorer l’efficacité",
+      "D": "Permettre aux équipes de travailler indépendamment sans coordination"
+    },
+    "correct": "C",
+    "explanation": "<p>L’automatisation est un aspect clé de DevOps, car elle aide à réduire les erreurs humaines dans les processus manuels et améliore l’efficacité des équipes en automatisant des tâches répétitives et critiques comme les tests, les déploiements et les configurations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 2",
+    "q": "Quel est un avantage clé de l’utilisation de containers dans DevOps ?",
+    "choices": {
+      "A": "Les containers sont plus faciles à déployer que les serveurs physiques",
+      "B": "Ils permettent de réduire les coûts de développement",
+      "C": "Ils garantissent que l’application fonctionne de la même manière sur n’importe quelle machine, que ce soit en développement ou en production",
+      "D": "Les containers sont uniquement utilisés pour le stockage des données"
+    },
+    "correct": "C",
+    "explanation": "<p>Les containers permettent d’encapsuler une application et toutes ses dépendances dans un environnement isolé, ce qui garantit qu’elle fonctionne de manière cohérente, que ce soit sur la machine du développeur ou sur un serveur en production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 2",
+    "q": "Quel est l’objectif de l’infrastructure as code (IaC) dans un processus DevOps ?",
+    "choices": {
+      "A": "Décrire l’infrastructure des serveurs uniquement en utilisant des diagrammes",
+      "B": "Créer et gérer l’infrastructure informatique de manière manuelle",
+      "C": "Automatiser la gestion de l’infrastructure en la décrivant sous forme de code",
+      "D": "Utiliser uniquement des serveurs physiques pour l’infrastructure"
+    },
+    "correct": "C",
+    "explanation": "<p>L’infrastructure as code (IaC) consiste à automatiser la gestion et le déploiement de l’infrastructure informatique à l’aide de fichiers de configuration écrits sous forme de code. Cela permet de rendre les environnements plus reproductibles, scalables et plus faciles à maintenir.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 2",
+    "q": "Quel est le rôle de Kubernetes dans un environnement DevOps ?",
+    "choices": {
+      "A": "Orchestration des conteneurs",
+      "B": "Gestion des versions de code",
+      "C": "Surveillance des performances des serveurs",
+      "D": "Gestion des configurations des infrastructures"
+    },
+    "correct": "A",
+    "explanation": "<p>Kubernetes est une plateforme d’orchestration de conteneurs qui permet de gérer et de déployer des applications conteneurisées de manière évolutive. Il gère la distribution, la mise à l’échelle et la gestion des conteneurs sur plusieurs hôtes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 2",
+    "q": "Qu’est-ce qu’une pipeline CI/CD dans le contexte de DevOps ?",
+    "choices": {
+      "A": "Une méthode de gestion des erreurs",
+      "B": "Un processus d’automatisation, des tests et du déploiement des applications",
+      "C": "Un outil pour la gestion des configurations d’infrastructure",
+      "D": "Une technique pour améliorer la performance des serveurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Une pipeline CI/CD (Continuous Integration/Continuous Delivery) est un processus automatisé qui permet d’intégrer les modifications du code, de les tester, et de déployer les applications à chaque étape du cycle de vie du développement logiciel. Cela réduit le temps nécessaire pour livrer des fonctionnalités et améliore la qualité du code.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 2",
+    "q": "Quel est le principal objectif de la surveillance dans un environnement DevOps ?",
+    "choices": {
+      "A": "S’assurer que l’application respecte les exigences de sécurité",
+      "B": "Optimiser les coûts de l’infrastructure",
+      "C": "Surveiller les performances des applications et des infrastructures pour détecter les anomalies",
+      "D": "Gérer les versions des applications"
+    },
+    "correct": "C",
+    "explanation": "<p>La surveillance est cruciale dans DevOps pour assurer la santé continue des applications et des systèmes. Elle permet de détecter rapidement les problèmes de performance ou les défaillances et d’agir de manière proactive pour résoudre les incidents avant qu’ils n’affectent les utilisateurs finaux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 2",
+    "q": "Qu’est-ce qu’un « microservice » dans un environnement DevOps ?",
+    "choices": {
+      "A": "Une petite base de données utilisée pour stocker des données temporaires",
+      "B": "Une application monolithique qui fonctionne sur un seul serveur",
+      "C": "Une architecture où les applications sont divisées en petits services indépendants qui communiquent entre eux",
+      "D": "Un outil pour automatiser les tests d’acceptation"
+    },
+    "correct": "C",
+    "explanation": "<p>Les microservices sont une approche architecturale où une application est décomposée en petits services indépendants qui peuvent être développés, déployés et scalés séparément. Chaque service réalise une tâche spécifique et communique avec les autres via des API.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 2",
+    "q": "Qu’est-ce que « Git » dans le contexte de DevOps ?",
+    "choices": {
+      "A": "Un serveur de déploiement automatisé",
+      "B": "Un système de gestion de version distribué",
+      "C": "Un outil de gestion de la configuration d’infrastructure",
+      "D": "Une plateforme de conteneurisation"
+    },
+    "correct": "B",
+    "explanation": "<p>Git est un système de gestion de version distribué qui permet aux développeurs de suivre les modifications du code source et de collaborer sur un projet. Dans DevOps, Git est utilisé pour versionner le code et faciliter la collaboration entre les équipes de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 2",
+    "q": "Quel est l’avantage de l’utilisation de Terraform dans DevOps ?",
+    "choices": {
+      "A": "Automatiser la création de tests unitaires",
+      "B": "Gérer les versions du code source",
+      "C": "Gérer l’infrastructure via du code de manière déclarative",
+      "D": "Automatiser les tâches d’intégration continue"
+    },
+    "correct": "C",
+    "explanation": "<p>Terraform est un outil d’IaC (Infrastructure as Code) qui permet de gérer l’infrastructure de manière déclarative, ce qui signifie que vous décrivez l’état désiré de l’infrastructure et Terraform se charge de la créer et de la maintenir. Cela permet une gestion automatisée et reproductible des environnements d’infrastructure.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 2",
+    "q": "Dans un environnement DevOps, que fait un « rollback » ?",
+    "choices": {
+      "A": "Il optimise les performances du code source",
+      "B": "Il effectue un retour en arrière sur un déploiement ou une mise à jour en cas de problème",
+      "C": "Il améliore la sécurité de l’application",
+      "D": "Il compile le code source avant le déploiement"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « rollback » consiste à revenir à une version antérieure d’une application ou d’un service après un déploiement raté ou un incident. Cela permet de restaurer l’état stable précédent et de minimiser l’impact sur les utilisateurs finaux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 3",
+    "q": "Quel est l’objectif principal du monitoring dans un environnement DevOps ?",
+    "choices": {
+      "A": "Identifier les problèmes de performance et garantir la stabilité des systèmes en production",
+      "B": "Réduire les coûts d’infrastructure",
+      "C": "Créer des rapports de gestion pour les équipes de direction",
+      "D": "Modifier les bases de données en temps réel"
+    },
+    "correct": "A",
+    "explanation": "<p>Le monitoring dans DevOps permet de suivre en temps réel les performances des systèmes en production, d’identifier les problèmes et de garantir que les services restent stables et performants. Cela permet de résoudre rapidement les incidents.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 3",
+    "q": "Quelle est la fonction de « Docker Compose » dans un environnement DevOps ?",
+    "choices": {
+      "A": "Gérer les conteneurs à grande échelle sur plusieurs serveurs",
+      "B": "Créer des images Docker",
+      "C": "Orchestrer des applications multi-conteneurs dans des environnements de développement",
+      "D": "Surveiller les performances des applications"
+    },
+    "correct": "C",
+    "explanation": "<p>Docker Compose permet de définir et de gérer des applications multi-conteneurs dans un environnement de développement. Il facilite la gestion de plusieurs conteneurs nécessaires pour faire fonctionner une application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 3",
+    "q": "Quelle est la principale fonction d’un « VCS » (Version Control System) dans DevOps ?",
+    "choices": {
+      "A": "Automatiser les tests de sécurité",
+      "B": "Suivre et gérer les versions du code source",
+      "C": "Mettre à jour les serveurs de production",
+      "D": "Assurer la communication entre les équipes"
+    },
+    "correct": "B",
+    "explanation": "<p>Un VCS (comme Git) permet de suivre les modifications apportées au code source, de gérer les versions et d’assurer une collaboration efficace entre les développeurs. Cela facilite la gestion des versions et permet de revenir à une version antérieure en cas de problème.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 3",
+    "q": "Quel est le rôle des « tests automatisés » dans un environnement DevOps ?",
+    "choices": {
+      "A": "Détecter les problèmes de performance en production uniquement",
+      "B": "Remplacer les tests manuels",
+      "C": "Tester le code en continu pour s’assurer qu’il fonctionne correctement à chaque modification",
+      "D": "Tester uniquement la sécurité des applications"
+    },
+    "correct": "C",
+    "explanation": "<p>Les tests automatisés permettent d’exécuter des tests de manière automatique à chaque modification du code pour détecter rapidement les erreurs et s’assurer que chaque modification n’introduit pas de régressions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 3",
+    "q": "Qu’est-ce qu’une « build » dans un processus DevOps ?",
+    "choices": {
+      "A": "Le processus de déploiement d’une application",
+      "B": "Un document qui décrit les étapes du processus de développement",
+      "C": "Le processus de compilation du code source et de création d’une version exécutable",
+      "D": "La gestion des versions du code source"
+    },
+    "correct": "C",
+    "explanation": "<p>La « build » fait référence au processus de compilation du code source en une version exécutable ou déployable de l’application. Ce processus est souvent automatisé dans DevOps à l’aide de systèmes comme Jenkins.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 3",
+    "q": "Qu’est-ce qu’un « Microservice » dans le contexte de DevOps ?",
+    "choices": {
+      "A": "Une application monolithique décomposée en petites applications",
+      "B": "Une méthode de gestion des versions du code",
+      "C": "Un type d’outil pour l’intégration continue",
+      "D": "Un petit service indépendant dans une architecture distribuée"
+    },
+    "correct": "D",
+    "explanation": "<p>Un microservice est une petite application autonome qui fait une tâche spécifique dans une architecture distribuée. Chaque microservice peut être développé, testé, déployé et mis à jour indépendamment des autres, facilitant ainsi la gestion du système global.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 3",
+    "q": "Qu’est-ce que le « Blue-Green Deployment » dans un pipeline DevOps ?",
+    "choices": {
+      "A": "Une méthode pour effectuer des tests automatisés en production",
+      "B": "Une stratégie de déploiement où deux environnements sont utilisés pour réduire le temps d’indisponibilité",
+      "C": "Un processus pour déployer des applications sur plusieurs serveurs",
+      "D": "Une approche de sécurité pour protéger les applications en production"
+    },
+    "correct": "B",
+    "explanation": "<p>Le « Blue-Green Deployment » est une technique de déploiement où deux environnements (le bleu et le vert) sont utilisés. L’environnement « bleu » représente la version actuelle en production, tandis que l’environnement « vert » est une copie où la nouvelle version est déployée. Une fois la nouvelle version testée et validée, le trafic est redirigé vers l’environnement vert, minimisant ainsi les interruptions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 3",
+    "q": "Dans un environnement DevOps, qu’est-ce qu’une « pull request » ?",
+    "choices": {
+      "A": "Un processus pour tester automatiquement le code",
+      "B": "Un processus pour gérer les mises à jour de l’infrastructure",
+      "C": "Une demande d’intégration du code d’un développeur dans le référentiel principal",
+      "D": "Une fonctionnalité permettant de récupérer les journaux d’exécution"
+    },
+    "correct": "C",
+    "explanation": "<p>Une « pull request » (PR) est une fonctionnalité de Git utilisée pour proposer des modifications dans le code source d’un projet. Un développeur crée une PR pour demander l’intégration de ses modifications dans le référentiel principal, après avoir effectué un examen et des tests.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 3",
+    "q": "Qu’est-ce que « Continuous Monitoring » dans un environnement DevOps ?",
+    "choices": {
+      "A": "Un processus de gestion des versions du code",
+      "B": "La surveillance continue des performances des applications et des infrastructures en production",
+      "C": "Une technique pour déployer des applications sans interruption",
+      "D": "Un outil de gestion des configurations d’infrastructure"
+    },
+    "correct": "B",
+    "explanation": "<p>Le « Continuous Monitoring » dans DevOps consiste à surveiller en permanence la performance des applications, des serveurs et des autres composants de l’infrastructure en production. Cela permet de détecter et de résoudre rapidement les problèmes avant qu’ils n’affectent les utilisateurs finaux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 3",
+    "q": "Quel est le rôle de « Ansible » dans DevOps ?",
+    "choices": {
+      "A": "Gestion des configurations et automatisation des déploiements",
+      "B": "Gestion des containers",
+      "C": "Surveillance de la performance du code",
+      "D": "Automatisation de la compilation du code source"
+    },
+    "correct": "A",
+    "explanation": "<p>Ansible est un outil open-source de gestion de configurations et d’automatisation des déploiements. Il permet de gérer les configurations des serveurs et de déployer des applications de manière répétable et fiable sur des infrastructures de toutes tailles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 4",
+    "q": "Qu’est-ce que « Continuous Delivery » (CD) dans un environnement DevOps ?",
+    "choices": {
+      "A": "Un processus pour tester la qualité du code",
+      "B": "Un processus où le code est automatiquement déployé en production sans validation",
+      "C": "Un processus où le code est prêt à être déployé en production à tout moment",
+      "D": "Un processus de création d’une base de données centralisée"
+    },
+    "correct": "C",
+    "explanation": "<p>La livraison continue (CD) vise à rendre le code prêt à être déployé en production à tout moment. Cela implique que le code est testé et validé dans un environnement pré-production et que des déploiements peuvent être effectués de manière rapide et sûre.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 4",
+    "q": "Quel est le rôle de « Git » dans un environnement DevOps ?",
+    "choices": {
+      "A": "Assurer la sécurité des applications",
+      "B": "Gérer la configuration des serveurs",
+      "C": "Gérer les versions du code source et faciliter la collaboration",
+      "D": "Automatiser les tests d’intégration"
+    },
+    "correct": "C",
+    "explanation": "<p>Git est un système de contrôle de version qui permet aux équipes de gérer les modifications du code source, de collaborer efficacement et de suivre les versions du code. C’est un outil clé dans un environnement DevOps pour le suivi des changements et la gestion des branches.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 4",
+    "q": "Qu’est-ce que le « Test Driven Development » (TDD) ?",
+    "choices": {
+      "A": "Une méthode de test manuelle où les tests sont réalisés après le développement",
+      "B": "Une approche où les tests sont automatisés avant même d’écrire le code de production",
+      "C": "Une méthode pour réduire les erreurs de code en production",
+      "D": "Une approche utilisée pour améliorer la collaboration entre les développeurs et les équipes d’exploitation"
+    },
+    "correct": "B",
+    "explanation": "<p>Le développement dirigé par les tests (TDD) est une approche où les tests sont écrits avant le code de production. Cela permet de s’assurer que le code répond à des critères définis et que les erreurs sont détectées tôt dans le cycle de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 4",
+    "q": "Quel est l’objectif principal de l’automatisation des tests dans un processus DevOps ?",
+    "choices": {
+      "A": "Réduire le besoin de collaboration entre les équipes de développement et d’exploitation",
+      "B": "Permettre des tests plus approfondis manuellement",
+      "C": "Accélérer le processus de développement en réduisant le temps passé à tester manuellement et garantir des déploiements fiables",
+      "D": "S’assurer que tous les tests sont effectués uniquement en production"
+    },
+    "correct": "C",
+    "explanation": "<p>L’automatisation des tests permet de tester le code plus rapidement et de manière répétitive, ce qui permet d’identifier les erreurs tôt dans le processus de développement. Cela aide également à garantir que les mises à jour du code n’introduisent pas de nouveaux problèmes lors des déploiements.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 4",
+    "q": "Qu’est-ce que le terme « Shift Left » signifie dans DevOps ?",
+    "choices": {
+      "A": "Déplacer les tests de sécurité à la fin du cycle de vie de l’application",
+      "B": "Faire en sorte que les tests de performance soient effectués en production",
+      "C": "Déplacer les tests et la validation des fonctionnalités plus tôt dans le cycle de vie du développement",
+      "D": "Utiliser des outils cloud pour les tests"
+    },
+    "correct": "C",
+    "explanation": "<p>Le concept de « Shift Left » consiste à déplacer les tests (tels que les tests unitaires, d’intégration, de sécurité, etc.) plus tôt dans le processus de développement, afin de détecter les erreurs rapidement et de réduire les coûts liés à la correction des problèmes plus tard.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 4",
+    "q": "Quel est l’objectif d’un « ChatOps » dans DevOps ?",
+    "choices": {
+      "A": "Fournir des outils de messagerie pour les développeurs",
+      "B": "Automatiser les actions DevOps à l’aide de chatbots intégrés dans des plateformes de messagerie",
+      "C": "Assurer la gestion des ressources cloud",
+      "D": "Gérer la configuration des bases de données"
+    },
+    "correct": "B",
+    "explanation": "<p>ChatOps fait référence à l’utilisation d’outils de messagerie, comme Slack ou Microsoft Teams, avec des bots pour automatiser des processus DevOps. Cela permet aux équipes de contrôler les déploiements, de surveiller les performances et d’exécuter des tâches directement à partir de la plateforme de messagerie.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 4",
+    "q": "Qu’est-ce qu’un test unitaire ?",
+    "choices": {
+      "A": "Un test qui vérifie l’intégration de plusieurs composants",
+      "B": "Un test qui vérifie le bon fonctionnement d’un composant individuel",
+      "C": "Un test qui vérifie les performances d’un système",
+      "D": "Un test qui vérifie la sécurité d’une application"
+    },
+    "correct": "B",
+    "explanation": "<p>Un test unitaire vérifie qu’une fonction ou une méthode donnée d’un programme fonctionne correctement. Ce test est généralement automatisé et vise à tester unité par unité le code d’un programme.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 4",
+    "q": "Qu’est-ce qu’un test fonctionnel ?",
+    "choices": {
+      "A": "Un test qui vérifie les performances d’une application",
+      "B": "Un test qui vérifie les interactions entre plusieurs modules d’une application",
+      "C": "Un test qui vérifie l’exécution d’une fonction spécifique dans le code",
+      "D": "Un test qui vérifie la sécurité d’une application"
+    },
+    "correct": "B",
+    "explanation": "<p>Un test fonctionnel vérifie que les fonctionnalités d’un système ou d’une application se comportent comme prévu. Cela implique généralement de tester le système dans son ensemble, en simulant des scénarios réels.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 4",
+    "q": "Quel outil est souvent utilisé dans un pipeline DevOps pour automatiser les tests unitaires ?",
+    "choices": {
+      "A": "Docker",
+      "B": "GitHub",
+      "C": "Kubernetes",
+      "D": "Jenkins"
+    },
+    "correct": "D",
+    "explanation": "<p>Jenkins est un outil d’intégration continue (CI) largement utilisé dans les pipelines DevOps pour automatiser les processus, y compris les tests unitaires. Il peut exécuter des tests de manière continue chaque fois qu’une nouvelle modification est apportée au code.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 4",
+    "q": "Quelle est la principale différence entre un test unitaire et un test fonctionnel ?",
+    "choices": {
+      "A": "Un test unitaire teste un composant isolé, tandis qu’un test fonctionnel teste l’application entière",
+      "B": "Un test unitaire est effectué après le test fonctionnel",
+      "C": "Un test fonctionnel vérifie la performance, alors qu’un test unitaire vérifie la sécurité",
+      "D": "Il n’y a aucune différence"
+    },
+    "correct": "A",
+    "explanation": "<p>Un test unitaire est spécifique à une partie isolée du code (comme une fonction ou une méthode), tandis qu’un test fonctionnel se concentre sur le comportement global du système et vérifie que toutes les parties du système fonctionnent ensemble comme prévu.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 5",
+    "q": "Quelle pratique fait partie du concept « Infrastructure as Code » (IaC) ?",
+    "choices": {
+      "A": "Déployer des applications sans utiliser de scripts",
+      "B": "Gérer l’infrastructure avec des fichiers de configuration versionnés",
+      "C": "Utiliser des serveurs manuels pour configurer l’infrastructure",
+      "D": "Créer des serveurs uniquement à la demande"
+    },
+    "correct": "B",
+    "explanation": "<p>« Infrastructure as Code » (IaC) est une pratique qui consiste à gérer et provisionner l’infrastructure informatique via du code. Les fichiers de configuration, souvent versionnés dans un gestionnaire de versions comme Git, permettent d’automatiser la gestion de l’infrastructure.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 5",
+    "q": "Qu’est-ce qu’un pipeline CI/CD ?",
+    "choices": {
+      "A": "Un ensemble de processus permettant de gérer le cycle de vie complet de l’application, de l’écriture à la production",
+      "B": "Un outil pour surveiller les applications en production",
+      "C": "Un processus de gestion des versions du code source",
+      "D": "Un logiciel de gestion de projet Agile"
+    },
+    "correct": "A",
+    "explanation": "<p>Un pipeline CI/CD est une série d’étapes automatisées qui permet de gérer le cycle de vie d’une application, depuis le développement (CI) jusqu’au déploiement sur des environnements de production (CD). Ce processus inclut des tests, des vérifications et le déploiement automatisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 5",
+    "q": "Quel outil est principalement utilisé pour le gestionnaire de configuration dans un environnement DevOps ?",
+    "choices": {
+      "A": "Jenkins",
+      "B": "Chef",
+      "C": "Docker",
+      "D": "Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Chef est un outil d’automatisation et de gestion de la configuration qui permet de gérer les infrastructures comme du code. Il est largement utilisé dans DevOps pour assurer la gestion cohérente et reproductible des serveurs et des environnements de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 5",
+    "q": "Qu’est-ce que Kanban dans un environnement DevOps ?",
+    "choices": {
+      "A": "Un outil de gestion des versions du code",
+      "B": "Une méthode Agile pour la gestion des tâches",
+      "C": "Un outil d’automatisation des tests",
+      "D": "Un protocole de communication entre les équipes"
+    },
+    "correct": "B",
+    "explanation": "<p>Kanban est une méthode de gestion de projet Agile qui permet de visualiser les tâches et de les gérer en continu. Dans DevOps, Kanban est souvent utilisé pour suivre l’avancement des tâches liées au développement, aux tests et aux déploiements dans un flux de travail.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 5",
+    "q": "Quel est le rôle principal de Docker Swarm dans un environnement DevOps ?",
+    "choices": {
+      "A": "Effectuer des tests continus",
+      "B": "Orchestrer des conteneurs pour la gestion des clusters",
+      "C": "Déployer du code sur plusieurs serveurs en parallèle",
+      "D": "Automatiser l’intégration des tests"
+    },
+    "correct": "B",
+    "explanation": "<p>Docker Swarm est un outil d’orchestration de conteneurs qui permet de gérer un cluster de conteneurs Docker en tant qu’une seule entité. Il permet de déployer, gérer et faire évoluer des applications conteneurisées de manière simple et efficace dans un environnement distribué.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 5",
+    "q": "Quelle est la signification de « CI/CD » dans le contexte DevOps ?",
+    "choices": {
+      "A": "Continous Integration / Continuous Deployment",
+      "B": "Continuous Improvement / Continuous Development",
+      "C": "Centralized Integration / Continuous Delivery",
+      "D": "Continuous Integration / Continuous Delivery"
+    },
+    "correct": "D",
+    "explanation": "<p>CI/CD représente l’intégration continue (CI) et la livraison continue (CD). L’intégration continue consiste à intégrer régulièrement du code dans un dépôt partagé, tandis que la livraison continue garantit que le code peut être livré à tout moment dans un environnement de production de manière automatisée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 5",
+    "q": "Quelle est la principale différence entre un conteneur Docker et une machine virtuelle ?",
+    "choices": {
+      "A": "Les conteneurs Docker nécessitent un hyperviseur, tandis que les machines virtuelles non",
+      "B": "Les conteneurs Docker partagent le même noyau du système d’exploitation hôte, tandis que les machines virtuelles ont un noyau indépendant",
+      "C": "Les machines virtuelles sont plus rapides que les conteneurs Docker",
+      "D": "Les machines virtuelles sont plus portables que les conteneurs Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Les conteneurs Docker partagent le noyau de l’hôte, ce qui les rend plus légers et plus rapides que les machines virtuelles, qui possèdent chacune leur propre noyau et nécessitent plus de ressources.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 5",
+    "q": "Quelle est la fonction de l’outil « Helm » dans un environnement Kubernetes ?",
+    "choices": {
+      "A": "Gérer les configurations des conteneurs",
+      "B": "Orchestrer les clusters Kubernetes",
+      "C": "Gérer les packages Kubernetes et les déploiements complexes",
+      "D": "Superviser la sécurité des applications Kubernetes"
+    },
+    "correct": "C",
+    "explanation": "<p>Helm est un gestionnaire de packages pour Kubernetes, permettant de définir, installer et mettre à jour des applications Kubernetes complexes sous forme de « charts ». Cela simplifie la gestion des configurations Kubernetes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 5",
+    "q": "Quel est l’objectif principal de l’outil « Prometheus » dans un pipeline DevOps ?",
+    "choices": {
+      "A": "Tester le code des microservices",
+      "B": "Orchestrer des conteneurs Docker",
+      "C": "Collecter et stocker des métriques pour la surveillance des systèmes",
+      "D": "Déployer automatiquement des applications sur Kubernetes"
+    },
+    "correct": "C",
+    "explanation": "<p>Prometheus est un système de surveillance open-source utilisé pour collecter et stocker des métriques sur les applications et l’infrastructure. Ces métriques peuvent ensuite être utilisées pour générer des alertes et effectuer des analyses de performance.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 5",
+    "q": "Quelle est la fonction de « GitOps » dans un environnement DevOps ?",
+    "choices": {
+      "A": "Un framework pour la gestion de l’infrastructure en cloud",
+      "B": "Un modèle de gestion de l’infrastructure utilisant Git comme source de vérité pour l’automatisation des déploiements",
+      "C": "Une méthodologie de gestion de versions du code source",
+      "D": "Un outil de test automatique du code source"
+    },
+    "correct": "B",
+    "explanation": "<p>GitOps est un modèle où les configurations de l’infrastructure sont stockées dans un dépôt Git et utilisées comme source de vérité. Cela permet d’automatiser la gestion des déploiements et de garantir que l’état de l’infrastructure est toujours cohérent avec ce qui est défini dans Git.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 6",
+    "q": "Quel est l’avantage de l’utilisation de branches dans un système de contrôle de version comme Git ?",
+    "choices": {
+      "A": "Elles permettent de travailler sur plusieurs versions d’un même projet simultanément sans interférer les unes avec les autres.",
+      "B": "Elles permettent de réinitialiser les versions du projet sans perdre de données.",
+      "C": "Elles augmentent la vitesse de compilation du projet.",
+      "D": "Elles simplifient la configuration des serveurs de production."
+    },
+    "correct": "A",
+    "explanation": "<p>Les branches permettent aux développeurs de travailler sur des fonctionnalités ou des corrections sans perturber la version principale du code, facilitant ainsi l’intégration et les tests sans risquer des conflits sur la branche principale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 6",
+    "q": "Quel est l’avantage principal de la conteneurisation avec Docker par rapport aux machines virtuelles ?",
+    "choices": {
+      "A": "La conteneurisation permet une virtualisation complète du système d’exploitation.",
+      "B": "Les conteneurs sont plus légers et démarrent plus rapidement que les machines virtuelles.",
+      "C": "Les conteneurs consomment plus de ressources système que les machines virtuelles.",
+      "D": "Les conteneurs sont plus sécurisés que les machines virtuelles."
+    },
+    "correct": "B",
+    "explanation": "<p>Docker permet de conteneuriser des applications avec leurs dépendances sans virtualiser complètement un système d’exploitation. Cela rend les conteneurs plus légers et plus rapides, tout en étant portables.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 6",
+    "q": "Quelle est la différence entre Puppet et Ansible pour l’automatisation de l’infrastructure ?",
+    "choices": {
+      "A": "Puppet utilise des agents pour configurer les serveurs, tandis qu’Ansible utilise une approche sans agent.",
+      "B": "Puppet est uniquement utilisé pour les déploiements cloud, alors qu’Ansible est pour les environnements locaux.",
+      "C": "Puppet ne peut pas gérer les configurations réseau, contrairement à Ansible.",
+      "D": "Puppet est plus orienté vers la gestion des containers, tandis qu’Ansible est plus orienté vers la gestion des machines virtuelles."
+    },
+    "correct": "A",
+    "explanation": "<p>Puppet et Ansible sont des outils d’automatisation, mais Puppet nécessite l’installation d’un agent sur chaque machine cible, tandis qu’Ansible se connecte directement aux serveurs via SSH sans nécessiter d’agent.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 6",
+    "q": "Quel est l’avantage de déployer une application sur une infrastructure cloud (par exemple AWS, Azure, GCP) ?",
+    "choices": {
+      "A": "La gestion de la sécurité est entièrement prise en charge par l’équipe interne.",
+      "B": "L’infrastructure cloud permet une mise à l’échelle automatique et une réduction des coûts d’infrastructure.",
+      "C": "Le cloud est plus lent et moins sécurisé que les serveurs locaux.",
+      "D": "Les ressources cloud sont fixes et ne peuvent pas être adaptées selon la demande."
+    },
+    "correct": "B",
+    "explanation": "<p>Les plateformes cloud offrent des services flexibles qui permettent de faire évoluer les ressources selon les besoins de l’application (mise à l’échelle automatique), ce qui permet de mieux gérer les coûts et la performance.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 6",
+    "q": "Comment l’automatisation dans DevOps peut-elle améliorer l’efficacité d’une équipe de développement ?",
+    "choices": {
+      "A": "En réduisant la dépendance vis-à-vis des outils de contrôle de version",
+      "B": "En minimisant les erreurs humaines et en accélérant les processus de développement et de déploiement",
+      "C": "En forçant les développeurs à écrire du code plus propre",
+      "D": "En augmentant le nombre de versions du code source produites par jour"
+    },
+    "correct": "B",
+    "explanation": "<p>L’automatisation dans DevOps permet de réduire les erreurs humaines (par exemple, dans le déploiement manuel) et d’accélérer les processus (comme l’intégration continue, les tests automatisés, et les déploiements), améliorant ainsi l’efficacité et la qualité des livraisons.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 6",
+    "q": "Quel est le rôle de Kubernetes dans la gestion de conteneurs Docker ?",
+    "choices": {
+      "A": "Stocker les images Docker dans un registre centralisé",
+      "B": "Orchestrer, déployer et gérer des clusters de conteneurs Docker à grande échelle",
+      "C": "Sécuriser les conteneurs Docker en les cryptant",
+      "D": "Conteneuriser des applications sans Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Kubernetes est un système d’orchestration de conteneurs qui facilite la gestion, le déploiement, la mise à l’échelle et la gestion des conteneurs Docker dans des environnements distribués et à grande échelle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 6",
+    "q": "Lequel des éléments suivants n’est PAS un outil de gestion de configuration ?",
+    "choices": {
+      "A": "Chef",
+      "B": "Puppet",
+      "C": "Ansible",
+      "D": "Jira"
+    },
+    "correct": "D",
+    "explanation": "<p>Jira est un outil de gestion de projet, principalement utilisé pour le suivi des problèmes et la gestion des tâches, tandis que Chef, Puppet et Ansible sont tous des outils de gestion de configuration utilisés pour automatiser le déploiement et la gestion des infrastructures.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 6",
+    "q": "Pourquoi un environnement DevOps utilise-t-il souvent une combinaison d’outils comme Jenkins, Docker et Kubernetes ?",
+    "choices": {
+      "A": "Pour simplifier le code source",
+      "B": "Pour combiner la gestion de version, l’intégration continue et l’orchestration des conteneurs dans un pipeline cohérent",
+      "C": "Pour garantir que les tests de performance sont effectués manuellement",
+      "D": "Pour augmenter les coûts d’infrastructure"
+    },
+    "correct": "B",
+    "explanation": "<p>L’utilisation combinée de plusieurs outils DevOps permet de créer un pipeline fluide, allant de la gestion du code source (via Git), à l’automatisation des tests et du déploiement (via Jenkins), jusqu’à la conteneurisation (Docker) et l’orchestration de ces conteneurs (Kubernetes).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 6",
+    "q": "Dans quelle phase les tests automatisés sont-ils principalement exécutés dans un pipeline CI/CD ?",
+    "choices": {
+      "A": "Création",
+      "B": "Test",
+      "C": "Déploiement",
+      "D": "Surveillance"
+    },
+    "correct": "B",
+    "explanation": "<p>Dans un pipeline CI/CD (Intégration Continue / Déploiement Continu), les tests automatisés sont principalement exécutés pendant la phase Test. Cette phase est dédiée à l’exécution des tests unitaires, des tests d’intégration et d’autres types de tests automatisés pour s’assurer que le code fonctionne correctement avant d’être déployé en production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 6",
+    "q": "Que signifie l’acronyme « CALMS » dans le contexte de DevOps ?",
+    "choices": {
+      "A": "Code, Automation, Logs, Monitoring, Security",
+      "B": "Culture, Automation, Lean, Measurement, Sharing",
+      "C": "Continuous Application Lifecycle Management System",
+      "D": "Code, Automation, Lifecycle, Monitoring, Systems"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 7",
+    "q": "Quel outil est utilisé pour la gestion de la configuration ?",
+    "choices": {
+      "A": "Git",
+      "B": "Nagios",
+      "C": "Ansible",
+      "D": "Jira"
+    },
+    "correct": "C",
+    "explanation": "<p>Ansible est un outil de gestion de configuration qui permet d’automatiser le déploiement, la gestion et la configuration des systèmes. Git est un système de gestion de version, Nagios est un outil de surveillance, et Jira est un outil de gestion de projet, mais aucun d’eux n’est spécifiquement conçu pour la gestion de la configuration.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 7",
+    "q": "Quelle pratique implique le déploiement de code dans un environnement de type production avant la production réelle ?",
+    "choices": {
+      "A": "Tests continus",
+      "B": "Version Canary",
+      "C": "Déploiement bleu-vert (Blue-Green Deployment)",
+      "D": "Déploiement continu"
+    },
+    "correct": "C",
+    "explanation": "<p>Le déploiement bleu-vert (ou Blue-Green Deployment) implique effectivement deux environnements parallèles : un environnement Bleu qui est l’environnement de production actuel, et un environnement Vert, qui est une copie identique de l’environnement de production où le nouveau code est déployé. Une fois que le nouveau code est testé et validé dans l’environnement Vert, le trafic utilisateur est basculé de l’environnement Bleu vers l’environnement Vert, rendant ainsi la mise à jour de la production transparente et sans interruption.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 7",
+    "q": "Quel outil est souvent utilisé pour orchestrer l’infrastructure cloud en tant que code ?",
+    "choices": {
+      "A": "Jenkins",
+      "B": "Grafana",
+      "C": "Terraform",
+      "D": "Docker"
+    },
+    "correct": "C",
+    "explanation": "<p>Terraform est un outil d’infrastructure en tant que code (IaC) largement utilisé pour orchestrer et gérer l’infrastructure cloud. Il permet de définir, provisionner et gérer des ressources cloud via des fichiers de configuration déclaratifs. Terraform est compatible avec de nombreux fournisseurs de services cloud, tels qu’AWS, Azure, Google Cloud, et d’autres.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 7",
+    "q": "Quel terme décrit une méthode par laquelle les développeurs fusionnent leurs modifications dans la branche principale plusieurs fois par jour ?",
+    "choices": {
+      "A": "Déploiement continu",
+      "B": "Intégration continue",
+      "C": "Surveillance continue",
+      "D": "Rétroaction continue"
+    },
+    "correct": "B",
+    "explanation": "<p>L’intégration continue (CI) est une pratique où les développeurs fusionnent fréquemment leurs modifications dans la branche principale, souvent plusieurs fois par jour. Cela permet de détecter rapidement les erreurs, d’améliorer la collaboration et de maintenir une base de code plus stable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 7",
+    "q": "Lequel des outils suivants est principalement associé à la surveillance et à la visualisation des données de séries chronologiques ?",
+    "choices": {
+      "A": "Ansible",
+      "B": "Git",
+      "C": "Grafana",
+      "D": "Puppet"
+    },
+    "correct": "C",
+    "explanation": "<p>Grafana est un outil principalement utilisé pour la visualisation et la surveillance des données de séries chronologiques, telles que les métriques de performance des systèmes, les logs ou les statistiques d’application. Il se connecte à diverses sources de données comme Prometheus, InfluxDB, Elasticsearch, etc., pour créer des tableaux de bord interactifs et visuels.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 7",
+    "q": "À quoi fait référence le terme « infrastructure immuable » ?",
+    "choices": {
+      "A": "Une infrastructure qui peut être facilement modifiée et adaptée",
+      "B": "Des composants d’infrastructure qui ne sont jamais mis à jour une fois déployés",
+      "C": "Une infrastructure qui change fréquemment",
+      "D": "Une infrastructure qui résiste aux attaques de pirates informatiques"
+    },
+    "correct": "B",
+    "explanation": "<p>Le terme « infrastructure immuable » fait référence à une approche dans laquelle les composants d’infrastructure, tels que les serveurs ou les machines virtuelles, ne sont jamais modifiés une fois qu’ils sont déployés. Si des changements ou des mises à jour sont nécessaires, une nouvelle instance de l’infrastructure est créée avec les mises à jour ou modifications, et l’ancienne instance est détruite. Cela permet de garantir une plus grande prévisibilité, de réduire les erreurs humaines et de rendre les systèmes plus faciles à gérer.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 7",
+    "q": "Quel outil DevOps est connu pour ses capacités « Infrastructure as Code » et son architecture sans agent ?",
+    "choices": {
+      "A": "Jenkins",
+      "B": "Git",
+      "C": "Puppet",
+      "D": "Ansible"
+    },
+    "correct": "D",
+    "explanation": "<p>Ansible est un outil DevOps largement utilisé pour l’Infrastructure as Code (IaC) et se distingue par son architecture sans agent. Cela signifie qu’Ansible n’a pas besoin d’installer de logiciels supplémentaires ou d’agents sur les machines cibles pour fonctionner. Il utilise des protocoles standard comme SSH pour se connecter et gérer les systèmes, ce qui simplifie sa configuration et son utilisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 7",
+    "q": "Quel service AWS est utilisé pour configurer, exploiter et faire évoluer une base de données relationnelle dans le cloud ?",
+    "choices": {
+      "A": "AWS Lambda",
+      "B": "Amazon RDS",
+      "C": "Amazon EC2",
+      "D": "AWS CLI"
+    },
+    "correct": "B",
+    "explanation": "<p>Amazon RDS (Relational Database Service) est un service AWS géré qui permet de configurer, d’exploiter et de faire évoluer une base de données relationnelle dans le cloud. Il prend en charge plusieurs moteurs de bases de données, tels que MySQL, PostgreSQL, MariaDB, Oracle et Microsoft SQL Server.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 7",
+    "q": "Ce qui n’est pas inclus dans la gestion de la configuration",
+    "choices": {
+      "A": "Identifier les éléments de configuration des produits qui composent les lignes de base à des moments donnés",
+      "B": "Créer des versions/spécifications du produit existant pour créer de nouveaux produits à l’aide du système SCM",
+      "C": "Contrôler les modifications apportées aux éléments de configuration"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 7",
+    "q": "Dans un environnement cloud, quel service DevOps est le plus utilisé pour la gestion des infrastructures ?",
+    "choices": {
+      "A": "AWS CloudFormation",
+      "B": "Ansible",
+      "C": "Docker",
+      "D": "Jenkins"
+    },
+    "correct": "A",
+    "explanation": "<p>AWS CloudFormation est un service qui permet de définir des ressources AWS sous forme de code (Infrastructure-as-Code), facilitant ainsi la gestion et l’automatisation des infrastructures cloud à l’échelle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 8",
+    "q": "Quel est l’objectif principal d’Ansible dans une architecture DevOps ?",
+    "choices": {
+      "A": "Conteneuriser des applications",
+      "B": "Automatiser la configuration et la gestion des serveurs",
+      "C": "Déployer des applications sur des machines virtuelles",
+      "D": "Effectuer l’intégration continue (CI)"
+    },
+    "correct": "B",
+    "explanation": "<p>Ansible est un outil d’automatisation pour la gestion des configurations et le déploiement. Il permet de décrire les tâches à réaliser (comme l’installation de logiciels) dans des fichiers de configuration appelés « playbooks » et peut être utilisé pour gérer des infrastructures à grande échelle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 8",
+    "q": "Quel type de gestion est principalement utilisé par Puppet dans un environnement DevOps ?",
+    "choices": {
+      "A": "Gestion des versions du code source",
+      "B": "Gestion des configurations et déploiement d’infrastructure",
+      "C": "Test unitaire des applications",
+      "D": "Surveillance des performances des serveurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Puppet est un outil d’automatisation de la gestion des configurations. Il permet de décrire l’infrastructure sous forme de code et d’assurer la cohérence de l’environnement en automatisant les configurations des serveurs et des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 8",
+    "q": "Quelle est la principale fonctionnalité de Jenkins dans un pipeline CI/CD ?",
+    "choices": {
+      "A": "Déployer des applications sur le cloud",
+      "B": "Gérer la configuration des serveurs",
+      "C": "Automatiser l’intégration continue et le déploiement continu des applications",
+      "D": "Créer des conteneurs Docker"
+    },
+    "correct": "C",
+    "explanation": "<p>Jenkins est un outil d’intégration continue (CI) et de déploiement continu (CD). Il permet d’automatiser la construction, le test et le déploiement d’applications dans le cadre d’un pipeline CI/CD, ce qui accélère le développement logiciel tout en réduisant les erreurs humaines.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 8",
+    "q": "Quel est le rôle de Docker Compose dans un projet DevOps ?",
+    "choices": {
+      "A": "Déployer des images sur des machines distantes",
+      "B": "Créer et gérer plusieurs conteneurs Docker en même temps",
+      "C": "Gérer la sécurité des conteneurs Docker",
+      "D": "Automatiser le processus de build d’images Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Docker Compose permet de définir et de gérer des applications multi-conteneurs. Avec un fichier docker-compose.yml, vous pouvez définir tous les services nécessaires à votre application et les démarrer avec une seule commande.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 8",
+    "q": "Quel est l’objectif principal de l’intégration continue (CI) dans un pipeline DevOps ?",
+    "choices": {
+      "A": "Déployer automatiquement les applications en production",
+      "B": "Tester le code fréquemment pour détecter les erreurs tôt dans le processus de développement",
+      "C": "Gérer l’infrastructure des serveurs",
+      "D": "Conteneuriser les applications dans des environnements isolés"
+    },
+    "correct": "B",
+    "explanation": "<p>L’intégration continue (CI) consiste à intégrer fréquemment des modifications de code dans un dépôt central et à exécuter des tests pour s’assurer que le code est fonctionnel et sans erreurs. Cela permet de détecter les problèmes plus tôt dans le processus de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 8",
+    "q": "Que fait la commande suivante ?",
+    "choices": {
+      "A": "Affiche tous les conteneurs en cours d’exécution",
+      "B": "Affiche les conteneurs en pause",
+      "C": "Affiche tous les conteneurs, y compris ceux qui ne sont pas en cours d’exécution",
+      "D": "Supprime tous les conteneurs"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande docker ps -a liste tous les conteneurs, qu’ils soient en cours d’exécution ou arrêtés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 8",
+    "q": "Quelle est l’avantage principal de l’utilisation du cloud dans une approche DevOps ?",
+    "choices": {
+      "A": "Accélérer le déploiement de l’infrastructure",
+      "B": "Réduire la sécurité des applications",
+      "C": "Limiter la flexibilité des outils",
+      "D": "Restreindre l’accès à l’infrastructure"
+    },
+    "correct": "A",
+    "explanation": "<p>Le cloud permet de déployer rapidement des ressources (serveurs, bases de données, etc.) sans avoir besoin d’une infrastructure physique. Cela facilite l’adaptation dynamique aux besoins de l’application et accélère les processus de développement et de mise en production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 8",
+    "q": "Quel fichier Docker est utilisé pour définir l’environnement d’exécution d’une image ?",
+    "choices": {
+      "A": ".dockerignore",
+      "B": "Dockerfile",
+      "C": "docker-compose.yml",
+      "D": "DockerRunFile"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Dockerfile est un fichier texte qui contient des instructions pour créer une image Docker. Il définit l’environnement d’exécution de l’image et les étapes pour configurer l’application à l’intérieur du conteneur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 8",
+    "q": "Pourquoi la conteneurisation est-elle particulièrement utile dans un environnement DevOps ?",
+    "choices": {
+      "A": "Elle permet une gestion centralisée des applications",
+      "B": "Elle permet de déployer les applications uniquement sur des serveurs dédiés",
+      "C": "Elle permet de créer des environnements isolés et reproductibles pour les applications",
+      "D": "Elle augmente la complexité des configurations d’infrastructure"
+    },
+    "correct": "C",
+    "explanation": "<p>La conteneurisation permet de créer des environnements isolés pour les applications, garantissant que les applications fonctionneront de la même manière, quel que soit l’environnement sous-jacent (développement, test, production). Cela facilite le déploiement et la gestion des applications dans un pipeline DevOps.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 9",
+    "q": "Quelle est la fonction principale d’un « fork » dans Git ?",
+    "choices": {
+      "A": "Créer une nouvelle branche pour un projet",
+      "B": "Dupliquer un dépôt pour travailler indépendamment et proposer des modifications",
+      "C": "Fusionner deux branches dans un dépôt",
+      "D": "Conserver un historique des modifications"
+    },
+    "correct": "B",
+    "explanation": "<p>Le « fork » permet de créer une copie d’un dépôt Git pour y travailler indépendamment, généralement utilisé dans des projets open-source. Ensuite, des « pull requests » peuvent être envoyées pour proposer des modifications au dépôt d’origine.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 9",
+    "q": "Quel est le format principal utilisé pour décrire les tâches d’Ansible ?",
+    "choices": {
+      "A": "YAML (Yet Another Markup Language)",
+      "B": "JSON (JavaScript Object Notation)",
+      "C": "XML (Extensible Markup Language)",
+      "D": "HTML (HyperText Markup Language)"
+    },
+    "correct": "A",
+    "explanation": "<p>Ansible utilise des fichiers de configuration en YAML pour définir les tâches d’automatisation sous forme de playbooks. YAML est un format lisible et facile à comprendre, ce qui facilite la rédaction et la gestion des tâches d’automatisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 9",
+    "q": "Quel est le but du fichier .dockerignore ?",
+    "choices": {
+      "A": "Ignorer certains fichiers lors du processus de construction d’une image Docker",
+      "B": "Lister les fichiers à inclure dans l’image Docker",
+      "C": "Définir les environnements de production et de test dans Docker",
+      "D": "Exclure des conteneurs de la liste de ceux qui doivent être supprimés"
+    },
+    "correct": "A",
+    "explanation": "<p>Le fichier .dockerignore permet d’exclure certains fichiers ou répertoires du contexte de build Docker, ce qui peut réduire la taille de l’image générée et éviter d’inclure des fichiers inutiles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 9",
+    "q": "Dans Kubernetes, que permet de faire un « pod » ?",
+    "choices": {
+      "A": "Exécuter une seule application dans un environnement isolé",
+      "B": "Contenir plusieurs conteneurs et les exécuter ensemble sur un même nœud",
+      "C": "Gérer des clusters de serveurs physiques",
+      "D": "Créer un réseau de communication entre les conteneurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « pod » dans Kubernetes est l’unité de base pour exécuter des conteneurs. Il peut contenir un ou plusieurs conteneurs qui partagent le même réseau, les mêmes volumes de stockage et les mêmes ressources, permettant une gestion cohérente de l’application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 9",
+    "q": "Quel est le rôle de GitLab dans un pipeline CI/CD ?",
+    "choices": {
+      "A": "Gérer les tests de sécurité des applications",
+      "B": "Fournir un environnement d’exécution pour le déploiement continu des applications",
+      "C": "Automatiser le processus de gestion des conteneurs Docker",
+      "D": "Fournir un système de gestion des versions du code source, intégré à l’automatisation des tests et du déploiement"
+    },
+    "correct": "D",
+    "explanation": "<p>GitLab combine la gestion de version avec des outils CI/CD, permettant d’automatiser l’intégration continue, les tests, et le déploiement des applications au sein d’un même système, favorisant ainsi une livraison rapide et fiable des logiciels.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 9",
+    "q": "Quel est l’avantage principal de l’utilisation des volumes Docker ?",
+    "choices": {
+      "A": "Permettre le partage de fichiers entre conteneurs",
+      "B": "Sauvegarder les données des conteneurs après leur suppression",
+      "C": "Accélérer le processus de build d’une image",
+      "D": "Limiter la consommation de mémoire du conteneur"
+    },
+    "correct": "B",
+    "explanation": "<p>Les volumes Docker sont utilisés pour stocker des données persistantes à l’extérieur des conteneurs. Cela garantit que les données ne sont pas perdues lorsque le conteneur est supprimé ou recréé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 9",
+    "q": "A quoi sert l’option -d avec la commande docker run ?",
+    "choices": {
+      "A": "Exécuter le conteneur en mode interactif",
+      "B": "Exécuter le conteneur en arrière-plan (mode détaché)",
+      "C": "Afficher les logs du conteneur",
+      "D": "Exécuter le conteneur avec des droits d’administrateur"
+    },
+    "correct": "B",
+    "explanation": "<p>L’option -d permet de lancer un conteneur en mode détaché, c’est-à-dire en arrière-plan, sans bloquer le terminal. Si elle n’est pas utilisée, le conteneur s’exécute au premier plan, et les logs seront affichés dans le terminal.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 9",
+    "q": "Quel est l’avantage principal d’utiliser des services cloud (comme AWS, Azure, ou Google Cloud) pour une approche DevOps ?",
+    "choices": {
+      "A": "Éviter la gestion des infrastructures physiques",
+      "B": "Diminuer la performance des applications",
+      "C": "Limiter la scalabilité des applications",
+      "D": "Ne pas avoir besoin de gérer des versions de code"
+    },
+    "correct": "A",
+    "explanation": "<p>Le cloud permet de s’abstraire de la gestion de l’infrastructure physique, ce qui permet aux équipes DevOps de se concentrer sur l’automatisation, le déploiement et la gestion des applications plutôt que de gérer des serveurs physiques ou des datacenters.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 10",
+    "q": "Quelle est la différence principale entre la stratégie Git « Git Flow » et « GitHub Flow » ?",
+    "choices": {
+      "A": "« Git Flow » utilise un processus de gestion des branches complexe, tandis que « GitHub Flow » est plus simple et basé sur la branche principale",
+      "B": "« GitHub Flow » utilise un processus de gestion des branches complexe, tandis que « Git Flow » est plus simple et basé sur la branche principale",
+      "C": "« Git Flow » se concentre sur l’intégration continue, tandis que « GitHub Flow » se concentre sur le déploiement continu",
+      "D": "« GitHub Flow » n’utilise pas de branches, alors que « Git Flow » utilise uniquement des branches principales"
+    },
+    "correct": "A",
+    "explanation": "<p>« Git Flow » est une approche plus complexe de gestion des branches avec des branches distinctes pour le développement, les versions, et la production. « GitHub Flow » est plus simple, avec une branche principale stable et des pull requests pour intégrer des modifications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 10",
+    "q": "Quelle est la différence entre une image Docker et un conteneur Docker ?",
+    "choices": {
+      "A": "Une image Docker est une version en cours d’exécution d’un conteneur, tandis qu’un conteneur Docker est une copie statique de l’image",
+      "B": "Une image Docker est un fichier qui contient tout le nécessaire pour créer un conteneur, tandis qu’un conteneur est une instance en cours d’exécution de cette image",
+      "C": "Un conteneur Docker est une version modifiée d’une image Docker",
+      "D": "Une image Docker est utilisée pour les tests, tandis qu’un conteneur Docker est utilisé pour le déploiement en production"
+    },
+    "correct": "B",
+    "explanation": "<p>Une image Docker est un modèle, un package statique qui contient toutes les dépendances nécessaires pour exécuter une application. Un conteneur Docker est une instance en cours d’exécution de cette image dans un environnement isolé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 10",
+    "q": "Qu’est-ce qu’un « Docker registry » ?",
+    "choices": {
+      "A": "Un fichier où sont stockées les configurations de conteneurs",
+      "B": "Un service en ligne pour stocker et partager des images Docker",
+      "C": "Un outil pour vérifier l’intégrité des images Docker",
+      "D": "Une commande pour exécuter des conteneurs Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Un Docker registry (comme Docker Hub) est un service qui permet de stocker et de partager des images Docker. Vous pouvez y pousser (push) des images créées localement ou en récupérer (pull) pour les utiliser.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 10",
+    "q": "Quel rôle joue un « Service » dans Kubernetes ?",
+    "choices": {
+      "A": "Un service permet de gérer les configurations des conteneurs dans un cluster",
+      "B": "Un service est responsable de la mise à l’échelle des applications dans un cluster",
+      "C": "Un service expose une interface réseau stable et permet la communication entre les conteneurs, même si les adresses IP des conteneurs changent",
+      "D": "Un service gère la surveillance des performances dans le cluster Kubernetes"
+    },
+    "correct": "C",
+    "explanation": "<p>Un service Kubernetes permet de définir une adresse IP et un nom de domaine stable pour un ensemble de pods, afin qu’ils puissent communiquer entre eux, même si l’adresse IP des pods change dynamiquement lors des redémarrages.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 10",
+    "q": "Quel est l’impact de l’option --rm dans la commande docker run ?",
+    "choices": {
+      "A": "Elle supprime le conteneur après son exécution",
+      "B": "Elle enregistre automatiquement l’image après l’exécution du conteneur",
+      "C": "Elle permet de redémarrer automatiquement un conteneur qui échoue",
+      "D": "Elle supprime l’image après l’exécution du conteneur"
+    },
+    "correct": "A",
+    "explanation": "<p>L’option --rm permet de supprimer automatiquement un conteneur une fois qu’il a terminé son exécution. Cela est utile pour les conteneurs temporaires qui n’ont pas besoin de persister après leur utilisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 10",
+    "q": "Quelle est la fonction d’un « Build Trigger » dans Jenkins ?",
+    "choices": {
+      "A": "Déclencher une alerte lorsque la construction échoue",
+      "B": "Déclencher une nouvelle tâche de construction lorsqu’une modification du code est détectée",
+      "C": "Exécuter un déploiement automatique après chaque construction",
+      "D": "Planifier les tâches de construction à une heure spécifique"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « Build Trigger » dans Jenkins permet de déclencher automatiquement une tâche de construction(Build) dès qu’une modification est poussée dans un dépôt de code, facilitant ainsi l’intégration continue (CI).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 10",
+    "q": "Dans Ansible, qu’est-ce qu’un « inventaire » ?",
+    "choices": {
+      "A": "Un fichier contenant des informations sur les tâches à automatiser",
+      "B": "Un fichier qui définit les utilisateurs autorisés à accéder à l’infrastructure",
+      "C": "Un fichier qui liste les hôtes et groupes d’hôtes à gérer avec Ansible",
+      "D": "Un script d’automatisation utilisé pour installer des logiciels"
+    },
+    "correct": "C",
+    "explanation": "<p>Un inventaire dans Ansible est un fichier qui définit les hôtes et les groupes d’hôtes sur lesquels Ansible effectuera des actions, comme l’installation de logiciels ou la configuration des systèmes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 10",
+    "q": "Quel fichier est utilisé par Docker Compose pour configurer les services multi-conteneurs ?",
+    "choices": {
+      "A": "Dockerfile",
+      "B": "docker-compose.yml",
+      "C": "docker-config.json",
+      "D": "compose-config.yaml"
+    },
+    "correct": "B",
+    "explanation": "<p>Le fichier docker-compose.yml est utilisé pour définir les services, réseaux et volumes dans une application multi-conteneurs. Il permet de configurer l’ensemble de l’environnement Docker pour un projet de manière déclarative.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 10",
+    "q": "Que représente un « manifeste » dans Puppet ?",
+    "choices": {
+      "A": "Un fichier contenant les ressources et les configurations des serveurs à gérer",
+      "B": "Un fichier de test des performances des serveurs",
+      "C": "Un fichier de log généré après le déploiement d’une application",
+      "D": "Un fichier de déploiement d’applications Docker"
+    },
+    "correct": "A",
+    "explanation": "<p>Un manifeste dans Puppet est un fichier qui contient la description des ressources (comme des utilisateurs, des packages ou des services) et des actions à entreprendre sur ces ressources pour configurer un serveur ou un groupe de serveurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 10",
+    "q": "Quel est le rôle de la commande docker logs ?",
+    "choices": {
+      "A": "Lister tous les conteneurs en cours d’exécution",
+      "B": "Visualiser les journaux de sortie d’un conteneur",
+      "C": "Supprimer les logs d’un conteneur",
+      "D": "Afficher les erreurs liées à la construction d’une image"
+    },
+    "correct": "B",
+    "explanation": "<p>La commande docker logs permet d’afficher les journaux de sortie d’un conteneur, ce qui est utile pour diagnostiquer les erreurs ou obtenir des informations sur le comportement d’une application en cours d’exécution dans un conteneur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 11",
+    "q": "Pourquoi les tests automatisés sont-ils essentiels dans un pipeline CI/CD ?",
+    "choices": {
+      "A": "Ils réduisent la charge de travail des développeurs en les remplaçant complètement dans le processus de validation",
+      "B": "Ils permettent de vérifier en continu que le code est correct et qu’il ne casse pas d’autres parties de l’application, facilitant ainsi le déploiement rapide et fiable",
+      "C": "Ils remplacent les déploiements en production",
+      "D": "Ils augmentent le temps de déploiement de manière significative"
+    },
+    "correct": "B",
+    "explanation": "<p>Les tests automatisés dans un pipeline CI/CD permettent de détecter rapidement les erreurs dans le code, garantissant que les nouvelles modifications n’introduisent pas de régressions et permettant un déploiement continu de manière fiable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 11",
+    "q": "Que fait la commande docker exec ?",
+    "choices": {
+      "A": "Exécute une commande dans un conteneur en cours d’exécution",
+      "B": "Démarre un conteneur à partir d’une image spécifique",
+      "C": "Exécute un script de déploiement sur le conteneur",
+      "D": "Exécute le processus de construction d’une image Docker"
+    },
+    "correct": "A",
+    "explanation": "<p>La commande docker exec permet d’exécuter une commande à l’intérieur d’un conteneur qui est déjà en cours d’exécution. Par exemple, vous pouvez l’utiliser pour ouvrir une session shell dans un conteneur avec docker exec -it <container_id> bash.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 11",
+    "q": "Quel service du cloud permet d’orchestrer des conteneurs Docker à grande échelle ?",
+    "choices": {
+      "A": "AWS S3",
+      "B": "Azure DevOps",
+      "C": "Google Kubernetes Engine (GKE)",
+      "D": "AWS Lambda"
+    },
+    "correct": "C",
+    "explanation": "<p>Google Kubernetes Engine (GKE) est un service de Google Cloud qui permet de déployer, gérer et orchestrer des conteneurs Docker à grande échelle en utilisant Kubernetes, ce qui facilite la gestion de microservices dans des environnements de production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 11",
+    "q": "Quel est le principal objectif d’une culture DevOps dans une organisation ?",
+    "choices": {
+      "A": "Accélérer le développement des applications sans tenir compte de la qualité",
+      "B": "Favoriser la collaboration entre les équipes de développement, d’opérations et de sécurité afin d’améliorer l’efficacité et la vitesse du cycle de vie des applications",
+      "C": "Limiter la participation des équipes de développement dans les processus de déploiement",
+      "D": "Augmenter le nombre de serveurs nécessaires pour les déploiements"
+    },
+    "correct": "B",
+    "explanation": "<p>La culture DevOps cherche à briser les barrières entre les équipes de développement, d’opérations et de sécurité, en les faisant travailler ensemble pour livrer des applications de manière plus rapide et fiable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 11",
+    "q": "Qu’est-ce que l’idempotence dans le contexte d’Ansible ?",
+    "choices": {
+      "A": "Un principe qui garantit que chaque tâche d’automatisation sera exécutée exactement une fois",
+      "B": "Un principe qui garantit que l’exécution d’une tâche plusieurs fois produira toujours le même résultat",
+      "C": "Un principe qui empêche l’exécution de tâches lorsque l’état désiré est déjà atteint",
+      "D": "Un principe qui garantit que les tâches seront exécutées en parallèle sur tous les nœuds simultanément"
+    },
+    "correct": "B",
+    "explanation": "<p>L’idempotence dans Ansible signifie qu’une tâche peut être exécutée plusieurs fois sans provoquer de changements supplémentaires une fois que l’état souhaité est atteint, ce qui garantit la stabilité et la prévisibilité des configurations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 11",
+    "q": "Que permet de faire AWS Lambda ?",
+    "choices": {
+      "A": "Gérer des bases de données relationnelles",
+      "B": "Exécuter du code sans gérer les serveurs",
+      "C": "Créer et déployer des applications sur des machines virtuelles",
+      "D": "Gérer les configurations d’infrastructure avec des templates JSON"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS Lambda est un service qui permet d’exécuter du code en réponse à des événements sans avoir à gérer les serveurs. Cela permet de créer des applications serverless où AWS gère l’infrastructure sous-jacente.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 11",
+    "q": "Quelle est la principale différence entre EC2 et Lambda ?",
+    "choices": {
+      "A": "EC2 est un service serverless, tandis que Lambda nécessite des serveurs",
+      "B": "EC2 permet de provisionner des machines virtuelles, tandis que Lambda exécute des fonctions sans serveur",
+      "C": "EC2 est utilisé pour les bases de données et Lambda pour le stockage",
+      "D": "Lambda est plus coûteux qu’EC2 pour les petites charges de travail"
+    },
+    "correct": "B",
+    "explanation": "<p>EC2 permet de provisionner des instances de machines virtuelles où vous avez un contrôle total de l’infrastructure, tandis que Lambda exécute des morceaux de code sans que vous ayez besoin de gérer les serveurs. Lambda est souvent utilisé pour des applications serverless.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 11",
+    "q": "Dans Docker, quel type de réseau est le mieux adapté lorsque plusieurs conteneurs doivent communiquer entre eux dans un environnement isolé ?",
+    "choices": {
+      "A": "Bridge",
+      "B": "Host",
+      "C": "None",
+      "D": "Overlay"
+    },
+    "correct": "A",
+    "explanation": "<p>Le réseau « bridge » est le type par défaut dans Docker, où chaque conteneur obtient une adresse IP distincte sur un réseau virtuel, ce qui permet aux conteneurs de communiquer entre eux sur le même hôte Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 11",
+    "q": "Que fait un « node » dans Kubernetes ?",
+    "choices": {
+      "A": "C’est un composant du cluster qui exécute des conteneurs dans des pods",
+      "B": "C’est une application déployée sur le cluster",
+      "C": "C’est un fichier de configuration pour Kubernetes",
+      "D": "C’est une unité de stockage dans Kubernetes"
+    },
+    "correct": "A",
+    "explanation": "<p>Un node (nœud) dans Kubernetes est une machine (physique ou virtuelle) qui exécute des pods contenant les applications dans des conteneurs. Chaque nœud a un « kubelet » qui gère les ressources et communique avec le master Kubernetes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 11",
+    "q": "Que signifie l’option -p dans la commande docker run ?",
+    "choices": {
+      "A": "Lancer un conteneur avec des privilèges élevés",
+      "B": "Activer les logs persistants pour le conteneur",
+      "C": "Récupérer une image depuis un registre",
+      "D": "Publier un port de conteneur vers le port hôte"
+    },
+    "correct": "D",
+    "explanation": "<p>L’option -p est utilisée pour publier un port du conteneur vers un port de l’hôte. Cela permet d’accéder à un service ou une application qui fonctionne à l’intérieur du conteneur depuis l’extérieur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 12",
+    "q": "Pourquoi l’utilisation des plugins est-elle essentielle dans Jenkins ?",
+    "choices": {
+      "A": "Ils permettent d’ajouter de nouvelles fonctionnalités sans redémarrer Jenkins",
+      "B": "Ils sont uniquement utilisés pour les tests de performance",
+      "C": "Ils augmentent la sécurité en supprimant les fonctionnalités inutiles",
+      "D": "Ils ne sont jamais nécessaires dans un environnement DevOps"
+    },
+    "correct": "A",
+    "explanation": "<p>Les plugins dans Jenkins permettent d’ajouter facilement de nouvelles fonctionnalités, comme l’intégration avec d’autres outils de gestion de version, de déploiement, ou de notification. Cela permet d’étendre Jenkins sans avoir besoin de redémarrer le système.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 12",
+    "q": "Quel est l’objectif principal d’une « feature branch » dans Git ?",
+    "choices": {
+      "A": "Isoler une fonctionnalité spécifique du code principal pour la développer sans affecter la branche principale",
+      "B": "Fusionner automatiquement toutes les modifications dans la branche principale",
+      "C": "Revenir à une version antérieure d’un projet",
+      "D": "Gérer les dépendances d’un projet"
+    },
+    "correct": "A",
+    "explanation": "<p>Une « feature branch » est utilisée pour développer une fonctionnalité ou un correctif de manière isolée de la branche principale (souvent la branche « master » ou « main »), permettant de travailler sur de nouvelles fonctionnalités sans affecter le code de production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 12",
+    "q": "Quel outil permet d’automatiser la création, la gestion et le déploiement d’infrastructures dans des clouds publics et privés ?",
+    "choices": {
+      "A": "Docker",
+      "B": "Jenkins",
+      "C": "Terraform",
+      "D": "Ansible"
+    },
+    "correct": "C",
+    "explanation": "<p>Terraform est un outil d’infrastructure as code (IaC) qui permet de définir, de provisionner et de gérer des infrastructures dans des environnements de cloud publics ou privés via des fichiers de configuration déclaratifs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 12",
+    "q": "Quel service AWS permet d’automatiser les tests dans un pipeline CI/CD ?",
+    "choices": {
+      "A": "AWS CodeDeploy",
+      "B": "AWS CodeCommit",
+      "C": "AWS CodePipeline",
+      "D": "AWS CodeBuild"
+    },
+    "correct": "D",
+    "explanation": "<p>AWS CodeBuild est un service de compilation (build) qui permet de compiler le code source, de le tester et de le déployer dans un pipeline CI/CD. Il est intégré avec d’autres services comme AWS CodePipeline pour automatiser les tests dans le processus de livraison continue.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 12",
+    "q": "Qu’est-ce qu’un « role » dans Ansible ?",
+    "choices": {
+      "A": "Un fichier de configuration définissant les serveurs cibles",
+      "B": "Un module d’Ansible permettant de configurer des applications",
+      "C": "Un ensemble de tâches et de fichiers associés pour automatiser un aspect spécifique de la configuration",
+      "D": "Une méthode d’exécution d’un playbook sur plusieurs hôtes"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans Ansible, un « role » est un ensemble structuré de fichiers, de tâches, de handlers, de variables et de templates permettant d’automatiser un aspect particulier de la configuration, comme l’installation d’un serveur web ou la gestion des utilisateurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 12",
+    "q": "Qu’est-ce que l’auto-scaling dans AWS ?",
+    "choices": {
+      "A": "Un service pour déployer des applications automatiquement",
+      "B": "Un mécanisme pour ajuster la capacité de traitement selon la demande",
+      "C": "Un service de stockage pour les fichiers volumineux",
+      "D": "Un mécanisme pour gérer les mises à jour de sécurité automatiquement"
+    },
+    "correct": "B",
+    "explanation": "<p>L’auto-scaling est une fonctionnalité d’AWS qui permet d’ajuster automatiquement la capacité de vos instances EC2 en fonction de la demande (augmentation ou diminution des ressources) afin d’optimiser les coûts et la performance de votre application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 12",
+    "q": "Que fait la commande docker run -it <image_name> <command> ?",
+    "choices": {
+      "A": "Exécute une commande dans un conteneur en mode interactif",
+      "B": "Démarre un conteneur en mode détaché et exécute une commande",
+      "C": "Crée une nouvelle image Docker à partir de la commande spécifiée",
+      "D": "Interrompt l’exécution d’un conteneur en cours d’exécution"
+    },
+    "correct": "A",
+    "explanation": "<p>L’option -it permet d’exécuter un conteneur en mode interactif. Cela est souvent utilisé pour obtenir un shell dans un conteneur, par exemple: docker run -it ubuntu bash.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 12",
+    "q": "AWS CloudWatch est utilisé pour _________",
+    "choices": {
+      "A": "Gérer les utilisateurs et les groupes IAM",
+      "B": "Surveiller les métriques des ressources AWS et des applications",
+      "C": "Fournir une plateforme de stockage pour les données volumineuses",
+      "D": "Déployer automatiquement des applications en production"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS CloudWatch est un service de surveillance qui vous permet de collecter et de suivre les métriques de performance des ressources AWS, des applications et des services. Il fournit des alertes et des visualisations pour surveiller l’état de vos applications en temps réel.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 13",
+    "q": "Qu’est-ce qu’un « module » dans Puppet ?",
+    "choices": {
+      "A": "Un fichier de configuration qui définit l’état d’un système",
+      "B": "Un package logiciel installé sur un serveur",
+      "C": "Un ensemble réutilisable de ressources et de définitions pour gérer une partie de l’infrastructure",
+      "D": "Un test automatisé pour vérifier l’état des serveurs"
+    },
+    "correct": "C",
+    "explanation": "<p>Un module dans Puppet est une unité réutilisable de code qui contient des définitions et des ressources pour gérer un aspect particulier de l’infrastructure, comme la gestion des utilisateurs, des services ou des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 13",
+    "q": "Quel est le principal avantage de l’utilisation d’un pipeline multibranches dans Jenkins ?",
+    "choices": {
+      "A": "Permet de déployer automatiquement sur plusieurs serveurs",
+      "B": "Permet de créer un pipeline distinct pour chaque branche de code, facilitant ainsi les tests et les déploiements parallèles",
+      "C": "Permet de réduire le nombre de tests effectués dans le pipeline",
+      "D": "Permet de travailler sur plusieurs projets Jenkins en même temps"
+    },
+    "correct": "B",
+    "explanation": "<p>Le pipeline multibranches dans Jenkins permet de créer des pipelines distincts pour chaque branche de code, ce qui permet d’exécuter des tests et des déploiements parallèles, tout en maintenant un environnement de CI/CD flexible pour chaque fonctionnalité ou version.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 13",
+    "q": "Qu’est-ce qu’AWS Elastic Beanstalk ?",
+    "choices": {
+      "A": "Un service pour déployer et gérer des bases de données",
+      "B": "Un service pour gérer des conteneurs Docker",
+      "C": "Un service pour déployer des applications web sans gérer l’infrastructure",
+      "D": "Un service pour la gestion des utilisateurs et des permissions"
+    },
+    "correct": "C",
+    "explanation": "<p>AWS Elastic Beanstalk est une plateforme en tant que service (PaaS) qui permet de déployer des applications web sans gérer les détails de l’infrastructure. Il prend en charge plusieurs langages de programmation et frameworks, en automatisant le déploiement, la gestion et la mise à l’échelle des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 13",
+    "q": "Que fait la commande docker network ls ?",
+    "choices": {
+      "A": "Affiche les informations réseau de Docker",
+      "B": "Liste les réseaux Docker existants",
+      "C": "Crée un nouveau réseau Docker",
+      "D": "Affiche la configuration réseau du conteneur"
+    },
+    "correct": "B",
+    "explanation": "<p>La commande docker network ls affiche tous les réseaux Docker actuellement disponibles sur votre machine, permettant de voir les réseaux définis pour les conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 13",
+    "q": "Quelle est la principale fonctionnalité d’AWS CloudFormation ?",
+    "choices": {
+      "A": "Surveiller la santé des instances EC2",
+      "B": "Créer et gérer des ressources AWS à l’aide de modèles",
+      "C": "Gérer les utilisateurs et les permissions IAM",
+      "D": "Fournir des services de stockage en nuage"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS CloudFormation permet aux utilisateurs de définir l’infrastructure AWS en utilisant des fichiers de modèle, généralement en JSON ou YAML. Cela permet de provisionner, gérer et supprimer des ressources de manière cohérente et répétable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 13",
+    "q": "Quel est le rôle d’AWS CodePipeline dans un environnement DevOps ?",
+    "choices": {
+      "A": "Il gère la sécurité des instances EC2",
+      "B": "Il permet de gérer les permissions des utilisateurs",
+      "C": "Il est utilisé pour automatiser les workflows de déploiement de logiciels",
+      "D": "Il permet de surveiller les applications en production"
+    },
+    "correct": "C",
+    "explanation": "<p>AWS CodePipeline est un service qui permet d’automatiser le processus de livraison de logiciels en orchestrant les différentes étapes du développement (build, test, déploiement). Il permet de configurer des pipelines pour livrer les applications de manière continue.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 13",
+    "q": "Quelle est la différence entre un « Deployment » et un « Pod » dans Kubernetes ?",
+    "choices": {
+      "A": "Un « Deployment » est une ressource Kubernetes qui gère la création et la mise à l’échelle des « Pods »",
+      "B": "Un « Pod » est un type d’application déployée sur Kubernetes, tandis qu’un « Deployment » est un type de service",
+      "C": "Un « Pod » est une ressource Kubernetes qui déploie des applications, tandis qu’un « Deployment » est utilisé pour la gestion des bases de données",
+      "D": "Un « Deployment » est un composant matériel dans Kubernetes, tandis qu’un « Pod » est un composant logiciel"
+    },
+    "correct": "A",
+    "explanation": "<p>Un « Deployment » dans Kubernetes est utilisé pour gérer le cycle de vie des « Pods », permettant de déployer, de mettre à l’échelle, de mettre à jour et de contrôler l’état de l’application dans les pods. Un pod est l’unité d’exécution dans Kubernetes, pouvant contenir un ou plusieurs conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 13",
+    "q": "Que se passe-t-il si un conteneur Docker ne dispose pas de port exposé via l’option -p ?",
+    "choices": {
+      "A": "Il ne pourra pas être exécuté.",
+      "B": "Il sera exécuté, mais il ne pourra pas être accessible depuis l’extérieur du conteneur.",
+      "C": "Il sera exécuté en mode interactif uniquement.",
+      "D": "Il s’exécutera en mode détaché par défaut."
+    },
+    "correct": "B",
+    "explanation": "<p>Si aucun port n’est exposé via l’option -p, le conteneur s’exécutera normalement mais ne sera pas accessible depuis l’extérieur du conteneur, sauf si vous y accédez via d’autres moyens comme un volume ou un réseau interne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 13",
+    "q": "Que permet de faire une image Docker multi-architecture ?",
+    "choices": {
+      "A": "Permet de créer des images pour différents systèmes d’exploitation",
+      "B": "Permet de créer une image Docker compatible avec plusieurs architectures matérielles (x86, ARM, etc.)",
+      "C": "Permet de déployer des images Docker sur des hôtes distants uniquement",
+      "D": "Permet d’inclure des ressources système dans l’image Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Les images Docker multi-architecture permettent de construire une image qui peut être exécutée sur différentes architectures matérielles, comme x86 et ARM, ce qui permet de rendre les conteneurs compatibles sur différents types de serveurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 14",
+    "q": "Dans Ansible, qu’est-ce qu’un « playbook » ?",
+    "choices": {
+      "A": "Un ensemble de tâches et de commandes exécutées sur un groupe d’hôtes définis",
+      "B": "Un script qui gère les dépendances entre les différents modules",
+      "C": "Un fichier contenant des configurations pour le déploiement des applications Docker",
+      "D": "Un fichier de log qui enregistre toutes les exécutions des tâches"
+    },
+    "correct": "A",
+    "explanation": "<p>Un « playbook » dans Ansible est un fichier YAML qui contient des « plays » (tâches) définissant des actions à effectuer sur des groupes d’hôtes spécifiques. Il est utilisé pour automatiser la configuration et la gestion des systèmes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 14",
+    "q": "Comment lier deux conteneurs Docker entre eux pour qu’ils puissent communiquer ?",
+    "choices": {
+      "A": "Utiliser la commande",
+      "B": "Les conteneurs peuvent toujours communiquer sans configuration supplémentaire.",
+      "C": "Les conteneurs peuvent se connecter via un réseau Docker défini.",
+      "D": "Docker ne permet pas la communication entre conteneurs."
+    },
+    "correct": "C",
+    "explanation": "<p>Les conteneurs Docker peuvent communiquer entre eux en étant connectés à un même réseau Docker. Il est possible de créer des réseaux personnalisés pour faciliter cette communication. La commande docker network connect permet de connecter un conteneur à un réseau Docker existant.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 14",
+    "q": "Quel fichier est utilisé pour lister les fichiers et répertoires à ignorer lors de la création d’une image Docker ?",
+    "choices": {
+      "A": "dockerignore",
+      "B": ".dockerignore",
+      "C": "Dockerfile",
+      "D": "ignore-file"
+    },
+    "correct": "B",
+    "explanation": "<p>Le fichier .dockerignore permet de spécifier les fichiers et répertoires à exclure du contexte de build Docker. Cela permet de réduire la taille de l’image en évitant l’inclusion de fichiers inutiles comme les fichiers temporaires ou les dossiers de développement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 14",
+    "q": "Qu’est-ce qu’AWS CodeDeploy ?",
+    "choices": {
+      "A": "Un service de surveillance des applications",
+      "B": "Un service pour automatiser le déploiement d’applications sur des instances EC2 et des Lambda",
+      "C": "Un service pour gérer les permissions des utilisateurs",
+      "D": "Un service de gestion des bases de données"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS CodeDeploy est un service d’automatisation du déploiement d’applications qui permet de déployer facilement des applications sur des instances EC2, des serveurs sur site, ou des fonctions Lambda. Cela facilite la gestion des mises à jour et des déploiements continus.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 14",
+    "q": "Quel service AWS permet de gérer l’état des infrastructures en utilisant des fichiers de configuration ?",
+    "choices": {
+      "A": "AWS CodeDeploy",
+      "B": "AWS Elastic Beanstalk",
+      "C": "AWS CloudFormation",
+      "D": "AWS CodeCommit"
+    },
+    "correct": "C",
+    "explanation": "<p>AWS CloudFormation permet de gérer l’infrastructure AWS en utilisant des modèles déclaratifs en JSON ou YAML. Il définit et provisionne des ressources AWS automatiquement en fonction de la configuration spécifiée dans ces modèles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 14",
+    "q": "Quel est le rôle d’un « ReplicaSet » dans Kubernetes ?",
+    "choices": {
+      "A": "Gérer les mises à jour de l’application sans interrompre son fonctionnement",
+      "B": "Assurer que le nombre souhaité de réplicas de pods sont toujours en cours d’exécution",
+      "C": "Définir les autorisations d’accès aux utilisateurs dans le cluster",
+      "D": "Fournir une interface pour l’accès aux services dans Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Un ReplicaSet dans Kubernetes garantit que le nombre spécifié de réplicas de pods est toujours en fonctionnement, même en cas de panne ou de défaillance d’un pod, assurant ainsi la disponibilité continue de l’application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 14",
+    "q": "Quelle fonctionnalité GitLab permet d’automatiser l’intégration continue et la livraison continue (CI/CD) ?",
+    "choices": {
+      "A": "GitLab Runners",
+      "B": "GitLab Pages",
+      "C": "GitLab Issues",
+      "D": "GitLab Registry"
+    },
+    "correct": "A",
+    "explanation": "<p>Les GitLab Runners sont des agents qui exécutent les pipelines CI/CD dans GitLab. Ils sont responsables de l’exécution des tâches définies dans le fichier .gitlab-ci.yml, permettant ainsi d’automatiser le processus d’intégration et de livraison continue.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 14",
+    "q": "Qu’est-ce qu’une « resource » dans Puppet ?",
+    "choices": {
+      "A": "Un fichier qui définit des variables dans Puppet",
+      "B": "Une ressource matérielle utilisée dans un environnement d’infrastructure",
+      "C": "Un élément de configuration tel qu’un package, un service ou un fichier, géré par Puppet",
+      "D": "Un modèle de déploiement pour des applications spécifiques"
+    },
+    "correct": "C",
+    "explanation": "<p>Une « resource » dans Puppet représente un objet ou une entité à gérer, tel qu’un fichier, un service, un package, etc. Puppet utilise ces ressources pour définir et gérer l’état d’une infrastructure.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 14",
+    "q": "Que fait la commande docker stats ?",
+    "choices": {
+      "A": "Affiche les statistiques d’utilisation des ressources du système Docker (CPU, mémoire, etc.)",
+      "B": "Affiche les statistiques d’exécution des conteneurs",
+      "C": "Supprime les statistiques des conteneurs inactifs",
+      "D": "Affiche l’état d’un conteneur spécifié"
+    },
+    "correct": "A",
+    "explanation": "<p>La commande docker stats permet de visualiser en temps réel les statistiques d’utilisation des ressources par les conteneurs en cours d’exécution, telles que l’utilisation du CPU, de la mémoire, du réseau et du disque.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 14",
+    "q": "Que contient généralement un « Jenkinsfile » ?",
+    "choices": {
+      "A": "Un ensemble de tests unitaires à exécuter lors d’un pipeline",
+      "B": "Un script qui définit un pipeline d’intégration continue (CI) ou de livraison continue (CD)",
+      "C": "Une configuration pour gérer les erreurs dans un pipeline",
+      "D": "Une description de l’architecture du projet"
+    },
+    "correct": "B",
+    "explanation": "<p>Un Jenkinsfile est un fichier qui contient la définition du pipeline dans Jenkins. Il permet de décrire les différentes étapes d’un processus CI/CD de manière déclarative ou impérative, comme l’exécution de tests, la construction et le déploiement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 15",
+    "q": "Quelle est la principale différence entre un « task » et un « handler » dans Ansible ?",
+    "choices": {
+      "A": "Un « handler » est une tâche qui peut être réexécutée plusieurs fois, contrairement à un « task »",
+      "B": "Un « task » est exécuté une seule fois, tandis qu’un « handler » est exécuté uniquement lorsque le « task » a échoué",
+      "C": "Un « handler » est exécuté à la fin d’un playbook, tandis qu’un « task » est exécuté pendant l’exécution",
+      "D": "Un « task » est une tâche de configuration d’un service, tandis qu’un « handler » est une tâche de déploiement"
+    },
+    "correct": "C",
+    "explanation": "<p>Les « tasks » dans Ansible sont des actions qui sont exécutées pendant l’exécution d’un playbook. Les « handlers » sont similaires aux « tasks », mais ne sont exécutés que lorsque leur état est modifié par une tâche précédente (par exemple, redémarrer un service après qu’un fichier de configuration ait été modifié).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 15",
+    "q": "Quelle est l’utilisation principale de Amazon S3 dans un environnement DevOps ?",
+    "choices": {
+      "A": "Gérer les serveurs web",
+      "B": "Stocker des artefacts de build et des logs de déploiement",
+      "C": "Fournir des services de calcul sans serveur",
+      "D": "Créer des machines virtuelles pour les tests"
+    },
+    "correct": "B",
+    "explanation": "<p>Amazon S3 (Simple Storage Service) est principalement utilisé pour stocker et récupérer des données. Dans un environnement DevOps, il est couramment utilisé pour stocker des artefacts de build (par exemple, des fichiers JAR, ZIP) ou des logs de déploiement pour un suivi et une analyse détaillée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 15",
+    "q": "Lorsque vous réalisez un « merge » dans Git, que se passe-t-il si les modifications dans les deux branches sont incompatibles ?",
+    "choices": {
+      "A": "Git effectue automatiquement le « merge » sans problème",
+      "B": "Git crée un conflit de fusion et demande une intervention manuelle pour résoudre le conflit",
+      "C": "Git abandonne les modifications de la branche secondaire",
+      "D": "Git ignore les modifications de la branche principale et intègre celles de la branche secondaire"
+    },
+    "correct": "B",
+    "explanation": "<p>Lorsqu’il y a des modifications incompatibles entre deux branches, Git crée un conflit de fusion. Il est alors nécessaire de résoudre ce conflit manuellement avant de compléter le processus de fusion.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 15",
+    "q": "Qu’est-ce qu’un « manifest » dans Puppet ?",
+    "choices": {
+      "A": "Un ensemble de règles définissant des étapes de déploiement d’une application",
+      "B": "Un fichier où sont décrites les ressources et les configurations des systèmes gérés",
+      "C": "Un modèle pour générer automatiquement des playbooks",
+      "D": "Un plugin permettant de tester les configurations des serveurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « manifest » dans Puppet est un fichier contenant des instructions déclaratives pour gérer l’état des ressources sur un serveur. Ce fichier décrit les configurations souhaitées pour les services, fichiers, packages, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 15",
+    "q": "Quel est le rôle du fichier « state » dans Terraform ?",
+    "choices": {
+      "A": "Il contient des informations sur les erreurs d’exécution de Terraform",
+      "B": "Il garde une trace des ressources déjà créées pour éviter des créations en double",
+      "C": "Il est utilisé pour la configuration des providers dans Terraform",
+      "D": "Il contient la configuration des variables d’environnement pour Terraform"
+    },
+    "correct": "B",
+    "explanation": "<p>Le fichier « state » de Terraform contient l’état actuel des ressources gérées par Terraform. Cela permet à Terraform de savoir quelles ressources existent et d’éviter la création de ressources en double ou la perte d’état.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 15",
+    "q": "Quel type de service Kubernetes permet d’exposer une application à l’extérieur du cluster ?",
+    "choices": {
+      "A": "ClusterIP",
+      "B": "NodePort",
+      "C": "LoadBalancer",
+      "D": "ExternalName"
+    },
+    "correct": "C",
+    "explanation": "<p>Le service de type « LoadBalancer » permet d’exposer une application à l’extérieur du cluster Kubernetes en créant un point d’accès public avec un équilibreur de charge qui redirige le trafic vers les pods appropriés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 15",
+    "q": "Que fait la commande docker volume ls ?",
+    "choices": {
+      "A": "Affiche la liste des volumes utilisés par les conteneurs Docker",
+      "B": "Liste les conteneurs qui utilisent des volumes Docker",
+      "C": "Crée un volume Docker",
+      "D": "Supprime un volume Docker"
+    },
+    "correct": "A",
+    "explanation": "<p>La commande docker volume ls permet de lister tous les volumes Docker existants. Un volume Docker est un mécanisme de stockage persistant pour les conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 15",
+    "q": "Qu’est-ce qu’une architecture microservices ?",
+    "choices": {
+      "A": "Un modèle monolithique où toutes les fonctionnalités sont intégrées dans une seule application",
+      "B": "Une architecture où chaque fonctionnalité de l’application est déployée et gérée indépendamment sous forme de services distincts",
+      "C": "Une architecture qui nécessite l’utilisation d’un serveur dédié pour chaque service",
+      "D": "Une architecture où tous les services sont partagés sur une même machine virtuelle"
+    },
+    "correct": "B",
+    "explanation": "<p>L’architecture microservices consiste à décomposer une application en petites unités fonctionnelles (microservices), qui peuvent être développées, déployées, et mises à l’échelle indépendamment les unes des autres.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 15",
+    "q": "Que signifie le terme DevSecOps ?",
+    "choices": {
+      "A": "Une approche DevOps qui exclut les tests de sécurité",
+      "B": "Une approche qui intègre la sécurité tout au long du processus DevOps, depuis le développement jusqu’à l’exploitation",
+      "C": "Une méthode où la sécurité est gérée uniquement dans la phase de production",
+      "D": "Un processus exclusivement axé sur les tests de performance des applications"
+    },
+    "correct": "B",
+    "explanation": "<p>DevSecOps intègre la sécurité directement dans le pipeline DevOps. Au lieu de traiter la sécurité comme une étape distincte à la fin du cycle de développement, la sécurité est prise en compte dès le début du processus de développement et de déploiement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 16",
+    "q": "Dans GitLab CI/CD, quel fichier contient la configuration pour les pipelines ?",
+    "choices": {
+      "A": ".gitlab-ci.yml",
+      "B": ".ci.yml",
+      "C": "config.yml",
+      "D": "pipeline.yml"
+    },
+    "correct": "A",
+    "explanation": "<p>Le fichier .gitlab-ci.yml est utilisé pour configurer les pipelines CI/CD dans GitLab. Il contient les instructions sur les étapes à suivre pour construire, tester et déployer l’application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 16",
+    "q": "Quelle est la fonctionnalité principale d’AWS Lambda dans un environnement DevOps ?",
+    "choices": {
+      "A": "Fournir un service de calcul pour les bases de données relationnelles",
+      "B": "Exécuter du code sans gérer de serveur, permettant l’exécution d’applications serverless",
+      "C": "Fournir un service d’orchestration de conteneurs",
+      "D": "Fournir une solution de gestion de l’état des applications"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS Lambda est un service serverless qui permet d’exécuter du code sans avoir à gérer des serveurs. Cela facilite l’automatisation et le déploiement de petites fonctions ou d’applications dans un environnement DevOps sans infrastructure dédiée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 16",
+    "q": "Qu’est-ce qu’une instance EC2 dans AWS ?",
+    "choices": {
+      "A": "Un service de stockage de données dans le cloud",
+      "B": "Une machine virtuelle (serveur virtuel) qui permet d’exécuter des applications et des services",
+      "C": "Un service de base de données relationnelle",
+      "D": "Un service d’orchestration de conteneurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Une instance EC2 (Elastic Compute Cloud) dans AWS est une machine virtuelle que vous pouvez utiliser pour exécuter des applications et des services dans le cloud. EC2 vous permet de gérer des serveurs virtuels selon vos besoins.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 16",
+    "q": "Qu’est-ce qu’un load balancer (équilibreur de charge) ?",
+    "choices": {
+      "A": "Un service pour héberger des applications web",
+      "B": "Un composant qui répartit le trafic réseau entre plusieurs serveurs ou instances pour assurer la haute disponibilité",
+      "C": "Un service qui gère les bases de données en temps réel",
+      "D": "Un service de stockage des objets dans le cloud"
+    },
+    "correct": "B",
+    "explanation": "<p>Un load balancer (ou équilibreur de charge) est un composant qui distribue le trafic entrant entre plusieurs serveurs ou instances pour éviter que l’un d’eux soit surchargé. Cela permet d’assurer la disponibilité et l’évolutivité des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 16",
+    "q": "Quelle est la différence principale entre IaaS, PaaS et SaaS ?",
+    "choices": {
+      "A": "IaaS fournit uniquement des solutions logicielles, tandis que PaaS et SaaS offrent des services de gestion d’infrastructure",
+      "B": "IaaS fournit des ressources d’infrastructure comme des machines virtuelles, PaaS fournit des plateformes pour développer des applications, et SaaS fournit des logiciels prêts à l’emploi",
+      "C": "IaaS et PaaS sont des services destinés aux développeurs uniquement, tandis que SaaS est destiné aux entreprises",
+      "D": "Il n’y a pas de différence significative entre IaaS, PaaS et SaaS"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 16",
+    "q": "Quel est l’avantage principal des « multi-stage builds » dans Docker ?",
+    "choices": {
+      "A": "Réduire la taille des images Docker en séparant les étapes de construction et d’exécution",
+      "B": "Permettre de gérer des applications complexes avec plusieurs conteneurs",
+      "C": "Faciliter la mise à l’échelle des conteneurs dans Docker",
+      "D": "Permettre d’exécuter des conteneurs dans différents environnements"
+    },
+    "correct": "A",
+    "explanation": "<p>Les « multi-stage builds » dans Docker permettent de séparer les étapes de construction et d’exécution dans différents conteneurs, ce qui réduit la taille des images finales. Cela permet de ne pas inclure des dépendances de développement dans l’image finale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 16",
+    "q": "Quel est le rôle d’un « Persistent Volume » (PV) dans Kubernetes ?",
+    "choices": {
+      "A": "Il permet de conserver des données lorsque des pods sont supprimés ou recréés",
+      "B": "Il gère la mise à l’échelle automatique des applications",
+      "C": "Il attribue une adresse IP unique à chaque pod dans le cluster",
+      "D": "Il définit la capacité de calcul disponible pour chaque pod"
+    },
+    "correct": "A",
+    "explanation": "<p>Un Persistent Volume (PV) dans Kubernetes est une ressource qui fournit un stockage persistant, permettant de conserver des données même si les pods associés sont supprimés ou recréés. Cela est essentiel pour les applications nécessitant un stockage permanent, comme les bases de données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 17",
+    "q": "Qu’est-ce qu’un « namespace » dans Kubernetes ?",
+    "choices": {
+      "A": "Une unité de gestion des utilisateurs et de leurs autorisations",
+      "B": "Une méthode pour organiser les ressources du cluster et isoler les environnements",
+      "C": "Un mécanisme pour gérer les volumes persistants dans Kubernetes",
+      "D": "Un type de service qui permet de gérer le trafic réseau dans Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « namespace » dans Kubernetes permet de partitionner les ressources du cluster pour isoler des environnements ou des applications différentes, comme pour les environnements de développement, de test et de production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 17",
+    "q": "Qu’est-ce qu’un conteneur Docker « légér » ?",
+    "choices": {
+      "A": "Un conteneur qui ne contient aucune application",
+      "B": "Un conteneur qui ne consomme pas de mémoire",
+      "C": "Un conteneur qui ne contient que les fichiers nécessaires à l’exécution de l’application",
+      "D": "Un conteneur qui peut être utilisé seulement pour des tests"
+    },
+    "correct": "C",
+    "explanation": "<p>Les conteneurs Docker sont conçus pour être légers. Ils contiennent uniquement les fichiers nécessaires pour exécuter une application, ce qui les rend plus rapides et plus économes en ressources par rapport aux machines virtuelles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 17",
+    "q": "Quel est le rôle d’AWS CloudTrail dans un environnement DevOps ?",
+    "choices": {
+      "A": "Surveiller l’utilisation des instances EC2",
+      "B": "Collecter et enregistrer les journaux d’activité des services AWS pour une traçabilité et une sécurité accrues",
+      "C": "Gérer la mise à l’échelle des applications sur AWS",
+      "D": "Fournir des métriques de performance pour les applications"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS CloudTrail enregistre et collecte des journaux d’activité détaillés de toutes les actions exécutées sur les ressources AWS. Cela permet de suivre les actions des utilisateurs et des services, garantissant ainsi la sécurité, la conformité et une meilleure gestion de l’infrastructure.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 17",
+    "q": "Quelle est la différence principale entre CloudFormation et Terraform dans un environnement DevOps ?",
+    "choices": {
+      "A": "CloudFormation est une technologie exclusive à AWS, tandis que Terraform est un outil multi-cloud qui fonctionne avec plusieurs fournisseurs de cloud",
+      "B": "CloudFormation est un service de base de données, tandis que Terraform est un service de calcul",
+      "C": "Terraform est un outil de gestion des utilisateurs, tandis que CloudFormation est un outil d’automatisation des déploiements",
+      "D": "Il n’y a aucune différence entre CloudFormation et Terraform"
+    },
+    "correct": "A",
+    "explanation": "<p>CloudFormation est un outil d’AWS qui permet de définir et de provisionner l’infrastructure à l’aide de modèles JSON ou YAML. Terraform, en revanche, est un outil open-source d’Infrastructure as Code (IaC) qui peut être utilisé avec plusieurs fournisseurs de cloud, y compris AWS, Azure, et Google Cloud.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 17",
+    "q": "Que fait la commande Git git merge ?",
+    "choices": {
+      "A": "Elle envoie les modifications locales vers un dépôt distant",
+      "B": "Elle fusionne les modifications d’une branche dans une autre",
+      "C": "Elle crée une nouvelle branche à partir de la branche actuelle",
+      "D": "Elle annule les derniers commits locaux"
+    },
+    "correct": "B",
+    "explanation": "<p>La commande git merge permet de combiner les changements provenant de différentes branches. Elle est couramment utilisée pour intégrer les modifications d’une branche de fonctionnalité dans la branche principale (par exemple, main ou master).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 17",
+    "q": "Dans Ansible, comment déclare-t-on une variable dans un playbook ?",
+    "choices": {
+      "A": "En utilisant la directive",
+      "B": "En utilisant la directive",
+      "C": "En utilisant la directive",
+      "D": "En utilisant la directive"
+    },
+    "correct": "A",
+    "explanation": "<p>Les variables dans Ansible sont déclarées sous la directive vars dans un playbook ou un rôle, permettant de paramétrer les tâches et de rendre les playbooks plus dynamiques et réutilisables.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 17",
+    "q": "Quelle est la meilleure pratique concernant la gestion des branches dans un flux de travail Git ?",
+    "choices": {
+      "A": "Travailler toujours sur la branche master",
+      "B": "Créer une branche pour chaque fonctionnalité et utiliser des pull requests pour intégrer dans main",
+      "C": "Ne jamais utiliser de branches et toujours travailler directement sur main",
+      "D": "Ne créer des branches que pour les corrections de bogues et utiliser master pour tout le reste"
+    },
+    "correct": "B",
+    "explanation": "<p>La pratique courante consiste à créer une branche pour chaque nouvelle fonctionnalité ou tâche, puis d’ouvrir une pull request (PR) pour intégrer ces changements dans la branche principale (main ou master) après révision et tests.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 18",
+    "q": "Quel est l’avantage principal de « Pipeline as Code » dans Jenkins ?",
+    "choices": {
+      "A": "Les pipelines sont définis dans un fichier de configuration et versionnés dans le contrôle de version, rendant ainsi l’intégration et le déploiement continus plus reproductibles",
+      "B": "Il permet d’automatiser l’intégration des tests uniquement",
+      "C": "Il permet de déployer automatiquement sur plusieurs serveurs simultanément",
+      "D": "Il réduit les coûts d’hébergement du serveur Jenkins"
+    },
+    "correct": "A",
+    "explanation": "<p>« Pipeline as Code » permet de définir les pipelines Jenkins dans un fichier de code source, souvent sous forme de Jenkinsfile. Cela permet de versionner et de suivre les changements des pipelines, garantissant ainsi leur reproductibilité et leur traçabilité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 18",
+    "q": "Que signifie l’option --network dans la commande docker run ?",
+    "choices": {
+      "A": "Exécuter le conteneur dans un mode réseau spécifique",
+      "B": "Créer un réseau Docker avec le conteneur",
+      "C": "Connecter le conteneur à un réseau Docker existant",
+      "D": "Limiter l’utilisation du réseau par le conteneur"
+    },
+    "correct": "C",
+    "explanation": "<p>L’option --network permet de spécifier un réseau Docker auquel le conteneur doit être connecté. Cela permet aux conteneurs de communiquer entre eux via ce réseau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 18",
+    "q": "Quel service AWS permet de gérer des bases de données NoSQL à grande échelle ?",
+    "choices": {
+      "A": "Amazon RDS",
+      "B": "Amazon DynamoDB",
+      "C": "Amazon Redshift",
+      "D": "Amazon S3"
+    },
+    "correct": "B",
+    "explanation": "<p>Amazon DynamoDB est un service de base de données NoSQL entièrement géré, conçu pour des applications nécessitant une latence faible et une évolutivité à grande échelle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 18",
+    "q": "Quel est l’objectif principal d’un « module » dans Terraform ?",
+    "choices": {
+      "A": "Permettre de déployer automatiquement des images Docker sur un serveur",
+      "B": "Organiser et réutiliser du code Terraform dans plusieurs configurations",
+      "C": "Gérer l’authentification dans des clouds publics",
+      "D": "Définir la gestion des utilisateurs dans des environnements distants"
+    },
+    "correct": "B",
+    "explanation": "<p>Les « modules » dans Terraform permettent d’encapsuler des configurations répétitives afin de les réutiliser à plusieurs endroits. Cela permet de mieux structurer le code et de simplifier la gestion des infrastructures complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 18",
+    "q": "Qu’est-ce qu’une image Docker « multi-étages » (multi-stage) ?",
+    "choices": {
+      "A": "Une image qui contient plusieurs versions d’une même application",
+      "B": "Une image qui contient plusieurs systèmes d’exploitation",
+      "C": "Une image qui est construite à partir de plusieurs étapes dans le Dockerfile",
+      "D": "Une image qui contient plusieurs conteneurs Docker"
+    },
+    "correct": "C",
+    "explanation": "<p>Une image Docker « multi-étages » permet de diviser le processus de construction de l’image en plusieurs étapes distinctes dans le Dockerfile. Cela permet d’optimiser la taille de l’image en n’incluant que les fichiers nécessaires dans l’image finale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 18",
+    "q": "Quelle est la fonction principale d’un « ConfigMap » dans Kubernetes ?",
+    "choices": {
+      "A": "Stocker des secrets sensibles utilisés par les applications",
+      "B": "Gérer le routage du trafic réseau entre les services",
+      "C": "Stocker des configurations non sensibles qui peuvent être utilisées par les pods",
+      "D": "Gérer l’auto-scaling des services dans un cluster"
+    },
+    "correct": "C",
+    "explanation": "<p>Un « ConfigMap » dans Kubernetes est utilisé pour stocker des données de configuration non sensibles (par exemple, des variables d’environnement ou des fichiers de configuration), que les pods peuvent utiliser pour configurer l’application au démarrage.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 18",
+    "q": "Quelle est la principale caractéristique d’un projet « Freestyle » dans Jenkins ?",
+    "choices": {
+      "A": "Il ne nécessite aucune configuration manuelle",
+      "B": "Il permet de créer des pipelines complexes avec des étapes conditionnelles",
+      "C": "Il est principalement utilisé pour des constructions simples sans gestion de pipeline complexe",
+      "D": "Il est utilisé uniquement pour les applications Java"
+    },
+    "correct": "C",
+    "explanation": "<p>Un projet « Freestyle » dans Jenkins est une configuration basique pour automatiser des tâches simples comme la construction et les tests. Ce n’est pas un pipeline complet, mais plutôt une tâche simple où vous définissez une série d’actions à exécuter.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 18",
+    "q": "Qu’est-ce qu’un Docker « swarm » ?",
+    "choices": {
+      "A": "Une méthode de création d’images Docker",
+      "B": "Un mode de gestion des conteneurs Docker à grande échelle",
+      "C": "Une commande permettant de lister les conteneurs",
+      "D": "Un service permettant d’exécuter des conteneurs en parallèle"
+    },
+    "correct": "B",
+    "explanation": "<p>Docker Swarm est un outil d’orchestration intégré à Docker, qui permet de gérer un cluster de machines Docker pour exécuter des conteneurs de manière distribuée et automatisée. Il permet la gestion de services sur plusieurs hôtes Docker.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 19",
+    "q": "Qu’est-ce que l’Auto DevOps dans GitLab ?",
+    "choices": {
+      "A": "Un service qui gère l’intégration continue de manière automatique",
+      "B": "Un ensemble de configurations et de pipelines prédéfinis pour les applications qui automatisent la construction, les tests, et le déploiement",
+      "C": "Un outil de gestion des utilisateurs et des permissions dans GitLab",
+      "D": "Une fonctionnalité qui génère automatiquement des images Docker à partir du code source"
+    },
+    "correct": "B",
+    "explanation": "<p>Auto DevOps dans GitLab est un ensemble de pratiques et de configurations prédéfinies qui permettent d’automatiser l’ensemble du processus CI/CD, du test à la production, avec des outils comme Kubernetes, Docker, et Helm.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 19",
+    "q": "Quelle est la fonction d’un « role » dans Ansible ?",
+    "choices": {
+      "A": "Un ensemble de tâches qui peuvent être réutilisées à travers plusieurs playbooks",
+      "B": "Un fichier contenant les variables d’environnement pour un playbook",
+      "C": "Un processus d’exécution des playbooks de manière séquentielle",
+      "D": "Une ressource permettant de gérer des services externes à Ansible"
+    },
+    "correct": "A",
+    "explanation": "<p>Un « role » dans Ansible est une structure qui permet de regrouper et organiser des tâches, des variables, des fichiers et des handlers. Cela facilite la réutilisation de configurations dans différents playbooks.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 19",
+    "q": "Que fait la commande docker system prune ?",
+    "choices": {
+      "A": "Supprime tous les conteneurs, images, volumes et réseaux inutilisés",
+      "B": "Nettoie les logs des conteneurs",
+      "C": "Optimise la configuration des images",
+      "D": "Supprime un conteneur spécifique"
+    },
+    "correct": "A",
+    "explanation": "<p>La commande docker system prune supprime toutes les ressources Docker inutilisées, y compris les conteneurs arrêtés, les images non utilisées, les volumes et les réseaux non connectés. Cela permet de libérer de l’espace disque.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 19",
+    "q": "Que fait la commande git rebase ?",
+    "choices": {
+      "A": "Elle annule les modifications locales",
+      "B": "Elle fusionne deux branches",
+      "C": "Elle applique les commits d’une branche sur une autre, en réécrivant l’historique",
+      "D": "Elle crée une nouvelle branche à partir d’une autre branche"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande git rebase permet de déplacer ou de « réappliquer » les commits d’une branche sur une autre. Contrairement à git merge, qui crée un commit de fusion, git rebase réécrit l’historique, ce qui peut être utile pour garder un historique plus propre et linéaire.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 19",
+    "q": "Qu’est-ce qu’une « classe » dans Puppet ?",
+    "choices": {
+      "A": "Un type de ressource pour installer des logiciels",
+      "B": "Un bloc de code qui définit une configuration spécifique et réutilisable",
+      "C": "Une structure pour organiser les rôles dans Puppet",
+      "D": "Un moyen de gérer les permissions d’utilisateur"
+    },
+    "correct": "B",
+    "explanation": "<p>Une « classe » dans Puppet est une unité de configuration qui contient des définitions de ressources. Elle permet de regrouper des configurations réutilisables et d’appliquer ces configurations à des nœuds différents.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 19",
+    "q": "À quoi sert un objet « Ingress » dans Kubernetes ?",
+    "choices": {
+      "A": "Gérer la mise à l’échelle automatique des pods",
+      "B": "Gérer l’accès externe aux services HTTP/HTTPS dans un cluster Kubernetes",
+      "C": "Définir les configurations de stockage pour les volumes persistants",
+      "D": "Contrôler l’accès aux bases de données dans Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Un objet « Ingress » dans Kubernetes permet de gérer l’accès externe aux services dans un cluster Kubernetes, souvent en dirigeant le trafic HTTP/HTTPS vers les services appropriés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 19",
+    "q": "Quel est l’avantage principal d’utiliser des volumes Docker ?",
+    "choices": {
+      "A": "Ils permettent d’accélérer les processus de construction des images Docker",
+      "B": "Ils permettent de partager des fichiers entre différents conteneurs",
+      "C": "Ils stockent des données dans des conteneurs, mais ne sont pas persistants",
+      "D": "Ils permettent de réduire la taille des images Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Les volumes Docker sont utilisés pour stocker des données de manière persistante et pour partager des fichiers entre plusieurs conteneurs. Ils permettent également de séparer les données des conteneurs, assurant ainsi la persistance des données même si les conteneurs sont supprimés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 19",
+    "q": "Quelle est la principale fonctionnalité de Kubernetes ?",
+    "choices": {
+      "A": "Créer des images Docker",
+      "B": "Orchestrer des conteneurs en fournissant un cadre pour leur gestion, leur mise à l’échelle et leur déploiement",
+      "C": "Gérer les utilisateurs dans un environnement cloud",
+      "D": "Gérer les réseaux de serveurs physiques"
+    },
+    "correct": "B",
+    "explanation": "<p>Kubernetes est une plateforme d’orchestration de conteneurs qui permet de gérer, déployer et mettre à l’échelle des applications conteneurisées, offrant des outils pour la gestion des clusters de serveurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 19",
+    "q": "Que fait la commande docker attach ?",
+    "choices": {
+      "A": "Elle attache un conteneur à un autre conteneur",
+      "B": "Elle permet de se connecter à un conteneur en cours d’exécution",
+      "C": "Elle exécute un conteneur dans un mode interactif",
+      "D": "Elle supprime un conteneur en cours d’exécution"
+    },
+    "correct": "B",
+    "explanation": "<p>La commande docker attach permet de se connecter au flux de sortie d’un conteneur en cours d’exécution. Cela vous permet de voir ses logs ou d’interagir avec lui si l’application l’accepte.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 20",
+    "q": "Que signifie le terme « conteneur éphémère » dans Docker ?",
+    "choices": {
+      "A": "Un conteneur qui ne peut pas être démarré une seconde fois",
+      "B": "Un conteneur qui est exécuté sans utiliser de ressources réseau",
+      "C": "Un conteneur qui est supprimé une fois son exécution terminée",
+      "D": "Un conteneur qui ne peut contenir qu’une seule application"
+    },
+    "correct": "C",
+    "explanation": "<p>Un conteneur éphémère est un conteneur qui est créé pour exécuter une tâche spécifique et qui est ensuite supprimé automatiquement à la fin de son exécution. Cela peut être géré avec l’option --rm dans la commande docker run.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 20",
+    "q": "Dans Jenkins, quel mécanisme permet d’exécuter plusieurs étapes de pipeline en parallèle ?",
+    "choices": {
+      "A": "matrix",
+      "B": "parallel",
+      "C": "stage",
+      "D": "steps"
+    },
+    "correct": "B",
+    "explanation": "<p>Le bloc parallel dans Jenkins permet d’exécuter plusieurs étapes d’un pipeline en parallèle, ce qui peut accélérer les processus de construction, de tests et de déploiement en exploitant la puissance des ressources multiples.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 20",
+    "q": "Quel est le rôle d’un « ReplicaSet » dans Kubernetes ?",
+    "choices": {
+      "A": "Assurer que le nombre spécifié de répliques d’un pod est toujours en fonctionnement",
+      "B": "Gérer le routage du trafic entrant vers les services",
+      "C": "Déployer et gérer des volumes persistants",
+      "D": "Assurer la mise à l’échelle automatique des applications dans le cluster"
+    },
+    "correct": "A",
+    "explanation": "<p>Un ReplicaSet dans Kubernetes garantit qu’un nombre fixe de répliques d’un pod sont en cours d’exécution à tout moment. Si un pod échoue ou est supprimé, le ReplicaSet crée de nouveaux pods pour maintenir le nombre désiré.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 20",
+    "q": "Qu’est-ce qu’un « provider » dans Terraform ?",
+    "choices": {
+      "A": "Un fichier de configuration permettant d’automatiser l’exécution des tâches Terraform",
+      "B": "Un module qui définit un environnement d’exécution pour Terraform",
+      "C": "Une ressource qui permet à Terraform de se connecter à des API externes, comme AWS, Google Cloud, ou Azure",
+      "D": "Un fichier qui définit les variables d’entrée pour une configuration Terraform"
+    },
+    "correct": "C",
+    "explanation": "<p>Un « provider » dans Terraform est un plugin qui permet à Terraform d’interagir avec une API externe, comme celles d’Amazon Web Services, Google Cloud, ou Azure. Chaque provider contient des ressources et des données spécifiques à son API.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 20",
+    "q": "Dans GitLab CI/CD, à quoi sert la directive stages ?",
+    "choices": {
+      "A": "Définir l’ordre dans lequel les tests doivent être effectués",
+      "B": "Organiser les différentes étapes de votre pipeline, comme build, test, et deploy",
+      "C": "Configurer les ressources système pour chaque job du pipeline",
+      "D": "Définir les permissions d’accès aux jobs du pipeline"
+    },
+    "correct": "B",
+    "explanation": "<p>La directive stages dans GitLab CI/CD permet de définir l’ordre dans lequel les différentes étapes du pipeline doivent être exécutées. Par exemple, vous pouvez avoir des stages comme build, test, et deploy, et chaque stage peut contenir des jobs spécifiques à exécuter.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 20",
+    "q": "Quelle est une bonne pratique en matière de sécurité pour les images Docker ?",
+    "choices": {
+      "A": "Utiliser des images « latest » pour garantir que vous avez toujours la dernière version",
+      "B": "Éviter de créer des images avec des utilisateurs root à l’intérieur",
+      "C": "Utiliser des images non officielles provenant de sources externes non vérifiées",
+      "D": "Ne jamais mettre à jour les images Docker pour ne pas briser la compatibilité"
+    },
+    "correct": "B",
+    "explanation": "<p>Il est recommandé d’éviter d’exécuter des conteneurs Docker avec l’utilisateur root, car cela représente un risque de sécurité. Il est préférable de créer des utilisateurs non privilégiés à l’intérieur du conteneur pour limiter les permissions en cas de vulnérabilités.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 20",
+    "q": "Quel est le but d’utiliser .gitignore dans un projet Git ?",
+    "choices": {
+      "A": "Ajouter des fichiers importants à Git",
+      "B": "Ignorer certains fichiers ou répertoires pour qu’ils ne soient pas suivis par Git",
+      "C": "Créer une nouvelle branche Git",
+      "D": "Sauvegarder des fichiers dans un dépôt distant"
+    },
+    "correct": "B",
+    "explanation": "<p>Le fichier .gitignore permet de spécifier quels fichiers ou répertoires ne doivent pas être suivis par Git. Cela est utile pour ignorer des fichiers générés automatiquement, comme des fichiers de configuration locaux ou des artefacts de compilation, qui ne doivent pas être inclus dans le contrôle de version.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 21",
+    "q": "Quel est l’avantage principal de Terraform par rapport à d’autres outils IaC ?",
+    "choices": {
+      "A": "Terraform ne nécessite aucune configuration préalable avant le déploiement",
+      "B": "Terraform permet de gérer l’infrastructure sur plusieurs fournisseurs de cloud",
+      "C": "Terraform est uniquement compatible avec AWS",
+      "D": "Terraform est conçu uniquement pour la gestion des applications web"
+    },
+    "correct": "B",
+    "explanation": "<p>Terraform est un outil Infrastructure as Code (IaC) qui permet de gérer l’infrastructure sur plusieurs fournisseurs de cloud, tels qu’AWS, Azure, Google Cloud, et d’autres, ce qui le rend plus flexible par rapport à des outils spécifiques à un fournisseur, comme AWS CloudFormation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 21",
+    "q": "Quelle est la principale différence entre un pipeline déclaratif et un pipeline scripté dans Jenkins ?",
+    "choices": {
+      "A": "Un pipeline déclaratif nécessite un fichier de configuration externe pour être exécuté",
+      "B": "Un pipeline scripté est plus flexible et permet d’utiliser Groovy pour écrire des étapes complexes, tandis qu’un pipeline déclaratif utilise une syntaxe simplifiée et des blocs prédéfinis",
+      "C": "Un pipeline déclaratif ne peut pas être utilisé avec des outils comme Docker ou Kubernetes",
+      "D": "Un pipeline scripté est principalement utilisé pour des tâches de construction, tandis qu’un pipeline déclaratif est utilisé uniquement pour le déploiement"
+    },
+    "correct": "B",
+    "explanation": "<p>Le pipeline déclaratif est plus simple et utilise une syntaxe prédéfinie pour définir les étapes d’un pipeline. Le pipeline scripté, en revanche, permet une plus grande flexibilité, car il utilise le langage Groovy pour écrire des étapes complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 21",
+    "q": "Quelle est la fonction de la commande git clone ?",
+    "choices": {
+      "A": "Créer un nouveau commit dans le dépôt local",
+      "B": "Créer une nouvelle branche dans un dépôt distant",
+      "C": "Créer une copie locale d’un dépôt distant",
+      "D": "Supprimer un dépôt local"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande git clone permet de créer une copie locale complète d’un dépôt distant. Cela inclut tous les fichiers, branches, et l’historique des commits. Elle est souvent utilisée pour initialiser un projet sur une nouvelle machine.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 21",
+    "q": "Que fait la commande docker-compose ?",
+    "choices": {
+      "A": "Elle permet de créer et gérer des réseaux Docker",
+      "B": "Elle est utilisée pour gérer les conteneurs Docker sur plusieurs hôtes",
+      "C": "Elle permet de gérer des applications multi-conteneurs avec un fichier de configuration",
+      "D": "Elle compile des images Docker à partir d’un Dockerfile"
+    },
+    "correct": "C",
+    "explanation": "<p>docker-compose est un outil permettant de définir et d’exécuter des applications multi-conteneurs avec Docker. Il utilise un fichier docker-compose.yml pour décrire les services nécessaires à l’application, leurs configurations et leurs relations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 21",
+    "q": "Qu’est-ce qu’un Serverless Computing ?",
+    "choices": {
+      "A": "Un modèle où les serveurs sont entièrement éliminés et ne sont plus nécessaires pour exécuter des applications",
+      "B": "Un modèle où les développeurs n’ont pas besoin de gérer l’infrastructure, car elle est gérée automatiquement par le fournisseur de cloud",
+      "C": "Un modèle où tous les services sont exécutés sur des machines physiques dédiées",
+      "D": "Un modèle qui nécessite la gestion de serveurs pour chaque application"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Serverless Computing permet aux développeurs d’exécuter du code sans se soucier de la gestion de l’infrastructure sous-jacente. Le fournisseur de cloud gère automatiquement les ressources, et vous ne payez que pour l’exécution réelle de votre code.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 21",
+    "q": "Quelle est l’utilité d’Amazon S3 dans un environnement DevOps ?",
+    "choices": {
+      "A": "Gérer des bases de données relationnelles",
+      "B": "Stocker des fichiers et des objets de manière scalable et durable pour les applications",
+      "C": "Fournir un environnement d’exécution pour des applications serverless",
+      "D": "Orchestrer des conteneurs dans un cluster Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Amazon S3 (Simple Storage Service) est un service de stockage d’objets qui permet de stocker et récupérer des fichiers (objets) de manière scalable et durable. Il est couramment utilisé pour stocker des fichiers de configuration, des journaux de déploiement, des sauvegardes et autres objets dans un environnement DevOps.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 21",
+    "q": "À quoi sert le « Horizontal Pod Autoscaler » (HPA) dans Kubernetes ?",
+    "choices": {
+      "A": "Il ajuste automatiquement la configuration des ressources de chaque pod",
+      "B": "Il ajuste automatiquement le nombre de répliques de pods en fonction de la charge CPU ou de la mémoire",
+      "C": "Il gère la mise à l’échelle horizontale des services externes à Kubernetes",
+      "D": "Il assure la réplication des pods sur plusieurs clusters Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Le Horizontal Pod Autoscaler (HPA) dans Kubernetes ajuste le nombre de répliques de pods en fonction de la demande en ressources, comme la charge CPU ou l’utilisation de la mémoire. Cela permet de garantir que l’application dispose des ressources nécessaires en fonction du trafic.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 21",
+    "q": "Quel est l’intérêt de la mise en cache dans un pipeline GitLab CI/CD ?",
+    "choices": {
+      "A": "Augmenter la vitesse d’exécution des tests uniquement",
+      "B": "Réduire la consommation de ressources en stockant des artefacts ou des dépendances entre les exécutions des pipelines",
+      "C": "Garantir que toutes les tâches du pipeline sont exécutées sur des machines dédiées",
+      "D": "Permettre une meilleure gestion des versions des conteneurs Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Le caching dans GitLab CI/CD permet de stocker des artefacts, des dépendances ou des résultats de tâches précédentes pour les réutiliser lors des futures exécutions de pipeline. Cela améliore la vitesse du pipeline en évitant de recalculer ou de télécharger les mêmes ressources à chaque exécution.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 21",
+    "q": "Que fait la commande docker ps -a ?",
+    "choices": {
+      "A": "Affiche les images Docker",
+      "B": "Affiche les conteneurs en cours d’exécution uniquement",
+      "C": "Affiche tous les conteneurs (en cours d’exécution et arrêtés)",
+      "D": "Supprime tous les conteneurs arrêtés"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande docker ps -a permet de lister tous les conteneurs, qu’ils soient en cours d’exécution ou arrêtés. Cela est utile pour gérer les conteneurs non actifs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 22",
+    "q": "Pourquoi le fichier « state » est-il important dans Terraform ?",
+    "choices": {
+      "A": "Il contient toutes les variables d’entrée utilisées dans un projet Terraform",
+      "B": "Il stocke l’état actuel de l’infrastructure, permettant à Terraform de savoir quelles ressources sont créées ou modifiées",
+      "C": "Il stocke les secrets nécessaires pour l’authentification dans les services cloud",
+      "D": "Il permet de récupérer les configurations de l’infrastructure depuis un fichier de sauvegarde"
+    },
+    "correct": "B",
+    "explanation": "<p>Le fichier de « state » dans Terraform contient l’état actuel de l’infrastructure. Il est essentiel pour que Terraform puisse savoir quelles ressources existent déjà et quelles modifications doivent être apportées lors des prochaines exécutions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 22",
+    "q": "Que fait la commande docker volume inspect <volume_name> ?",
+    "choices": {
+      "A": "Crée un volume Docker",
+      "B": "Supprime un volume Docker",
+      "C": "Affiche les informations détaillées sur un volume Docker",
+      "D": "Affiche une liste de tous les volumes Docker"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande docker volume inspect <volume_name> fournit des informations détaillées sur un volume Docker spécifique, telles que son point de montage, son type, et les conteneurs qui l’utilisent.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 22",
+    "q": "Quelle fonctionnalité d’AWS permet de surveiller les métriques de vos ressources cloud ?",
+    "choices": {
+      "A": "AWS CloudWatch",
+      "B": "AWS Lambda",
+      "C": "AWS CloudFormation",
+      "D": "AWS EC2"
+    },
+    "correct": "A",
+    "explanation": "<p>AWS CloudWatch est un service qui permet de surveiller et de collecter des métriques sur les ressources AWS en temps réel, telles que l’utilisation de CPU, le stockage, les transactions réseau, et d’autres paramètres de performance des services cloud.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 22",
+    "q": "Quel est l’impact de la commande git reset --soft HEAD~1 ?",
+    "choices": {
+      "A": "Elle réinitialise l’historique de Git à la version précédente sans conserver les changements",
+      "B": "Elle réinitialise l’historique de Git à la version précédente, en conservant les modifications dans l’index",
+      "C": "Elle annule un commit local et conserve les modifications dans le répertoire de travail",
+      "D": "Elle annule un commit local et les modifications dans l’index et le répertoire de travail"
+    },
+    "correct": "B",
+    "explanation": "<p>La commande git reset --soft HEAD~1 réinitialise le commit actuel, mais conserve les changements dans l’index, ce qui signifie que les modifications restent prêtes à être ajoutées à un nouveau commit.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 22",
+    "q": "Quelle est la caractéristique clé de l’idempotence dans Ansible ?",
+    "choices": {
+      "A": "Les tâches sont exécutées dans un ordre spécifique et ne peuvent pas être réexécutées",
+      "B": "Chaque tâche d’Ansible est conçue pour garantir qu’un état final est atteint, quel que soit le nombre de fois qu’elle est exécutée",
+      "C": "Ansible ne peut pas gérer les ressources déjà existantes sur les hôtes distants",
+      "D": "L’exécution d’une tâche dépend de la mise à jour manuelle des ressources système"
+    },
+    "correct": "B",
+    "explanation": "<p>L’idempotence dans Ansible signifie que chaque tâche d’un playbook peut être exécutée plusieurs fois sans affecter le résultat final. Ansible vérifiera si l’état de la ressource correspond déjà à ce qui est attendu avant d’effectuer des changements.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 22",
+    "q": "Dans Puppet, qu’est-ce qu’un « fact » ?",
+    "choices": {
+      "A": "Un fichier de configuration contenant des paramètres utilisés dans les manifestes",
+      "B": "Un fichier qui contient des informations sur l’état des ressources de l’infrastructure",
+      "C": "Une variable dynamique qui contient des informations sur le système cible, comme l’OS ou la mémoire disponible",
+      "D": "Un type de ressource utilisé pour déployer des applications"
+    },
+    "correct": "C",
+    "explanation": "<p>Un « fact » dans Puppet est une variable qui contient des informations dynamiques sur le système cible, telles que le système d’exploitation, la mémoire disponible, l’architecture, etc. Ces facts sont utilisés dans les manifestes pour personnaliser les configurations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 22",
+    "q": "Quel est l’objectif principal de l’outil Helm dans Kubernetes ?",
+    "choices": {
+      "A": "Gérer les configurations de services externes au cluster",
+      "B": "Gérer les mises à jour des pods Kubernetes sans interruption de service",
+      "C": "Automatiser la gestion des secrets et des certificats dans Kubernetes",
+      "D": "Gérer et déployer des packages d’applications dans Kubernetes sous forme de « charts »"
+    },
+    "correct": "D",
+    "explanation": "<p>Helm est un gestionnaire de packages pour Kubernetes. Il permet de définir, installer et mettre à jour des applications Kubernetes sous forme de « charts », qui sont des ensembles de fichiers de configuration permettant de déployer une application complexe.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 22",
+    "q": "Quelle est la différence entre un pull request et un merge request dans Git ?",
+    "choices": {
+      "A": "Il n’y a aucune différence, ce sont deux termes pour la même chose"
+    },
+    "correct": "A",
+    "explanation": "<p>Un pull request dans GitHub et une merge request dans GitLab désignent la même action: proposer la fusion d’une branche dans une autre. Les termes varient en fonction de la plateforme, mais la fonctionnalité est identique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 22",
+    "q": "Quel est l’objectif principal d’utiliser des « credentials » dans Jenkins ?",
+    "choices": {
+      "A": "Protéger les secrets et les informations sensibles (comme les mots de passe ou les clés API) utilisées dans les pipelines",
+      "B": "Gérer les autorisations d’accès aux fichiers de configuration de Jenkins",
+      "C": "Gérer les erreurs dans les étapes d’exécution du pipeline",
+      "D": "Définir l’ordre d’exécution des étapes dans un pipeline"
+    },
+    "correct": "A",
+    "explanation": "<p>Jenkins utilise des « credentials » pour stocker de manière sécurisée des informations sensibles comme les mots de passe, les clés API ou les certificats, ce qui permet de les utiliser dans les pipelines sans exposer ces informations dans les fichiers de configuration.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 23",
+    "q": "Quelle approche est utilisée dans DevOps pour garantir la qualité continue du code ?",
+    "choices": {
+      "A": "L’intégration continue (CI) et le déploiement continu (CD) avec des tests automatisés",
+      "B": "La gestion manuelle des versions du code source",
+      "C": "La mise en production directe sans tests",
+      "D": "La réalisation de tests uniquement avant le déploiement"
+    },
+    "correct": "A",
+    "explanation": "<p>L’intégration continue (CI) et le déploiement continu (CD) sont des pratiques essentielles de DevOps qui permettent d’intégrer les modifications de code et de les tester automatiquement à chaque étape. Cela assure la qualité continue du code et réduit les risques lors du déploiement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 23",
+    "q": "Quelle est une bonne pratique pour optimiser la taille d’une image Docker ?",
+    "choices": {
+      "A": "Utiliser une image de base plus grande pour inclure toutes les dépendances",
+      "B": "Mettre toutes les dépendances dans une seule couche pour réduire la complexité",
+      "C": "Utiliser des images de base légères (comme alpine) et réduire le nombre de couches dans l’image",
+      "D": "Utiliser des conteneurs pour chaque dépendance afin d’éviter de les installer dans l’image"
+    },
+    "correct": "C",
+    "explanation": "<p>Les images de base légères comme alpine permettent de réduire la taille de l’image Docker. De plus, en combinant plusieurs commandes dans une seule couche dans le Dockerfile, vous minimisez le nombre de couches, ce qui réduit la taille de l’image.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 23",
+    "q": "Que signifie le terme « fork » dans un flux de travail Git ?",
+    "choices": {
+      "A": "Créer une branche pour isoler des fonctionnalités",
+      "B": "Créer une copie complète d’un dépôt distant sous votre propre compte",
+      "C": "Créer une nouvelle version d’un commit dans le dépôt local",
+      "D": "Fusionner deux branches différentes dans un seul commit"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « fork » est une copie complète d’un dépôt distant sous un autre compte utilisateur. C’est une opération couramment utilisée dans des projets open source, permettant aux utilisateurs de proposer des modifications sans affecter directement le dépôt original.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 23",
+    "q": "À quoi sert un « ConfigMap » dans Kubernetes ?",
+    "choices": {
+      "A": "Fournir un mécanisme de stockage persistant pour les données des applications",
+      "B": "Gérer la configuration d’une application sous forme de fichiers ou de variables d’environnement",
+      "C": "Gérer les secrets de manière sécurisée dans Kubernetes",
+      "D": "Configurer les ressources réseau pour les services Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Un ConfigMap dans Kubernetes permet de stocker la configuration des applications sous forme de fichiers ou de variables d’environnement. Cela permet de séparer la configuration des pods et de rendre la gestion des configurations plus flexible.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 23",
+    "q": "Que fait la commande docker build ?",
+    "choices": {
+      "A": "Crée un réseau Docker",
+      "B": "Crée un volume Docker",
+      "C": "Crée une image Docker à partir d’un Dockerfile",
+      "D": "Exécute un conteneur Docker à partir d’une image"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande docker build est utilisée pour créer une image Docker à partir des instructions définies dans un Dockerfile. Cela permet de construire une image avec la configuration et les logiciels nécessaires pour exécuter une application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 23",
+    "q": "Quel est l’objectif de la stratégie de « gitflow » pour la gestion des branches ?",
+    "choices": {
+      "A": "Permettre des tests en continu avec des branches de fonctionnalités",
+      "B": "Gérer des environnements multiples avec une branche distincte pour chaque environnement",
+      "C": "Fournir un modèle de gestion des branches structuré qui sépare le développement de fonctionnalités, la maintenance et les versions de production",
+      "D": "Réduire le nombre de branches dans le projet en favorisant les commits directs sur la branche principale"
+    },
+    "correct": "C",
+    "explanation": "<p>Le modèle Gitflow organise le développement en branches distinctes: master pour la production, develop pour les intégrations, et des branches pour les fonctionnalités, les corrections de bugs et les versions. Ce modèle aide à structurer les versions et les releases.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 23",
+    "q": "Dans Ansible, qu’est-ce qu’un « inventory » ?",
+    "choices": {
+      "A": "Un fichier où sont définis les utilisateurs et leurs droits d’accès sur les hôtes distants",
+      "B": "Un fichier ou une base de données qui contient la liste des hôtes et des groupes d’hôtes sur lesquels Ansible va exécuter des tâches",
+      "C": "Un fichier qui définit les tâches spécifiques à exécuter pour chaque hôte distant",
+      "D": "Un fichier qui contient les configurations de déploiement d’Ansible sur les systèmes distants"
+    },
+    "correct": "B",
+    "explanation": "<p>L’inventaire d’Ansible définit les hôtes et les groupes d’hôtes sur lesquels Ansible doit exécuter des tâches. Il peut être sous forme de fichier texte (par exemple hosts), ou être généré dynamiquement à partir d’une source externe.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 23",
+    "q": "Dans Puppet, que sont les « resources » ?",
+    "choices": {
+      "A": "Des objets utilisés pour définir l’état voulu de la configuration d’un système",
+      "B": "Des tâches qui sont exécutées sur les hôtes distants",
+      "C": "Des groupes de machines cibles pour l’application des configurations",
+      "D": "Des modules qui permettent d’étendre les fonctionnalités de Puppet"
+    },
+    "correct": "A",
+    "explanation": "<p>Les « resources » dans Puppet sont des objets qui définissent l’état souhaité des éléments d’un système, comme les fichiers, les packages ou les services. Puppet utilise ces ressources pour appliquer les configurations nécessaires.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 23",
+    "q": "Qu’est-ce qu’une « image Docker alpine » ?",
+    "choices": {
+      "A": "Une image Docker optimisée pour les applications Java",
+      "B": "Une image Docker légère, basée sur Alpine Linux, conçue pour être petite et rapide",
+      "C": "Une image Docker conçue pour les systèmes de fichiers distribués",
+      "D": "Une image Docker qui contient des outils de développement"
+    },
+    "correct": "B",
+    "explanation": "<p>Les images Docker basées sur Alpine Linux sont des images très légères, ce qui les rend idéales pour les environnements où la taille des images doit être minimale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 24",
+    "q": "Quel est le rôle d’un volume dans Docker ?",
+    "choices": {
+      "A": "Stocker les logs générés par les applications dans un conteneur",
+      "B": "Permettre le partage de fichiers entre le système d’exploitation hôte et les conteneurs",
+      "C": "Permettre le stockage de secrets d’application dans un conteneur",
+      "D": "Gérer les adresses IP des conteneurs Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Les volumes dans Docker sont utilisés pour stocker des données persistantes en dehors des conteneurs. Ils permettent de partager des fichiers entre le conteneur et l’hôte, ainsi que de préserver les données même si le conteneur est supprimé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 24",
+    "q": "Quelle est la fonction des « templates » dans Helm ?",
+    "choices": {
+      "A": "Définir les règles de mise à l’échelle automatique des pods dans Kubernetes",
+      "B": "Créer des configurations de déploiement réutilisables pour différentes applications",
+      "C": "Définir la structure des images Docker utilisées dans les charts",
+      "D": "Générer des fichiers de configuration Kubernetes à partir de modèles dynamiques"
+    },
+    "correct": "D",
+    "explanation": "<p>Les « templates » dans Helm sont utilisés pour générer des fichiers de configuration Kubernetes dynamiquement. Les templates sont des fichiers YAML qui utilisent la syntaxe Go templating pour injecter des valeurs personnalisées dans les configurations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 24",
+    "q": "Qu’est-ce que Amazon SQS (Simple Queue Service) permet de faire ?",
+    "choices": {
+      "A": "Gérer les bases de données relationnelles",
+      "B": "Gérer l’envoi et la réception de messages entre les composants distribués d’une application",
+      "C": "Orchestrer des conteneurs",
+      "D": "Créer des images de conteneurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Amazon SQS est un service de mise en file d’attente de messages qui permet de dé-coupler les composants d’une application en envoyant et recevant des messages de manière fiable. Ce service est utilisé pour assurer une communication fluide entre les microservices et les applications distribuées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 24",
+    "q": "Quelle est la structure d’un fichier playbook dans Ansible ?",
+    "choices": {
+      "A": "Une série de fichiers YAML pour définir les tâches et les variables des hôtes distants",
+      "B": "Un fichier JSON contenant des instructions pour déployer des applications sur des machines cibles",
+      "C": "Une séquence de scripts Bash utilisés pour déployer des applications",
+      "D": "Un fichier Python contenant les commandes spécifiques à exécuter sur les hôtes distants"
+    },
+    "correct": "A",
+    "explanation": "<p>Un playbook dans Ansible est un fichier écrit en YAML qui contient des séries de « plays », chaque play définissant des tâches à exécuter sur des hôtes spécifiques. Le playbook est utilisé pour automatiser la gestion de la configuration et les déploiements.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 24",
+    "q": "Qu’est-ce qu’un « chart » dans Helm ?",
+    "choices": {
+      "A": "Un tableau de bord pour visualiser l’état des applications Kubernetes",
+      "B": "Un package de ressources Kubernetes contenant des fichiers de configuration réutilisables pour déployer une application",
+      "C": "Une extension qui permet de visualiser les métriques des applications dans Kubernetes",
+      "D": "Une ressource permettant de déployer des bases de données dans Kubernetes"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « chart » dans Helm est un package de ressources Kubernetes qui contient tous les fichiers nécessaires pour déployer et configurer une application dans un cluster Kubernetes. Il permet d’automatiser l’installation et la gestion des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 24",
+    "q": "Que fait l’option --no-cache dans la commande docker build ?",
+    "choices": {
+      "A": "Ignore les fichiers de cache pendant la construction d’une image Docker",
+      "B": "Empêche le conteneur de consommer de la mémoire cache",
+      "C": "Ignore le cache du registre Docker",
+      "D": "Empêche Docker de créer une image Docker"
+    },
+    "correct": "A",
+    "explanation": "<p>L’option --no-cache force Docker à ignorer le cache lors de la construction d’une image. Cela peut être utile si vous voulez garantir que chaque étape du Dockerfile soit exécutée à partir de zéro, sans utiliser de cache existant.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 24",
+    "q": "Que fait la fonctionnalité « Auto DevOps » dans GitLab CI/CD ?",
+    "choices": {
+      "A": "Elle génère automatiquement les secrets pour l’environnement de déploiement",
+      "B": "Elle propose un ensemble prédéfini de pipelines CI/CD pour le déploiement continu, incluant la construction, les tests et le déploiement de l’application",
+      "C": "Elle configure automatiquement les permissions et les accès aux ressources cloud utilisées dans les pipelines",
+      "D": "Elle déploie automatiquement l’application dans un cluster Kubernetes sans intervention manuelle"
+    },
+    "correct": "B",
+    "explanation": "<p>Auto DevOps dans GitLab CI/CD fournit une série de pipelines préconfigurés pour automatiser le déploiement continu, y compris la construction, les tests et le déploiement des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 24",
+    "q": "Quel est le rôle de la commande git diff ?",
+    "choices": {
+      "A": "Comparer les fichiers locaux avec le dernier commit",
+      "B": "Afficher l’historique des commits",
+      "C": "Réinitialiser un fichier à son état d’origine",
+      "D": "Annuler un commit local"
+    },
+    "correct": "A",
+    "explanation": "<p>La commande git diff permet de voir les différences entre les fichiers dans le répertoire de travail et le dernier commit, ce qui est utile pour voir les modifications non encore ajoutées ou validées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 25",
+    "q": "À quoi servent les « submodules » dans Git ?",
+    "choices": {
+      "A": "Ils permettent de créer des branches multiples dans un même dépôt",
+      "B": "Ils permettent d’inclure un dépôt Git dans un autre dépôt Git en tant que sous-répétition indépendant",
+      "C": "Ils servent à fusionner plusieurs dépôts Git dans un seul dépôt principal",
+      "D": "Ils permettent d’exécuter des tests dans des sous-répétitions d’un même projet"
+    },
+    "correct": "B",
+    "explanation": "<p>Un « submodule » dans Git permet d’inclure un autre dépôt Git à l’intérieur d’un dépôt principal. Cela permet de gérer des dépendances entre projets tout en maintenant des historiques de commits séparés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 25",
+    "q": "Comment pouvez-vous conditionner l’exécution d’une tâche dans Ansible ?",
+    "choices": {
+      "A": "En utilisant des « when » pour spécifier des conditions basées sur les variables ou les faits",
+      "B": "En ajoutant des commentaires dans les fichiers de configuration",
+      "C": "En spécifiant des conditions d’authentification dans le fichier d’inventaire",
+      "D": "En utilisant des « for loops » dans les playbooks"
+    },
+    "correct": "A",
+    "explanation": "<p>Dans Ansible, vous pouvez conditionner l’exécution d’une tâche en utilisant le mot-clé when. Cela permet d’exécuter une tâche uniquement si certaines conditions sont remplies, comme la valeur d’une variable ou un fait spécifique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 25",
+    "q": "Que permet de faire la commande helm rollback ?",
+    "choices": {
+      "A": "Supprimer une version précédente d’un chart déployé",
+      "B": "Mettre à jour une application à une version spécifique d’un chart dans Kubernetes",
+      "C": "Revertir un déploiement à une version antérieure d’un chart en cas d’échec",
+      "D": "Recréer le chart à partir de sa version précédente dans le registre Helm"
+    },
+    "correct": "C",
+    "explanation": "<p>La commande helm rollback permet de revenir à une version précédente d’un chart déployé dans Kubernetes, utile pour annuler un déploiement qui a échoué ou qui ne fonctionne pas comme prévu.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 25",
+    "q": "Comment Kubernetes gère-t-il les informations sensibles comme les mots de passe ?",
+    "choices": {
+      "A": "En les stockant directement dans les fichiers de configuration des pods",
+      "B": "En utilisant des « Secrets » pour stocker les données sensibles de manière sécurisée dans le cluster",
+      "C": "En chiffrant les informations sensibles uniquement lors de leur transfert entre les nœuds",
+      "D": "En utilisant des volumes pour stocker des informations sensibles en dehors des pods"
+    },
+    "correct": "B",
+    "explanation": "<p>Kubernetes utilise des objets « Secrets » pour stocker des informations sensibles comme des mots de passe, des clés API, ou des certificats. Ces données sont stockées de manière sécurisée et peuvent être utilisées par les pods sans être exposées dans les configurations ou les fichiers de déploiement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 25",
+    "q": "Quelle est la fonction principale d’AWS IAM (Identity and Access Management) ?",
+    "choices": {
+      "A": "Gérer les réseaux privés virtuels",
+      "B": "Gérer l’accès aux ressources AWS en fonction des utilisateurs et des groupes",
+      "C": "Superviser la consommation d’énergie des ressources AWS",
+      "D": "Déployer des applications sur AWS"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS IAM permet de gérer les identités et les permissions d’accès aux ressources AWS, en créant des utilisateurs, des groupes et des rôles pour contrôler l’accès aux services et ressources de manière sécurisée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 25",
+    "q": "Quelle est la fonction du réseau par défaut bridge dans Docker ?",
+    "choices": {
+      "A": "Il permet à tous les conteneurs de communiquer entre eux, mais uniquement à l’intérieur de l’hôte",
+      "B": "Il permet aux conteneurs de communiquer entre eux et avec l’extérieur, tout en fournissant une isolation complète",
+      "C": "Il est utilisé pour connecter des conteneurs Docker à un réseau externe, comme un réseau local ou Internet",
+      "D": "Il permet aux conteneurs de partager des ressources physiques comme le CPU et la RAM"
+    },
+    "correct": "A",
+    "explanation": "<p>Le réseau bridge est le réseau par défaut pour les conteneurs Docker. Il permet aux conteneurs de communiquer entre eux via des adresses IP locales tout en maintenant l’isolation de l’hôte.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 25",
+    "q": "Comment Jenkins peut-il gérer les secrets et les informations sensibles ?",
+    "choices": {
+      "A": "En les stockant directement dans le code source dans des fichiers .env",
+      "B": "En utilisant des outils comme Jenkins Credentials Plugin pour stocker et gérer les secrets de manière sécurisée",
+      "C": "En les envoyant par e-mail à l’administrateur de Jenkins",
+      "D": "En les mettant dans des variables d’environnement sur le serveur Jenkins uniquement"
+    },
+    "correct": "B",
+    "explanation": "<p>Jenkins propose des plugins comme Credentials Plugin pour gérer les informations sensibles de manière sécurisée. Les secrets sont stockés dans un coffre sécurisé et sont récupérés par les pipelines Jenkins lorsque nécessaire, sans être exposés dans les logs ou le code source.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 26",
+    "q": "Quel est le rôle d’un Service dans Kubernetes ?",
+    "choices": {
+      "A": "Déployer des pods dans le cluster",
+      "B": "Gérer l’état et la santé des pods",
+      "C": "Offrir une abstraction pour accéder à un ensemble de pods et gérer leur réseau",
+      "D": "Maintenir l’état des conteneurs sur des nœuds spécifiques"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans Kubernetes, un Service fournit une abstraction pour accéder à un ensemble de pods. Il gère le routage du trafic réseau vers les pods disponibles, permettant ainsi une communication stable et fiable, même si les pods sont redéployés ou redémarrés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 26",
+    "q": "Dans GitLab CI/CD, à quoi servent les environnements ?",
+    "choices": {
+      "A": "Ils spécifient les versions de GitLab utilisées dans un pipeline",
+      "B": "Ils permettent de définir les paramètres et les variables nécessaires pour exécuter des pipelines dans des contextes différents (ex.: développement, staging, production)",
+      "C": "Ils dépendent uniquement des utilisateurs GitLab configurés dans le projet",
+      "D": "Ils sont utilisés pour gérer la sécurité des variables d’environnement dans GitLab Runner"
+    },
+    "correct": "B",
+    "explanation": "<p>Les environnements dans GitLab CI/CD permettent de définir des contextes pour les pipelines, comme staging ou production. Cela permet d’appliquer des configurations ou des variables spécifiques à chaque environnement de manière flexible et sécurisée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 26",
+    "q": "Quelle est la fonction des « handlers » dans Ansible ?",
+    "choices": {
+      "A": "Exécuter des tâches supplémentaires après une certaine condition dans le playbook",
+      "B": "Gérer les erreurs d’exécution dans un playbook",
+      "C": "Appliquer une configuration à tous les hôtes définis dans un inventaire",
+      "D": "Permettre la réinitialisation des machines distantes à chaque exécution"
+    },
+    "correct": "A",
+    "explanation": "<p>Les handlers dans Ansible sont utilisés pour exécuter des tâches supplémentaires uniquement lorsqu’un changement a été effectué dans les tâches précédentes. Par exemple, un handler peut être utilisé pour redémarrer un service uniquement si une configuration a été modifiée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 26",
+    "q": "Quel service AWS permet d’héberger des applications web statiques ?",
+    "choices": {
+      "A": "Amazon EC2",
+      "B": "AWS Lambda",
+      "C": "Amazon S3",
+      "D": "Amazon RDS"
+    },
+    "correct": "C",
+    "explanation": "<p>Amazon S3 est un service de stockage d’objets qui permet d’héberger des sites web statiques, comme des pages HTML, des images et des fichiers JavaScript, de manière évolutive et à faible coût.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 26",
+    "q": "Si une application doit se déployer en moins de 1 seconde sans gestion de serveur, quel service utiliseriez-vous ?",
+    "choices": {
+      "A": "AWS EC2",
+      "B": "AWS Lambda",
+      "C": "Google Kubernetes Engine",
+      "D": "Azure Blob Storage"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS Lambda permet d’exécuter du code sans gérer de serveur, parfait pour des déploiements rapides.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 26",
+    "q": "Pour quel type de tâche Kubernetes est-il le plus adapté ?",
+    "choices": {
+      "A": "Gérer des bases de données relationnelles",
+      "B": "Automatiser le déploiement et l’orchestration de conteneurs",
+      "C": "Gérer l’accès aux ressources dans un cloud privé",
+      "D": "Déployer des applications serverless"
+    },
+    "correct": "B",
+    "explanation": "<p>Kubernetes orchestre des conteneurs en fournissant des mécanismes de déploiement, mise à l’échelle et gestion des applications.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 26",
+    "q": "Quel fichier permet de configurer des paramètres Git pour un projet particulier (en plus du fichier global de configuration) ?",
+    "choices": {
+      "A": ".gitignore",
+      "B": ".gitmodules",
+      "C": ".gitattributes",
+      "D": ".gitconfig"
+    },
+    "correct": "C",
+    "explanation": "<p>Le fichier .gitattributes permet de configurer des paramètres spécifiques à un dépôt, tels que les règles de fusion pour des fichiers particuliers, les attributs de ligne de fin de fichier, ou d’autres configurations liées au formatage.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 26",
+    "q": "Comment Helm gère-t-il les versions des charts ?",
+    "choices": {
+      "A": "Les charts ne sont pas versionnés, ce qui nécessite de déployer de nouveaux charts pour chaque modification",
+      "B": "Helm permet de versionner les charts et d’effectuer un rollback à une version précédente si nécessaire",
+      "C": "Helm versionne automatiquement les charts sans intervention de l’utilisateur",
+      "D": "Helm n’autorise que les versions de charts définies par l’administrateur du cluster"
+    },
+    "correct": "B",
+    "explanation": "<p>Helm gère la version des charts via un numéro de version et permet de revenir à une version antérieure en cas de besoin grâce à la commande helm rollback. Cela facilite la gestion des applications dans Kubernetes en permettant de suivre l’historique des versions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 26",
+    "q": "Quel est l’outil Docker qui permet d’orchestrer plusieurs conteneurs de manière déclarative ?",
+    "choices": {
+      "A": "Docker Compose",
+      "B": "Docker Swarm",
+      "C": "Kubernetes",
+      "D": "Docker Hub"
+    },
+    "correct": "A",
+    "explanation": "<p>Docker Compose permet de définir et de gérer des applications multi-conteneurs via un fichier de configuration YAML, ce qui permet une orchestration déclarative des conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 27",
+    "q": "Dans Docker, les conteneurs sont comme _______",
+    "choices": {
+      "A": "Des salles dans un hôtel, où chaque client (application) vit indépendamment",
+      "B": "Des appartements dans un immeuble, partageant les ressources d’un même serveur",
+      "C": "Des espaces de travail ouverts, où tout le monde partage tout",
+      "D": "Des machines séparées, chacune exécutant son propre système d’exploitation"
+    },
+    "correct": "A",
+    "explanation": "<p>Chaque conteneur fonctionne de manière isolée, mais tous partagent le même noyau du système d’exploitation, tout comme des chambres d’hôtel séparées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 27",
+    "q": "Quelle est la meilleure approche pour gérer les branches dans Git dans un projet à long terme ?",
+    "choices": {
+      "A": "Ne travailler que sur la branche principale, en évitant les branches secondaires",
+      "B": "Créer des branches de fonctionnalité pour chaque nouvelle feature et les fusionner régulièrement",
+      "C": "Travailler sans branches et commettre directement dans main",
+      "D": "Créer une nouvelle branche chaque fois qu’un problème survient"
+    },
+    "correct": "B",
+    "explanation": "<p>Travailler avec des branches de fonctionnalité permet de garder le développement organisé, tout en réduisant les risques de conflits lors de la fusion.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 27",
+    "q": "Pourquoi utiliser des modules dans Terraform ?",
+    "choices": {
+      "A": "Pour améliorer la performance du script en réduisant le temps d’exécution",
+      "B": "Pour organiser et réutiliser des configurations de manière cohérente et modulaire",
+      "C": "Pour éviter l’utilisation de variables dans les configurations",
+      "D": "Pour fusionner plusieurs configurations en une seule ressource"
+    },
+    "correct": "B",
+    "explanation": "<p>Les modules permettent de créer des blocs de configuration réutilisables, facilitant ainsi la gestion d’infrastructures complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 27",
+    "q": "Kubernetes est comme un manager de restaurant, il ____________",
+    "choices": {
+      "A": "Gère la cuisine, mais ne s’occupe pas de la salle",
+      "B": "Ajuste le nombre de serveurs (pods) en fonction de la demande des clients (utilisateurs)",
+      "C": "Répartit les commandes à la volée sans aucun plan d’organisation",
+      "D": "Ne peut augmenter ou diminuer l’effectif sans intervention manuelle"
+    },
+    "correct": "B",
+    "explanation": "<p>Kubernetes ajuste dynamiquement le nombre de pods pour répondre à la charge, garantissant une disponibilité optimale des services.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 27",
+    "q": "Helm versionne les charts comme __________",
+    "choices": {
+      "A": "Des livres anciens, qui ne peuvent être modifiés",
+      "B": "Des scripts d’installation qui ne peuvent pas être mis à jour",
+      "C": "Des recettes de cuisine, où chaque version améliore la précédente pour une meilleure préparation",
+      "D": "Des documents statiques sans mise à jour possible"
+    },
+    "correct": "C",
+    "explanation": "<p>Les charts Helm sont versionnés et permettent de déployer des applications Kubernetes en suivant une version spécifique qui peut être mise à jour ou rétrogradée facilement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 27",
+    "q": "Quel est l’impact de la commande git push --force ?",
+    "choices": {
+      "A": "Elle annule un commit sur le dépôt distant",
+      "B": "Elle pousse les commits locaux vers le dépôt distant, même si cela crée des conflits",
+      "C": "Elle supprime les branches du dépôt distant",
+      "D": "Elle crée un commit « forcé » dans l’historique"
+    },
+    "correct": "B",
+    "explanation": "<p>La commande git push --force force l’envoi des commits locaux vers le dépôt distant, même si cela peut écraser des modifications précédentes. C’est une opération risquée et généralement déconseillée, sauf si vous êtes certain de ce que vous faites, car elle réécrit l’historique distant.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 27",
+    "q": "Dans Docker, l’image d’un conteneur est comme ________",
+    "choices": {
+      "A": "Un prototype d’un produit, prêt à être fabriqué et exécuté",
+      "B": "Une copie d’un fichier système à partager avec d’autres",
+      "C": "Une version de sauvegarde d’un conteneur déjà en cours d’exécution",
+      "D": "Un conteneur vide sans configuration ni dépendances"
+    },
+    "correct": "A",
+    "explanation": "<p>L’image Docker est le modèle à partir duquel les conteneurs sont créés. Elle contient toutes les dépendances nécessaires pour faire fonctionner l’application.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 27",
+    "q": "Si vous voyez un conteneur Docker avec le statut « Exited », cela signifie:",
+    "choices": {
+      "A": "Le conteneur est en cours d’exécution",
+      "B": "Le conteneur a terminé son exécution et s’est arrêté",
+      "C": "Le conteneur a échoué à démarrer",
+      "D": "Le conteneur est en pause"
+    },
+    "correct": "B",
+    "explanation": "<p>Lorsque le statut d’un conteneur Docker est « Exited », cela signifie que le conteneur a terminé son exécution et s’est arrêté (normalement ou suite à une erreur). Vous pouvez consulter les logs du conteneur pour en savoir plus sur la cause de son arrêt.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 27",
+    "q": "Quelle approche AWS utiliseriez-vous pour effectuer une sauvegarde régulière de vos fichiers ?",
+    "choices": {
+      "A": "Amazon EC2",
+      "B": "AWS CloudWatch",
+      "C": "Amazon S3",
+      "D": "AWS Lambda"
+    },
+    "correct": "C",
+    "explanation": "<p>Amazon S3 est conçu pour stocker et sauvegarder des fichiers de manière fiable et scalable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 28",
+    "q": "L’intégration continue (CI) et la livraison continue (CD) fonctionnent comme :",
+    "choices": {
+      "A": "Des actions manuelles qui doivent être effectuées après chaque mise à jour de code",
+      "B": "Une chaîne de production qui automatise le test, le déploiement et la livraison du code",
+      "C": "Des étapes indépendantes qui ne sont jamais liées entre elles",
+      "D": "Une procédure uniquement pour les mises à jour mineures du code"
+    },
+    "correct": "B",
+    "explanation": "<p>CI/CD automatise le processus de test, déploiement et livraison, garantissant que le code est toujours prêt à être mis en production.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 28",
+    "q": "Un pod Kubernetes est comme :",
+    "choices": {
+      "A": "Un seul serveur dédié à une application",
+      "B": "Un groupe de containers partageant un même environnement réseau et stockage",
+      "C": "Un service cloud qui permet de déployer des applications sans machines",
+      "D": "Un processus unique qui exécute des tâches en série"
+    },
+    "correct": "B",
+    "explanation": "<p>Un pod dans Kubernetes est une unité d’exécution qui contient un ou plusieurs conteneurs partageant un réseau et des volumes de stockage communs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 28",
+    "q": "Le réseau Docker est comme :",
+    "choices": {
+      "A": "Un système de messagerie où chaque conteneur envoie des lettres entre eux",
+      "B": "Un autoroute où tous les conteneurs se déplacent indépendamment",
+      "C": "Une place de marché où tous les conteneurs se connectent sans limites",
+      "D": "Un réseau privé où les conteneurs échangent uniquement avec ceux qu’ils connaissent"
+    },
+    "correct": "D",
+    "explanation": "<p>Par défaut, les conteneurs Docker dans un même réseau peuvent communiquer entre eux, mais l’isolation réseau empêche les conteneurs non autorisés de s’y connecter.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 28",
+    "q": "Quel service est le mieux adapté à une application avec des besoins en ressources fluctuants ?",
+    "choices": {
+      "A": "AWS EC2",
+      "B": "AWS Lambda",
+      "C": "AWS Elastic Beanstalk",
+      "D": "Amazon RDS"
+    },
+    "correct": "B",
+    "explanation": "<p>AWS Lambda est serverless et ajuste automatiquement les ressources selon les besoins.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 28",
+    "q": "Quel service AWS permet de gérer des clusters de conteneurs sans gérer les machines sous-jacentes ?",
+    "choices": {
+      "A": "Amazon ECS",
+      "B": "Amazon EC2",
+      "C": "AWS Fargate",
+      "D": "AWS S3"
+    },
+    "correct": "C",
+    "explanation": "<p>AWS Fargate est un service serverless qui gère automatiquement l’infrastructure sous-jacente des conteneurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 28",
+    "q": "Helm et les charts peuvent être comparés à :",
+    "choices": {
+      "A": "Un système de versionnement pour le code source",
+      "B": "Un ensemble de recettes permettant de configurer des applications dans Kubernetes",
+      "C": "Des outils de gestion de versions pour les bases de données",
+      "D": "Un format de fichier utilisé uniquement pour stocker des informations sur le cloud"
+    },
+    "correct": "B",
+    "explanation": "<p>Helm utilise des charts, des paquets qui contiennent toutes les informations nécessaires pour déployer une application dans Kubernetes, comme une recette complète.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 28",
+    "q": "Si vous devez automatiser le processus d’infrastructure en utilisant des scripts, quel outil choisiriez-vous ?",
+    "choices": {
+      "A": "AWS CloudFormation",
+      "B": "Ansible",
+      "C": "AWS EC2",
+      "D": "Docker"
+    },
+    "correct": "B",
+    "explanation": "<p>Ansible est un outil de gestion de configuration qui utilise des scripts (playbooks) pour automatiser le déploiement et la gestion de l’infrastructure.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 28",
+    "q": "En cas d’échec dans un pipeline CI/CD, un rollback est comme :",
+    "choices": {
+      "A": "Un arrêt complet de la production pour analyser les erreurs",
+      "B": "Une tentative de résoudre le problème sans annuler les actions précédentes",
+      "C": "Une remise en état du système à un état stable précédemment connu",
+      "D": "Une mise en pause des nouvelles fonctionnalités en attendant un examen manuel"
+    },
+    "correct": "C",
+    "explanation": "<p>Le rollback permet de revenir à une version antérieure stable de l’application ou du système après un échec dans le pipeline CI/CD, évitant ainsi des déploiements défectueux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 29",
+    "q": "Que contient une image Docker ?",
+    "choices": {
+      "A": "Le code source uniquement",
+      "B": "Le système d’exploitation complet",
+      "C": "Les fichiers nécessaires pour exécuter une application",
+      "D": "Le code source et la configuration de l’infrastructure"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 29",
+    "q": "Dans une architecture Puppet, l’agent et le master sont :",
+    "choices": {
+      "A": "Uniquement utilisés pour les environnements cloud",
+      "B": "L’agent est responsable de la gestion des configurations et le master centralise l’exécution des scripts",
+      "C": "Le master exécute les configurations et l’agent récupère les scripts à exécuter",
+      "D": "L’agent est le serveur qui contient les manifests, et le master les exécute"
+    },
+    "correct": "C",
+    "explanation": "<p>Dans Puppet, le master centralise la gestion des configurations et distribue les manifests aux agents, qui exécutent les tâches sur les hôtes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 29",
+    "q": "Dans Jenkins, le rôle d’un « Master » est de :",
+    "choices": {
+      "A": "Exécuter les pipelines d’intégration continue uniquement sur des serveurs distants",
+      "B": "Contrôler la gestion des builds et distribuer les tâches vers des « Slaves »",
+      "C": "Déployer des applications directement sur l’environnement de production",
+      "D": "Définir les accès et les permissions des utilisateurs sur les projets"
+    },
+    "correct": "B",
+    "explanation": "<p>Le « Master » de Jenkins est responsable de la gestion des builds et de la distribution des tâches aux « Slaves », qui sont des machines qui exécutent effectivement les travaux demandés par le master.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 29",
+    "q": "Quel service AWS utiliseriez-vous pour déployer un site web statique avec un nom de domaine personnalisé ?",
+    "choices": {
+      "A": "AWS EC2",
+      "B": "Amazon S3 avec Amazon Route 53",
+      "C": "AWS Lambda",
+      "D": "Amazon RDS"
+    },
+    "correct": "B",
+    "explanation": "<p>Amazon S3 permet d’héberger des sites statiques, et Amazon Route 53 gère le routage DNS pour le nom de domaine.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 29",
+    "q": "Quel est le but de git pull --rebase ?",
+    "choices": {
+      "A": "Pour forcer une mise à jour distante",
+      "B": "Pour récupérer et réécrire l’historique local",
+      "C": "Pour ajouter un nouveau commit avant le précédent",
+      "D": "Pour fusionner une branche sans créer de commit supplémentaire"
+    },
+    "correct": "B",
+    "explanation": "<p>git pull --rebase permet de récupérer les modifications d’une branche distante et de réappliquer les commits locaux dessus pour garder un historique plus linéaire.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 29",
+    "q": "Un « build trigger » dans Jenkins est utilisé pour :",
+    "choices": {
+      "A": "Lancer un build automatiquement en fonction d’événements spécifiques comme un changement dans le code source",
+      "B": "Mettre à jour les dépendances d’un projet",
+      "C": "Gérer les versions de l’environnement de production",
+      "D": "Supprimer les anciens jobs de la file d’attente"
+    },
+    "correct": "A",
+    "explanation": "<p>Un « build trigger » dans Jenkins permet de déclencher automatiquement l’exécution d’un build en fonction d’événements externes, tels que des commits dans un dépôt Git ou des modifications dans un fichier.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 29",
+    "q": "Jenkins Blue Ocean est :",
+    "choices": {
+      "A": "Un plugin qui fournit une interface graphique moderne et intuitive pour la gestion des pipelines Jenkins",
+      "B": "Un outil permettant de gérer des utilisateurs et des permissions dans Jenkins",
+      "C": "Un système de stockage de logs d’exécution des builds Jenkins",
+      "D": "Un service externe pour envoyer des notifications après l’exécution des builds"
+    },
+    "correct": "A",
+    "explanation": "<p>Jenkins Blue Ocean est un plugin qui offre une interface graphique améliorée pour la gestion des pipelines Jenkins, facilitant la visualisation et la création des workflows CI/CD.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 29",
+    "q": "Dans Ansible, les « conditionnelles » permettent de :",
+    "choices": {
+      "A": "Forcer l’exécution de toutes les tâches dans un playbook",
+      "B": "Exécuter des tâches uniquement si certaines conditions sont remplies",
+      "C": "Empêcher les erreurs de s’afficher pendant l’exécution du playbook",
+      "D": "Désactiver l’exécution de certaines tâches après une erreur"
+    },
+    "correct": "B",
+    "explanation": "<p>Les conditionnelles dans Ansible permettent de spécifier des critères pour l’exécution de tâches. Par exemple, vous pouvez exécuter une tâche seulement si une certaine variable est définie ou si un certain état est atteint.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 29",
+    "q": "MCollective dans Puppet est utilisé pour :",
+    "choices": {
+      "A": "Déployer des configurations à grande échelle sur des clusters",
+      "B": "Superviser la performance des serveurs en temps réel",
+      "C": "Faciliter la communication entre nœuds Puppet et exécuter des commandes en parallèle sur plusieurs nœuds",
+      "D": "Gérer la configuration des dépendances de logiciels sur les hôtes"
+    },
+    "correct": "C",
+    "explanation": "<p>MCollective est un outil de gestion de l’infrastructure qui permet la communication et l’exécution de commandes parallèles entre les nœuds gérés par Puppet, facilitant ainsi la gestion à grande échelle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Partie 30",
+    "q": "Qu’est-ce que Docker Hub ?",
+    "choices": {
+      "A": "Un outil d’orchestration des conteneurs",
+      "B": "Un registre où les images Docker peuvent être stockées et partagées",
+      "C": "Un service permettant de créer des conteneurs Docker",
+      "D": "Un système pour surveiller les performances des conteneurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Docker Hub est un service en ligne qui permet de stocker, partager et distribuer des images Docker. C’est essentiellement un registre public où les utilisateurs peuvent télécharger et partager des images Docker, ainsi qu’un endroit pour stocker leurs propres images privées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Partie 30",
+    "q": "Quel outil permet de créer une image portable de votre application pour l’exécuter dans n’importe quel environnement ?",
+    "choices": {
+      "A": "Docker",
+      "B": "Jenkins",
+      "C": "Kubernetes",
+      "D": "Terraform"
+    },
+    "correct": "A",
+    "explanation": "<p>Docker permet de créer des images de conteneur portables et légères, idéales pour exécuter des applications dans n’importe quel environnement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Partie 30",
+    "q": "Quel service AWS permet de gérer les versions et mises à jour du code source dans un dépôt ?",
+    "choices": {
+      "A": "Amazon RDS",
+      "B": "Amazon S3",
+      "C": "AWS CloudFormation",
+      "D": "AWS CodeCommit"
+    },
+    "correct": "D",
+    "explanation": "<p>AWS CodeCommit est un service de contrôle de version qui permet de gérer le code source dans des dépôts Git privés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Partie 30",
+    "q": "Qu’est-ce que le mode « host » pour un réseau Docker ?",
+    "choices": {
+      "A": "Le conteneur utilise le réseau de l’hôte Docker directement",
+      "B": "Le conteneur est complètement isolé du réseau",
+      "C": "Le réseau du conteneur est virtualisé",
+      "D": "Le conteneur partage un réseau spécifique avec un autre conteneur"
+    },
+    "correct": "A",
+    "explanation": "<p>En mode « host », le conteneur partage le même réseau que l’hôte Docker. Cela signifie que le conteneur n’a pas son propre réseau isolé; au lieu de cela, il utilise les interfaces réseau de l’hôte. Les ports ouverts dans le conteneur sont mappés directement sur les ports de l’hôte.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Partie 30",
+    "q": "Quelle pratique DevOps assure que l’infrastructure soit identique dans tous les environnements ?",
+    "choices": {
+      "A": "Conteneurisation",
+      "B": "Infrastructure as Code (IaC)",
+      "C": "Continuous Integration",
+      "D": "Test Driven Development (TDD)"
+    },
+    "correct": "B",
+    "explanation": "<p>L’Infrastructure as Code permet de définir l’infrastructure par code, garantissant ainsi une configuration identique dans tous les environnements.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Partie 30",
+    "q": "Pour quel type de déploiement utiliseriez-vous un rolling update ?",
+    "choices": {
+      "A": "Pour déployer une application statique",
+      "B": "Pour mettre à jour progressivement les instances sans interrompre le service",
+      "C": "Pour exécuter un test de performance",
+      "D": "Pour configurer des serveurs sans affecter les utilisateurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Un rolling update est une stratégie de déploiement qui permet de mettre à jour progressivement les instances d’une application ou d’un service, une par une ou par petits groupes, afin de garantir que le service reste disponible pendant le processus de mise à jour. Cela minimise les interruptions de service et assure une transition en douceur vers la nouvelle version.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Partie 30",
+    "q": "PuppetDB est utilisé pour:",
+    "choices": {
+      "A": "Gérer la configuration des applications sur les nœuds",
+      "B": "Stocker les faits et les rapports sur les nœuds gérés par Puppet",
+      "C": "Gérer les versions des manifests Puppet",
+      "D": "Superviser les performances du système"
+    },
+    "correct": "B",
+    "explanation": "<p>PuppetDB est une base de données centrale utilisée pour stocker et interroger les faits et les rapports générés par Puppet, facilitant ainsi la gestion des configurations et le suivi des changements.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Partie 30",
+    "q": "Qu’est-ce qu’un Docker « layer » ?",
+    "choices": {
+      "A": "Une image Docker qui contient uniquement les fichiers de configuration",
+      "B": "Une couche de cache utilisée lors de la construction d’une image",
+      "C": "Un conteneur qui héberge plusieurs applications",
+      "D": "Un réseau virtuel pour connecter des conteneurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Un layer (couche) Docker représente un ensemble de modifications appliquées au système de fichiers d’une image. Lorsqu’une image Docker est construite, elle est constituée de plusieurs couches qui se superposent pour former l’image finale. Chaque commande dans un Dockerfile (comme RUN, COPY, ADD, etc.) crée une nouvelle couche, et ces couches sont mises en cache pour optimiser les reconstructions d’images.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Partie 30",
+    "q": "Dans Jenkins, l’architecture Master-Slave permet de :",
+    "choices": {
+      "A": "Répartir les tâches de construction entre plusieurs nœuds pour améliorer la performance",
+      "B": "Contrôler les versions des plugins utilisés dans Jenkins",
+      "C": "Lancer plusieurs builds sur un même serveur",
+      "D": "Sauvegarder les données du serveur maître sur des nœuds esclaves"
+    },
+    "correct": "A",
+    "explanation": "<p>Dans l’architecture Master-Slave de Jenkins, le master contrôle la gestion des builds et distribue les tâches aux slaves, permettant de répartir la charge de travail et d’améliorer les performances en cas de nombreux builds simultanés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Partie 30",
+    "q": "En Ansible, l’utilisation de « loops » permet de :",
+    "choices": {
+      "A": "Exécuter une tâche une seule fois sur plusieurs hôtes",
+      "B": "Exécuter une tâche plusieurs fois sur le même hôte avec différentes valeurs",
+      "C": "Répéter une tâche uniquement si elle échoue",
+      "D": "Exécuter des tâches conditionnelles sur un hôte donné"
+    },
+    "correct": "B",
+    "explanation": "<p>Les loops dans Ansible permettent d’itérer sur une liste de valeurs et d’exécuter une tâche plusieurs fois, avec des valeurs différentes à chaque itération. Cela permet de simplifier les tâches répétitives.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Partie 30",
+    "q": "Dans Puppet, un « environment » est :",
+    "choices": {
+      "A": "Un sous-ensemble de la configuration utilisée pour contrôler l’accès des utilisateurs",
+      "B": "Un espace de travail isolé contenant une version spécifique de la configuration",
+      "C": "Un processus d’exécution parallèle des tâches",
+      "D": "Un système de gestion des rapports des nœuds"
+    },
+    "correct": "B",
+    "explanation": "<p>Les environnements dans Puppet permettent de maintenir différentes versions des configurations, par exemple pour un environnement de développement, de test ou de production. Cela permet de séparer les configurations selon les besoins de chaque environnement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Partie 30",
+    "q": "Dans Ansible, comment pouvez-vous exécuter une tâche uniquement si une autre tâche échoue ?",
+    "choices": {
+      "A": "En utilisant un",
+      "B": "En utilisant",
+      "C": "En utilisant un",
+      "D": "En utilisant"
+    },
+    "correct": "B",
+    "explanation": "<p>Ansible permet d’utiliser un bloc (block) avec une section rescue pour capturer les erreurs d’une tâche et exécuter une autre tâche en cas d’échec. Cela est utile pour gérer les erreurs de manière plus élégante.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Partie 30",
+    "q": "Que signifie l’option --link dans Docker ?",
+    "choices": {
+      "A": "Relier deux conteneurs Docker pour qu’ils puissent communiquer",
+      "B": "Créer un réseau Docker personnalisé",
+      "C": "Exécuter plusieurs conteneurs dans le même environnement",
+      "D": "Relier un conteneur à une base de données externe"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q15",
+    "partie": "Partie 30",
+    "q": "Comment Puppet gère les dépendances entre les ressources ?",
+    "choices": {
+      "A": "En exécutant toutes les ressources en même temps",
+      "B": "En analysant et en ordonnant les ressources dans le manifeste",
+      "C": "En exécutant une ressource seulement après la vérification de toutes les autres ressources",
+      "D": "En ajoutant des variables dans les manifests"
+    },
+    "correct": "B",
+    "explanation": "<p>Puppet analyse les dépendances entre les ressources dans les manifests et détermine l’ordre dans lequel les ressources doivent être appliquées pour garantir que les dépendances sont respectées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  }
+];
