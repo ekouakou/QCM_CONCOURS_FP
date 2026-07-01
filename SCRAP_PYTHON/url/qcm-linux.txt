@@ -1,0 +1,16 @@
+https://waytolearnx.com/2018/08/qcm-linux-gestion-des-comptes-et-groupes-dutilisateurs.html
+https://waytolearnx.com/2018/08/qcm-linux-gestion-de-processus.html
+https://waytolearnx.com/2018/08/qcm-linux-processus-de-demarrage-init-et-arret.html
+https://waytolearnx.com/2018/08/qcm-linux-systemes-de-fichiers.html
+https://waytolearnx.com/2018/08/qcm-linux-droit-et-permission-dacces-aux-fichiers-partie-1.html
+https://waytolearnx.com/2018/08/qcm-linux-droit-et-permission-dacces-aux-fichiers-partie-2.html
+https://waytolearnx.com/2018/08/qcm-linux-les-differents-types-de-fichiers.html
+https://waytolearnx.com/2018/08/qcm-linux-gestion-des-fichiers-partie-1.html
+https://waytolearnx.com/2018/08/qcm-linux-gestion-des-fichiers-partie-2.html
+https://waytolearnx.com/2018/02/qcm-linux-les-commandes-de-linux-partie-1.html
+https://waytolearnx.com/2018/02/qcm-linux-les-commandes-de-linux-partie-2.html
+https://waytolearnx.com/2018/02/qcm-linux-les-commandes-de-linux-partie-3.html
+https://waytolearnx.com/2018/02/qcm-linux-les-commandes-de-linux-partie-4.html
+https://waytolearnx.com/2018/02/qcm-linux-lenvironnement-linux-partie-1.html
+https://waytolearnx.com/2018/02/qcm-linux-lenvironnement-linux-partie-2.html
+https://waytolearnx.com/2018/02/qcm-linux-lenvironnement-linux-partie-3.html

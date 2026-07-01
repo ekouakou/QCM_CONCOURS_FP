@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docker QCM — Podcast de Révision</title>
+<style>
+:root{
+  --bg:#0d1117;--surface:#161b22;--surface2:#1c2330;--border:#30363d;--border2:#484f58;
+  --text:#e6edf3;--muted:#8b949e;--subtle:#6e7681;
+  --blue:#2188ff;--blue-bg:#0c2d6b;--blue-light:#58a6ff;
+  --green:#3fb950;--green-bg:#0f3b1a;--green-light:#7ee787;
+  --red:#f85149;--red-bg:#4d1a1a;--red-light:#ff7b72;
+  --yellow:#d29922;--yellow-bg:#3d2d00;--yellow-light:#e3b341;
+  --purple:#bc8cff;--purple-bg:#2a1a4d;
+  --r:10px;--rs:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+.app{display:grid;grid-template-columns:270px 1fr;grid-template-rows:60px 1fr;min-height:100vh}
+
+/* TOPBAR */
+.topbar{grid-column:1/-1;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:12px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;letter-spacing:-.3px;white-space:nowrap}
+.logo svg{width:26px;height:26px;flex-shrink:0}
+.badge{background:var(--blue-bg);color:var(--blue-light);font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;border:1px solid var(--blue);white-space:nowrap}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.pw{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.pt{width:120px;height:5px;background:var(--border);border-radius:99px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,var(--blue),#58a6ff);border-radius:99px;transition:width .5s ease}
+.score-b{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:12px;color:var(--muted);white-space:nowrap}
+.score-b span{color:var(--green-light);font-weight:600}
+.export-btn{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:var(--rs);border:1px solid var(--border2);background:var(--surface2);color:var(--text);font-size:12px;font-weight:600;cursor:pointer;transition:all .18s;white-space:nowrap}
+.export-btn:hover{background:var(--border);border-color:var(--border2)}
+.export-btn svg{width:14px;height:14px;flex-shrink:0}
+
+/* SIDEBAR */
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:16px 12px;overflow-y:auto;position:sticky;top:60px;height:calc(100vh - 60px)}
+.sb-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--subtle);margin-bottom:12px;padding-left:4px}
+.pg{margin-bottom:16px}
+.pl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:4px 6px;margin-bottom:2px}
+.qi{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:var(--rs);cursor:pointer;transition:all .15s;font-size:12px;color:var(--muted)}
+.qi:hover{background:var(--surface2);color:var(--text)}
+.qi.active{background:var(--blue-bg);color:var(--blue-light)}
+.qi.correct{color:var(--green-light)}
+.qi.wrong{color:var(--red-light)}
+.qn{width:20px;height:20px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.qi.active .qn{background:var(--blue);color:#fff}
+.qi.correct .qn{background:var(--green-bg);border:1px solid var(--green)}
+.qi.wrong .qn{background:var(--red-bg);border:1px solid var(--red)}
+.qs{margin-left:auto;width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.qi.correct .qs{background:var(--green)}
+.qi.wrong .qs{background:var(--red)}
+
+/* MAIN */
+.main{padding:28px 36px;overflow-y:auto}
+.q-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.pt-tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-light);background:var(--blue-bg);border:1px solid rgba(33,136,255,.3);padding:3px 9px;border-radius:20px}
+.qn-tag{font-size:11px;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:3px 9px;border-radius:20px}
+
+/* QUESTION CARD */
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:16px}
+.qtext{font-size:17px;font-weight:600;line-height:1.55;color:var(--text);margin-bottom:20px;letter-spacing:-.2px}
+.choices{display:flex;flex-direction:column;gap:9px}
+.choice{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-radius:var(--rs);border:1px solid var(--border);background:var(--surface2);cursor:pointer;transition:all .18s;user-select:none}
+.choice:hover:not(.disabled){border-color:var(--blue);background:var(--blue-bg);transform:translateX(3px)}
+.choice.selected{border-color:var(--blue);background:var(--blue-bg)}
+.choice.correct{border-color:var(--green);background:var(--green-bg);cursor:default}
+.choice.wrong{border-color:var(--red);background:var(--red-bg);cursor:default}
+.choice.disabled{cursor:default}
+.choice.ndis{opacity:.45;cursor:default}
+.cl{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;background:var(--border);color:var(--muted);transition:all .18s}
+.choice:hover:not(.disabled) .cl{background:var(--blue);color:#fff}
+.choice.selected .cl{background:var(--blue);color:#fff}
+.choice.correct .cl{background:var(--green);color:#fff}
+.choice.wrong .cl{background:var(--red);color:#fff}
+.ct{font-size:14px;line-height:1.5;color:var(--text);padding-top:3px;flex:1}
+.ci{margin-left:auto;flex-shrink:0;font-size:15px;padding-top:4px}
+
+/* REVEAL */
+.reveal-s{margin-bottom:16px;display:none}
+.reveal-btn{width:100%;padding:13px;border-radius:var(--rs);border:1px dashed var(--border2);background:transparent;color:var(--blue-light);font-size:14px;font-weight:600;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.reveal-btn:hover{background:var(--blue-bg);border-color:var(--blue)}
+
+/* EXPLANATION */
+.explanation{animation:si .3s ease}
+@keyframes si{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.ab{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border-radius:var(--rs);margin-bottom:14px;border:1px solid var(--green);background:var(--green-bg)}
+.ab.wa{border-color:var(--red);background:var(--red-bg)}
+.ai{font-size:18px;flex-shrink:0;margin-top:1px}
+.albl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--green-light);margin-bottom:3px}
+.ab.wa .albl{color:var(--red-light)}
+.ac{font-size:14px;color:var(--text);line-height:1.5}
+.ac strong{color:var(--green-light)}
+.ab.wa .ac strong{color:var(--red-light)}
+.eb{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
+.ebt{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.ebt.blue{color:var(--blue-light)}.ebt.red{color:var(--red-light)}.ebt.purple{color:var(--purple)}.ebt.yellow{color:var(--yellow-light)}
+.ebt svg{width:15px;height:15px}
+.et{font-size:14px;line-height:1.8;color:var(--muted)}
+.et p{margin-bottom:12px}.et p:last-child{margin-bottom:0}
+.et strong{color:var(--text);font-weight:600}
+.et code{font-family:'SF Mono','Fira Code',monospace;font-size:12px;background:var(--surface2);border:1px solid var(--border);padding:1px 5px;border-radius:4px;color:var(--blue-light)}
+.wi{display:flex;flex-direction:column;gap:10px}
+.witem{border:1px solid rgba(248,81,73,.2);border-radius:var(--rs);padding:12px 14px;background:rgba(77,26,26,.3)}
+.wh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.wl{width:22px;height:22px;border-radius:50%;background:var(--red-bg);border:1px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--red-light);flex-shrink:0}
+.wlbl{font-size:12px;font-weight:600;color:var(--red-light)}
+.sl{display:flex;flex-direction:column;gap:9px}
+.si-row{display:flex;gap:10px;align-items:flex-start}
+.sa{color:var(--yellow-light);font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
+.st{font-size:13px;line-height:1.65;color:var(--text)}
+.st code{font-family:'SF Mono','Fira Code',monospace;font-size:11.5px;background:var(--surface2);border:1px solid var(--border);padding:1px 5px;border-radius:4px;color:var(--blue-light)}
+
+/* NAV */
+.nav{display:flex;gap:10px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.nb{flex:1;padding:11px 16px;border-radius:var(--rs);border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:all .18s}
+.nb:hover:not(:disabled){background:var(--surface);border-color:var(--border2)}
+.nb:disabled{opacity:.3;cursor:not-allowed}
+.nb.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.nb.primary:hover:not(:disabled){background:#1a6fd8}
+
+/* SPLASH */
+.splash{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;text-align:center}
+.splash-icon{font-size:60px;margin-bottom:20px}
+.splash h1{font-size:26px;font-weight:700;margin-bottom:10px;letter-spacing:-.5px}
+.splash p{font-size:15px;color:var(--muted);max-width:480px;line-height:1.7;margin-bottom:28px}
+.splash-stats{display:flex;gap:16px;margin-bottom:28px;flex-wrap:wrap;justify-content:center}
+.sc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 24px;text-align:center;min-width:110px}
+.sn{font-size:32px;font-weight:700;letter-spacing:-1px}
+.sn.g{color:var(--green-light)}.sn.r{color:var(--red-light)}.sn.b{color:var(--blue-light)}
+.sl2{font-size:11px;color:var(--muted);margin-top:3px}
+.restart-btn{padding:12px 28px;border-radius:var(--rs);background:var(--blue);border:none;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:background .18s}
+.restart-btn:hover{background:#1a6fd8}
+
+/* EXPORT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;max-width:480px;width:100%}
+.modal h2{font-size:18px;font-weight:700;margin-bottom:6px}
+.modal p{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6}
+.modal-btns{display:flex;flex-direction:column;gap:10px}
+.mbtn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--rs);border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:14px;font-weight:600;cursor:pointer;transition:all .18s;text-align:left}
+.mbtn:hover{border-color:var(--border2);background:var(--border)}
+.mbtn svg{width:20px;height:20px;flex-shrink:0}
+.mbtn .mbtn-desc{font-size:12px;color:var(--muted);font-weight:400;margin-top:1px}
+.mclose{margin-top:14px;width:100%;padding:10px;border-radius:var(--rs);border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;cursor:pointer;transition:all .18s}
+.mclose:hover{background:var(--surface2);color:var(--text)}
+
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+
+@media(max-width:768px){
+  .app{grid-template-columns:1fr;grid-template-rows:60px auto 1fr}
+  .sidebar{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:10px 12px}
+  .pg{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+  .qi{padding:5px 8px}
+  .main{padding:16px 14px}
+  .pw{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="topbar">
+    <div class="logo">
+      <svg viewBox="0 0 50 40" fill="none">
+        <rect x="1" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="12" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="23" y="14" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="12" y="3" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <rect x="23" y="3" width="9" height="9" rx="1.5" fill="#2188ff"/>
+        <path d="M34 22c2-8 12-8 14-2" stroke="#2188ff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M34 22H8c-4 0-7 2.5-7 7s3 7 7 7h28c4 0 7-3 7-7" stroke="#2188ff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Docker QCM
+    </div>
+    <span class="badge">Podcast de Révision · 23 questions</span>
+    <div class="topbar-right">
+      <div class="pw">
+        <span id="progressText">0 / 23</span>
+        <div class="pt"><div class="pf" id="progressFill" style="width:0%"></div></div>
+      </div>
+      <div class="score-b">Score : <span id="scoreDisplay">0 / 0</span></div>
+      <button class="export-btn" onclick="showExportModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exporter
+      </button>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-overlay" id="exportModal" style="display:none" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h2>📤 Exporter le cours complet</h2>
+    <p>Choisissez le format d'export. Le document contiendra toutes les questions avec leurs explications détaillées, l'analyse des propositions incorrectes, et les résumés à retenir.</p>
+    <div class="modal-btns">
+      <button class="mbtn" onclick="exportHTML()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <div>
+          <div>Fichier HTML</div>
+          <div class="mbtn-desc">Page web autonome, lisible dans tout navigateur</div>
+        </div>
+      </button>
+      <button class="mbtn" onclick="exportPrint()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <div>
+          <div>Imprimer / PDF</div>
+          <div class="mbtn-desc">Ouvre la boîte d'impression — choisissez "Enregistrer en PDF"</div>
+        </div>
+      </button>
+    </div>
+    <button class="mclose" onclick="closeModal()">Annuler</button>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// DONNÉES — 23 questions complètes (toutes les parties du JSON)
+// ════════════════════════════════════════════════════════════════
+const QCM = [
+// ── PARTIE 1 ──────────────────────────────────────────────────
+{
+  num:"Q5", partie:"Partie 1",
+  q:"Qu'est-ce qu'un Dockerfile ?",
+  choices:{A:"Une image Docker construite en exécutant une commande Docker.",B:"Un fichier texte qui contient toutes les commandes nécessaires pour construire une image donnée.",C:"Une instance en cours d'exécution d'une image Docker.",D:"Un site web où vous pouvez télécharger des images Docker."},
+  correct:"B",
+  explanation:`<p>Pour bien comprendre ce concept, il faut distinguer trois objets fondamentaux dans Docker : le Dockerfile, l'image, et le conteneur. Ce sont trois choses très différentes, souvent confondues par les débutants.</p><p>Un <strong>Dockerfile</strong> est simplement un fichier texte brut, nommé littéralement <code>Dockerfile</code> sans extension, qui contient une série d'instructions exécutées de façon séquentielle. Chaque instruction crée une nouvelle couche dans l'image finale. Ce fichier joue le rôle d'une recette de cuisine : il décrit étape par étape comment fabriquer l'image Docker. On y trouve des instructions comme <code>FROM</code> (image de base), <code>RUN</code> (exécuter une commande), <code>COPY</code> (copier des fichiers), <code>EXPOSE</code> (déclarer un port), <code>CMD</code> (commande de démarrage par défaut).</p><p>Prenons un exemple concret : si vous voulez conteneuriser une application Node.js, votre Dockerfile commencera par <code>FROM node:18</code>, puis <code>WORKDIR /app</code>, ensuite <code>COPY package*.json ./</code>, puis <code>RUN npm install</code>, <code>COPY . .</code>, et enfin <code>CMD ["node", "index.js"]</code>. Ce fichier suffit pour que n'importe qui sur la planète puisse construire la même image identique, quel que soit son système d'exploitation.</p><p>Dans un environnement professionnel, le Dockerfile est versionné avec le code source dans Git. C'est une bonne pratique essentielle : l'image peut être reconstruite à tout moment de façon reproductible. Les équipes DevOps l'intègrent dans leurs pipelines CI/CD pour construire automatiquement les images à chaque commit.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Cette proposition décrit le processus de <em>construction</em> d'une image, pas le Dockerfile lui-même. Quand on exécute <code>docker build</code>, on utilise le Dockerfile pour créer une image. Le Dockerfile est l'entrée du processus, pas l'image résultante. Le piège ici est d'associer l'idée de 'construire en exécutant une commande' au Dockerfile, alors que c'est bien l'image qui en résulte."},
+    {l:"C",t:"Cette définition correspond au <strong>conteneur</strong>, pas au Dockerfile. Un conteneur est une instance en cours d'exécution d'une image. La confusion est fréquente car les trois notions sont liées : Dockerfile → Image → Conteneur. Beaucoup de candidats débutants mélangent ces trois niveaux d'abstraction."},
+    {l:"D",t:"Cela décrit <strong>Docker Hub</strong>, le registre public en ligne. Docker Hub est un site web permettant de télécharger et partager des images prêtes à l'emploi. Un Dockerfile est un fichier texte local sur votre machine de développement, pas un service en ligne."}
+  ],
+  examiner:"Cette question évalue si le candidat distingue bien les trois couches fondamentales de Docker : le fichier de configuration (Dockerfile), l'artefact compilé (image), et le processus en cours (conteneur). Le piège classique est de confondre Dockerfile et image, ou Dockerfile et registre.",
+  summary:["Un Dockerfile est un fichier texte local contenant des instructions séquentielles pour construire une image Docker.","Il joue le rôle de recette : <code>FROM</code>, <code>RUN</code>, <code>COPY</code>, <code>CMD</code> sont ses instructions principales.","Le Dockerfile est différent de l'image (résultat de la construction) et du conteneur (instance en cours d'exécution).","Il doit être versionné dans Git avec le code source pour garantir la reproductibilité des builds."]
+},
+{
+  num:"Q6", partie:"Partie 1",
+  q:"Lequel des énoncés suivants décrit correctement un conteneur Docker ?",
+  choices:{A:"Un fichier texte décrivant les dépendances d'une application.",B:"Une image Docker.",C:"Une instance d'une application créée à partir d'une image Docker.",D:"Un package composé d'une application et de toutes ses dépendances."},
+  correct:"C",
+  explanation:`<p>Le conteneur est l'unité d'exécution centrale de Docker. Pour bien comprendre ce concept, imaginez une image comme un moule de gâteau et le conteneur comme le gâteau lui-même : le moule définit la forme, mais c'est le gâteau qu'on consomme. De même, l'image est statique et immuable, tandis que le conteneur est vivant et en cours d'exécution.</p><p>Techniquement, un conteneur Docker est un processus isolé sur le système hôte, créé à partir d'une image Docker. Il utilise les <strong>namespaces Linux</strong> (pour l'isolation des processus, du réseau, du système de fichiers) et les <strong>cgroups</strong> (pour la limitation des ressources CPU et mémoire). Contrairement à une machine virtuelle, il partage le noyau du système d'exploitation hôte, ce qui le rend beaucoup plus léger et rapide à démarrer — souvent en moins d'une seconde.</p><p>Dans un environnement professionnel, on peut démarrer des dizaines, voire des centaines de conteneurs à partir d'une seule image. Par exemple, une image Nginx peut servir de base pour 50 conteneurs différents répartis sur plusieurs serveurs, chacun gérant un flux de trafic web indépendant. C'est ce qui fait la puissance de Docker dans les architectures microservices.</p><p>Retenons également qu'un conteneur a un cycle de vie : il peut être créé (<code>docker create</code>), démarré (<code>docker start</code>), stoppé (<code>docker stop</code>), et supprimé (<code>docker rm</code>). Chaque conteneur possède une couche d'écriture temporaire au-dessus de l'image en lecture seule, qui disparaît quand le conteneur est supprimé.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Cette description correspond à un fichier de dépendances comme <code>package.json</code> (Node.js) ou <code>requirements.txt</code> (Python). Ce n'est pas un concept Docker mais un concept propre aux gestionnaires de paquets applicatifs. Un conteneur n'est pas un fichier texte — c'est un processus actif."},
+    {l:"B",t:"L'image Docker est le modèle statique en lecture seule à partir duquel on crée des conteneurs. Confondre image et conteneur est l'erreur la plus fréquente chez les débutants. L'image est le plan, le conteneur est la réalisation vivante de ce plan."},
+    {l:"D",t:"Cette description s'approche de la définition d'une <strong>image Docker</strong> (un package avec l'application et ses dépendances), pas d'un conteneur. Le conteneur est l'instanciation en mémoire et en exécution de ce package. Une image peut exister sans jamais générer de conteneur ; un conteneur, lui, ne peut pas exister sans image."}
+  ],
+  examiner:"Cette question teste la distinction fondamentale image/conteneur. Les examinateurs utilisent souvent des formulations très proches pour piéger les candidats. Retenir que le conteneur est toujours une instance en cours d'exécution est la clé de la réussite.",
+  summary:["Un conteneur est une instance d'une application créée à partir d'une image Docker — c'est un processus actif.","Il est isolé via les namespaces Linux et les cgroups, mais partage le noyau du système hôte.","Une même image peut générer des dizaines de conteneurs simultanément indépendants.","Le conteneur a un cycle de vie : créé, démarré, stoppé, supprimé — sa couche d'écriture est temporaire."]
+},
+{
+  num:"Q8", partie:"Partie 1",
+  q:"Un conteneur Docker est une instance d'une image avec une configuration spécifique.",
+  choices:{A:"Vrai",B:"Faux"},
+  correct:"A",
+  explanation:`<p>Cette affirmation est vraie. Un conteneur Docker est bien une instance d'une image, et cette instance peut avoir une configuration spécifique qui la distingue des autres conteneurs issus de la même image.</p><p>Prenons un exemple concret : vous avez une image de base pour un serveur web Nginx. Vous pouvez créer trois conteneurs à partir de cette même image, chacun avec une configuration différente : un exposé sur le port 8080 avec 512 Mo de RAM alloués, un autre sur le port 8081 avec une variable d'environnement <code>ENV=production</code>, et un troisième monté avec un volume personnalisé pointant vers des fichiers HTML différents.</p><p>La configuration d'un conteneur peut être définie au moment de sa création via la commande <code>docker run</code> avec des options comme <code>-p</code> (port mapping), <code>-e</code> (variables d'environnement), <code>-v</code> (volumes), <code>--memory</code> (limite mémoire), <code>--name</code> (nom personnalisé) ou <code>--network</code> (réseau Docker).</p><p>Dans un environnement professionnel, cette capacité est au cœur du principe de portabilité de Docker : la même image peut être déployée en développement, en staging et en production avec des configurations différentes injectées à l'exécution, sans jamais modifier l'image elle-même. C'est ce qu'on appelle le principe de séparation de la configuration et du code, fondamental dans les architectures DevOps modernes.</p>`,
+  wrongAnalysis:[
+    {l:"B",t:"La proposition Faux est incorrecte. Un conteneur est bien défini par son image de base ET sa configuration d'exécution. Répondre Faux suggérerait qu'un conteneur est identique à son image ou qu'il ne peut pas avoir de configuration propre, ce qui est inexact. Chaque conteneur peut être paramétré différemment même s'il provient de la même image."}
+  ],
+  examiner:"Les questions vrai/faux sur Docker testent souvent des nuances sémantiques. Ici, le mot 'configuration spécifique' est la clé : il valide que le candidat comprend qu'on peut paramétrer un conteneur différemment de l'image de base. Les certifications les utilisent pour vérifier la précision de la compréhension.",
+  summary:["Un conteneur est une instance d'une image, enrichie d'une configuration d'exécution spécifique.","La configuration inclut : ports, variables d'environnement, volumes, limites de ressources, réseau.","Plusieurs conteneurs de la même image peuvent avoir des configurations très différentes.","Ce principe permet de déployer la même image en dev, staging et production sans modifier le code."]
+},
+{
+  num:"Q10", partie:"Partie 1",
+  q:"Laquelle des propositions suivantes explique la relation entre une image Docker et un conteneur Docker ?",
+  choices:{A:"Un conteneur Docker est utilisé pour démarrer une image Docker.",B:"Un conteneur Docker est une instance en cours d'exécution d'une image.",C:"Un conteneur Docker est une collection de couches d'images.",D:"Un conteneur Docker est constitué de deux ou plusieurs images qui partagent un environnement d'exécution commun."},
+  correct:"B",
+  explanation:`<p>La relation entre image et conteneur dans Docker est l'un des concepts les plus fondamentaux à maîtriser pour toute certification. Une image Docker est un modèle statique, immuable, en lecture seule. C'est un snapshot complet de tout ce dont une application a besoin : le système de fichiers, les bibliothèques, les dépendances, le code applicatif et les métadonnées de configuration.</p><p>Un conteneur est ce qu'on obtient quand on "exécute" cette image. La commande <code>docker run mon-image</code> crée un conteneur à partir de l'image et le démarre immédiatement. Techniquement, le moteur Docker ajoute au-dessus des couches en lecture seule de l'image une couche d'écriture temporaire (thin writable layer). Toutes les modifications effectuées pendant l'exécution sont stockées dans cette couche. Si le conteneur est supprimé, cette couche et ses données disparaissent.</p><p>Une analogie utile : une image est comme un programme installé sur votre ordinateur (par exemple Firefox). Un conteneur est comme une instance ouverte de ce programme. Vous pouvez ouvrir Firefox plusieurs fois simultanément — c'est exactement comme avoir plusieurs conteneurs qui tournent à partir de la même image. Chaque instance a son propre état et ses propres données, mais toutes partagent le même code source.</p><p>Dans les architectures cloud natives modernes, cette relation est exploitée massivement : les orchestrateurs comme Kubernetes gèrent automatiquement des milliers de conteneurs issus d'un ensemble réduit d'images, en les répartissant sur des clusters de serveurs selon la charge et les besoins de disponibilité.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"La relation est strictement inversée. C'est le conteneur qui est créé à partir de l'image, pas l'image qui est démarrée par le conteneur. La commande correcte est <code>docker run &lt;image&gt;</code> qui crée un conteneur — jamais l'inverse. Cette confusion révèle une méconnaissance du flux de travail Docker."},
+    {l:"C",t:"C'est la définition partielle d'une <strong>image</strong> (qui est effectivement composée de couches superposées appelées layers), pas d'un conteneur. Confondre la structure interne de l'image avec la définition du conteneur est une erreur conceptuelle fréquente chez les apprenants qui ont partiellement assimilé la notion de layers."},
+    {l:"D",t:"Cette proposition est techniquement incorrecte. Un conteneur est issu d'une seule image de base (même si cette image hérite elle-même d'autres images via <code>FROM</code> dans son Dockerfile). La notion de 'deux ou plusieurs images partageant un environnement' correspond davantage à Docker Compose ou aux pods Kubernetes, pas à la définition d'un conteneur simple."}
+  ],
+  examiner:"Cette question centrale revient dans la quasi-totalité des certifications Docker. Elle évalue la compréhension précise du cycle de vie image → conteneur. La réponse B utilise l'expression 'instance en cours d'exécution' qui est la formulation canonique de la documentation officielle Docker.",
+  summary:["Une image est un modèle statique en lecture seule ; un conteneur en est une instance active en cours d'exécution.","La commande <code>docker run</code> crée et démarre un conteneur à partir d'une image.","Plusieurs conteneurs peuvent tourner simultanément à partir d'une seule image.","Le conteneur ajoute une couche d'écriture temporaire au-dessus des couches immuables de l'image."]
+},
+// ── PARTIE 2 ──────────────────────────────────────────────────
+{
+  num:"Q1", partie:"Partie 2",
+  q:"Quelle instruction doit apparaître en premier dans le fichier Dockerfile ?",
+  choices:{A:"IMAGE",B:"ENV",C:"FROM",D:"RUN"},
+  correct:"C",
+  explanation:`<p>L'instruction <code>FROM</code> est obligatoirement la première instruction d'un Dockerfile (exception faite des commentaires et de l'instruction <code>ARG</code> dans certains cas avancés de multi-stage builds). Elle définit l'image de base à partir de laquelle toute la construction va s'effectuer.</p><p>Pensez à <code>FROM</code> comme au choix de votre point de départ. Si vous construisez une application Python, vous partirez probablement de <code>FROM python:3.11-slim</code>. Si c'est une application Java, peut-être <code>FROM openjdk:17-alpine</code>. Si vous voulez partir de zéro pour créer une image minimaliste, Docker propose l'image spéciale <code>FROM scratch</code> qui est vide.</p><p>La syntaxe complète est <code>FROM &lt;image&gt;[:tag] [AS &lt;name&gt;]</code>. La partie <code>AS &lt;name&gt;</code> permet les builds multi-étapes (multi-stage builds), une technique avancée très utilisée pour réduire la taille finale des images de production. Par exemple, une première étape <code>FROM node:18 AS builder</code> pour compiler l'application, puis une seconde étape <code>FROM nginx:alpine</code> qui ne copie que les fichiers compilés, sans inclure Node.js dans l'image finale.</p><p>Dans un environnement professionnel, le choix de l'image de base a des implications importantes sur la sécurité (une image avec moins de packages a moins de vulnérabilités potentielles), la taille (les variantes <code>alpine</code> ou <code>slim</code> sont beaucoup plus légères), et la compatibilité avec l'architecture cible (amd64, arm64).</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"L'instruction <code>IMAGE</code> n'existe tout simplement pas dans la syntaxe Dockerfile. C'est un leurre typique des QCM sur Docker. Certains candidats la choisissent par association avec le concept d'image de base, mais aucune instruction Dockerfile ne se nomme IMAGE."},
+    {l:"B",t:"<code>ENV</code> est une instruction valide et utile pour définir des variables d'environnement dans l'image (ex: <code>ENV NODE_ENV=production</code>), mais elle ne peut pas apparaître en premier. Elle nécessite obligatoirement que l'image de base soit déjà définie via <code>FROM</code>, car elle s'exécute dans le contexte de cette image."},
+    {l:"D",t:"<code>RUN</code> exécute une commande lors de la phase de construction de l'image (par exemple <code>RUN apt-get update && apt-get install -y curl</code>). Comme toutes les autres instructions, elle ne peut être utilisée qu'après <code>FROM</code> qui établit l'environnement dans lequel elle va s'exécuter."}
+  ],
+  examiner:"Cette question teste la connaissance de la structure obligatoire d'un Dockerfile. FROM est la seule instruction pouvant et devant apparaître en premier (avec ARG dans des cas très spécifiques). Les examinateurs proposent délibérément des instructions inexistantes (IMAGE) et des instructions valides mais mal positionnées (ENV, RUN).",
+  summary:["<code>FROM</code> est la première instruction obligatoire de tout Dockerfile — elle définit l'image de base.","Elle supporte les variantes légères : <code>FROM python:3.11-slim</code>, <code>FROM node:18-alpine</code>.","Les builds multi-étapes utilisent plusieurs <code>FROM</code> pour optimiser la taille des images de production.","IMAGE n'existe pas comme instruction Dockerfile — c'est un piège classique d'examen à mémoriser."]
+},
+{
+  num:"Q2", partie:"Partie 2",
+  q:"Le registre Docker est un endroit où l'on peut stocker et distribuer des ________ Docker.",
+  choices:{A:"fichiers",B:"images",C:"codes"},
+  correct:"B",
+  explanation:`<p>Un registre Docker (Docker Registry) est un service centralisé de stockage et de distribution d'images Docker. C'est l'équivalent d'un gestionnaire de paquets (comme npm pour JavaScript ou pip pour Python) mais spécialisé pour les images de conteneurs.</p><p>Il en existe deux grandes catégories. Le registre public le plus connu est <strong>Docker Hub</strong>, accessible à hub.docker.com, qui héberge des millions d'images publiques. Quand vous exécutez <code>docker pull nginx</code> sans préciser de registre, Docker va automatiquement chercher l'image nginx sur Docker Hub. Les entreprises utilisent également des registres privés pour héberger leurs images propriétaires : Amazon ECR (Elastic Container Registry), Google Artifact Registry, Azure Container Registry (ACR), ou des solutions auto-hébergées comme Harbor ou JFrog Artifactory.</p><p>Le fonctionnement interne d'un registre repose sur le protocole HTTP/HTTPS et les opérations <code>push</code> (publier une image) et <code>pull</code> (télécharger une image). Chaque image est identifiée par un nom complet incluant le registre, le namespace et un tag : <code>registry.example.com/mon-app:v2.1.0</code>. Sans tag spécifié, Docker utilise <code>latest</code> par défaut, ce qui est une mauvaise pratique en production car ce tag est mutable et peut pointer vers des versions différentes dans le temps.</p><p>Dans un environnement professionnel, la gestion des registres est cruciale pour la sécurité (contrôle d'accès basé sur les rôles, scan automatique de vulnérabilités) et la performance (un registre régional proche des serveurs de déploiement réduit considérablement les temps de téléchargement lors des mises à jour).</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Un registre Docker ne stocke pas de 'fichiers' au sens générique du terme. Il stocke spécifiquement des images, qui sont elles-mêmes structurées en couches (layers) mais l'unité de distribution et d'identification est toujours l'image, jamais un fichier isolé."},
+    {l:"C",t:"Un registre Docker ne stocke pas de code source. Pour versionner et distribuer du code, on utilise des systèmes de contrôle de version comme Git et des plateformes comme GitHub, GitLab ou Bitbucket. Un registre Docker contient des images déjà construites à partir du code, pas les fichiers sources eux-mêmes."}
+  ],
+  examiner:"Question de complètement testant la définition précise d'un registre Docker. Le terme 'images' est le seul terme technique correct dans toute la documentation officielle Docker. La distinction fichiers/code/images est fondamentale.",
+  summary:["Un registre Docker stocke et distribue des images Docker — pas du code source ni des fichiers génériques.","Docker Hub est le registre public officiel ; il existe aussi des registres privés (ECR, GCR, Harbor).","Les commandes <code>docker push</code> et <code>docker pull</code> interagissent avec le registre.","En production, toujours utiliser des tags de version explicites plutôt que <code>latest</code>."]
+},
+{
+  num:"Q3", partie:"Partie 2",
+  q:"Quel est le but d'une image ?",
+  choices:{A:"Fournir un processus traditionnel pour une application.",B:"Fournir la configuration réseau pour la pile réseau d'une application.",C:"Fournir le système de fichiers pour une application.",D:"Fournir un processus isolé pour une application."},
+  correct:"C",
+  explanation:`<p>Le rôle fondamental d'une image Docker est de fournir un système de fichiers complet et autonome pour une application. C'est précisément ce qui différencie Docker des solutions de virtualisation traditionnelles : l'image encapsule tout l'environnement nécessaire à l'exécution de l'application dans un seul artefact portable.</p><p>Pour bien comprendre ce concept, imaginez un conteneur comme un processus qui démarre avec un système de fichiers qui lui appartient entièrement et qui est complètement distinct du système de fichiers de l'hôte. Ce système de fichiers est fourni par l'image. Il inclut : le système d'exploitation de base (bibliothèques C, utilitaires système), les runtimes nécessaires (Python, Java, Node.js), les dépendances applicatives (packages npm, pip, Maven), et le code de l'application elle-même.</p><p>Une image Docker est construite en couches superposées (layers). Chaque instruction du Dockerfile crée une nouvelle couche immuable. Ces couches sont stockées séparément et peuvent être partagées entre plusieurs images qui ont des couches communes, ce qui économise de l'espace disque et accélère les téléchargements. Par exemple, si dix images utilisent <code>ubuntu:22.04</code> comme base, la couche Ubuntu n'est stockée qu'une seule fois sur le système.</p><p>Une erreur fréquente consiste à croire que l'image contient le processus en cours d'exécution. Non — l'image est purement statique et inerte. C'est le conteneur qui représente le processus actif. L'image ne fournit que l'environnement de fichiers nécessaire à l'exécution ; le processus lui-même est instancié par le runtime Docker au moment de la création du conteneur.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Le terme 'processus traditionnel' est vague et n'a pas de sens technique précis dans le contexte Docker. Une image ne fournit pas un processus — elle fournit le système de fichiers. C'est le conteneur qui instancie le processus en s'appuyant sur ce système de fichiers."},
+    {l:"B",t:"La configuration réseau n'est pas dans l'image. Elle est gérée dynamiquement par Docker Engine au moment de la création du conteneur (bridges virtuels, réseaux overlay, règles NAT, DNS interne Docker). L'image est indépendante de toute couche réseau."},
+    {l:"D",t:"Le processus isolé est fourni par le <strong>conteneur</strong>, pas par l'image. L'isolation (via les namespaces Linux) et la limitation des ressources (via les cgroups) sont des mécanismes du runtime Docker appliqués au conteneur. L'image elle-même ne contient ni processus ni mécanisme d'isolation."}
+  ],
+  examiner:"Cette question teste la compréhension du rôle exact d'une image dans l'architecture Docker. La réponse C est la plus précise techniquement. La réponse D est très séduisante mais elle décrit le rôle du conteneur et non celui de l'image.",
+  summary:["Une image Docker fournit le système de fichiers complet et autonome pour une application.","Elle inclut l'OS de base, les runtimes, les dépendances applicatives et le code.","Les images sont composées de couches immuables partagées entre images, économisant espace et bande passante.","L'image est un artefact statique ; le processus isolé est le rôle du conteneur, pas de l'image."]
+},
+{
+  num:"Q4", partie:"Partie 2",
+  q:"Laquelle des affirmations suivantes est vraie à propos de l'architecture de Docker ?",
+  choices:{A:"L'architecture est de type client-serveur.",B:"Les conteneurs Docker sont exécutés en tant que root.",C:"Le démon doit être exécuté en tant que root.",D:"Toutes les réponses sont vraies."},
+  correct:"D",
+  explanation:`<p>Cette question est particulièrement intéressante car la bonne réponse est que toutes les propositions A, B et C sont vraies simultanément, ce qui correspond à l'option D "Toutes les réponses sont vraies".</p><p>Décortiquons chaque affirmation. L'<strong>architecture client-serveur</strong> : Docker fonctionne avec un daemon (<code>dockerd</code>) qui tourne en arrière-plan sur le serveur et un client CLI (la commande <code>docker</code>) qui lui envoie des requêtes via une API REST sur socket Unix (<code>/var/run/docker.sock</code>) ou TCP. C'est le schéma classique client-serveur que l'on retrouve dans de nombreux services Unix.</p><p>Les <strong>conteneurs exécutés en tant que root</strong> : par défaut, les processus à l'intérieur d'un conteneur Docker tournent avec l'utilisateur root du conteneur. Ce root est techniquement limité par les capacités Linux (capabilities) mais reste une configuration préoccupante d'un point de vue sécurité. La bonne pratique consiste à définir un utilisateur non-root dans le Dockerfile via l'instruction <code>USER nom_utilisateur</code> après avoir créé cet utilisateur avec <code>RUN useradd</code>.</p><p>Le <strong>daemon exécuté en tant que root</strong> : c'est une réalité technique importante. Le daemon Docker (<code>dockerd</code>) nécessite des privilèges root pour gérer les namespaces noyau, les cgroups, les interfaces réseau et les montages de volumes. C'est pour cette raison que des alternatives sans root (rootless Docker, Podman) ont été développées pour améliorer la posture de sécurité. L'appartenance au groupe <code>docker</code> donne des privilèges quasi-équivalents à root sur le système hôte.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Cette affirmation est vraie individuellement. L'architecture Docker est bien de type client-serveur. Mais la question demande de choisir la proposition qui rend compte de toutes les vérités — ce n'est pas suffisant de sélectionner seulement A."},
+    {l:"B",t:"Cette affirmation est également vraie. Les conteneurs tournent par défaut en root. Mais comme A, elle n'est pas la seule vraie. Répondre B serait correct mais incomplet."},
+    {l:"C",t:"Vraie aussi. Le daemon Docker requiert des droits root. Mais là encore, ce n'est pas la seule réponse correcte. La bonne réponse D englobe les trois propositions simultanément."}
+  ],
+  examiner:"Ce type de question 'toutes les réponses sont correctes' est un piège classique des certifications professionnelles. Il teste si le candidat vérifie chaque proposition indépendamment avant de conclure, plutôt que de s'arrêter à la première vraie qu'il rencontre.",
+  summary:["L'architecture Docker est client-serveur : le CLI (client) communique avec <code>dockerd</code> (daemon/serveur).","Les conteneurs tournent par défaut en root — bonne pratique : définir un USER non-root dans le Dockerfile.","Le daemon <code>dockerd</code> doit être exécuté en root pour accéder aux fonctionnalités noyau Linux.","Quand toutes les propositions semblent individuellement vraies, l'option 'Toutes les réponses' est souvent la bonne."]
+},
+{
+  num:"Q5", partie:"Partie 2",
+  q:"Sur quels concepts de base Docker repose-t-il ?",
+  choices:{A:"Images et conteneurs",B:"Images et machines virtuelles",C:"Images et archives",D:"Vmware et VirtualBox"},
+  correct:"A",
+  explanation:`<p>Docker repose fondamentalement sur deux concepts indissociables : les <strong>images</strong> et les <strong>conteneurs</strong>. C'est le duo central autour duquel toute la technologie Docker est construite, et toute la terminologie de l'écosystème en découle.</p><p>Les <strong>images</strong> sont les blocs de construction statiques. Elles encapsulent tout ce qu'une application nécessite pour fonctionner : code, runtime, bibliothèques, variables d'environnement, fichiers de configuration. Une image est immuable — une fois construite, on ne la modifie pas, on en crée une nouvelle version avec un nouveau tag. Cette immuabilité est une propriété délibérée qui garantit la reproductibilité.</p><p>Les <strong>conteneurs</strong> sont les unités d'exécution dynamiques. Ils sont créés à partir des images et représentent les processus applicatifs en cours d'exécution. Ils sont légers car ils partagent le noyau du système hôte, contrairement aux machines virtuelles qui embarquent un OS complet avec leur propre noyau.</p><p>Il est important de bien distinguer Docker des machines virtuelles. Une VM comme VMware ou VirtualBox virtualise le matériel et inclut un système d'exploitation complet avec un noyau dédié, ce qui la rend lourde (plusieurs Go) et lente à démarrer (minutes). Un conteneur Docker partage le noyau hôte et ne contient que les dépendances applicatives nécessaires. Il démarre en secondes, voire en millisecondes, et occupe quelques dizaines de Mo. En pratique, conteneurs et VMs sont souvent complémentaires dans les infrastructures cloud.</p>`,
+  wrongAnalysis:[
+    {l:"B",t:"Docker n'est pas construit sur les machines virtuelles. Il est souvent comparé aux VMs dans les présentations, mais il s'en distingue fondamentalement par son architecture. Les VMs virtualisent le matériel et embarquent un OS complet ; Docker utilise les fonctionnalités du noyau Linux (namespaces, cgroups) pour isoler les processus sans OS supplémentaire."},
+    {l:"C",t:"Bien qu'une image Docker soit techniquement exportée au format tar (via <code>docker save</code>), le concept d'archive n'est pas un pilier conceptuel de Docker. C'est un détail d'implémentation interne, pas un fondement architectural présenté à l'utilisateur."},
+    {l:"D",t:"VMware et VirtualBox sont des solutions de virtualisation de type hyperviseur, pas des concepts internes à Docker. Cette proposition teste si le candidat sait distinguer la virtualisation (VMs) de la conteneurisation (Docker). Ce sont deux technologies différentes, bien que complémentaires."}
+  ],
+  examiner:"Question fondamentale sur les bases de Docker. Retenir le duo image/conteneur comme socle conceptuel est essentiel. Les distracteurs B et D testent la confusion entre virtualisation et conteneurisation, l'une des méprises les plus courantes chez les débutants.",
+  summary:["Docker repose sur deux concepts fondamentaux : les images (statiques, immuables) et les conteneurs (dynamiques, en exécution).","Une image est le modèle immuable ; un conteneur est son instance active.","Docker diffère des VMs : il partage le noyau hôte, démarre en secondes et est beaucoup plus léger.","VMware et VirtualBox sont des outils de virtualisation, des technologies distinctes de la conteneurisation Docker."]
+},
+{
+  num:"Q7", partie:"Partie 2",
+  q:"Cette commande Dockerfile spécifie l'image de base à utiliser lors de la création d'une image Docker.",
+  choices:{A:"BASE",B:"CMD",C:"ADD",D:"FROM"},
+  correct:"D",
+  explanation:`<p>L'instruction <code>FROM</code> est la commande Dockerfile qui spécifie l'image de base. C'est la fondation de toute image Docker personnalisée, et elle est obligatoirement présente dans chaque Dockerfile.</p><p>La syntaxe complète est <code>FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;alias&gt;]</code>. Quelques exemples illustratifs : <code>FROM ubuntu:22.04</code> pour partir d'Ubuntu LTS, <code>FROM python:3.12-slim</code> pour une image Python légère basée sur Debian Slim, <code>FROM node:18-alpine</code> pour une image Node.js ultra-légère sur Alpine Linux, ou <code>FROM scratch</code> pour partir d'une image vide (utilisé pour des binaires Go compilés statiquement par exemple).</p><p>L'importance du tag est souvent sous-estimée par les débutants. Utiliser <code>FROM node:latest</code> peut subitement casser vos builds si Node.js publie une nouvelle version majeure qui introduit des changements incompatibles. Dans un environnement professionnel, on épingle toujours la version précisément : <code>FROM node:18.19.0-alpine3.19</code>. Cela garantit que chaque build produit exactement la même image, même des mois plus tard.</p><p>Les builds multi-étapes (multi-stage builds) utilisent plusieurs instructions FROM dans un même Dockerfile. Exemple typique : une première étape <code>FROM maven:3.9 AS build</code> compile le code Java, puis <code>FROM openjdk:17-jre-slim</code> ne contient que le runtime Java et les fichiers compilés. Résultat : une image de production 10x plus légère sans les outils de compilation.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"<code>BASE</code> n'est pas une instruction Docker valide. Elle n'existe pas dans la spécification Dockerfile. C'est un leurre très courant dans les QCM, car le concept d'image 'de base' est réel (on parle bien d'image de base), mais l'instruction pour la spécifier est FROM et non BASE."},
+    {l:"B",t:"<code>CMD</code> définit la commande par défaut exécutée quand un conteneur démarre à partir de l'image. Exemple : <code>CMD [\"python\", \"app.py\"]</code> ou <code>CMD [\"nginx\", \"-g\", \"daemon off;\"]</code>. Elle ne spécifie pas l'image de base — c'est une instruction de comportement à l'exécution, pas de définition d'environnement."},
+    {l:"C",t:"<code>ADD</code> copie des fichiers depuis le contexte de build (ou une URL) vers le système de fichiers de l'image en cours de construction. Elle supporte la décompression automatique des archives tar. Elle n'a aucun rapport avec la définition de l'image de base. Pour les copies simples, <code>COPY</code> est préféré car son comportement est plus prévisible."}
+  ],
+  examiner:"Question directe sur la syntaxe Dockerfile. FROM est la réponse canonique documentée. BASE est le piège classique (concept bien réel, mais instruction inexistante). CMD et ADD testent si le candidat distingue les différents rôles des instructions Dockerfile.",
+  summary:["<code>FROM</code> spécifie l'image de base — première instruction obligatoire de tout Dockerfile.","Toujours épingler la version du tag en production pour garantir des builds reproductibles.","Les builds multi-étapes utilisent plusieurs <code>FROM</code> pour produire des images de production optimisées.","BASE n'existe pas ; CMD définit la commande de démarrage ; ADD copie des fichiers avec décompression."]
+},
+{
+  num:"Q8", partie:"Partie 2",
+  q:"Lequel des éléments suivants n'est pas une directive Dockerfile recommandée ?",
+  choices:{A:"MAINTAINER",B:"COPY",C:"LABEL",D:"FROM"},
+  correct:"A",
+  explanation:`<p>L'instruction <code>MAINTAINER</code> est officiellement dépréciée dans Docker depuis la version 1.13 (début 2017). La documentation officielle recommande d'utiliser à la place l'instruction <code>LABEL</code> pour définir des métadonnées sur l'image, y compris l'auteur et les informations de contact.</p><p>Historiquement, on utilisait <code>MAINTAINER</code> ainsi : <code>MAINTAINER John Doe &lt;john@example.com&gt;</code>. La syntaxe moderne équivalente avec <code>LABEL</code> est : <code>LABEL maintainer="john@example.com"</code>, ou de façon plus complète et expressive : <code>LABEL maintainer="John Doe &lt;john@example.com&gt;" version="1.0.0" description="Serveur web Nginx personnalisé" org.opencontainers.image.source="https://github.com/mon-org/mon-repo"</code>.</p><p>L'avantage de LABEL sur MAINTAINER est considérable et multiface. LABEL est une instruction générique qui peut porter autant de métadonnées que nécessaire sous forme de paires clé-valeur. Ces métadonnées sont consultables avec la commande <code>docker inspect mon-image</code> et peuvent être filtrées avec <code>docker images --filter label=version=1.0</code>.</p><p>Dans un environnement professionnel, les labels font partie intégrante des bonnes pratiques DevOps. Les pipelines CI/CD injectent automatiquement des labels avec le numéro de commit Git, la branche, la date et l'heure de build pour assurer une traçabilité complète de chaque image produite. Les orchestrateurs comme Kubernetes utilisent aussi les labels pour sélectionner et filtrer les ressources.</p>`,
+  wrongAnalysis:[
+    {l:"B",t:"<code>COPY</code> est une instruction parfaitement valide, moderne et recommandée pour copier des fichiers depuis le contexte de build vers le système de fichiers de l'image. Elle est même préférée à <code>ADD</code> pour les copies simples car son comportement est transparent et prévisible, sans effets de bord liés à la décompression automatique."},
+    {l:"C",t:"<code>LABEL</code> est précisément l'instruction recommandée en remplacement de MAINTAINER. Elle est moderne, flexible, et standard dans tous les Dockerfiles actuels. Elle fait partie des OCI Image Annotations et constitue une bonne pratique universelle."},
+    {l:"D",t:"<code>FROM</code> est l'instruction de base obligatoire de tout Dockerfile — la plus importante de toutes. Elle ne sera jamais dépréciée car elle est fondamentale à la construction de toute image Docker."}
+  ],
+  examiner:"Cette question teste la connaissance des bonnes pratiques actuelles de la rédaction de Dockerfiles. MAINTAINER est dépréciée depuis 2017 mais reste très présente dans les anciens tutoriels et exemples sur internet. Les certifications récentes vérifient que le candidat connaît cette évolution et préfère LABEL.",
+  summary:["<code>MAINTAINER</code> est dépréciée depuis Docker 1.13 (2017) — ne plus l'utiliser dans les nouveaux Dockerfiles.","<code>LABEL</code> est son remplacement moderne et flexible : <code>LABEL maintainer=\"email\"</code>.","<code>LABEL</code> supporte des paires clé-valeur multiples, consultables via <code>docker inspect</code>.","<code>COPY</code>, <code>FROM</code> et <code>LABEL</code> sont toutes des directives valides et activement recommandées."]
+},
+{
+  num:"Q9", partie:"Partie 2",
+  q:"Laquelle des interfaces réseau suivantes est créée lorsque vous installez le runtime Docker sur l'hôte Docker ?",
+  choices:{A:"Docker1",B:"Docker0",C:"eth0",D:"eth1"},
+  correct:"B",
+  explanation:`<p>Lors de l'installation de Docker sur un système Linux, une interface réseau virtuelle nommée <code>docker0</code> est automatiquement créée par le daemon Docker. C'est un pont réseau (bridge) virtuel qui joue un rôle central dans la connectivité par défaut des conteneurs.</p><p>Pour bien comprendre le fonctionnement de docker0, il faut comprendre le mécanisme des veth pairs (virtual ethernet pairs). Lorsqu'un conteneur démarre, Docker crée automatiquement une paire d'interfaces réseau virtuelles connectées l'une à l'autre : une extrémité est attachée à l'interface <code>docker0</code> côté système hôte, et l'autre extrémité est la carte réseau du conteneur (généralement nommée <code>eth0</code> à l'intérieur du conteneur). Cela crée un tunnel réseau virtuel permettant la communication.</p><p>Par défaut, <code>docker0</code> se voit attribuer l'adresse IP <code>172.17.0.1</code> avec un masque /16, ce qui correspond à la plage d'adresses <code>172.17.0.0/16</code>. Les conteneurs connectés au réseau bridge par défaut reçoivent des adresses dans cette plage (172.17.0.2, 172.17.0.3, etc.). On peut visualiser cette interface avec la commande <code>ip addr show docker0</code> ou <code>ifconfig docker0</code>.</p><p>Dans un environnement professionnel, on crée souvent des réseaux Docker personnalisés plutôt que d'utiliser le réseau bridge par défaut. La commande <code>docker network create --driver bridge mon-reseau</code> crée un réseau dédié avec sa propre plage d'adresses, permettant l'isolation entre différents groupes de conteneurs et activant la résolution DNS par nom de conteneur (fonctionnalité absente du réseau bridge par défaut).</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"<code>Docker1</code> n'existe pas. Ce n'est pas une interface créée par Docker lors de l'installation. C'est un leurre typique par proximité lexicale avec la vraie réponse. L'interface officielle s'appelle <code>docker0</code> (avec le chiffre zéro, pas le chiffre un)."},
+    {l:"C",t:"<code>eth0</code> est l'interface réseau physique ou virtuelle principale du système hôte (ou de la VM). Elle existait avant l'installation de Docker et n'est pas créée par Docker. Cependant, les conteneurs utilisent souvent le nom <code>eth0</code> pour désigner leur propre interface réseau interne — ne pas confondre l'interface de l'hôte et celle du conteneur."},
+    {l:"D",t:"<code>eth1</code> est une seconde interface réseau du système hôte si elle existe (machine à deux cartes réseau). Comme eth0, elle n'est pas créée par Docker mais préexiste à l'installation."}
+  ],
+  examiner:"Question technique sur la configuration réseau par défaut de Docker. <code>docker0</code> est la réponse canonique documentée dans la documentation officielle. L'examinateur teste également si le candidat confond les interfaces du système hôte (eth0, eth1) avec celle créée par Docker.",
+  summary:["Docker crée automatiquement l'interface <code>docker0</code> (bridge virtuel) lors de son installation.","<code>docker0</code> agit comme un switch virtuel reliant les conteneurs entre eux et à l'extérieur via NAT.","Sa plage IP par défaut est <code>172.17.0.0/16</code> avec la gateway à <code>172.17.0.1</code>.","Les réseaux Docker personnalisés (<code>docker network create</code>) sont préférés en production pour l'isolation et le DNS."]
+},
+{
+  num:"Q10", partie:"Partie 2",
+  q:"Lequel des éléments suivants n'est pas un composant de l'architecture Docker ?",
+  choices:{A:"Docker Registry",B:"Docker Runtime",C:"Docker Engine",D:"Docker Machine"},
+  correct:"D",
+  explanation:`<p>Docker Machine était un outil complémentaire permettant de provisionner et gérer des hôtes Docker sur des machines distantes ou des fournisseurs cloud (AWS, GCP, Azure, VirtualBox). Il est important de noter qu'il a été officiellement déprécié et abandonné en 2021. Il n'est donc pas considéré comme un composant de l'architecture Docker actuelle.</p><p>Les composants constitutifs de l'architecture Docker moderne sont bien définis. <strong>Docker Engine</strong> est le moteur central et le cœur de Docker : c'est le daemon <code>dockerd</code> qui reçoit les commandes via l'API REST, gère la création et la supervision des conteneurs, des réseaux et des volumes. <strong>Docker Runtime</strong> désigne la couche d'exécution des conteneurs, qui comprend <code>containerd</code> (runtime de haut niveau gérant le cycle de vie complet des conteneurs) et <code>runc</code> (runtime de bas niveau conforme à la spécification OCI — Open Container Initiative, qui crée et exécute effectivement les processus). <strong>Docker Registry</strong> est le service de stockage et de distribution des images (Docker Hub pour le registre public, ou registres privés).</p><p>Docker Machine, lui, était un outil externe de provisionnement. Il permettait d'initialiser Docker sur des machines distantes et de gérer des hôtes Docker multiples depuis une seule machine locale. Avec la montée en puissance de Kubernetes et des solutions cloud natives intégrées (EKS, GKE, AKS), il est devenu obsolète et a été retiré du périmètre officiel Docker.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Docker Registry est bien un composant fondamental de l'architecture Docker. C'est le service de stockage et distribution des images. Docker Hub est le registre public officiel, mais les entreprises déploient souvent leurs propres registres privés pour des raisons de sécurité et de performance."},
+    {l:"B",t:"Docker Runtime (containerd/runc) est un composant essentiel et incontournable. Sans runtime, Docker ne peut pas créer ni exécuter de conteneurs. containerd est d'ailleurs utilisé aujourd'hui directement par Kubernetes, indépendamment de Docker, ce qui témoigne de son importance architecturale."},
+    {l:"C",t:"Docker Engine est littéralement le cœur de Docker. C'est le daemon (<code>dockerd</code>) qui orchestre tout : la communication avec le client CLI, la gestion du cycle de vie des images, des conteneurs, des réseaux et des volumes. Sans lui, rien ne fonctionne."}
+  ],
+  examiner:"Question sur l'architecture Docker actuelle versus les outils historiques dépréciés. Docker Machine est le distractor évident car il porte le nom Docker mais n'est plus un composant officiel depuis 2021. Les certifications récentes incluent souvent des questions sur les composants dépréciés pour tester la mise à jour des connaissances.",
+  summary:["Les composants actifs de l'architecture Docker : Engine (dockerd), Runtime (containerd/runc), Registry.","Docker Machine est déprécié depuis 2021 — ce n'est plus un composant de l'architecture officielle.","containerd gère le cycle de vie des conteneurs et est aussi utilisé directement par Kubernetes.","Savoir distinguer les composants actuels des outils dépréciés est fondamental pour les certifications récentes."]
+},
+// ── PARTIE 3 ──────────────────────────────────────────────────
+{
+  num:"Q7", partie:"Partie 3",
+  q:"Quel format Docker utilise-t-il pour exporter les images ?",
+  choices:{A:"zip",B:"tar",C:"iso",D:"rar"},
+  correct:"B",
+  explanation:`<p>Docker utilise le format <code>tar</code> (Tape Archive) pour exporter et importer les images. C'est un format d'archive Unix historique qui s'avère parfaitement adapté à la nature des images Docker grâce à sa capacité à préserver l'arborescence de fichiers, les permissions Unix et toutes les métadonnées associées.</p><p>Deux commandes principales permettent de travailler avec les images en format tar. La commande <code>docker save</code> exporte une ou plusieurs images vers une archive tar : <code>docker save -o mon-image.tar mon-image:latest</code> ou encore <code>docker save mon-image:v1 mon-image:v2 | gzip > images.tar.gz</code> pour exporter plusieurs images compressées. La commande réciproque <code>docker load</code> importe une image depuis une archive tar : <code>docker load -i mon-image.tar</code>.</p><p>Il est important de ne pas confondre ces commandes avec <code>docker export</code> et <code>docker import</code>, qui travaillent sur le système de fichiers d'un conteneur en cours d'exécution ou stoppé (pas sur les images avec leurs métadonnées et leurs layers). Cette distinction est fréquemment testée en certification.</p><p>Techniquement, une image Docker exportée via <code>docker save</code> contient dans l'archive tar un répertoire par couche (layer), chacun avec un fichier <code>layer.tar</code> et des fichiers de métadonnées JSON (<code>config.json</code>, <code>manifest.json</code>). Cette structure en couches est préservée intégralement dans l'archive, permettant une reconstruction fidèle et efficace.</p><p>Dans un environnement professionnel, l'export en tar est utilisé pour transférer des images dans des environnements air-gappés (sans accès internet), pour archiver des versions spécifiques d'images en dehors du registre, ou pour migrer des images entre différents daemons Docker sur un réseau privé.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Le format zip n'est pas utilisé par Docker pour les images. C'est un format de compression très répandu mais orienté Windows. Docker utilise tar, qui est natif aux systèmes Unix/Linux et qui préserve nativement les permissions de fichiers Linux, essentielles pour le bon fonctionnement des conteneurs."},
+    {l:"C",t:"ISO est un format d'image disque optique (CD, DVD, ISO 9660). Il n'a absolument aucun rapport avec Docker. La confusion peut venir du mot 'image' utilisé dans les deux contextes (image Docker vs image ISO), mais ce sont des concepts radicalement différents."},
+    {l:"D",t:"RAR est un format de compression propriétaire développé par Eugene Roshal. Docker n'utilise aucun format propriétaire pour ses images — il s'appuie sur des standards ouverts comme tar et les spécifications OCI (Open Container Initiative)."}
+  ],
+  examiner:"Question technique sur le format d'export/import des images Docker. La réponse tar est documentée dans les commandes <code>docker save</code> et <code>docker load</code>. La confusion avec zip est le piège le plus fréquent. La distinction save/load (images) vs export/import (conteneurs) est aussi souvent testée.",
+  summary:["Docker utilise le format <code>tar</code> pour exporter les images (<code>docker save -o fichier.tar image:tag</code>).","<code>docker load -i fichier.tar</code> importe une image depuis un fichier tar en préservant tous les layers.","L'archive tar préserve la structure en couches, les métadonnées et les configurations de l'image.","Ne pas confondre <code>docker save/load</code> (images complètes) et <code>docker export/import</code> (système de fichiers de conteneur)."]
+},
+{
+  num:"Q8", partie:"Partie 3",
+  q:"Laquelle des propositions suivantes décrit le mieux une image Docker ?",
+  choices:{A:"Une template en lecture seule pour démarrer un ou plusieurs conteneurs.",B:"Un volume de données qui peut être monté à l'intérieur d'un conteneur.",C:"Un instantané ponctuel d'un conteneur utilisé pour les sauvegardes.",D:"Un modèle en lecture-écriture pour démarrer un ou plusieurs conteneurs."},
+  correct:"A",
+  explanation:`<p>Une image Docker est précisément définie dans la documentation officielle comme un modèle (template) en lecture seule servant de base pour créer un ou plusieurs conteneurs. Les deux mots clés de cette définition sont "lecture seule" (read-only) et "template" : ce sont les caractéristiques essentielles qui distinguent l'image du conteneur.</p><p>L'<strong>immutabilité des images</strong> est un principe central et délibéré de Docker. Une fois construite et identifiée par son digest SHA256, une image ne peut pas être modifiée. Toute tentative de modification nécessite la construction d'une nouvelle image avec un nouveau tag. Cette propriété garantit des déploiements parfaitement reproductibles : l'image que vous avez testée en développement est bit-pour-bit identique à celle déployée en production.</p><p>Techniquement, une image est composée de couches (layers) superposées, chacune représentant une instruction du Dockerfile et stockée séparément sur le système. Ces couches sont partagées entre les images qui ont des ancêtres communs. Par exemple, si dix images utilisent <code>ubuntu:22.04</code> comme base, la couche Ubuntu n'est stockée qu'une seule fois sur le disque — les autres images la référencent par son hash. Cela économise considérablement l'espace disque et accélère les téléchargements.</p><p>Lorsqu'un conteneur est créé à partir d'une image, Docker ajoute une couche d'écriture mince et temporaire au-dessus des couches en lecture seule de l'image (principle du Copy-on-Write). Toutes les modifications effectuées dans le conteneur sont écrites dans cette couche temporaire uniquement. L'image sous-jacente reste intacte et peut continuer à servir de base pour d'autres conteneurs.</p>`,
+  wrongAnalysis:[
+    {l:"B",t:"Un volume Docker est un mécanisme de persistance des données complètement distinct d'une image. Les volumes sont des répertoires gérés par Docker sur le système hôte, permettant de stocker des données qui survivent à la suppression du conteneur. Ils peuvent être partagés entre plusieurs conteneurs. Ils n'ont rien à voir avec la définition d'une image."},
+    {l:"C",t:"Un instantané (snapshot) d'un conteneur s'appelle dans le vocabulaire Docker un <strong>commit</strong> (réalisé via la commande <code>docker commit &lt;conteneur&gt; &lt;nouvelle-image&gt;</code>). Cette opération crée certes une nouvelle image, mais ce n'est pas la définition générale d'une image Docker. C'est un usage particulier et souvent déconseillé en production (préférer les Dockerfiles pour la reproductibilité)."},
+    {l:"D",t:"C'est le piège principal et le plus efficace de cette question. Le terme 'lecture-écriture' est la seule différence avec la bonne réponse A. Mais c'est une différence fondamentale : les images sont strictement en lecture seule. C'est le conteneur qui dispose d'une couche en lecture-écriture. Confondre lecture seule et lecture-écriture pour les images est une erreur conceptuelle majeure qui révèle une mécompréhension du modèle de couches Docker."}
+  ],
+  examiner:"Cette question teste la définition canonique officielle d'une image Docker. L'expression 'template en lecture seule' est tirée mot pour mot de la documentation officielle Docker. Le piège D (lecture-écriture) est sciemment conçu pour tester si le candidat a bien retenu le caractère immuable et en lecture seule des images.",
+  summary:["Une image Docker est un template en lecture seule (immuable) servant de base pour créer un ou plusieurs conteneurs.","L'immutabilité garantit des déploiements parfaitement reproductibles entre tous les environnements.","Les images sont composées de couches partagées (Copy-on-Write), économisant espace disque et bande passante.","Seul le conteneur dispose d'une couche en lecture-écriture — l'image sous-jacente reste toujours intacte."]
+},
+// ── PARTIE 4 ──────────────────────────────────────────────────
+{
+  num:"Q6", partie:"Partie 4",
+  q:"À quoi sert la commande docker exec ?",
+  choices:{A:"Permet d'exécuter des processus en dehors d'un conteneur.",B:"Vous permet d'exécuter des processus dans un conteneur.",C:"C'est similaire à l'installation d'un logiciel.",D:"Vous permet d'exécuter des processus dans de nouveaux conteneurs."},
+  correct:"B",
+  explanation:`<p>La commande <code>docker exec</code> permet d'exécuter une commande dans un conteneur qui est <strong>déjà en cours d'exécution</strong>. C'est l'un des outils les plus utilisés au quotidien par les développeurs et les équipes opérationnelles pour interagir avec des conteneurs actifs.</p><p>La syntaxe de base est <code>docker exec [options] &lt;conteneur&gt; &lt;commande&gt; [arguments]</code>. Les options les plus courantes sont <code>-i</code> (interactive, maintient STDIN ouvert) et <code>-t</code> (alloue un pseudo-terminal TTY). Combinées, ces deux options donnent la forme la plus fréquemment utilisée : <code>docker exec -it mon-conteneur bash</code> qui ouvre un shell interactif dans le conteneur, exactement comme si vous vous connectiez en SSH à un serveur distant.</p><p>Les cas d'usage professionnels sont nombreux et variés. Pour le débogage : <code>docker exec -it mon-app sh</code> pour inspecter le système de fichiers, les processus actifs ou les logs internes. Pour les opérations de maintenance : <code>docker exec mon-django python manage.py migrate</code> pour appliquer des migrations de base de données. Pour les vérifications de configuration : <code>docker exec mon-nginx nginx -t</code> pour tester la configuration Nginx sans redémarrer le conteneur. Pour les tâches administratives ponctuelles sans interrompre le service en cours.</p><p>Une erreur fréquente et classique consiste à confondre <code>docker exec</code> avec <code>docker run</code>. La différence est fondamentale et souvent testée : <code>docker run</code> crée et démarre un <em>nouveau</em> conteneur à partir d'une image, tandis que <code>docker exec</code> exécute une commande dans un conteneur <em>déjà existant et actif</em>. Si le conteneur cible est stoppé, <code>docker exec</code> retournera une erreur.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"C'est l'exact inverse de la réalité. <code>docker exec</code> exécute des processus à l'<em>intérieur</em> du conteneur, pas en dehors. Les processus du système hôte (en dehors des conteneurs) sont gérés normalement par le système d'exploitation hôte, indépendamment de Docker."},
+    {l:"C",t:"L'installation d'un logiciel dans un conteneur peut certes être réalisée via <code>docker exec -it conteneur apt-get install -y curl</code>, mais cette description est une approximation vague et inexacte de ce que fait <code>docker exec</code>. <code>docker exec</code> est une commande d'exécution générique, pas une commande d'installation."},
+    {l:"D",t:"<code>docker exec</code> n'opère <em>jamais</em> sur de nouveaux conteneurs — uniquement sur des conteneurs existants et en cours d'exécution. Pour démarrer un processus dans un <em>nouveau</em> conteneur, c'est la commande <code>docker run</code> qu'il faut utiliser. Cette confusion est le piège le plus classique de cette question."}
+  ],
+  examiner:"Question classique sur les commandes Docker fondamentales. La distinction exec (conteneur existant et actif) vs run (création d'un nouveau conteneur) est un piège récurrent dans les examens et certifications. La réponse D est spécifiquement conçue pour piéger les candidats qui confondent les deux commandes.",
+  summary:["<code>docker exec</code> exécute une commande dans un conteneur déjà en cours d'exécution.","La forme la plus utilisée : <code>docker exec -it conteneur bash</code> pour un shell interactif.","Ne pas confondre avec <code>docker run</code> qui crée et démarre un tout nouveau conteneur.","Si le conteneur est arrêté, <code>docker exec</code> échoue — le conteneur doit impérativement être actif."]
+},
+{
+  num:"Q7", partie:"Partie 4",
+  q:"Quel option peut être utilisé pour définir un Dockerfile personnalisé (tel que mydockerfile.node) lors de la création d'une image personnalisée ?",
+  choices:{A:"-customfile",B:"-f",C:"-file",D:"Toutes les réponses ci-dessus"},
+  correct:"B",
+  explanation:`<p>L'option <code>-f</code> (ou sa forme longue <code>--file</code>) de la commande <code>docker build</code> permet de spécifier le chemin d'un Dockerfile personnalisé avec un nom non standard lors de la construction d'une image.</p><p>Par défaut, <code>docker build .</code> cherche un fichier nommé exactement <code>Dockerfile</code> (avec un D majuscule et sans extension) dans le répertoire courant passé comme contexte de build. Pour utiliser un fichier avec un nom différent, on utilise l'option <code>-f</code> : <code>docker build -f mydockerfile.node -t mon-image-node:latest .</code></p><p>Cette fonctionnalité est très utile dans les projets complexes qui maintiennent plusieurs Dockerfiles pour différents environnements ou usages. Par exemple : <code>Dockerfile.dev</code> pour le développement avec des outils de debug, <code>Dockerfile.prod</code> pour la production optimisée et sécurisée, <code>Dockerfile.test</code> pour les environnements de tests CI, ou encore des Dockerfiles spécifiques à des architectures (<code>Dockerfile.arm64</code>).</p><p>Dans un environnement professionnel, les pipelines CI/CD utilisent fréquemment <code>-f</code> pour cibler le bon fichier selon l'environnement de déploiement cible. La commande complète typique en CI ressemble à : <code>docker build -f docker/Dockerfile.prod --build-arg VERSION=$CI_COMMIT_TAG -t registry.example.com/mon-app:$CI_COMMIT_TAG .</code></p>`,
+  wrongAnalysis:[
+    {l:"A",t:"<code>-customfile</code> n'est pas une option valide de la commande <code>docker build</code>. Elle n'existe pas dans la documentation Docker. C'est un leurre."},
+    {l:"C",t:"<code>-file</code> avec un seul tiret n'est pas valide. La forme longue correcte est <code>--file</code> (avec deux tirets) qui est l'équivalent de <code>-f</code>. Avec un seul tiret, les options Docker sont des raccourcis d'une lettre."},
+    {l:"D",t:"Toutes les réponses ne sont pas correctes : seule l'option <code>-f</code> (et sa variante <code>--file</code>) est valide. Les options <code>-customfile</code> et <code>-file</code> n'existent pas dans l'interface en ligne de commande Docker."}
+  ],
+  examiner:"Cette question teste la connaissance des options de la commande <code>docker build</code>. L'option <code>-f</code> est documentée et standard. Les distracteurs testent si le candidat connaît la convention Unix des options courtes (-f) versus longues (--file).",
+  summary:["L'option <code>-f</code> (ou <code>--file</code>) de <code>docker build</code> spécifie un Dockerfile avec un nom personnalisé.","Syntaxe : <code>docker build -f mon-dockerfile.node -t mon-image:tag .</code>","Utile pour gérer plusieurs Dockerfiles dans un même projet (dev, prod, test, architectures différentes).","<code>-customfile</code> et <code>-file</code> n'existent pas — seules <code>-f</code> et <code>--file</code> sont valides."]
+},
+{
+  num:"Q8", partie:"Partie 4",
+  q:"Commande pour créer un cluster dans Docker ?",
+  choices:{A:"apache mesos",B:"docker swarm",C:"K8s",D:"Toutes les réponses ci-dessus"},
+  correct:"D",
+  explanation:`<p>La bonne réponse est que toutes les solutions proposées — Apache Mesos, Docker Swarm et Kubernetes (K8s) — peuvent être utilisées pour créer et gérer un cluster de nœuds Docker. Bien qu'elles aient des approches et des niveaux de complexité très différents, elles répondent toutes à ce besoin fondamental d'orchestration de conteneurs à l'échelle.</p><p><strong>Docker Swarm</strong> est la solution native intégrée directement dans Docker Engine. Elle est la plus simple à mettre en place (<code>docker swarm init</code> sur le premier nœud) et utilise les mêmes commandes Docker auxquelles les développeurs sont habitués. Elle est idéale pour les projets de taille modeste ou les équipes qui débutent avec l'orchestration. Ses limites apparaissent sur les très grands clusters ou les besoins d'orchestration avancée.</p><p><strong>Kubernetes (K8s)</strong> est le standard industrie de facto pour l'orchestration de conteneurs en production à grande échelle. Développé initialement par Google et maintenant géré par la CNCF, il offre des capacités avancées : autoscaling horizontal et vertical, rolling updates avec zero downtime, gestion des secrets et des configurations, service mesh, health checks avancés, RBAC. Sa courbe d'apprentissage est plus raide mais sa puissance est inégalée.</p><p><strong>Apache Mesos</strong> est un gestionnaire de ressources distribué plus général (pas uniquement pour les conteneurs Docker). Il peut orchestrer des conteneurs Docker via le framework Marathon ou DC/OS. C'est une solution plus ancienne, utilisée par des entreprises comme Twitter et Airbnb avant l'essor de Kubernetes. Son adoption a significativement décliné au profit de K8s.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Apache Mesos permet bien de créer des clusters Docker mais c'est une solution incomplète seule — elle est souvent couplée à Marathon pour l'orchestration de conteneurs. Elle est correcte mais insuffisante comme seule réponse car les autres options sont aussi valides."},
+    {l:"B",t:"Docker Swarm est la solution la plus directement associée à Docker pour créer des clusters. Elle est correcte, mais là encore, ce n'est pas la seule bonne réponse car Mesos et Kubernetes sont aussi valides."},
+    {l:"C",t:"Kubernetes est le standard industriel actuel pour l'orchestration Docker/conteneurs. Correct, mais pas la seule option valide parmi les propositions données."}
+  ],
+  examiner:"Ce type de question 'toutes les réponses sont correctes' teste la connaissance de l'écosystème d'orchestration Docker dans son ensemble. Les trois technologies sont légitimes pour créer des clusters Docker, avec des niveaux de complexité et d'adoption différents. Kubernetes domine aujourd'hui le marché.",
+  summary:["Docker Swarm, Kubernetes (K8s) et Apache Mesos peuvent tous créer des clusters Docker — toutes les réponses sont correctes.","Docker Swarm est le plus simple, natif à Docker, idéal pour commencer l'orchestration.","Kubernetes (K8s) est le standard industrie actuel pour la production à grande échelle.","Apache Mesos est plus général (pas uniquement conteneurs) et moins adopté que K8s aujourd'hui."]
+},
+// ── PARTIE 5 ──────────────────────────────────────────────────
+{
+  num:"Q1", partie:"Partie 5",
+  q:"Quel service de Docker hébergé dans le nuage offre des capacités de registre pour le contenu public et privé ?",
+  choices:{A:"Docker Images",B:"Docker Compose",C:"Docker Alpine",D:"Docker Hub"},
+  correct:"D",
+  explanation:`<p>Docker Hub est la plateforme cloud officielle de Docker pour stocker, partager et distribuer des images de conteneurs. C'est le plus grand registre public d'images Docker au monde, hébergeant des millions d'images provenant de l'écosystème open source et de l'industrie.</p><p>Docker Hub offre plusieurs types de contenu et fonctionnalités. Les <strong>images officielles</strong> sont maintenues directement par Docker Inc. ou par les éditeurs logiciels en partenariat avec Docker (nginx, postgres, redis, node, python, ubuntu, alpine, etc.). Elles sont régulièrement mises à jour, auditées pour les vulnérabilités de sécurité, et constituent la source la plus fiable pour les images de base. Les <strong>images vérifiées</strong> (Verified Publishers) proviennent d'éditeurs de logiciels commerciaux ayant passé un processus de vérification Docker. Les <strong>dépôts communautaires</strong> sont des images publiées par n'importe quel utilisateur inscrit.</p><p>Côté accès, Docker Hub propose des <strong>dépôts publics</strong> (gratuits, téléchargeables par tous) et des <strong>dépôts privés</strong> (accessibles uniquement aux membres autorisés, inclus dans les plans payants). Pour interagir avec Docker Hub, on utilise <code>docker login</code> pour s'authentifier, <code>docker push mon-user/mon-image:tag</code> pour publier et <code>docker pull mon-user/mon-image:tag</code> pour télécharger. Par défaut et sans préfixe de registre, Docker cherche les images sur Docker Hub.</p><p>Dans un environnement professionnel, Docker Hub est généralement utilisé pour les images de base publiques, combiné à des registres privés internes (Amazon ECR, Google Artifact Registry, Azure Container Registry, Harbor) pour les images propriétaires de l'entreprise.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"'Docker Images' n'est pas un service cloud — c'est simplement le concept générique d'images Docker. Il n'existe aucun service ou produit Docker officiellement nommé 'Docker Images'."},
+    {l:"B",t:"Docker Compose est un outil de définition et d'exécution d'applications multi-conteneurs via un fichier YAML (<code>docker-compose.yml</code> ou <code>compose.yaml</code>). C'est un outil d'orchestration locale, pas un service de registre cloud."},
+    {l:"C",t:"Alpine est une distribution Linux ultra-légère (~5 Mo) très populaire comme image de base dans Docker (<code>FROM alpine:3.19</code>). C'est une image disponible dans les registres, pas un service de registre lui-même."}
+  ],
+  examiner:"Docker Hub est le terme officiel pour le registre cloud Docker. Les distracteurs testent si le candidat distingue les différents produits de l'écosystème Docker : le registre (Hub), l'orchestrateur multi-conteneurs local (Compose), et les images de base légères (Alpine).",
+  summary:["Docker Hub est le registre cloud officiel Docker pour stocker et distribuer des images publiques et privées.","Il propose des images officielles (nginx, postgres, node...) maintenues par les éditeurs.","Commandes : <code>docker login</code>, <code>docker push</code>, <code>docker pull</code>.","En entreprise, Docker Hub est combiné à des registres privés (ECR, GCR, ACR, Harbor) pour les images internes."]
+},
+{
+  num:"Q2", partie:"Partie 5",
+  q:"Qu'est-ce qui est utilisé pour convertir un groupe d'hôtes Docker en un seul hôte Docker virtuel ?",
+  choices:{A:"Docker Images",B:"Docker Compose",C:"Docker Swarm",D:"Docker Hub"},
+  correct:"C",
+  explanation:`<p>Docker Swarm est le système d'orchestration natif intégré dans Docker Engine qui permet de regrouper plusieurs hôtes Docker (machines physiques ou virtuelles avec Docker installé) en un cluster géré comme une seule entité cohérente. C'est littéralement ce qu'il fait : convertir un groupe d'hôtes individuels en un unique "hôte Docker virtuel" depuis le point de vue de l'administrateur.</p><p>Pour bien comprendre l'architecture de Docker Swarm, imaginons que vous avez 5 serveurs distincts avec Docker installé sur chacun. Docker Swarm les organise en un "Swarm" (essaim) structuré autour de deux types de rôles. Les <strong>nœuds managers</strong> maintiennent l'état désiré du cluster, orchestrent le déploiement des services, gèrent le consensus distribué via l'algorithme Raft, et acceptent les commandes de l'API Docker Swarm. Les <strong>nœuds workers</strong> reçoivent et exécutent les tâches (conteneurs) assignées par les managers.</p><p>Les commandes essentielles : <code>docker swarm init --advertise-addr &lt;IP-manager&gt;</code> initialise le Swarm sur le premier nœud (qui devient manager), <code>docker swarm join --token &lt;token&gt; &lt;IP-manager&gt;:2377</code> ajoute un worker, et <code>docker service create --replicas 3 --name mon-service mon-image</code> déploie un service répliqué sur 3 conteneurs répartis automatiquement sur les nœuds disponibles.</p><p>Docker Swarm gère automatiquement la répartition de charge entre conteneurs, la tolérance aux pannes (si un nœud tombe, ses conteneurs sont redémarrés sur d'autres nœuds), les mises à jour progressives sans interruption de service (rolling updates), et la mise à l'échelle simple (<code>docker service scale mon-service=5</code>). Il est souvent comparé à Kubernetes : Swarm est plus simple mais moins puissant pour les très grandes échelles.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Docker Images sont des artefacts statiques de stockage du système de fichiers applicatif. Elles n'ont aucune capacité d'orchestration, de clustering ou de gestion d'infrastructure. Elles sont nécessaires pour créer des conteneurs mais ne gèrent pas des hôtes."},
+    {l:"B",t:"Docker Compose orchestre plusieurs conteneurs sur <em>un seul hôte</em> via un fichier YAML. C'est précisément sa limitation : il ne gère pas plusieurs hôtes Docker et ne crée pas de cluster. Pour passer à plusieurs hôtes, on utilise Docker Swarm ou Kubernetes."},
+    {l:"D",t:"Docker Hub est un registre cloud de stockage et distribution d'images. Il ne gère pas des hôtes Docker, ne crée pas de clusters et n'a aucune capacité d'orchestration d'infrastructure."}
+  ],
+  examiner:"Question qui distingue les outils Docker par leur portée fonctionnelle. Compose = multi-conteneurs sur 1 hôte. Swarm = multi-hôtes en cluster. Hub = registre d'images. Cette distinction fondamentale entre les outils de l'écosystème Docker est centrale dans toutes les certifications.",
+  summary:["Docker Swarm regroupe plusieurs hôtes Docker en un cluster géré comme un seul hôte virtuel.","Architecture : nœuds managers (orchestration, consensus Raft) et workers (exécution des conteneurs).","Il gère automatiquement la haute disponibilité, la répartition de charge et les rolling updates.","Docker Compose = 1 hôte multi-conteneurs ; Docker Swarm = cluster multi-hôtes ; K8s = orchestration avancée."]
+},
+{
+  num:"Q3", partie:"Partie 5",
+  q:"Quel est la template utilisé pour décrire le build d'une image ?",
+  choices:{A:"Docker Logs",B:"Docker Documents",C:"DockerFile",D:"Docker Stream"},
+  correct:"C",
+  explanation:`<p>Le Dockerfile est le fichier template utilisé pour décrire toutes les étapes nécessaires à la construction (build) d'une image Docker. C'est le document de référence qui définit entièrement et de façon reproductible comment l'image doit être assemblée.</p><p>Pour bien comprendre ce concept fondamental, le Dockerfile est à Docker ce que le Makefile est à la compilation C : un fichier déclaratif qui décrit une série d'opérations à réaliser dans l'ordre pour produire un artefact. Chaque instruction du Dockerfile produit une nouvelle couche dans l'image finale, et Docker met en cache ces couches pour accélérer les builds suivants si les instructions n'ont pas changé.</p><p>Un Dockerfile minimal pour une application Python ressemble à ceci : <code>FROM python:3.11-slim</code> (image de base), <code>WORKDIR /app</code> (répertoire de travail), <code>COPY requirements.txt .</code> (copie du fichier de dépendances), <code>RUN pip install --no-cache-dir -r requirements.txt</code> (installation des dépendances), <code>COPY . .</code> (copie du code applicatif), et <code>CMD ["python", "app.py"]</code> (commande de démarrage). Ce fichier décrit complètement et sans ambiguïté comment construire l'image.</p><p>Le build s'effectue avec la commande <code>docker build -t mon-app:1.0 .</code> où le point final désigne le répertoire contextuel (contenant le Dockerfile et les fichiers à intégrer). Docker envoie ce contexte au daemon Docker qui exécute chaque instruction séquentiellement.</p><p>Dans un environnement professionnel, le Dockerfile est considéré comme du code source à part entière. Il doit être versionné dans Git, soumis à revue de code, et optimisé pour minimiser la taille des images et maximiser l'utilisation du cache.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"Docker Logs est une commande Docker (<code>docker logs &lt;conteneur&gt;</code>) qui affiche les journaux de sortie d'un conteneur en cours d'exécution ou stoppé. Les logs n'ont rien à voir avec la description du build d'une image — ils concernent l'exécution des conteneurs."},
+    {l:"B",t:"'Docker Documents' n'est pas un terme ou concept Docker. Cela n'existe pas dans la documentation officielle Docker ni dans l'écosystème Docker. C'est un leurre générique."},
+    {l:"D",t:"'Docker Stream' fait référence aux flux de données (streaming de logs, streaming d'output des commandes Docker) mais n'est pas une template de build d'image. Ce concept n'est pas un composant nommé de l'architecture Docker."}
+  ],
+  examiner:"Question directe sur la terminologie Docker. DockerFile (ou Dockerfile) est le terme canonique et officiel pour le fichier de description du build d'une image. Les distracteurs sont soit des commandes existantes détournées de leur contexte (Docker Logs), soit des termes inventés.",
+  summary:["Le Dockerfile est le fichier template décrivant toutes les étapes du build d'une image Docker.","Chaque instruction crée une couche immuable dans l'image, mise en cache pour accélérer les builds futurs.","Il doit être versionné dans Git et traité comme du code source à part entière.","Le build se lance avec <code>docker build -t nom-image:tag .</code> depuis le répertoire contenant le Dockerfile."]
+},
+{
+  num:"Q4", partie:"Partie 5",
+  q:"Plusieurs conteneurs fonctionnant sur une seule machine partagent tous les mêmes ressources (CPU, RAM, etc…)",
+  choices:{A:"Vrai",B:"Faux"},
+  correct:"A",
+  explanation:`<p>Cette affirmation est vraie. Plusieurs conteneurs fonctionnant sur une seule machine hôte partagent effectivement les ressources matérielles de cette machine : le CPU, la RAM, le stockage et la carte réseau. C'est l'une des caractéristiques fondamentales et des avantages majeurs de la conteneurisation par rapport à la virtualisation traditionnelle.</p><p>Pour bien comprendre ce mécanisme, il faut distinguer le partage des ressources matérielles du partage du noyau système. Les conteneurs partagent le <strong>noyau (kernel)</strong> du système d'exploitation hôte — contrairement aux machines virtuelles qui ont chacune leur propre noyau. Ce partage du noyau permet aux conteneurs d'accéder directement aux ressources matérielles via le planificateur (scheduler) du noyau, sans couche d'hyperviseur intermédiaire. Résultat : les performances sont proches du natif et le démarrage est quasi-instantané.</p><p>Le partage des ressources se fait via le mécanisme des <strong>cgroups (control groups)</strong> du noyau Linux. Docker utilise les cgroups pour allouer et limiter les ressources par conteneur. Par exemple : <code>docker run --memory=512m --cpus=1.5 mon-image</code> limite le conteneur à 512 Mo de RAM et 1,5 cœurs CPU maximum. Sans ces limites, les conteneurs partagent les ressources disponibles de façon dynamique selon leurs besoins.</p><p>L'explication du QCM original le résume bien : plusieurs conteneurs peuvent fonctionner sur la même machine et partager le noyau du système d'exploitation, chacun s'exécutant comme un processus isolé dans l'espace utilisateur. Les images de conteneurs font généralement quelques dizaines de Mo (versus plusieurs Go pour les VMs), peuvent gérer davantage d'applications et nécessitent moins de VMs et de systèmes d'exploitation.</p>`,
+  wrongAnalysis:[
+    {l:"B",t:"La proposition Faux est incorrecte. Les conteneurs sur une même machine hôte partagent bien le même pool de ressources matérielles (CPU, RAM, stockage, réseau). Répondre Faux suggérerait que chaque conteneur possède ses propres ressources matérielles dédiées, ce qui correspondrait à la description de machines virtuelles avec des ressources isolées, pas de conteneurs Docker."}
+  ],
+  examiner:"Cette question vrai/faux teste la compréhension du modèle de ressources de Docker par rapport aux VMs. Le partage du noyau et des ressources matérielles est LA distinction fondamentale entre conteneurs et VMs. C'est aussi ce qui explique la légèreté et les performances supérieures des conteneurs.",
+  summary:["Les conteneurs sur une même machine partagent les ressources matérielles (CPU, RAM) via le planificateur du noyau.","Ils partagent aussi le noyau Linux de l'hôte — contrairement aux VMs qui ont chacune leur propre noyau.","Les cgroups Linux permettent à Docker de limiter les ressources par conteneur (<code>--memory</code>, <code>--cpus</code>).","Ce partage rend les conteneurs beaucoup plus légers (dizaines de Mo) et rapides à démarrer que les VMs (plusieurs Go)."]
+},
+{
+  num:"Q5", partie:"Partie 5",
+  q:"Quelle est l'adresse IP par défaut de l'hôte Docker ?",
+  choices:{A:"10.10.10.10",B:"172.17.0.0/16",C:"0.0.0.0",D:"127.0.0.1"},
+  correct:"B",
+  explanation:`<p>L'adresse IP par défaut du réseau bridge Docker (et donc la plage d'adresses IP assignée par défaut aux conteneurs) est <code>172.17.0.0/16</code>. Cette plage est attribuée au réseau bridge par défaut créé automatiquement par Docker lors de son installation, accessible via l'interface réseau virtuelle <code>docker0</code> sur le système hôte.</p><p>Pour bien comprendre l'attribution des adresses, quand Docker démarre un conteneur sans réseau spécifié, il le connecte au réseau bridge par défaut (nommé <code>bridge</code>). La passerelle (gateway) de ce réseau est l'interface <code>docker0</code> sur l'hôte, qui reçoit l'adresse IP <code>172.17.0.1</code>. Les conteneurs reçoivent des adresses IP séquentielles dans la plage disponible : 172.17.0.2, 172.17.0.3, 172.17.0.4, et ainsi de suite jusqu'à 172.17.255.254.</p><p>La notation CIDR <code>/16</code> signifie que les 16 premiers bits sont fixes (correspondant à 172.17) et que les 16 bits restants peuvent varier. Cela offre théoriquement 65 534 adresses IP disponibles (2^16 - 2), ce qui est largement suffisant pour la grande majorité des déploiements Docker locaux ou de développement.</p><p>Dans un environnement professionnel, cette plage par défaut peut entrer en conflit avec des plages d'adresses IP existantes du réseau d'entreprise (si l'entreprise utilise déjà 172.17.x.x pour ses serveurs internes ou ses VPNs). Dans ce cas, on modifie la configuration du daemon Docker dans <code>/etc/docker/daemon.json</code> en ajoutant <code>"bip": "192.168.100.1/24"</code> pour changer la plage par défaut. Les réseaux Docker personnalisés créés avec <code>docker network create</code> utilisent d'autres plages.</p>`,
+  wrongAnalysis:[
+    {l:"A",t:"10.10.10.10 est une adresse IP arbitraire appartenant à la plage privée 10.0.0.0/8 (RFC 1918). Docker n'utilise pas cette adresse par défaut. C'est un leurre numérique sans signification particulière dans le contexte de la configuration réseau Docker."},
+    {l:"C",t:"0.0.0.0 est une adresse spéciale qui signifie 'toutes les interfaces réseau disponibles'. Elle est utilisée dans des configurations de binding pour signifier 'écouter sur toutes les interfaces' (ex: <code>docker daemon --host tcp://0.0.0.0:2376</code>), mais ce n'est pas l'adresse du réseau bridge Docker par défaut."},
+    {l:"D",t:"127.0.0.1 est l'adresse de loopback (localhost) qui permet à un processus de communiquer avec lui-même sur la même machine sans passer par la carte réseau physique. Ce n'est pas l'adresse du réseau bridge Docker. Elle reste accessible depuis les conteneurs pour atteindre leur propre interface loopback interne, mais pas pour rejoindre le réseau Docker."}
+  ],
+  examiner:"Question technique sur la configuration réseau par défaut de Docker. 172.17.0.0/16 est la valeur documentée dans la configuration officielle Docker et correspond à l'interface docker0. Les distracteurs utilisent des adresses IP spéciales bien connues (loopback, toutes-interfaces, adresse arbitraire) pour tester la précision des connaissances du candidat.",
+  summary:["Le réseau bridge par défaut de Docker utilise la plage <code>172.17.0.0/16</code>.","L'interface <code>docker0</code> reçoit l'adresse <code>172.17.0.1</code> ; les conteneurs commencent à <code>172.17.0.2</code>.","Cette plage peut être modifiée dans <code>/etc/docker/daemon.json</code> en cas de conflit réseau.","0.0.0.0 = toutes les interfaces ; 127.0.0.1 = loopback — aucune des deux n'est l'adresse Docker par défaut."]
+}
+];
+
+// ════════════════════════════════════════════════════════════════
+// ÉTAT
+// ════════════════════════════════════════════════════════════════
+let state = {
+  current: 0,
+  answers: new Array(QCM.length).fill(null),
+  revealed: new Array(QCM.length).fill(false)
+};
+
+// ════════════════════════════════════════════════════════════════
+// SIDEBAR
+// ════════════════════════════════════════════════════════════════
+function renderSidebar() {
+  const parties = {};
+  QCM.forEach((q,i) => {
+    if (!parties[q.partie]) parties[q.partie] = [];
+    parties[q.partie].push({q,i});
+  });
+  let html = '<div class="sb-title">Questions (' + QCM.length + ')</div>';
+  for (const [p, items] of Object.entries(parties)) {
+    html += `<div class="pg"><div class="pl">${p}</div>`;
+    items.forEach(({q,i}) => {
+      let cls = '';
+      if (i === state.current) cls = ' active';
+      else if (state.answers[i]) cls = state.answers[i] === q.correct ? ' correct' : ' wrong';
+      const dot = state.answers[i] ? '<div class="qs"></div>' : '';
+      html += `<div class="qi${cls}" onclick="goTo(${i})"><div class="qn">${i+1}</div><span>${q.num}</span>${dot}</div>`;
+    });
+    html += '</div>';
+  }
+  document.getElementById('sidebar').innerHTML = html;
+}
+
+// ════════════════════════════════════════════════════════════════
+// PROGRESS
+// ════════════════════════════════════════════════════════════════
+function renderProgress() {
+  const answered = state.answers.filter(Boolean).length;
+  const correct = state.answers.filter((a,i) => a === QCM[i].correct).length;
+  const pct = Math.round((answered / QCM.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = answered + ' / ' + QCM.length;
+  document.getElementById('scoreDisplay').textContent = correct + ' / ' + answered;
+}
+
+// ════════════════════════════════════════════════════════════════
+// MAIN RENDER
+// ════════════════════════════════════════════════════════════════
+function renderMain() {
+  const q = QCM[state.current];
+  const answered = state.answers[state.current];
+  const revealed = state.revealed[state.current];
+
+  let choicesHtml = '';
+  Object.entries(q.choices).forEach(([k,v]) => {
+    let cls = '', icon = '';
+    if (answered) {
+      if (k === q.correct) { cls = ' correct disabled'; icon = '<span class="ci">✓</span>'; }
+      else if (k === answered) { cls = ' wrong disabled'; icon = '<span class="ci">✗</span>'; }
+      else cls = ' ndis disabled';
+    }
+    choicesHtml += `<div class="choice${cls}" onclick="selectChoice('${k}')">
+      <div class="cl">${k}</div>
+      <div class="ct">${v}</div>
+      ${icon}
+    </div>`;
+  });
+
+  let expHtml = '';
+  if (revealed) {
+    const isCorrect = answered === q.correct;
+    const wrongItemsHtml = (q.wrongAnalysis || []).map(w => `
+      <div class="witem">
+        <div class="wh"><div class="wl">${w.l}</div><div class="wlbl">Proposition ${w.l} — Pourquoi incorrecte</div></div>
+        <div class="et">${w.t}</div>
+      </div>`).join('');
+    const summaryHtml = q.summary.map(s => `
+      <div class="si-row"><div class="sa">→</div><div class="st">${s}</div></div>`).join('');
+
+    expHtml = `<div class="explanation">
+      <div class="ab${isCorrect ? '' : ' wa'}">
+        <div class="ai">${isCorrect ? '✅' : '❌'}</div>
+        <div>
+          <div class="albl">${isCorrect ? 'Bonne réponse !' : 'Mauvaise réponse'}</div>
+          <div class="ac">La bonne réponse est la <strong>Proposition ${q.correct}</strong> : ${q.choices[q.correct]}</div>
+        </div>
+      </div>
+      <div class="eb">
+        <div class="ebt blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Explication détaillée</div>
+        <div class="et">${q.explanation}</div>
+      </div>
+      ${wrongItemsHtml ? `<div class="eb"><div class="ebt red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>Analyse des propositions incorrectes</div><div class="wi">${wrongItemsHtml}</div></div>` : ''}
+      <div class="eb">
+        <div class="ebt purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Ce que l'examinateur cherche à vérifier</div>
+        <div class="et"><p>${q.examiner}</p></div>
+      </div>
+      <div class="eb">
+        <div class="ebt yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Ce qu'il faut retenir</div>
+        <div class="sl">${summaryHtml}</div>
+      </div>
+    </div>`;
+  }
+
+  const revealDisplay = answered && !revealed ? 'block' : 'none';
+
+  document.getElementById('main').innerHTML = `
+    <div class="q-header">
+      <span class="pt-tag">${q.partie}</span>
+      <span class="qn-tag">${q.num} · ${state.current+1} / ${QCM.length}</span>
+    </div>
+    <div class="qcard">
+      <div class="qtext">${q.q}</div>
+      <div class="choices">${choicesHtml}</div>
+    </div>
+    <div class="reveal-s" id="revealS" style="display:${revealDisplay}">
+      <button class="reveal-btn" onclick="revealAnswer()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Voir l'explication complète du cours
+      </button>
+    </div>
+    ${expHtml}
+    <div class="nav">
+      <button class="nb" onclick="goTo(${state.current-1})" ${state.current===0?'disabled':''}>← Précédent</button>
+      ${state.current < QCM.length-1
+        ? `<button class="nb primary" onclick="goTo(${state.current+1})">Suivant →</button>`
+        : `<button class="nb primary" onclick="showResults()">Voir les résultats 🎉</button>`}
+    </div>`;
+  document.getElementById('main').scrollTop = 0;
+}
+
+// ════════════════════════════════════════════════════════════════
+// INTERACTIONS
+// ════════════════════════════════════════════════════════════════
+function selectChoice(k) {
+  if (state.answers[state.current]) return;
+  state.answers[state.current] = k;
+  renderAll();
+}
+function revealAnswer() {
+  state.revealed[state.current] = true;
+  renderAll();
+}
+function goTo(i) {
+  if (i < 0 || i >= QCM.length) return;
+  state.current = i;
+  renderAll();
+}
+function renderAll() {
+  renderSidebar();
+  renderMain();
+  renderProgress();
+}
+
+// ════════════════════════════════════════════════════════════════
+// RÉSULTATS
+// ════════════════════════════════════════════════════════════════
+function showResults() {
+  const correct = state.answers.filter((a,i) => a === QCM[i].correct).length;
+  const answered = state.answers.filter(Boolean).length;
+  const pct = Math.round((correct / QCM.length) * 100);
+  const emoji = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📚';
+  const msg = pct >= 80 ? 'Excellent ! Vous maîtrisez les fondamentaux de Docker.' : pct >= 60 ? 'Bon résultat ! Quelques révisions suffiront pour consolider.' : 'Continuez à réviser avec les explications — vous progressez !';
+  document.getElementById('main').innerHTML = `
+    <div class="splash">
+      <div class="splash-icon">${emoji}</div>
+      <h1>Quiz terminé !</h1>
+      <p>${msg}</p>
+      <div class="splash-stats">
+        <div class="sc"><div class="sn g">${correct}</div><div class="sl2">Bonnes réponses</div></div>
+        <div class="sc"><div class="sn r">${answered-correct}</div><div class="sl2">Mauvaises réponses</div></div>
+        <div class="sc"><div class="sn">${QCM.length-answered}</div><div class="sl2">Non répondues</div></div>
+        <div class="sc"><div class="sn b">${pct}%</div><div class="sl2">Score final</div></div>
+      </div>
+      <button class="restart-btn" onclick="restart()">🔄 Recommencer le quiz</button>
+    </div>`;
+}
+function restart() {
+  state = { current:0, answers:new Array(QCM.length).fill(null), revealed:new Array(QCM.length).fill(false) };
+  renderAll();
+}
+
+// ════════════════════════════════════════════════════════════════
+// EXPORT MODAL
+// ════════════════════════════════════════════════════════════════
+function showExportModal() { document.getElementById('exportModal').style.display='flex'; }
+function closeModal() { document.getElementById('exportModal').style.display='none'; }
+
+function buildExportContent() {
+  let html = '';
+  QCM.forEach((q, i) => {
+    const choicesHtml = Object.entries(q.choices).map(([k,v]) =>
+      `<div class="ec ${k===q.correct?'ecorrect':''}"><span class="ek">${k}</span> ${v}${k===q.correct?' ✓':''}</div>`
+    ).join('');
+    const wrongHtml = (q.wrongAnalysis||[]).map(w =>
+      `<div class="ew"><strong>Proposition ${w.l} :</strong> ${w.t}</div>`
+    ).join('');
+    const summaryHtml = q.summary.map(s => `<li>${s}</li>`).join('');
+    html += `<div class="eq">
+      <div class="eq-header"><span class="eq-num">Question ${i+1}</span><span class="eq-tag">${q.partie} · ${q.num}</span></div>
+      <div class="eq-q">${q.q}</div>
+      <div class="eq-choices">${choicesHtml}</div>
+      <div class="eq-section eq-answer"><strong>✅ Bonne réponse :</strong> Proposition ${q.correct} — ${q.choices[q.correct]}</div>
+      <div class="eq-section">
+        <div class="eq-section-title">📖 Explication détaillée</div>
+        <div class="eq-text">${q.explanation}</div>
+      </div>
+      ${wrongHtml ? `<div class="eq-section"><div class="eq-section-title">❌ Analyse des propositions incorrectes</div>${wrongHtml}</div>` : ''}
+      <div class="eq-section">
+        <div class="eq-section-title">🎓 Ce que l'examinateur cherche à vérifier</div>
+        <div class="eq-text"><p>${q.examiner}</p></div>
+      </div>
+      <div class="eq-section eq-summary">
+        <div class="eq-section-title">⭐ Ce qu'il faut retenir</div>
+        <ul>${summaryHtml}</ul>
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+function exportHTML() {
+  const content = buildExportContent();
+  const blob = new Blob([`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Docker QCM — Cours Complet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f6f8fa;color:#1f2328;line-height:1.6;padding:0}
+.cover{background:linear-gradient(135deg,#0d1117 0%,#1a2332 50%,#0d1117 100%);color:#fff;padding:60px 40px;text-align:center}
+.cover h1{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.cover p{font-size:16px;color:#8b949e;margin-bottom:24px}
+.cover .meta{display:inline-flex;gap:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 28px;font-size:14px}
+.cover .meta span{color:#58a6ff;font-weight:600}
+.container{max-width:900px;margin:0 auto;padding:40px 24px}
+.eq{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:28px;margin-bottom:28px;page-break-inside:avoid}
+.eq-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eq-num{font-size:12px;font-weight:700;background:#0969da;color:#fff;padding:3px 10px;border-radius:20px}
+.eq-tag{font-size:12px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;padding:3px 10px;border-radius:20px}
+.eq-q{font-size:17px;font-weight:600;color:#1f2328;margin-bottom:18px;line-height:1.5}
+.eq-choices{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.ec{display:flex;gap:10px;padding:10px 14px;border-radius:6px;border:1px solid #d0d7de;background:#f6f8fa;font-size:14px;line-height:1.5}
+.ec.ecorrect{background:#dafbe1;border-color:#2da44e;font-weight:600;color:#1a7f37}
+.ek{font-weight:700;min-width:18px;flex-shrink:0}
+.eq-section{margin-top:16px;padding-top:16px;border-top:1px solid #eaecef}
+.eq-answer{background:#dafbe1;border:1px solid #2da44e;border-radius:8px;padding:12px 16px;margin-top:16px;font-size:14px;color:#1a7f37}
+.eq-section-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#57606a;margin-bottom:10px}
+.eq-text{font-size:14px;line-height:1.8;color:#444c56}
+.eq-text p{margin-bottom:10px}.eq-text p:last-child{margin-bottom:0}
+.eq-text strong{color:#1f2328;font-weight:600}
+.eq-text code,.eq-text em code,.ew code{font-family:'SF Mono','Fira Code',monospace;font-size:12.5px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 5px;border-radius:4px;color:#0969da}
+.ew{background:#fff5f5;border-left:3px solid #d1242f;padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:8px;font-size:14px;line-height:1.7;color:#444c56}
+.ew strong{color:#d1242f}
+.eq-summary{background:#fffbee;border:1px solid #d4a72c;border-radius:8px;padding:16px}
+.eq-summary ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.eq-summary li{font-size:14px;line-height:1.6;color:#1f2328;padding-left:20px;position:relative}
+.eq-summary li::before{content:"→";position:absolute;left:0;color:#d4a72c;font-weight:700}
+.eq-summary li code{font-family:'SF Mono','Fira Code',monospace;font-size:12.5px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 5px;border-radius:4px;color:#0969da}
+@media print{body{background:#fff}.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}.eq{break-inside:avoid}}
+</style></head><body>
+<div class="cover">
+  <h1>🐳 Docker QCM — Cours Complet</h1>
+  <p>Podcast de révision · Explications détaillées pour l'oral et les certifications</p>
+  <div class="meta">
+    <div><span>${QCM.length}</span> questions</div>
+    <div><span>5</span> parties</div>
+    <div>Généré le <span>${new Date().toLocaleDateString('fr-FR')}</span></div>
+  </div>
+</div>
+<div class="container">${content}</div>
+</body></html>`], {type:'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'docker-qcm-cours-complet.html';
+  a.click();
+  closeModal();
+}
+
+function exportPrint() {
+  const content = buildExportContent();
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Docker QCM — Cours Complet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:#1f2328;line-height:1.6;padding:20px}
+.cover{background:linear-gradient(135deg,#0d1117,#1a2332);color:#fff;padding:40px;text-align:center;border-radius:10px;margin-bottom:32px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover h1{font-size:28px;font-weight:800;margin-bottom:8px}
+.cover p{font-size:14px;color:#8b949e;margin-bottom:16px}
+.cover .meta{display:inline-flex;gap:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 20px;font-size:13px;color:#58a6ff;font-weight:600}
+.eq{border:1px solid #d0d7de;border-radius:8px;padding:22px;margin-bottom:22px;break-inside:avoid}
+.eq-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.eq-num{font-size:11px;font-weight:700;background:#0969da;color:#fff;padding:2px 8px;border-radius:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-tag{font-size:11px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;padding:2px 8px;border-radius:20px}
+.eq-q{font-size:16px;font-weight:600;margin-bottom:14px;line-height:1.5}
+.eq-choices{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.ec{display:flex;gap:8px;padding:8px 12px;border-radius:5px;border:1px solid #d0d7de;font-size:13px;line-height:1.5}
+.ec.ecorrect{background:#dafbe1;border-color:#2da44e;font-weight:600;color:#1a7f37;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ek{font-weight:700;min-width:16px;flex-shrink:0}
+.eq-section{margin-top:14px;padding-top:14px;border-top:1px solid #eaecef}
+.eq-answer{background:#dafbe1;border:1px solid #2da44e;border-radius:6px;padding:10px 14px;margin-top:14px;font-size:13px;color:#1a7f37;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#57606a;margin-bottom:8px}
+.eq-text{font-size:13px;line-height:1.75;color:#444c56}
+.eq-text p{margin-bottom:8px}.eq-text p:last-child{margin-bottom:0}
+.eq-text strong{color:#1f2328}
+.eq-text code,.ew code{font-family:monospace;font-size:12px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 4px;border-radius:3px;color:#0969da}
+.ew{background:#fff5f5;border-left:3px solid #d1242f;padding:8px 12px;margin-bottom:7px;font-size:13px;line-height:1.7;color:#444c56;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ew strong{color:#d1242f}
+.eq-summary{background:#fffbee;border:1px solid #d4a72c;border-radius:6px;padding:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.eq-summary ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.eq-summary li{font-size:13px;line-height:1.6;padding-left:18px;position:relative}
+.eq-summary li::before{content:"→";position:absolute;left:0;color:#d4a72c;font-weight:700}
+.eq-summary li code{font-family:monospace;font-size:12px;background:#f6f8fa;border:1px solid #d0d7de;padding:1px 4px;border-radius:3px;color:#0969da}
+</style></head><body>
+<div class="cover">
+  <h1>🐳 Docker QCM — Cours Complet</h1>
+  <p>Podcast de révision · Explications détaillées</p>
+  <div class="meta"><span>${QCM.length} questions</span> &nbsp;·&nbsp; <span>5 parties</span> &nbsp;·&nbsp; <span>${new Date().toLocaleDateString('fr-FR')}</span></div>
+</div>
+${content}
+<script>window.onload=function(){window.print()}<\/script>
+</body></html>`);
+  win.document.close();
+  closeModal();
+}
+
+// ════════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════════
+renderAll();
+</script>
+</body>
+</html>
