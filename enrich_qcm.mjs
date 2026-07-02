@@ -1,11 +1,23 @@
 import { writeFileSync, readFileSync } from 'fs';
+import path from 'path';
+
+try {
+  process.loadEnvFile();
+} catch (e) {
+  // Ignorer l'erreur si le fichier .env n'existe pas
+}
+
+const inputFilePath = './JSON_TRANSFORMER/qcm_intelligence-artificielle/qcm_qcm-intelligence-artificielle_enriched_deduplicated.js';
+const inputDir = path.dirname(inputFilePath);
+const baseName = path.basename(inputFilePath, '.js');
+const outputFilePath = path.join(inputDir, `${baseName}_final.js`);
 
 let QCM = [];
 try {
-  const textContent = readFileSync('./QCM_enriched.js', 'utf8');
+  const textContent = readFileSync(inputFilePath, 'utf8');
   QCM = JSON.parse(textContent.replace(/^const QCM = /, '').replace(/;\s*$/, ''));
 } catch (e) {
-  console.error("Erreur de lecture de QCM_enriched.js. Assurez-vous que le fichier existe.");
+  console.error(`Erreur de lecture de ${inputFilePath}. Assurez-vous que le fichier existe.`);
   process.exit(1);
 }
 
@@ -32,7 +44,11 @@ Explication existante: ${q.explanation || "(vide)"}`;
 
   const model = "gemini-3.1-flash-lite";
 
-  const apiKey = process.env.GEMINI_API_KEY || "";
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    console.error("Erreur : la variable GEMINI_API_KEY n'est pas définie dans le fichier .env");
+    process.exit(1);
+  }
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
   const response = await fetch(url, {
@@ -114,8 +130,8 @@ async function main() {
   }
 
   const output = `const QCM = ${JSON.stringify(enriched, null, 2)};`;
-  writeFileSync('./QCM_enriched.js', output, 'utf8');
-  console.log(`\nDone! ${enriched.length} questions enriched.`);
+  writeFileSync(outputFilePath, output, 'utf8');
+  console.log(`\nDone! ${enriched.length} questions enriched. Sauvegardé sous : ${outputFilePath}`);
 }
 
 main().catch(console.error);

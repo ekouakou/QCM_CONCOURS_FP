@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const jsonFilePath = './qcm_cloud_computing/qcm_qcm-cloud-computing.json';
+const jsonFilePath = './qcm_en-informatique-generale/qcm_qcm-en-informatique-generale.json';
 const jsonDir = path.dirname(jsonFilePath);
 const jsonName = path.basename(jsonFilePath, '.json');
 
