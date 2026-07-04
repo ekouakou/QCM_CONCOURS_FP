@@ -7,7 +7,7 @@ try {
   // Ignorer l'erreur si le fichier .env n'existe pas
 }
 
-const inputFilePath = './JSON_TRANSFORMER/qcm_intelligence-artificielle/qcm_qcm-intelligence-artificielle_enriched_deduplicated.js';
+const inputFilePath = './JSON_TRANSFORMER/qcm_architecture-des-ordinateurs/qcm_groupes_par_theme/qcm_Concepts_Generaux.js';
 const inputDir = path.dirname(inputFilePath);
 const baseName = path.basename(inputFilePath, '.js');
 const outputFilePath = path.join(inputDir, `${baseName}_final.js`);
