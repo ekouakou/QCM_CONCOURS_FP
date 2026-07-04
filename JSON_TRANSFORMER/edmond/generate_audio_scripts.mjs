@@ -6,6 +6,7 @@ const outSummaryJson = './audio_summary_and_examiner.json';
 const outSummaryTxt = './audio_summary_and_examiner.txt';
 const outExplanationJson = './audio_explanations.json';
 const outExplanationTxt = './audio_explanations.txt';
+const outPureExplanationTxt = './audio_pure_explanations.txt';
 
 // Fonction pour nettoyer le HTML et le rendre "lisible" par un outil audio
 function cleanHtmlForAudio(html) {
@@ -47,6 +48,7 @@ function main() {
 
   const explanationsData = [];
   let explanationsNarrativeText = "--- SCRIPTS AUDIO : EXPLICATIONS DÉTAILLÉES ---\n\n";
+  let pureExplanationsText = "--- SCRIPTS AUDIO : EXPLICATIONS PURES ---\n\n";
 
   qcmArray.forEach((qcm, index) => {
     // ---- 1. Construction pour Examiner & Summary ----
@@ -80,6 +82,9 @@ function main() {
     let narrExp = `Question de la thématique : ${qcm.partie}.\n`;
     narrExp += `La question est : ${qcm.q}\n`;
     narrExp += `Voici l'explication détaillée :\n${cleanExp}\n`;
+    
+    // Texte pur d'explication
+    pureExplanationsText += `${cleanExp}\n\n`;
 
     explanationsData.push({
       id: qcm.num,
@@ -99,12 +104,14 @@ function main() {
   // Écriture des fichiers textes bruts pour lecture audio
   writeFileSync(outSummaryTxt, summariesNarrativeText, 'utf8');
   writeFileSync(outExplanationTxt, explanationsNarrativeText, 'utf8');
+  writeFileSync(outPureExplanationTxt, pureExplanationsText, 'utf8');
 
   console.log(`✅ Fichiers générés avec succès pour ${qcmArray.length} questions :`);
   console.log(`- ${outSummaryJson}`);
   console.log(`- ${outSummaryTxt}`);
   console.log(`- ${outExplanationJson}`);
   console.log(`- ${outExplanationTxt}`);
+  console.log(`- ${outPureExplanationTxt}`);
 }
 
 main();

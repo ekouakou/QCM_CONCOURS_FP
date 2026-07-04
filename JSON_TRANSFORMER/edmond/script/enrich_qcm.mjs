@@ -25,7 +25,7 @@ if (!apiKey) {
 }
 
 // Le dossier cible passé en argument (ou par défaut)
-const targetDir = process.argv[2] || path.join(process.cwd(), '../ia');
+const targetDir = process.argv[2] || path.join(process.cwd(), '../qcm_reseau');
 
 if (!existsSync(targetDir)) {
   console.error(`Le dossier ${targetDir} n'existe pas.`);
