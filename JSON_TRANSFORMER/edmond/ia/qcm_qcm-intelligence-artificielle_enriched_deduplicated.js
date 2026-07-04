@@ -1,0 +1,3215 @@
+const QCM = [
+  {
+    "num": "Q1",
+    "partie": "Agents",
+    "q": "Laquelle des machines suivantes nécessite des entrées de la part des humains mais peut interpréter elle-même les sorties ?",
+    "choices": {
+      "A": "Actionneurs",
+      "B": "Capteur",
+      "C": "Agents",
+      "D": "Système d’intelligence artificielle"
+    },
+    "correct": "D",
+    "explanation": "Un système d’intelligence artificielle reçoit des entrées, traite ces données grâce à des algorithmes pour interpréter et produire des sorties de manière autonome.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Agents",
+    "q": "Lequel des éléments suivants est un exemple d’agent(s) intelligent(s) artificiel(s) ?",
+    "choices": {
+      "A": "Un vaisseau spatial autonome",
+      "B": "Humain",
+      "C": "Robot"
+    },
+    "correct": "C",
+    "explanation": "Un agent intelligent artificiel est une entité non humaine capable de percevoir son environnement et d'agir de manière autonome.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Agents",
+    "q": "Si un robot est capable de modifier sa propre trajectoire en fonction des conditions extérieures, alors le robot est considéré comme __.",
+    "choices": {
+      "A": "Mobile",
+      "B": "Robot",
+      "C": "Stupide",
+      "D": "Intelligent"
+    },
+    "correct": "D",
+    "explanation": "Un agent capable de s'adapter aux conditions environnementales est considéré comme un agent intelligent.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Algorithmes",
+    "q": "Qu’est-ce qu’un SVM (Support Vector Machine) ?",
+    "choices": {
+      "A": "Un type de fonction d’activation",
+      "B": "Un algorithme d’apprentissage supervisé utilisé principalement pour la classification",
+      "C": "Un algorithme pour effectuer des tâches de traitement du langage naturel",
+      "D": "Un réseau de neurones utilisé uniquement pour la régression"
+    },
+    "correct": "B",
+    "explanation": "<p>Le SVM (Support Vector Machine) est un algorithme d’apprentissage supervisé, principalement utilisé pour la classification. Il cherche à séparer les données par une hyperplane qui maximise la marge entre les classes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Algorithmes",
+    "q": "Quel algorithme de recherche nécessite le moins de mémoire ?",
+    "choices": {
+      "A": "Recherche optimale",
+      "B": "Recherche en profondeur",
+      "C": "Recherche linéaire"
+    },
+    "correct": "B",
+    "explanation": "La recherche en profondeur (DFS) explore les branches une par une, limitant la mémoire nécessaire.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Algorithmes",
+    "q": "Quelle est la principale caractéristique des algorithmes génétiques ?",
+    "choices": {
+      "A": "Ils s’inspirent des processus de sélection naturelle pour résoudre des problèmes d’optimisation",
+      "B": "Ils sont utilisés uniquement pour l’analyse d’image",
+      "C": "Ils sont plus rapides que les autres algorithmes d’IA",
+      "D": "Ils ne nécessitent pas de données d’entraînement"
+    },
+    "correct": "A",
+    "explanation": "<p>Les algorithmes génétiques sont inspirés des principes de sélection naturelle et d’évolution biologique. Ils sont utilisés pour résoudre des problèmes d’optimisation en générant des solutions « candidates », les évaluant, et « évoluant » ces solutions par des processus de mutation, croisement et sélection.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Algorithmes de ML",
+    "q": "Quel type de problème est le plus adapté au k-plus proches voisins (k-NN) ?",
+    "choices": {
+      "A": "Prévision de séries temporelles",
+      "B": "Clustering non supervisé",
+      "C": "Traduction automatique",
+      "D": "Classification ou régression basée sur la similarité avec des exemples existants"
+    },
+    "correct": "D",
+    "explanation": "<p>Le k-NN est un algorithme simple qui classe ou prédit une valeur en se basant sur les k exemples les plus proches (selon une distance) dans les données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Applications",
+    "q": "Qu’est-ce qu’un « chatbot » basé sur l’IA ?",
+    "choices": {
+      "A": "Un programme capable de converser avec un humain en langage naturel",
+      "B": "Une application de livraison automatique",
+      "C": "Un moteur de recherche",
+      "D": "Un robot physique"
+    },
+    "correct": "A",
+    "explanation": "Un chatbot IA est un programme capable de comprendre et de répondre à des messages humains.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Applications IA",
+    "q": "AlphaGo, l’IA de Google DeepMind, est célèbre pour avoir battu un humain au :",
+    "choices": {
+      "A": "Monopoly",
+      "B": "Jeu de cartes Uno",
+      "C": "Jeu de Go",
+      "D": "Scrabble"
+    },
+    "correct": "C",
+    "explanation": "<p>AlphaGo a marqué l’histoire en battant un champion humain au jeu de Go, un jeu bien plus complexe que les échecs pour les machines, grâce à des techniques avancées d’apprentissage par renforcement et de réseaux de neurones.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Applications IA",
+    "q": "L’IA utilisée pour recommander des films sur Netflix ou des vidéos sur YouTube utilise principalement :",
+    "choices": {
+      "A": "Des capteurs infrarouges",
+      "B": "L’analyse financière",
+      "C": "Des devinettes aléatoires",
+      "D": "Des algorithmes de recommandation basés sur l’apprentissage automatique"
+    },
+    "correct": "D",
+    "explanation": "<p>Les plateformes comme Netflix utilisent des algorithmes d’IA pour analyser ton historique et prédire ce que tu aimeras regarder ensuite.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Applications IA",
+    "q": "Lequel de ces domaines peut utiliser l’IA ?",
+    "choices": {
+      "A": "La médecine",
+      "B": "L’agriculture",
+      "C": "Le commerce",
+      "D": "Tous les domaines ci-dessus"
+    },
+    "correct": "D",
+    "explanation": "<p>L’IA est transversale: elle peut aider à diagnostiquer des maladies, optimiser des cultures, prédire les ventes, et bien plus encore. Elle s’adapte à plein de contextes !</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Applications IA",
+    "q": "Que fait une IA dans une voiture autonome ?",
+    "choices": {
+      "A": "Elle lit les plaques d’immatriculation",
+      "B": "Elle joue de la musique automatiquement",
+      "C": "Elle perçoit l’environnement, prend des décisions et pilote en temps réel",
+      "D": "Elle regarde Netflix"
+    },
+    "correct": "C",
+    "explanation": "<p>Une IA embarquée dans une voiture autonome doit voir (caméras, capteurs), comprendre (algorithmes), agir (pilotage). C’est un des domaines les plus complexes de l’IA aujourd’hui.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Applications IA",
+    "q": "Quel est un exemple d’application de l’IA dans le domaine de la finance ?",
+    "choices": {
+      "A": "La conduite autonome de véhicules.",
+      "B": "La détection de fraude et l’évaluation des risques.",
+      "C": "La génération de texte créatif.",
+      "D": "La reconnaissance faciale pour la sécurité."
+    },
+    "correct": "B",
+    "explanation": "<p>L’IA joue un rôle croissant dans le secteur financier pour détecter les transactions frauduleuses, évaluer le risque de crédit, automatiser le trading et fournir des conseils financiers personnalisés.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Applications IA",
+    "q": "Quel est un exemple d’application de l’IA dans le domaine de la santé ?",
+    "choices": {
+      "A": "La traduction automatique de langues.",
+      "B": "La reconnaissance d’objets dans des images.",
+      "C": "Le diagnostic médical assisté par ordinateur.",
+      "D": "La recommandation de produits en ligne."
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA est de plus en plus utilisée dans le domaine de la santé pour aider au diagnostic de maladies, à la découverte de médicaments, à la personnalisation des traitements et à la gestion des soins aux patients.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Apprentissage Automatique",
+    "q": "Pourquoi utilise-t-on le batch training ?",
+    "choices": {
+      "A": "Pour diviser les modèles en couches",
+      "B": "Pour entraîner plusieurs modèles en même temps",
+      "C": "Pour améliorer l’efficacité de l’entraînement en traitant des mini-lots de données",
+      "D": "Pour supprimer des données du dataset"
+    },
+    "correct": "C",
+    "explanation": "<p>Le batch training consiste à entraîner un modèle en traitant les données par petits lots (mini-batches) au lieu de tout passer d’un coup. Cela améliore la vitesse, la stabilité et la mémoire lors de l’entraînement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Apprentissage Automatique",
+    "q": "Qu’est-ce qu’un “modèle linéaire” en apprentissage automatique ?",
+    "choices": {
+      "A": "Un modèle qui ne peut fonctionner que sur des données droites",
+      "B": "Un modèle dont la sortie est une combinaison linéaire des entrées",
+      "C": "Un modèle qui fonctionne uniquement avec du texte",
+      "D": "Un modèle dont les poids sont toujours à 0"
+    },
+    "correct": "B",
+    "explanation": "<p>Un modèle linéaire calcule la sortie comme une somme pondérée des entrées. C’est simple, rapide, mais limité à des relations linéaires.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Apprentissage Automatique",
+    "q": "Qu’est-ce qu’un modèle “pré-entraîné” ?",
+    "choices": {
+      "A": "Un modèle avec une jolie interface",
+      "B": "Un modèle qui a déjà été entraîné sur une grande base de données",
+      "C": "Un modèle qu’on a stocké dans une base SQL",
+      "D": "Un modèle qui apprend en regardant la télé"
+    },
+    "correct": "B",
+    "explanation": "<p>Un modèle pré-entraîné a déjà appris sur un très grand volume de données. On peut ensuite le réutiliser pour une nouvelle tâche (via le fine-tuning) sans repartir de zéro.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Apprentissage Automatique",
+    "q": "Que fait un modèle de classification ?",
+    "choices": {
+      "A": "Il divise un disque dur",
+      "B": "Il prédit des catégories ou étiquettes à partir de données",
+      "C": "Il chiffre des mots de passe",
+      "D": "Il copie des bases de données"
+    },
+    "correct": "B",
+    "explanation": "<p>Un modèle de classification permet de prédire une étiquette (comme “chat” ou “chien”, “positif” ou “négatif”) selon les données d’entrée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Apprentissage Automatique",
+    "q": "Que permet de faire une fonction de perte comme “MSE” (Mean Squared Error) ?",
+    "choices": {
+      "A": "Elle dessine un graphique",
+      "B": "Elle supprime les données aberrantes",
+      "C": "Elle formate les résultats en pourcentage",
+      "D": "Elle mesure l’erreur entre les prédictions et les vraies valeurs (en moyenne quadratique)"
+    },
+    "correct": "D",
+    "explanation": "<p>La MSE calcule la moyenne des carrés des erreurs entre les prédictions du modèle et les vraies valeurs. Plus la MSE est faible, plus ton modèle est bon en régression.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Apprentissage Automatique",
+    "q": "Que signifie “entraîner un modèle” ?",
+    "choices": {
+      "A": "L’imprimer sur papier",
+      "B": "Lui apprendre à faire des prédictions grâce aux données",
+      "C": "Lui créer une interface graphique",
+      "D": "Le tester uniquement"
+    },
+    "correct": "B",
+    "explanation": "<p>Entraîner un modèle, c’est lui montrer des données + les bonnes réponses, pour qu’il apprenne à généraliser et puisse prédire sur des données qu’il n’a jamais vues.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Apprentissage Automatique",
+    "q": "Que signifie “fine-tuning” d’un modèle IA ?",
+    "choices": {
+      "A": "Réécrire tout le modèle depuis zéro",
+      "B": "Ajuster légèrement un modèle déjà entraîné pour une tâche précise",
+      "C": "Supprimer ses erreurs passées",
+      "D": "Ajouter des images dans un réseau de neurones textuel"
+    },
+    "correct": "B",
+    "explanation": "<p>Le fine-tuning permet d’adapter un modèle pré-entraîné à une tâche spécifique. C’est rapide, économe et très efficace.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Apprentissage Automatique",
+    "q": "Quel concept désigne la capacité d’un modèle à bien fonctionner sur de nouvelles données ?",
+    "choices": {
+      "A": "L’overfitting",
+      "B": "L’apprentissage non supervisé",
+      "C": "La généralisation",
+      "D": "Le sur-échantillonnage"
+    },
+    "correct": "C",
+    "explanation": "<p>La généralisation, c’est la capacité d’un modèle à faire de bonnes prédictions sur des données qu’il n’a jamais vues. C’est l’objectif principal de tout apprentissage machine.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Apprentissage Automatique",
+    "q": "Quel est le rôle d’un algorithme de régression ?",
+    "choices": {
+      "A": "Prédire une valeur continue (ex. : prix, température)",
+      "B": "Classer des images",
+      "C": "Compresser des fichiers",
+      "D": "Traduire un texte automatiquement"
+    },
+    "correct": "A",
+    "explanation": "<p>La régression sert à prédire une valeur numérique continue. C’est différent du classement, qui donne des catégories.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Apprentissage Automatique",
+    "q": "Quel type d’IA classe les emails en « spam » ou « non spam » ?",
+    "choices": {
+      "A": "IA non supervisée",
+      "B": "IA générative",
+      "C": "IA supervisée",
+      "D": "IA symbolique"
+    },
+    "correct": "C",
+    "explanation": "<p>Pour savoir si un email est du spam, le système a été entraîné avec des exemples étiquetés (« spam » / « non-spam ») → c’est donc de l’apprentissage supervisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Apprentissage Non Supervisé",
+    "q": "Que fait un “algorithme de clustering” ?",
+    "choices": {
+      "A": "Il trie des emails par date",
+      "B": "Il classe les données selon des catégories définies à l’avance",
+      "C": "Il regroupe automatiquement des données similaires sans étiquettes",
+      "D": "Il supprime les doublons"
+    },
+    "correct": "C",
+    "explanation": "<p>Le clustering (ex: K-means) est une méthode non supervisée qui regroupe des données similaires entre elles sans savoir à l’avance quelles sont les “bonnes réponses”. Très utile pour explorer ou segmenter des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Apprentissage par renforcement",
+    "q": "Dans le “reinforcement learning” (apprentissage par renforcement), que cherche à faire l’agent ?",
+    "choices": {
+      "A": "Minimiser la mémoire utilisée",
+      "B": "Maximiser une récompense cumulative",
+      "C": "Choisir des actions au hasard",
+      "D": "Réduire le nombre de classes"
+    },
+    "correct": "B",
+    "explanation": "<p>En apprentissage par renforcement, un agent interagit avec un environnement pour maximiser une récompense. Exemples: apprendre à jouer à un jeu, contrôler un robot, optimiser un système de recommandation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Architecture IA",
+    "q": "Que fait un “autoencodeur” (autoencoder) ?",
+    "choices": {
+      "A": "Il encode des vidéos pour YouTube",
+      "B": "Il décode des instructions en binaire",
+      "C": "Il apprend à compresser et reconstruire des données",
+      "D": "Il supprime toutes les données erronées"
+    },
+    "correct": "C",
+    "explanation": "<p>Un autoencodeur est un type de réseau de neurones qui compresse (encode) les données dans un format plus petit, puis les reconstruit (decode). Utile pour la réduction de dimension, détection d’anomalies, ou encore la compression d’images.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Architecture IA",
+    "q": "Quelle est l’utilité d’un modèle de type “multimodal” ?",
+    "choices": {
+      "A": "Il change automatiquement de langue",
+      "B": "Il fonctionne sans données",
+      "C": "Il traite plusieurs types d’entrée (texte, image, audio…) en même temps",
+      "D": "Il se met à jour toutes les heures"
+    },
+    "correct": "C",
+    "explanation": "<p>Un modèle multimodal peut croiser plusieurs types de données, comme une image et une description, ou du texte et du son. Par exemple, GPT-4 avec vision peut analyser une image et répondre en langage naturel.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Avantages",
+    "q": "Lequel des énoncés suivants est un avantage de l’intelligence artificielle ?",
+    "choices": {
+      "A": "Elle réduit le temps nécessaire à la résolution d’un problème.",
+      "B": "Elle aide à assurer la sécurité",
+      "C": "Elle a la capacité de penser, ce qui facilite le travail.",
+      "D": "Toutes les réponses ci-dessus."
+    },
+    "correct": "D",
+    "explanation": "L’IA automatise les tâches, améliore la sécurité et facilite le travail par la prise de décision automatisée.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Classification",
+    "q": "Quelle est la différence entre classification binaire et multi-classe ?",
+    "choices": {
+      "A": "Binaire a deux sorties, multi-classe en a plusieurs",
+      "B": "Multi-classe n’utilise pas de réseau",
+      "C": "Binaire est plus lent",
+      "D": "Il n’y a pas de différence"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Concepts de base",
+    "q": "C’est quoi une base de données d’entraînement ?",
+    "choices": {
+      "A": "Un jeu vidéo",
+      "B": "Un fichier vide",
+      "C": "Un outil de sauvegarde automatique en temps réel",
+      "D": "Une collection d’exemples pour apprendre à l’IA"
+    },
+    "correct": "D",
+    "explanation": "<p>Une base de données d’entraînement (training set) est un ensemble d’exemples (texte, images, sons…) utilisé pour enseigner à un modèle comment faire des prédictions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Concepts de base",
+    "q": "En combien de catégories le processus d’intelligence artificielle est-il classé ?",
+    "choices": {
+      "A": "Catégorisé en 5 catégories",
+      "B": "Les processus sont catégorisés en fonction de l’entrée fournie",
+      "C": "Les processus sont classés en 3 catégories",
+      "D": "Les processus ne sont pas catégorisés"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Concepts de base",
+    "q": "L’intelligence artificielle a extrêmement évolué dans tous les domaines, à l’exception de _________.",
+    "choices": {
+      "A": "L’exploration du Web",
+      "B": "Construction de plans dans des systèmes dynamiques en temps réel",
+      "C": "La compréhension du langage naturel de manière robuste",
+      "D": "Tous les domaines mentionnés"
+    },
+    "correct": "D",
+    "explanation": "L'IA rencontre encore des limites dans ces domaines complexes qui nécessitent des améliorations.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Concepts de base",
+    "q": "L’intelligence artificielle, c’est à peu près comme _____.",
+    "choices": {
+      "A": "Jouer à un jeu sur ordinateur",
+      "B": "Rendre une machine intelligente",
+      "C": "Programmer sur une machine avec votre propre intelligence",
+      "D": "Mettre son intelligence dans une machine"
+    },
+    "correct": "B",
+    "explanation": "L’IA vise à créer des machines intelligentes capables de penser comme l’homme.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Concepts de base",
+    "q": "Le “machine learning” est une technique qui permet à une machine de :",
+    "choices": {
+      "A": "Réparer du matériel informatique",
+      "B": "Se mettre en veille automatiquement",
+      "C": "Compiler du code plus vite",
+      "D": "Apprendre à partir de données sans être explicitement programmée pour chaque tâche"
+    },
+    "correct": "D",
+    "explanation": "<p>Le machine learning permet à une machine d’analyser des données, d’en tirer des leçons, puis de faire des prédictions ou décisions sans avoir été explicitement programmée pour chaque cas.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Concepts de base",
+    "q": "Lequel des éléments suivants est une branche de l’intelligence artificielle ?",
+    "choices": {
+      "A": "Machine Learning",
+      "B": "Cybercriminalité",
+      "C": "Social Network",
+      "D": "Networking"
+    },
+    "correct": "A",
+    "explanation": "Machine Learning est l’un des principaux sous-domaines de l’intelligence artificielle, tout comme les réseaux neuronaux, computer vision, la robotique et le langage naturel.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Concepts de base",
+    "q": "Lequel des éléments suivants n’est pas une application de l’intelligence artificielle ?",
+    "choices": {
+      "A": "Computer Vision",
+      "B": "Traitement du langage naturel",
+      "C": "Système de gestion des bases de données",
+      "D": "Assistant Digital"
+    },
+    "correct": "C",
+    "explanation": "Un système de gestion de base de données (SGBD) classique n’est pas en lui-même une application de l’IA, car il se limite au stockage et à l’organisation des données.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Concepts de base",
+    "q": "Parmi les suivants, lequel n’est pas un sous-domaine courant de l’Intelligence Artificielle ?",
+    "choices": {
+      "A": "L’apprentissage automatique (Machine Learning)",
+      "B": "Le traitement du langage naturel (Natural Language Processing)",
+      "C": "La vision par ordinateur (Computer Vision)",
+      "D": "La robotique avancée"
+    },
+    "correct": "D",
+    "explanation": "La robotique est un domaine distinct qui intègre l'IA mais qui ne constitue pas un sous-domaine direct de la discipline de l'IA logicielle.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Concepts de base",
+    "q": "Pourquoi dit-on que l’IA “ne comprend pas” réellement ce qu’elle dit ?",
+    "choices": {
+      "A": "Parce qu’elle ne parle pas anglais",
+      "B": "Parce qu’elle manque de RAM",
+      "C": "Parce qu’elle fait semblant",
+      "D": "Parce qu'elle n'a pas de corps"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA comme GPT prédit mot après mot ce qui a le plus de chances d’apparaître. Elle ne “comprend” pas au sens humain, elle simule une réponse crédible basée sur des statistiques et des patterns appris.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Concepts de base",
+    "q": "Pourquoi le “deep learning” a-t-il explosé ces dernières années ?",
+    "choices": {
+      "A": "Grâce à l’essor des CPU",
+      "B": "Parce que les bases de données sont devenues plus rares",
+      "C": "Grâce à plus de données, plus de puissance de calcul (GPU) et de meilleurs algorithmes",
+      "D": "Parce que c’est obligatoire à l’école"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’un “embedding” en IA ?",
+    "choices": {
+      "A": "Une sorte de virus informatique",
+      "B": "Une méthode de compression de vidéo",
+      "C": "Une représentation vectorielle d’un mot, image ou autre donnée dans un espace de nombres",
+      "D": "Une technique de piratage"
+    },
+    "correct": "C",
+    "explanation": "<p>Un embedding est une traduction d’un objet (mot, image, etc.) en vecteur numérique. Cela permet aux algorithmes de comparer, chercher, analyser des objets abstraits de façon mathématique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’un « agent intelligent » en IA ?",
+    "choices": {
+      "A": "Une entité (logicielle ou matérielle) qui perçoit son environnement à travers des capteurs et agit sur cet environnement à travers des effecteurs dans le but d’atteindre ses objectifs.",
+      "B": "Un programme informatique capable de jouer à des jeux complexes.",
+      "C": "Un modèle d’apprentissage automatique capable de faire des prédictions précises.",
+      "D": "Un système d’IA capable de passer le test de Turing."
+    },
+    "correct": "A",
+    "explanation": "<p>Le concept d’agent intelligent est fondamental en IA. Il s’agit d’une entité autonome qui interagit avec son environnement pour atteindre un but. Un robot, un logiciel de recommandation ou un chatbot peuvent être considérés comme des agents intelligents.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’un algorithme dans le contexte de l’IA ?",
+    "choices": {
+      "A": "Un ensemble de données utilisé pour entraîner un modèle d’IA.",
+      "B": "Un programme informatique capable d’imiter l’intelligence humaine.",
+      "C": "Une séquence d’instructions bien définie pour résoudre un problème ou effectuer une tâche.",
+      "D": "Un réseau de neurones artificiels utilisé dans l’apprentissage profond."
+    },
+    "correct": "C",
+    "explanation": "<p>Un algorithme est au cœur de l’IA. Il s’agit de l’ensemble des étapes logiques qu’une machine suit pour atteindre un objectif, qu’il s’agisse de classer des images, de traduire des langues ou de prendre des décisions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q14",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’un dataset ?",
+    "choices": {
+      "A": "Un logiciel de gestion de fichiers",
+      "B": "Un groupe de développeurs IA",
+      "C": "Un ensemble de données utilisé pour entraîner ou tester une IA",
+      "D": "Un antivirus"
+    },
+    "correct": "C",
+    "explanation": "<p>Un dataset (jeu de données) est une collection de données structurées, utilisée pour entraîner ou évaluer un modèle d’IA. Par exemple, une base de milliers d’images de chats et de chiens pour apprendre à les reconnaître.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q15",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’un hyperparamètre ?",
+    "choices": {
+      "A": "Une erreur de calcul",
+      "B": "Un paramètre réglé avant l’entraînement d’un modèle",
+      "C": "Une métrique de performance",
+      "D": "Une valeur que le modèle prédit"
+    },
+    "correct": "B",
+    "explanation": "<p>Les hyperparamètres sont les valeurs qu’on fixe avant l’apprentissage (par ex. : le taux d’apprentissage, le nombre de couches, la taille du batch…). Ils influencent la qualité de l’entraînement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q16",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’un modèle d’IA ?",
+    "choices": {
+      "A": "L’ensemble des données brutes utilisées pour l’apprentissage.",
+      "B": "La représentation apprise à partir des données d’entraînement par un algorithme d’IA, qui peut ensuite être utilisée pour faire des prédictions ou des décisions sur de nouvelles données.",
+      "C": "Le matériel informatique sur lequel s’exécute un programme d’IA.",
+      "D": "L’interface utilisateur d’une application d’IA."
+    },
+    "correct": "B",
+    "explanation": "<p>Un modèle d’IA est le résultat de l’entraînement d’un algorithme sur des données. Il capture les motifs et les relations présents dans les données et peut être utilisé pour généraliser à de nouvelles situations.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q17",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce qu’une “donnée étiquetée” ?",
+    "choices": {
+      "A": "Une donnée supprimée",
+      "B": "Une donnée cryptée",
+      "C": "Une donnée audio uniquement",
+      "D": "Une donnée avec sa réponse correcte pour l'apprentissage supervisé"
+    },
+    "correct": "D",
+    "explanation": "<p>Une donnée étiquetée est essentielle en apprentissage supervisé. Elle inclut à la fois l’entrée et sa réponse correcte pour entraîner un modèle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q18",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce que “TensorFlow” ?",
+    "choices": {
+      "A": "Un langage de programmation",
+      "B": "Une base de données IA",
+      "C": "Une bibliothèque pour créer et entraîner des modèles d’intelligence artificielle",
+      "D": "Un moteur de recherche IA"
+    },
+    "correct": "C",
+    "explanation": "<p>TensorFlow est une bibliothèque open source développée par Google, très utilisée pour le machine learning et le deep learning, notamment avec les réseaux de neurones.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q19",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce que l’intelligence artificielle ?",
+    "choices": {
+      "A": "L’intelligence artificielle est un domaine qui vise à exploiter les données.",
+      "B": "L’intelligence artificielle est un domaine qui vise à développer des machines intelligentes.",
+      "C": "L’intelligence artificielle est un domaine qui vise à améliorer la sécurité.",
+      "D": "L’intelligence artificielle est un domaine qui vise à rendre les humains plus intelligents."
+    },
+    "correct": "B",
+    "explanation": "L’intelligence artificielle est le développement de systèmes intelligents qui fonctionnent et réagissent de la même manière que les humains.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q20",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce que la « planification » en IA ?",
+    "choices": {
+      "A": "La capacité d’un système d’IA à prédire l’avenir.",
+      "B": "Le processus par lequel un système d’IA détermine une séquence d’actions à entreprendre pour atteindre un objectif donné.",
+      "C": "La capacité d’un système d’IA à s’adapter à des environnements changeants en temps réel.",
+      "D": "La capacité d’un système d’IA à interagir avec des humains de manière naturelle."
+    },
+    "correct": "B",
+    "explanation": "<p>La planification est essentielle pour les agents intelligents qui doivent effectuer des tâches complexes nécessitant une séquence d’actions, comme un robot qui doit naviguer dans un environnement ou un système d’IA qui doit organiser une chaîne d’approvisionnement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q21",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce que la « représentation des connaissances » en IA ?",
+    "choices": {
+      "A": "La manière dont les données brutes sont stockées dans un système d’IA.",
+      "B": "La conception de structures et de formalismes pour stocker et manipuler des informations afin de permettre aux systèmes d’IA de raisonner et de résoudre des problèmes.",
+      "C": "La visualisation des résultats d’un modèle d’IA.",
+      "D": "La traduction de connaissances humaines en langage de programmation."
+    },
+    "correct": "B",
+    "explanation": "<p>La représentation des connaissances est cruciale pour permettre à l’IA d’aller au-delà de la simple reconnaissance de motifs et de manipuler des concepts, des relations et des règles pour effectuer des tâches complexes comme le raisonnement et la planification.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q22",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce que le “batch size” dans l’apprentissage d’un modèle ?",
+    "choices": {
+      "A": "Le nombre de classes dans le dataset",
+      "B": "Le nombre de couches d’un modèle",
+      "C": "Le nombre d’échantillons traités avant une mise à jour des poids",
+      "D": "La taille maximale du fichier de données"
+    },
+    "correct": "C",
+    "explanation": "<p>Le batch size, c’est le nombre d’exemples que le modèle traite en même temps avant de mettre à jour les poids. Un batch plus petit → entraînement plus stable, mais plus lent. Grand batch → plus rapide, mais parfois instable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q23",
+    "partie": "Concepts de base",
+    "q": "Qu’est-ce que le « raisonnement » en IA ?",
+    "choices": {
+      "A": "La capacité d’un système d’IA à apprendre de nouvelles informations.",
+      "B": "Le processus par lequel un système d’IA utilise des connaissances représentées pour tirer des conclusions, résoudre des problèmes et prendre des décisions.",
+      "C": "La capacité d’un système d’IA à communiquer en langage naturel.",
+      "D": "La capacité d’un système d’IA à percevoir et à interpréter des informations visuelles."
+    },
+    "correct": "B",
+    "explanation": "<p>Le raisonnement est une capacité clé de l’IA. Il implique l’utilisation de connaissances et de règles logiques pour inférer de nouvelles informations ou pour trouver des solutions à des problèmes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q24",
+    "partie": "Concepts de base",
+    "q": "Que fait un modèle IA après avoir été entraîné ?",
+    "choices": {
+      "A": "Il s’éteint",
+      "B": "Il fait des blagues",
+      "C": "Il remplace automatiquement Windows",
+      "D": "Il fait des prédictions ou des décisions à partir de nouvelles données"
+    },
+    "correct": "D",
+    "explanation": "<p>Une fois entraîné, un modèle IA peut généraliser et faire des prédictions sur de nouveaux cas qu’il n’a jamais vus.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q25",
+    "partie": "Concepts de base",
+    "q": "Que fait une IA de type “classification” ?",
+    "choices": {
+      "A": "Elle trie les e-mails par ordre alphabétique",
+      "B": "Elle transforme une image en 3D",
+      "C": "Elle change la langue du texte",
+      "D": "Elle devine à quelle catégorie appartient une donnée (ex : spam ou non spam)"
+    },
+    "correct": "D",
+    "explanation": "<p>En classification, une IA reçoit une entrée (ex : un email) et prédit sa classe (ex : spam ou non spam, chat ou chien, positif ou négatif…).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q26",
+    "partie": "Concepts de base",
+    "q": "Que représente un “label” dans un dataset supervisé ?",
+    "choices": {
+      "A": "Une variable aléatoire",
+      "B": "Le nom du fichier",
+      "C": "La valeur attendue ou catégorie associée à une donnée",
+      "D": "L’ordre des colonnes"
+    },
+    "correct": "C",
+    "explanation": "<p>Un label, c’est la valeur attendue dans un jeu de données supervisé. Par exemple, pour une image de chat, le label sera “chat”. Le modèle apprend à associer les entrées aux bons labels.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q27",
+    "partie": "Concepts de base",
+    "q": "Que signifie “machine learning” ?",
+    "choices": {
+      "A": "Apprentissage des machines pour réparer du matériel",
+      "B": "Apprentissage automatique des machines à partir des données",
+      "C": "Une technique pour envoyer des e-mails",
+      "D": "Une méthode de dessin"
+    },
+    "correct": "B",
+    "explanation": "<p>Le machine learning (ML) permet à un système d’apprendre à partir de données, sans être explicitement programmé pour chaque tâche.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q28",
+    "partie": "Concepts de base",
+    "q": "Que signifie « IA symbolique » ?",
+    "choices": {
+      "A": "Une IA basée sur des emojis",
+      "B": "Une IA qui ne fonctionne que dans les musées",
+      "C": "Une IA qui utilise des règles logiques et des symboles pour raisonner",
+      "D": "Une IA émotionnelle"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA symbolique repose sur la logique, les règles explicites et les symboles (comme des faits ou des relations). C’est une des approches historiques de l’IA, différente du machine learning moderne basé sur les données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q29",
+    "partie": "Concepts de base",
+    "q": "Que sont les “données temporelles” ?",
+    "choices": {
+      "A": "Des données rangées dans le futur",
+      "B": "Des données liées à des moments dans le temps (ex : séries chronologiques)",
+      "C": "Des données stockées 24h",
+      "D": "Des données supprimées chaque jour"
+    },
+    "correct": "B",
+    "explanation": "<p>Les données temporelles (ou séries chronologiques) ont une dimension temporelle, comme : température heure par heure, cours de bourse, battements cardiaques… souvent utilisées avec des RNN ou LSTM.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q30",
+    "partie": "Concepts de base",
+    "q": "Que sont les données d’entraînement ?",
+    "choices": {
+      "A": "Les données utilisées pour s’entraîner à taper plus vite",
+      "B": "Les données utilisées pour faire du sport",
+      "C": "Les données que l’IA utilise pour apprendre et s’améliorer",
+      "D": "Les données inutiles supprimées après le test"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA apprend à partir des données d’entraînement, qui sont des exemples fournis pour qu’elle puisse comprendre les relations et améliorer ses prédictions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q31",
+    "partie": "Concepts de base",
+    "q": "Que veut dire “epoch” dans un entraînement IA ?",
+    "choices": {
+      "A": "Le nombre de couches d’un réseau",
+      "B": "Une erreur de typage",
+      "C": "Un passage complet sur l’ensemble des données d’entraînement",
+      "D": "Une unité de calcul GPU"
+    },
+    "correct": "C",
+    "explanation": "<p>Une epoch est un tour complet du modèle sur toutes les données d’entraînement. On entraîne souvent un modèle sur plusieurs epochs, en ajustant les poids à chaque passage.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q32",
+    "partie": "Concepts de base",
+    "q": "Quel est l’objectif principal d’un chatbot basé sur l’IA comme ChatGPT ?",
+    "choices": {
+      "A": "Envoyer des spams",
+      "B": "Mémoriser des numéros de téléphone",
+      "C": "Comprendre et générer du langage naturel",
+      "D": "Se connecter à Facebook"
+    },
+    "correct": "C",
+    "explanation": "<p>Un chatbot IA comme ChatGPT utilise le traitement du langage naturel (NLP) pour comprendre les messages humains et répondre de façon fluide, souvent de manière très réaliste.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q33",
+    "partie": "Concepts de base",
+    "q": "Quel est le but de l’intelligence artificielle ?",
+    "choices": {
+      "A": "Résoudre des problèmes du monde réel",
+      "B": "Expliquer les différentes sortes d’intelligence",
+      "C": "Extraire des causes scientifiques",
+      "D": "Résoudre des problèmes artificiels"
+    },
+    "correct": "A",
+    "explanation": "Le but principal de l’intelligence artificielle (IA) est de concevoir des systèmes capables de simuler l’intelligence humaine pour résoudre des problèmes concrets.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q34",
+    "partie": "Concepts de base",
+    "q": "Quel est le lien entre IA et données ?",
+    "choices": {
+      "A": "L’IA fonctionne sans données",
+      "B": "Les données sont inutiles pour une IA",
+      "C": "L’IA a besoin de données pour apprendre et faire des prédictions",
+      "D": "L’IA fabrique ses propres données au hasard"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA apprend à partir de données: plus les données sont bonnes et nombreuses, meilleur sera le modèle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q35",
+    "partie": "Concepts de base",
+    "q": "Quel est le risque si on entraîne un modèle trop longtemps ?",
+    "choices": {
+      "A": "Il devient plus rapide",
+      "B": "Il oublie les anciennes données",
+      "C": "Il supprime les labels",
+      "D": "Il risque de faire de l’overfitting (surapprentissage)"
+    },
+    "correct": "D",
+    "explanation": "<p>Un modèle trop entraîné peut apprendre par cœur les données d’entraînement et perdre sa capacité à généraliser à de nouvelles données. D’où l’intérêt de l’early stopping et de la validation croisée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q36",
+    "partie": "Concepts de base",
+    "q": "Quel est le rôle d’un “modèle” en intelligence artificielle ?",
+    "choices": {
+      "A": "Il décore l’interface de l’IA",
+      "B": "C’est une image 3D d’un robot",
+      "C": "C’est le nom du fichier principal",
+      "D": "C’est la structure entraînée pour faire des prédictions à partir de données"
+    },
+    "correct": "D",
+    "explanation": "<p>Un modèle IA est ce qui reste après l’entraînement: une structure mathématique (comme un réseau de neurones) capable de faire des prédictions ou des classifications sur de nouvelles données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q37",
+    "partie": "Concepts de base",
+    "q": "Quel est le test proposé par Alan Turing pour évaluer la capacité d’une machine à manifester une intelligence comparable à celle d’un être humain ?",
+    "choices": {
+      "A": "Le test de Loebner",
+      "B": "Le test de Turing",
+      "C": "Le test de Stanford",
+      "D": "Le test de Dartmouth"
+    },
+    "correct": "B",
+    "explanation": "<p>Le test de Turing, introduit par Alan Turing en 1950, propose qu’une machine puisse être considérée comme intelligente si un humain, lors d’une conversation textuelle, ne peut pas distinguer la machine d’un autre humain.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q38",
+    "partie": "Concepts de base",
+    "q": "Quelle différence entre un modèle “génératif” et un modèle “discriminatif” ?",
+    "choices": {
+      "A": "Le génératif prédit une catégorie, le discriminatif crée des données",
+      "B": "Le discriminatif classe, le génératif produit",
+      "C": "Ils sont identiques mais ont des noms différents",
+      "D": "Le génératif supprime les erreurs"
+    },
+    "correct": "B",
+    "explanation": "<p>Un modèle discriminatif apprend les frontières entre les classes, tandis qu'un modèle génératif apprend la distribution des données pour en créer de nouvelles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q39",
+    "partie": "Concepts de base",
+    "q": "Quelle est l’utilité d’un “batch” pendant l’entraînement ?",
+    "choices": {
+      "A": "Diviser les données en petits groupes pour les traiter progressivement",
+      "B": "Entraîner le modèle une donnée à la fois",
+      "C": "Réinitialiser le modèle après chaque itération",
+      "D": "Tester le modèle uniquement"
+    },
+    "correct": "A",
+    "explanation": "<p>Un batch est un sous-ensemble des données utilisé pour une étape d’apprentissage. Travailler en batch permet d’optimiser la mémoire et d’accélérer l’entraînement tout en rendant l’apprentissage plus stable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q40",
+    "partie": "Concepts de base",
+    "q": "Quelle est la différence entre IA et machine learning ?",
+    "choices": {
+      "A": "Le machine learning est plus puissant que l’IA",
+      "B": "Le machine learning est une branche de l’IA",
+      "C": "L’IA est plus récente",
+      "D": "Il n’y a aucune différence"
+    },
+    "correct": "B",
+    "explanation": "<p>Le machine learning est une sous-catégorie de l’intelligence artificielle, spécialisée dans l’apprentissage automatique à partir des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q41",
+    "partie": "Concepts de base",
+    "q": "Quelle est la différence entre IA faible (narrow AI) et IA forte (general AI) ?",
+    "choices": {
+      "A": "L’IA faible est lente et l’IA forte est rapide",
+      "B": "Il n’y a aucune différence",
+      "C": "L’IA faible utilise Internet, l’IA forte fonctionne hors ligne",
+      "D": "L’IA faible est spécialisée dans une tâche, l’IA forte peut raisonner comme un humain"
+    },
+    "correct": "D",
+    "explanation": "<p>L’IA faible est conçue pour accomplir une tâche spécifique (comme jouer aux échecs ou recommander des vidéos). L’IA forte, encore en développement, pourrait imiter le raisonnement et la compréhension humaine dans plusieurs domaines.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q42",
+    "partie": "Concepts de base",
+    "q": "Quelle est la différence entre IA symbolique et IA par apprentissage ?",
+    "choices": {
+      "A": "L’IA symbolique utilise des règles; l’autre apprend à partir de données",
+      "B": "L’IA par apprentissage parle plus souvent",
+      "C": "L’IA symbolique est réservée aux enfants",
+      "D": "Elles utilisent les mêmes bases de données"
+    },
+    "correct": "A",
+    "explanation": "<p>IA symbolique = basée sur des règles explicites codées par des humains.IA par apprentissage = apprend à partir de données (comme les réseaux de neurones).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q43",
+    "partie": "Concepts de base",
+    "q": "Quelle est la forme complète du terme « IA » ?",
+    "choices": {
+      "A": "Intelligence Avancée",
+      "B": "Intelligence Accelerated",
+      "C": "Intelligence Access",
+      "D": "Intelligence Artificielle"
+    },
+    "correct": "D",
+    "explanation": "L’IA est l’abréviation d’Intelligence Artificielle. Elle est utilisée pour créer des systèmes ou construire des machines capables de penser et de travailler comme les humains.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q44",
+    "partie": "Concepts de base",
+    "q": "Qui est l’inventeur de l’intelligence artificielle ?",
+    "choices": {
+      "A": "John McCarthy",
+      "B": "Linus Benedict Torvalds",
+      "C": "Rasmus Lerdorf",
+      "D": "James Gosling"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q45",
+    "partie": "Concepts de base",
+    "q": "Technique mise au point pour déterminer si une machine peut ou non faire preuve de l’intelligence artificielle connue sous le nom de___.",
+    "choices": {
+      "A": "Algèbre de Boole",
+      "B": "Logarithme",
+      "C": "Test de Turing",
+      "D": "Algorithme"
+    },
+    "correct": "C",
+    "explanation": "Alan Turing a introduit le Test de Turing en 1950 pour mesurer si une machine peut faire preuve d'intelligence.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Concepts Généraux",
+    "q": "À quoi sert la validation croisée (cross-validation) ?",
+    "choices": {
+      "A": "À accélérer le calcul du gradient",
+      "B": "À normaliser les données d’entrée",
+      "C": "À vérifier que le modèle n’est pas surentraîné en utilisant plusieurs sous-ensembles de données",
+      "D": "À convertir le texte en vecteurs"
+    },
+    "correct": "C",
+    "explanation": "<p>La validation croisée consiste à diviser les données d’entraînement en plusieurs « folds », et à entraîner/tester le modèle sur différents combinaisons pour évaluer sa robustesse et éviter l’overfitting.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Concepts Généraux",
+    "q": "À quoi sert le padding dans les CNN ?",
+    "choices": {
+      "A": "À réinitialiser les poids",
+      "B": "À réduire le surapprentissage",
+      "C": "À normaliser les poids du réseau",
+      "D": "À conserver la taille d’origine d’une image lors de la convolution"
+    },
+    "correct": "D",
+    "explanation": "<p>Le padding consiste à ajouter des pixels (souvent des zéros) autour de l’image d’entrée pour conserver sa taille après l’application d’un filtre de convolution.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Concepts Généraux",
+    "q": "À quoi sert une “courbe d’apprentissage” ?",
+    "choices": {
+      "A": "À suivre l’évolution de la performance du modèle pendant l’entraînement",
+      "B": "À dessiner un schéma de robot",
+      "C": "À planifier les vacances du data scientist",
+      "D": "À mesurer la vitesse d’entraînement d’un modèle"
+    },
+    "correct": "A",
+    "explanation": "<p>Une courbe d’apprentissage montre comment le modèle s’améliore (ou pas) au fil des itérations. Elle aide à repérer un sur-apprentissage (overfitting) ou un sous-apprentissage (underfitting).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Concepts Généraux",
+    "q": "En apprentissage supervisé, on connaît ___________",
+    "choices": {
+      "A": "Les résultats attendus pour chaque donnée d’entraînement",
+      "B": "Les noms des développeurs",
+      "C": "Les erreurs à la fin uniquement",
+      "D": "Le nombre exact de neurones"
+    },
+    "correct": "A",
+    "explanation": "<p>Dans l’apprentissage supervisé, chaque exemple dans les données est accompagné de la bonne réponse. L’IA apprend donc à imiter ces réponses.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Concepts Généraux",
+    "q": "Pourquoi divise-t-on souvent les données en 3 parties : entraînement, validation, test ?",
+    "choices": {
+      "A": "Pour décorer les rapports",
+      "B": "Pour occuper plus de mémoire",
+      "C": "Pour entraîner, ajuster et évaluer le modèle de manière fiable",
+      "D": "Pour confondre les développeurs"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce qu’un « réseau de neurones artificiels » (RNA) ?",
+    "choices": {
+      "A": "Un modèle de calcul inspiré du système nerveux biologique, composé de nœuds interconnectés (« neurones ») organisés en couches, qui peuvent apprendre des motifs complexes à partir des données.",
+      "B": "Un type d’algorithme d’apprentissage automatique qui ne nécessite pas de données d’entraînement.",
+      "C": "Un système de représentation des connaissances basé sur des règles logiques.",
+      "D": "Un type de robot capable d’imiter le comportement humain."
+    },
+    "correct": "A",
+    "explanation": "<p>Les réseaux de neurones artificiels sont au cœur de nombreuses avancées récentes en IA, en particulier dans Deep learning. Leur structure en couches et leurs connexions pondérées leur permettent d’apprendre des représentations hiérarchiques des données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce qu’un « réseau de neurones convolutif » (CNN) ?",
+    "choices": {
+      "A": "Un type de réseau de neurones principalement utilisé pour le traitement du langage naturel.",
+      "B": "Un type de réseau de neurones spécialement conçu pour traiter des données structurées en grille, comme les images, en utilisant des couches convolutives qui appliquent des filtres pour extraire des caractéristiques spatiales.",
+      "C": "Un type de réseau de neurones utilisé pour le traitement des séries temporelles.",
+      "D": "Un type de réseau de neurones avec une seule couche cachée."
+    },
+    "correct": "B",
+    "explanation": "<p>Les CNN ont révolutionné la vision par ordinateur. Leurs couches convolutives apprennent automatiquement des caractéristiques hiérarchiques à partir des images, comme les bords, les textures et les formes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce qu’un « système expert » en IA ?",
+    "choices": {
+      "A": "Un système d’IA capable d’apprendre à partir de grandes quantités de données non structurées.",
+      "B": "Un système d’IA qui utilise des règles et des connaissances spécifiques à un domaine pour résoudre des problèmes complexes et fournir des conseils ou des explications comme un expert humain dans ce domaine.",
+      "C": "Un système d’IA capable de comprendre et de générer du langage naturel de manière fluide.",
+      "D": "Un système d’IA utilisé principalement pour la reconnaissance de formes dans des images."
+    },
+    "correct": "B",
+    "explanation": "<p>Les systèmes experts ont été parmi les premières applications réussies de l’IA. Ils codifient la connaissance d’experts humains sous forme de règles (par exemple, des règles « si-alors ») et les utilisent pour faire des déductions et fournir des solutions dans des domaines spécifiques comme le diagnostic médical ou la configuration de systèmes complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce qu’une fonction d’activation sigmoïde ?",
+    "choices": {
+      "A": "Une fonction qui renvoie des valeurs comprises entre -1 et 1",
+      "B": "Une fonction linéaire utilisée pour des réseaux de neurones récurrents",
+      "C": "Une fonction qui renvoie des valeurs comprises entre 0 et 1, souvent utilisée pour des problèmes de classification binaire",
+      "D": "Une fonction utilisée pour entraîner des modèles à très grande échelle"
+    },
+    "correct": "C",
+    "explanation": "<p>La fonction sigmoïde est une fonction d’activation qui renvoie des valeurs comprises entre 0 et 1. Elle est souvent utilisée dans les réseaux de neurones pour des problèmes de classification binaire, car elle permet de modéliser une probabilité.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce que la « robotique » en IA ?",
+    "choices": {
+      "A": "Un sous-domaine de l’IA qui se concentre sur la création de logiciels intelligents.",
+      "B": "Un domaine multidisciplinaire qui combine l’IA avec l’ingénierie mécanique et électrique pour concevoir, construire, exploiter et appliquer des robots.",
+      "C": "Un type d’algorithme d’apprentissage automatique utilisé pour contrôler les mouvements des machines.",
+      "D": "Un ensemble de capteurs utilisés par les systèmes d’IA pour percevoir leur environnement."
+    },
+    "correct": "B",
+    "explanation": "<p>La robotique utilise les principes de l’IA pour doter les robots de capacités intelligentes telles que la perception, la planification et le contrôle, leur permettant d’effectuer des tâches autonomes dans le monde réel.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce que la tokenisation en NLP ?",
+    "choices": {
+      "A": "Une méthode de cryptographie",
+      "B": "Une méthode de compression de données",
+      "C": "Une technique de régularisation",
+      "D": "Un processus qui transforme les phrases en jetons (mots, sous-mots, caractères) pour traitement"
+    },
+    "correct": "D",
+    "explanation": "<p>La tokenisation est le processus qui divise un texte brut en unités manipulables appelées tokens (mots, sous-mots, caractères). C’est une étape clé du prétraitement dans le NLP.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce que le « prédictif » en IA ?",
+    "choices": {
+      "A": "Une IA qui lit dans l’avenir comme une voyante",
+      "B": "Une IA qui fait des prédictions basées sur des données passées",
+      "C": "Une IA qui efface les anciennes données",
+      "D": "Une IA qui se met en pause automatiquement"
+    },
+    "correct": "B",
+    "explanation": "<p>Le prédictif permet à une IA de prévoir ce qui pourrait se passer en se basant sur des données historiques. Par exemple: prédire si un client va acheter, ou si une machine va tomber en panne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Concepts Généraux",
+    "q": "Qu’est-ce que le transfer learning ?",
+    "choices": {
+      "A": "Une technique pour transférer des données d’un modèle à un autre",
+      "B": "Une méthode pour traduire un texte automatiquement",
+      "C": "Utiliser un modèle pré-entraîné sur une tâche et l’adapter à une autre tâche",
+      "D": "Partager les données entre plusieurs modèles"
+    },
+    "correct": "C",
+    "explanation": "<p>Le transfer learning permet de réutiliser un modèle pré-entraîné (comme ResNet, BERT, GPT) sur une tâche spécifique et de le réadapter à une autre tâche, souvent avec peu de données. Cela accélère l’entraînement et améliore les performances.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q14",
+    "partie": "Concepts Généraux",
+    "q": "Que fait un algorithme de “clustering” (regroupement) ?",
+    "choices": {
+      "A": "Il regroupe des données similaires entre elles sans connaître les étiquettes",
+      "B": "Il divise un fichier en morceaux",
+      "C": "Il trie les emails",
+      "D": "Il améliore la qualité de l’image"
+    },
+    "correct": "A",
+    "explanation": "<p>Le clustering est un type d’apprentissage non supervisé. Il regroupe les données en “clusters” (groupes) en fonction de leurs similarités, sans étiquette prédéfinie.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q15",
+    "partie": "Concepts Généraux",
+    "q": "Que mesure une fonction de coût (loss function) ?",
+    "choices": {
+      "A": "Le prix d’un modèle IA",
+      "B": "La taille de la base de données",
+      "C": "L’écart entre la prédiction et la vraie valeur",
+      "D": "La complexité du code"
+    },
+    "correct": "C",
+    "explanation": "<p>La fonction de coût mesure à quel point le modèle se trompe. Moins la perte est grande, plus le modèle est précis. Le but de l’entraînement est de minimiser cette erreur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q16",
+    "partie": "Concepts Généraux",
+    "q": "Que permet de faire le t-SNE (t-distributed Stochastic Neighbor Embedding) ?",
+    "choices": {
+      "A": "Classifier des données",
+      "B": "Réduire la dimensionnalité des données tout en préservant les relations locales",
+      "C": "Analyser des séries temporelles",
+      "D": "Prédire des résultats en utilisant des réseaux de neurones"
+    },
+    "correct": "B",
+    "explanation": "<p>Le t-SNE est une technique de réduction de dimensionnalité qui permet de visualiser des données complexes à haute dimension (comme des données de texte ou d’image) en les projetant dans un espace à deux ou trois dimensions tout en conservant les relations locales.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q17",
+    "partie": "Concepts Généraux",
+    "q": "Que représente une “feature” en IA ?",
+    "choices": {
+      "A": "Une chanson populaire",
+      "B": "Une ligne de code secrète",
+      "C": "Une mise à jour du modèle",
+      "D": "Une caractéristique mesurable dans les données"
+    },
+    "correct": "D",
+    "explanation": "<p>Une feature, c’est une caractéristique mesurable. Exemple: pour prédire le prix d’une voiture, les features pourraient être: la marque, l’année, le kilométrage, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q18",
+    "partie": "Concepts Généraux",
+    "q": "Que veut dire “nettoyage des données” (data cleaning) ?",
+    "choices": {
+      "A": "Supprimer les virus informatiques",
+      "B": "Organiser les fichiers par taille",
+      "C": "Vider la corbeille de l’ordinateur",
+      "D": "Corriger ou supprimer les données incorrectes, manquantes ou inutiles"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q19",
+    "partie": "Concepts Généraux",
+    "q": "Quel est l’intérêt de “diviser un dataset” en données d’entraînement et données de test ?",
+    "choices": {
+      "A": "Pour économiser de la mémoire",
+      "B": "Pour rendre l’IA plus rapide",
+      "C": "Pour mélanger les résultats",
+      "D": "Pour vérifier si l’IA fonctionne bien sur des données qu’elle n’a jamais vues"
+    },
+    "correct": "D",
+    "explanation": "<p>On sépare les données d’entraînement (pour apprendre) et les données de test (pour évaluer) afin de vérifier que le modèle peut bien généraliser et qu’il ne s’est pas contenté d’apprendre par cœur.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q20",
+    "partie": "Concepts Généraux",
+    "q": "Quel est l’objectif de la technique appelée dropout dans un réseau de neurones ?",
+    "choices": {
+      "A": "Ajouter de nouveaux neurones",
+      "B": "Réduire la dimensionnalité",
+      "C": "Éviter le surapprentissage en désactivant aléatoirement certains neurones pendant l’entraînement",
+      "D": "Accélérer le calcul de la fonction de perte"
+    },
+    "correct": "C",
+    "explanation": "<p>Le dropout consiste à désactiver aléatoirement un pourcentage de neurones pendant l’entraînement. Cela empêche le réseau de trop dépendre de certaines connexions et favorise la généralisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q21",
+    "partie": "Concepts Généraux",
+    "q": "Quel est le principal avantage de l’utilisation des réseaux convolutifs (CNN) ?",
+    "choices": {
+      "A": "Ils traitent efficacement les textes",
+      "B": "Ils permettent la reconnaissance d’images en capturant les caractéristiques spatiales",
+      "C": "Ils sont plus rapides que tous les autres types de réseaux",
+      "D": "Ils remplacent totalement les bases de données"
+    },
+    "correct": "B",
+    "explanation": "<p>Les CNN (Convolutional Neural Networks) sont spécialement conçus pour analyser les données visuelles. Ils extraient automatiquement des caractéristiques locales (bords, formes, textures) et les combinent pour effectuer des tâches comme la classification d’images.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q22",
+    "partie": "Concepts Généraux",
+    "q": "Quelle entreprise a développé ChatGPT ?",
+    "choices": {
+      "A": "Google",
+      "B": "Meta",
+      "C": "OpenAI",
+      "D": "Microsoft"
+    },
+    "correct": "C",
+    "explanation": "<p>OpenAI est l’entreprise qui a créé ChatGPT, Codex, DALL·E, et d’autres modèles d’IA. Microsoft est partenaire stratégique, mais c’est bien OpenAI qui développe les modèles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q23",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est l’utilité d’un “jeu de validation” (validation set) ?",
+    "choices": {
+      "A": "Tester la mémoire de l’IA",
+      "B": "Ajuster les paramètres d’un modèle pendant l’entraînement",
+      "C": "Supprimer les données inutiles",
+      "D": "Ralentir le modèle"
+    },
+    "correct": "B",
+    "explanation": "<p>Le jeu de validation sert à évaluer le modèle pendant l’apprentissage pour ajuster ses paramètres (comme la complexité). Il est différent du jeu de test, utilisé uniquement à la fin pour vérifier la performance finale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q24",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est la différence entre précision (precision) et rappel (recall) en IA ?",
+    "choices": {
+      "A": "Ce sont deux noms pour la même chose",
+      "C": "Précision = vitesse, Rappel = mémoire vive",
+      "D": "Précision = nombre total de données, Rappel = taille du fichier"
+    },
+    "correct": "B",
+    "explanation": "<p>Précision: parmi les résultats positifs prédits, combien sont vraiment corrects ?Rappel: parmi tous les vrais positifs existants, combien l’IA en a retrouvé ?Ex: pour un détecteur de maladies, mieux vaut souvent un bon rappel, pour ne rater aucun cas réel.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q25",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est la différence entre une régression et une classification ?",
+    "choices": {
+      "A": "La régression est utilisée pour des images, la classification pour des textes",
+      "B": "La régression prédit des valeurs continues, la classification prédit des catégories",
+      "C": "La classification utilise le NLP, la régression non",
+      "D": "Il n’y a pas de différence"
+    },
+    "correct": "B",
+    "explanation": "<p>En régression, le modèle prédit des valeurs continues (ex: prix d’une maison). En classification, il prédit des catégories (ex: chat ou chien).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q26",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est la première étape dans un projet IA ?",
+    "choices": {
+      "A": "Lancer l’entraînement du modèle tout de suite",
+      "B": "Nettoyer les données",
+      "C": "Poser un problème clair et définir les objectifs",
+      "D": "Installer une IA sur son ordi"
+    },
+    "correct": "C",
+    "explanation": "<p>Avant de lancer quoi que ce soit, il faut formuler clairement le problème, définir ce qu’on veut prédire ou automatiser, et identifier les données nécessaires. C’est une étape cruciale pour éviter de partir dans tous les sens.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q27",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est la principale fonction d’un embeddings dans le NLP ?",
+    "choices": {
+      "A": "Traduire automatiquement un texte",
+      "B": "Compresser un fichier texte",
+      "C": "Représenter les mots par des vecteurs dans un espace de dimension réduite",
+      "D": "Filtrer les mots inutiles dans une phrase"
+    },
+    "correct": "C",
+    "explanation": "<p>Un embedding est une représentation vectorielle dense d’un mot dans un espace de plus petite dimension. Il permet de capturer les relations sémantiques entre les mots. Exemple : Word2Vec, GloVe, BERT embeddings.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q28",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est la tâche d’un modèle de “génération d’images par IA” comme DALL·E ?",
+    "choices": {
+      "A": "Compresser des fichiers JPEG",
+      "B": "Créer des images à partir de descriptions en langage naturel",
+      "C": "Ajouter des filtres à des photos",
+      "D": "Analyser les visages dans les photos"
+    },
+    "correct": "B",
+    "explanation": "<p>Des IA comme DALL·E ou Stable Diffusion peuvent générer des images à partir de phrases textuelles, comme “un chat astronaute sur la lune”. C’est de la génération d’image basée sur le deep learning.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q29",
+    "partie": "Concepts Généraux",
+    "q": "Quelle est une limite actuelle de l’IA ?",
+    "choices": {
+      "A": "Elle mange trop d’énergie",
+      "B": "Elle parle trop",
+      "C": "Elle refuse de travailler",
+      "D": "Elle ne peut pas raisonner comme un humain dans tous les cas"
+    },
+    "correct": "D",
+    "explanation": "<p>Même les meilleures IA actuelles n’ont pas de conscience, d’émotion, ni de compréhension “profonde”. Elles traitent des modèles statistiques, pas du vrai raisonnement humain.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q30",
+    "partie": "Concepts Généraux",
+    "q": "Siri, Alexa ou Google Assistant sont des exemples de _________",
+    "choices": {
+      "A": "Robots industriels",
+      "B": "IA faibles spécialisées en interaction vocale",
+      "C": "Intelligences artificielles générales",
+      "D": "Programmes antivirus"
+    },
+    "correct": "B",
+    "explanation": "<p>Ces assistants vocaux sont des IA faibles: ils sont spécialisés dans des tâches comme écouter, comprendre et répondre à la voix humaine, mais ne comprennent pas réellement le monde comme un humain le ferait.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Deep Learning",
+    "q": "Dans un réseau de neurones, qu’est-ce que la régularisation ?",
+    "choices": {
+      "A": "Une méthode pour augmenter la taille des données d’entraînement",
+      "B": "Un processus pour ajuster la fonction d’activation",
+      "C": "Une technique utilisée pour éviter le surapprentissage (overfitting) en ajoutant une pénalité sur les poids du modèle",
+      "D": "Un algorithme pour accélérer l’entraînement des réseaux de neurones"
+    },
+    "correct": "C",
+    "explanation": "<p>La régularisation est une technique utilisée pour éviter l’overfitting en ajoutant une pénalité (comme L1 ou L2) sur les poids du modèle. Cela empêche le modèle de devenir trop complexe et de trop s’ajuster aux données d’entraînement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Deep Learning",
+    "q": "Le “deep learning” est particulièrement efficace dans _________",
+    "choices": {
+      "A": "La gestion des ressources humaines",
+      "B": "La reconnaissance d’images et de sons",
+      "C": "La construction de ponts",
+      "D": "Le rangement des fichiers"
+    },
+    "correct": "B",
+    "explanation": "<p>Le deep learning (ou apprentissage profond) utilise des réseaux de neurones à plusieurs couches et excelle dans la reconnaissance visuelle, la traduction automatique, ou encore la reconnaissance vocale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Deep Learning",
+    "q": "Pourquoi dit-on que les réseaux de neurones sont « inspirés du cerveau humain » ?",
+    "choices": {
+      "A": "Parce qu’ils peuvent rêver",
+      "B": "Parce qu’ils ont des neurones et des synapses simulés",
+      "C": "Parce qu’ils sont faits en biologie moléculaire",
+      "D": "Parce qu’ils fonctionnent en sommeil profond"
+    },
+    "correct": "B",
+    "explanation": "<p>Les réseaux de neurones artificiels s’inspirent de la structure du cerveau, avec des nœuds appelés « neurones » et des connexions (poids) comme les synapses entre neurones biologiques.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce qu’un “filtre” dans un réseau de neurones convolutionnel (CNN) ?",
+    "choices": {
+      "A": "Un antivirus",
+      "B": "Une technique pour ralentir l’IA",
+      "C": "Une couche de suppression de bruit",
+      "D": "Une matrice qui détecte des motifs visuels (bords, textures…) dans une image"
+    },
+    "correct": "D",
+    "explanation": "<p>Un filtre dans un CNN “scanne” une image pour y détecter des formes simples : bords, coins, motifs. Ces éléments sont ensuite combinés dans les couches suivantes pour reconnaître des objets complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce qu’un autoencodeur ?",
+    "choices": {
+      "A": "Un modèle de régression pour prédire des valeurs continues",
+      "B": "Un type de réseau de neurones utilisé pour la compression et la réduction de dimensionnalité",
+      "C": "Un algorithme d’optimisation pour ajuster les poids",
+      "D": "Une méthode de traitement du langage naturel"
+    },
+    "correct": "B",
+    "explanation": "<p>Un autoencodeur est un type de réseau de neurones utilisé pour apprendre une représentation compacte (encodage) des données d’entrée, souvent dans un but de réduction de dimensionnalité ou de compression.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce qu’un perceptron ?",
+    "choices": {
+      "A": "Un type de réseau de neurones à une seule couche",
+      "B": "Un algorithme de classification supervisée",
+      "C": "Un processus de réduction des données",
+      "D": "Un type de fonction d’activation"
+    },
+    "correct": "A",
+    "explanation": "<p>Le perceptron est un réseau de neurones très simple à une seule couche, utilisé principalement pour des problèmes de classification linéaire. C’est l’un des premiers modèles de réseaux de neurones.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce qu’un réseau de neurones artificiels ?",
+    "choices": {
+      "A": "Un réseau de câbles reliant des ordinateurs",
+      "B": "Un système informatique qui imite le fonctionnement du cerveau humain",
+      "C": "Un ensemble de règles conditionnelles",
+      "D": "Un logiciel de messagerie intelligent"
+    },
+    "correct": "B",
+    "explanation": "Les réseaux de neurones sont constitués de neurones artificiels interconnectés inspirés du cerveau humain.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce qu’une “fonction d’activation ReLU” fait exactement ?",
+    "choices": {
+      "A": "Elle transforme toute valeur négative en 0 et laisse les positives inchangées",
+      "B": "Elle inverse les données",
+      "C": "Elle normalise les labels",
+      "D": "Elle crée des tokens"
+    },
+    "correct": "A",
+    "explanation": "<p>ReLU (Rectified Linear Unit) est une fonction ultra populaire dans les réseaux profonds. Elle accélère l’apprentissage et réduit le risque de gradient qui disparaît. Très simple: ReLU(x) = max(0, x)</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce que l’algorithme de backpropagation ?",
+    "choices": {
+      "A": "Un algorithme de régression",
+      "B": "Un processus utilisé pour ajuster les poids d’un réseau de neurones lors de l’entraînement",
+      "C": "Un algorithme pour calculer les erreurs dans les modèles",
+      "D": "Un algorithme de traitement du langage naturel"
+    },
+    "correct": "B",
+    "explanation": "<p>L’algorithme de backpropagation est utilisé dans l’entraînement des réseaux de neurones. Il permet de propager l’erreur en arrière dans le réseau afin d’ajuster les poids de chaque neurone pour minimiser l’erreur globale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce que le pruning dans un réseau de neurones ?",
+    "choices": {
+      "A": "Une méthode pour ajouter de nouvelles couches au réseau",
+      "B": "Une technique pour éliminer des poids inutiles afin de rendre le modèle plus rapide et plus efficace",
+      "C": "Une méthode pour augmenter le nombre de neurones dans le réseau",
+      "D": "Un algorithme d’optimisation des fonctions d’activation"
+    },
+    "correct": "B",
+    "explanation": "<p>Le pruning (élagage) consiste à éliminer les poids ou les neurones non significatifs dans un réseau de neurones, afin de réduire la complexité et améliorer l’efficacité tout en maintenant la performance du modèle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Deep Learning",
+    "q": "Qu’est-ce que le terme « Deep Learning » désigne ?",
+    "choices": {
+      "A": "L’utilisation de machines très rapides pour résoudre des problèmes",
+      "B": "L’entraînement de modèles très simples pour les tâches d’IA",
+      "C": "Un algorithme de tri amélioré",
+      "D": "L’utilisation de réseaux de neurones avec plusieurs couches pour résoudre des problèmes complexes"
+    },
+    "correct": "D",
+    "explanation": "<p>Le Deep Learning (ou apprentissage profond) désigne l’utilisation de réseaux de neurones avec plusieurs couches pour résoudre des problèmes complexes, comme la reconnaissance d’image, la traduction automatique, ou la reconnaissance vocale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Deep Learning",
+    "q": "Que fait un “gradient” lors de l’apprentissage d’un réseau de neurones ?",
+    "choices": {
+      "A": "Il définit le taux de compression des données",
+      "B": "Il guide l’ajustement des poids en fonction de l’erreur",
+      "C": "Il mesure la température du GPU",
+      "D": "Il ordonne les labels dans le dataset"
+    },
+    "correct": "B",
+    "explanation": "<p>Le gradient indique dans quelle direction ajuster les poids pour réduire l’erreur (fonction de perte). C’est la base de la descente de gradient, l’algorithme d’apprentissage le plus utilisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Deep Learning",
+    "q": "Quel est l’objectif principal du tuning hyperparamétrique ?",
+    "choices": {
+      "A": "Ajuster les données d’entraînement pour améliorer les performances",
+      "B": "Choisir la meilleure fonction d’activation",
+      "C": "Optimiser les hyperparamètres du modèle pour obtenir les meilleures performances",
+      "D": "Réduire la taille du modèle"
+    },
+    "correct": "C",
+    "explanation": "<p>Le tuning hyperparamétrique est le processus consistant à ajuster les hyperparamètres du modèle (comme le taux d’apprentissage, le nombre de couches, ou la taille du batch) afin d’optimiser la performance du modèle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q14",
+    "partie": "Deep Learning",
+    "q": "Quel est le rôle d’une fonction d’activation dans un réseau de neurones ?",
+    "choices": {
+      "A": "Déterminer si un neurone doit être activé ou non",
+      "B": "Augmenter la taille des données d’entraînement",
+      "C": "Réduire le temps d’exécution du modèle",
+      "D": "Calculer les pertes du modèle"
+    },
+    "correct": "A",
+    "explanation": "<p>La fonction d’activation permet de déterminer si un neurone dans un réseau de neurones doit être activé ou non en fonction de l’entrée qu’il reçoit. Des exemples courants sont ReLU (Rectified Linear Unit) ou sigmoïde.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q15",
+    "partie": "Deep Learning",
+    "q": "Quel est le rôle de la descente de gradient dans l’entraînement des modèles d’IA ?",
+    "choices": {
+      "A": "Calculer le score final d’un modèle",
+      "B": "Réduire la taille des données d’entraînement",
+      "C": "Optimiser les paramètres du modèle en ajustant les poids pour minimiser l’erreur",
+      "D": "Créer des représentations visuelles des données"
+    },
+    "correct": "C",
+    "explanation": "<p>La descente de gradient est une méthode d’optimisation utilisée pour ajuster les paramètres (poids) d’un modèle, dans le but de minimiser l’erreur (la fonction de perte) en suivant la pente la plus raide du gradient.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q16",
+    "partie": "Deep Learning",
+    "q": "Quel est le rôle de la fonction “softmax” en sortie d’un modèle de classification ?",
+    "choices": {
+      "A": "Convertir les poids en 0",
+      "B": "Choisir la sortie au hasard",
+      "C": "Convertir les scores bruts en probabilités de chaque classe",
+      "D": "Rendre le modèle plus coloré"
+    },
+    "correct": "C",
+    "explanation": "<p>La fonction softmax prend des scores (logits) et les transforme en probabilités comprises entre 0 et 1, qui représentent la probabilité que chaque classe soit la bonne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q17",
+    "partie": "Deep Learning",
+    "q": "Quel est le rôle de la fonction de perte dans un modèle d’IA ?",
+    "choices": {
+      "A": "Fournir des prédictions à partir des entrées",
+      "B": "Mesurer l’écart entre les prédictions du modèle et les valeurs réelles",
+      "C": "Calculer la taille du réseau de neurones",
+      "D": "Optimiser les poids du modèle"
+    },
+    "correct": "B",
+    "explanation": "<p>La fonction de perte mesure l’écart entre les prédictions du modèle et les valeurs réelles. Elle permet d’évaluer la performance du modèle et sert à guider l’algorithme lors de l’optimisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q18",
+    "partie": "Deep Learning",
+    "q": "Quelle bibliothèque Python est la plus utilisée pour les réseaux de neurones profonds ?",
+    "choices": {
+      "A": "NumPy",
+      "B": "Pandas",
+      "C": "TensorFlow",
+      "D": "Matplotlib"
+    },
+    "correct": "C",
+    "explanation": "<p>TensorFlow est l’une des bibliothèques les plus populaires pour créer et entraîner des modèles de deep learning. Elle est développée par Google et souvent utilisée avec Keras, une interface de haut niveau.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Éthique",
+    "q": "Que désigne le terme “biais algorithmique” ?",
+    "choices": {
+      "A": "Une préférence injuste intégrée à un système d’IA",
+      "B": "Une erreur de calcul volontaire",
+      "C": "Un code malveillant",
+      "D": "Une surcharge du processeur"
+    },
+    "correct": "A",
+    "explanation": "<p>Le biais algorithmique survient quand l’IA prend des décisions injustes à cause de biais présents dans les données d’entraînement ou dans la façon dont le système a été conçu. Exemple: discrimination dans le recrutement automatisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Éthique",
+    "q": "Quelle est une précaution importante dans le développement et l'éthique de l’IA ?",
+    "choices": {
+      "A": "Toujours coder seul",
+      "B": "Utiliser un clavier spécial",
+      "C": "Tester les biais, respecter l’éthique et assurer la transparence",
+      "D": "Choisir un logo futuriste"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA peut avoir un impact réel sur la société. Il est donc crucial de tester les biais, être éthique, et rendre les décisions aussi transparentes que possible.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Éthique en IA",
+    "q": "Quel est le risque principal si l’IA est entraînée uniquement sur des données biaisées ?",
+    "choices": {
+      "A": "Elle oublie son objectif",
+      "B": "Elle fonctionne plus vite",
+      "C": "Elle reproduit ou amplifie les injustices existantes",
+      "D": "Elle utilise trop d’électricité"
+    },
+    "correct": "C",
+    "explanation": "<p>Une IA biaisée peut prendre des décisions injustes: exclusion de candidats, propos discriminants, etc. C’est une vraie question éthique en IA aujourd’hui.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Éthique et données",
+    "q": "En IA, à quoi correspond l’anonymisation des données ?",
+    "choices": {
+      "A": "À leur suppression",
+      "B": "À la modification ou suppression des données personnelles pour protéger l’identité",
+      "C": "À leur mise en ligne publique",
+      "D": "À leur traduction automatique"
+    },
+    "correct": "B",
+    "explanation": "<p>L’anonymisation est essentielle pour respecter la vie privée: cela consiste à supprimer ou rendre non identifiables les informations personnelles d’un individu.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Éthique et Explicabilité",
+    "q": "Que désigne le terme “intelligence artificielle explicable” (XAI) ?",
+    "choices": {
+      "A": "Une IA qui lit à voix haute",
+      "B": "Une IA avec une documentation PDF",
+      "C": "Une IA dont on peut comprendre le fonctionnement et les décisions",
+      "D": "Une IA qui donne ses résultats en chanson"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA explicable (XAI) désigne des techniques pour rendre les décisions de l’IA compréhensibles pour les humains. Très important dans les domaines sensibles comme la médecine ou la justice.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Éthique IA",
+    "q": "Qu’est-ce que l’explicabilité (explainability) dans le contexte des modèles d’IA ?",
+    "choices": {
+      "A": "La capacité d’un modèle d’IA à s’adapter à de nouvelles données.",
+      "B": "La vitesse à laquelle un modèle d’IA peut être entraîné.",
+      "C": "La taille de l’architecture d’un modèle d’IA.",
+      "D": "La capacité d’un modèle d’IA à fournir des raisons ou des justifications pour ses décisions ou ses prédictions."
+    },
+    "correct": "D",
+    "explanation": "<p>L’explicabilité est étroitement liée à l’interprétabilité. Un modèle explicable peut non seulement être compris dans son fonctionnement interne, mais il peut également fournir des justifications spécifiques pour chaque prédiction ou décision.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Éthique IA",
+    "q": "Qu’est-ce que l’interprétabilité dans le contexte des modèles d’IA ?",
+    "choices": {
+      "A": "La facilité avec laquelle un modèle d’IA peut être déployé dans des applications réelles.",
+      "B": "La capacité de comprendre comment et pourquoi un modèle d’IA prend certaines décisions ou fait certaines prédictions.",
+      "C": "La quantité de données nécessaires pour entraîner un modèle d’IA.",
+      "D": "La performance globale d’un modèle d’IA."
+    },
+    "correct": "B",
+    "explanation": "<p>L’interprétabilité est de plus en plus importante, en particulier dans les domaines critiques où les décisions de l’IA peuvent avoir des conséquences importantes. Comprendre le raisonnement derrière les prédictions d’un modèle permet d’instaurer la confiance et de détecter les biais potentiels.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Éthique IA",
+    "q": "Qu’est-ce que le « biais » dans le contexte des données d’entraînement en IA ?",
+    "choices": {
+      "A": "La quantité totale de données utilisées pour entraîner un modèle.",
+      "B": "La vitesse à laquelle un modèle d’IA apprend.",
+      "C": "La complexité de l’architecture d’un modèle d’IA.",
+      "D": "Une tendance systématique dans les données d’entraînement qui peut entraîner un modèle d’IA à produire des résultats injustes ou inexacts pour certains groupes."
+    },
+    "correct": "D",
+    "explanation": "<p>Le biais dans les données d’entraînement est un problème critique en IA car il peut perpétuer ou amplifier les inégalités existantes si le modèle apprend à partir de données qui reflètent des préjugés historiques ou sociaux.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Éthique IA",
+    "q": "Que signifie l’expression “boîte noire” en IA ?",
+    "choices": {
+      "A": "Une IA utilisée dans les avions",
+      "B": "Une IA qui fonctionne sans électricité",
+      "C": "Une IA dont on ne comprend pas exactement comment elle prend ses décisions",
+      "D": "Une IA utilisée uniquement la nuit"
+    },
+    "correct": "C",
+    "explanation": "<p>On parle de « boîte noire » quand une IA, notamment un réseau de neurones profond, donne un résultat sans que l’on sache exactement pourquoi ou comment elle l’a produit.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Éthique IA",
+    "q": "Quel est un risque souvent mentionné avec l’intelligence artificielle ?",
+    "choices": {
+      "A": "Elle rend les ordinateurs plus lents",
+      "B": "Elle peut faire tomber la pluie",
+      "C": "Elle peut causer des biais ou des décisions injustes",
+      "D": "Elle empêche de dormir"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA peut apprendre des biais présents dans les données d’entraînement, ce qui peut mener à des décisions injustes ou discriminatoires, par exemple dans le recrutement ou les prêts bancaires.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Évaluation",
+    "q": "À quoi sert une courbe ROC ?",
+    "choices": {
+      "A": "À afficher l’évolution du CPU",
+      "B": "À mesurer la performance d’un modèle de classification",
+      "C": "À générer du texte automatiquement",
+      "D": "À identifier des visages"
+    },
+    "correct": "B",
+    "explanation": "<p>La courbe ROC (Receiver Operating Characteristic) permet de visualiser la capacité d’un modèle à distinguer les classes. Elle montre le taux de vrais positifs vs faux positifs pour différents seuils.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Évaluation",
+    "q": "Que mesure une “métrique” en machine learning ?",
+    "choices": {
+      "A": "Le nombre de lignes dans un fichier",
+      "B": "La performance du modèle selon un critère défini",
+      "C": "La taille de l’image d’entrée",
+      "D": "Le nombre de couches du modèle"
+    },
+    "correct": "B",
+    "explanation": "<p>Une métrique comme l’accuracy, le F1-score ou l’AUC sert à évaluer la qualité des prédictions du modèle. Elle aide à savoir si le modèle apprend bien ou non.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Évaluation",
+    "q": "Quel est le rôle de l’évaluation dans l’entraînement d’un modèle ?",
+    "choices": {
+      "A": "Faire des calculs compliqués",
+      "B": "Vérifier la vitesse de l’ordinateur",
+      "C": "Mesurer si le modèle fonctionne bien ou non sur de nouvelles données",
+      "D": "Colorier les résultats"
+    },
+    "correct": "C",
+    "explanation": "<p>L’évaluation permet de tester le modèle sur des données qu’il n’a jamais vues (appelées “test set”) pour mesurer sa précision, son efficacité ou ses erreurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Évaluation",
+    "q": "Quel indicateur utilise-t-on souvent pour évaluer un modèle de classification ?",
+    "choices": {
+      "A": "La tension électrique",
+      "B": "Le taux de classification (accuracy)",
+      "C": "Le niveau de bruit",
+      "D": "Le format CSV"
+    },
+    "correct": "B",
+    "explanation": "<p>Le taux de classification (accuracy) mesure le pourcentage de bonnes prédictions faites par le modèle. C’est un indicateur simple mais souvent utilisé en première analyse.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Évaluation",
+    "q": "Quelle est la différence entre “précision” (precision) et “rappel” (recall) ?",
+    "choices": {
+      "A": "La précision mesure ce qu’on a bien trouvé ; le rappel, ce qu’on a manqué",
+      "B": "Ce sont des synonymes",
+      "C": "Le rappel est plus rapide que la précision",
+      "D": "La précision s’applique aux images, le rappel au son"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Évaluation",
+    "q": "Si ton modèle a une accuracy de 98 %, est-ce forcément un bon modèle ?",
+    "choices": {
+      "A": "Oui, toujours",
+      "B": "Non, surtout si le dataset est déséquilibré",
+      "C": "Oui, sauf si le modèle est lent",
+      "D": "Non, sauf s’il utilise une IA forte"
+    },
+    "correct": "B",
+    "explanation": "<p>Un dataset déséquilibré peut donner une fausse bonne impression. Ex: si 98 % des patients ne sont pas malades, prédire “non malade” donne 98 % de précision… mais ne détecte aucun malade ! Faut aussi regarder recall, F1, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "IA Avancée",
+    "q": "Qu’est-ce que le “zero-shot learning” ?",
+    "choices": {
+      "A": "Apprendre sans ordinateur",
+      "B": "Prédire correctement sans avoir vu d’exemples de cette classe en entraînement",
+      "C": "Un apprentissage avec images floues",
+      "D": "Un entraînement accéléré sur GPU"
+    },
+    "correct": "B",
+    "explanation": "<p>Le zero-shot learning permet à un modèle de faire une prédiction sur une classe jamais vue en entraînement, en s’appuyant sur des connaissances transférées (ex : GPT répond à une question même si ce n’est pas exactement dans ses données d’entraînement).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "IA et société",
+    "q": "L’IA peut-elle se tromper ?",
+    "choices": {
+      "A": "Non, jamais",
+      "B": "Oui, si elle apprend sur de mauvaises données ou est mal conçue",
+      "C": "Uniquement le lundi",
+      "D": "Seulement avec de l’audio"
+    },
+    "correct": "B",
+    "explanation": "<p>Une IA peut faire des erreurs si elle est mal entraînée, sur des données biaisées, incomplètes, ou peu représentatives. L’IA n’est pas magique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "IA et société",
+    "q": "L’IA remplace-t-elle complètement l’humain ?",
+    "choices": {
+      "A": "Oui, dans tous les domaines",
+      "B": "Non, elle aide l’humain mais ne pense pas comme lui",
+      "C": "Oui, sauf dans la cuisine",
+      "D": "Non, elle refuse de travailler"
+    },
+    "correct": "B",
+    "explanation": "<p>L’IA est un outil puissant, mais elle n’a pas de conscience, de créativité réelle, ou d’intention. Elle complète l’humain, surtout dans les tâches répétitives ou complexes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "IA et société",
+    "q": "Pourquoi l’IA doit-elle être éthique ?",
+    "choices": {
+      "A": "Pour ne pas faire de fautes d’orthographe",
+      "B": "Pour éviter de blesser les émotions de la machine",
+      "C": "Pour éviter des discriminations, respecter la vie privée et garantir des décisions justes",
+      "D": "Parce que c’est obligatoire par la loi partout"
+    },
+    "correct": "C",
+    "explanation": "<p>Une IA mal conçue ou mal utilisée peut causer des injustices (ex : recrutement, crédit, justice). L’éthique est indispensable pour une IA responsable.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "IA et société",
+    "q": "Pourquoi l’IA est-elle un sujet important aujourd’hui ?",
+    "choices": {
+      "A": "Parce qu’elle est à la mode",
+      "B": "Parce qu’elle transforme tous les secteurs (santé, finance, éducation…)",
+      "C": "Parce qu’elle est drôle",
+      "D": "Parce qu’elle remplace les smartphones"
+    },
+    "correct": "B",
+    "explanation": "<p>L’IA change la manière dont on travaille, apprend, soigne, invente, et même interagit avec la technologie → c’est une révolution technologique majeure.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "IA et société",
+    "q": "Quel est le lien entre IA et cybersécurité ?",
+    "choices": {
+      "A": "L’IA ne sert à rien dans ce domaine",
+      "B": "L’IA est utilisée uniquement pour chiffrer les emails",
+      "C": "L’IA peut détecter des comportements suspects et anticiper des cyberattaques",
+      "D": "L’IA remplace les pare-feux"
+    },
+    "correct": "C",
+    "explanation": "<p>En cybersécurité, l’IA peut analyser des milliers d’événements, repérer des anomalies, ou bloquer automatiquement une attaque en détectant des patterns suspects → c’est un allié stratégique.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "IA et société",
+    "q": "Quelle est la principale limite actuelle de l’IA ?",
+    "choices": {
+      "A": "Elle fonctionne sans électricité",
+      "B": "Elle comprend les émotions humaines",
+      "C": "Elle ne comprend pas le contexte aussi bien qu’un humain",
+      "D": "Elle peut créer une armée de robots"
+    },
+    "correct": "C",
+    "explanation": "<p>L’IA, même avancée, ne comprend pas vraiment les intentions, émotions ou subtilités humaines. Elle traite les données sans conscience réelle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "IA Générative",
+    "q": "Que signifie le terme “IA générative” ?",
+    "choices": {
+      "A": "Une IA qui produit du contenu nouveau à partir d’instructions",
+      "B": "Une IA qui génère du stress",
+      "C": "Une IA qui trie des fichiers",
+      "D": "Une IA qui se duplique toute seule"
+    },
+    "correct": "A",
+    "explanation": "<p>L’IA générative (comme GPT, DALL·E, Sora…) est conçue pour créer du contenu inédit : textes, images, vidéos, musiques, etc. Elle ne se contente pas d’analyser, elle crée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "IA Générative",
+    "q": "Quelle est la principale source de données pour entraîner ChatGPT ?",
+    "choices": {
+      "A": "Des caméras de surveillance",
+      "B": "Des images médicales",
+      "C": "Des textes en ligne (livres, articles, forums…)",
+      "D": "Des signaux GPS"
+    },
+    "correct": "C",
+    "explanation": "<p>Les modèles comme ChatGPT sont entraînés sur d’énormes corpus de textes trouvés sur internet : livres, articles, Wikipédia, discussions, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Logique",
+    "q": "Le nombre total de symboles logiques en IA est de ____________.",
+    "choices": {
+      "A": "Il y a 3 symboles logiques",
+      "B": "Il y a 5 symboles logiques",
+      "C": "Le nombre de symboles logiques dépend de l’entrée.",
+      "D": "Les symboles logiques ne sont pas utilisés"
+    },
+    "correct": "B",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Logique",
+    "q": "Les symboles de proposition en IA sont ?",
+    "choices": {
+      "A": "true et false",
+      "B": "true, false, et null",
+      "C": "true",
+      "D": "false"
+    },
+    "correct": "A",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Machine Learning",
+    "q": "Qu’appelle-t-on « suradaptation » (overfitting) en IA ?",
+    "choices": {
+      "A": "Quand le modèle est trop lent à l’exécution",
+      "B": "Quand le modèle apprend trop bien les données d’entraînement, au point de mal généraliser sur de nouvelles données",
+      "C": "Quand le modèle n’arrive pas à s’entraîner",
+      "D": "Quand le modèle est trop simple"
+    },
+    "correct": "B",
+    "explanation": "L’overfitting survient lorsque le modèle mémorise les données d'entraînement au lieu d'apprendre des tendances générales.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce qu’un « dataset » en IA ?",
+    "choices": {
+      "A": "Une base de code",
+      "B": "Un ensemble de données utilisé pour entraîner un modèle",
+      "C": "Un logiciel de traitement de texte",
+      "D": "Un algorithme de tri"
+    },
+    "correct": "B",
+    "explanation": "Un dataset est un ensemble structuré de données utilisé pour entraîner, valider, ou tester un modèle d’IA.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce qu’un modèle ensembliste (ensemble model) ?",
+    "choices": {
+      "A": "Un modèle qui utilise plusieurs sous-modèles pour faire des prédictions",
+      "B": "Un algorithme qui combine les résultats de plusieurs ensembles de données",
+      "C": "Un modèle de réseau de neurones à plusieurs couches",
+      "D": "Un algorithme de traitement d’image"
+    },
+    "correct": "A",
+    "explanation": "<p>Un modèle ensembliste combine les prédictions de plusieurs modèles de base pour améliorer la performance. Des exemples courants incluent les forêts aléatoires (Random Forest) et le boosting.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce qu’une “variable cible” (target variable) dans l’apprentissage supervisé ?",
+    "choices": {
+      "A": "Une donnée inutile",
+      "B": "Le résultat que l’IA doit prédire",
+      "C": "Une menace pour l’IA",
+      "D": "Une erreur de calcul"
+    },
+    "correct": "B",
+    "explanation": "<p>La variable cible est ce que l’on essaie de prédire. Exemple: si tu veux prédire le prix d’une maison, la variable cible est “prix”. Toutes les autres infos (surface, quartier, etc.) sont les caractéristiques (features).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q5",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce que l’apprentissage multi-tâche (multi-task learning) en IA ?",
+    "choices": {
+      "A": "Un type d’apprentissage où un modèle est entraîné pour effectuer une seule tâche complexe.",
+      "B": "Une approche d’apprentissage automatique où un seul modèle est entraîné simultanément pour effectuer plusieurs tâches différentes mais potentiellement liées, ce qui peut améliorer la performance sur toutes les tâches.",
+      "C": "Un type d’apprentissage qui utilise plusieurs modèles différents pour résoudre une seule tâche.",
+      "D": "Un type d’apprentissage qui s’adapte à des environnements multi-utilisateurs."
+    },
+    "correct": "B",
+    "explanation": "<p>L’apprentissage multi-tâche permet aux modèles d’apprendre des représentations de données plus riches et plus généralisables en exploitant les similitudes et les différences entre plusieurs tâches apparentées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q6",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce que l’apprentissage par renforcement (Reinforcement Learning) ?",
+    "choices": {
+      "A": "Un type d’apprentissage supervisé avec des étiquettes de données",
+      "B": "Une méthode où l’algorithme apprend à partir de l’expérience en interagissant avec son environnement",
+      "C": "Un algorithme qui calcule des moyennes mobiles",
+      "D": "Un type de réseau de neurones utilisé uniquement pour la reconnaissance d’images"
+    },
+    "correct": "B",
+    "explanation": "L’apprentissage par renforcement implique un agent qui apprend par essais et erreurs en recevant des récompenses.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q7",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce que l’apprentissage par transfert (transfer learning) en IA ?",
+    "choices": {
+      "A": "Un type d’apprentissage qui ne nécessite pas de données étiquetées.",
+      "B": "Une technique d’apprentissage automatique où un modèle entraîné sur une tâche est réutilisé comme point de départ pour entraîner un modèle sur une tâche différente mais connexe.",
+      "C": "Un type d’apprentissage où un modèle apprend en interagissant avec un environnement.",
+      "D": "Un type d’apprentissage qui utilise des réseaux de neurones profonds."
+    },
+    "correct": "B",
+    "explanation": "<p>L’apprentissage par transfert est une technique puissante qui permet de réduire la quantité de données et le temps nécessaires pour entraîner de nouveaux modèles en tirant parti des connaissances acquises sur des tâches précédentes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q8",
+    "partie": "Machine Learning",
+    "q": "Qu’est-ce que la « sous-adaptation » (underfitting) dans l’apprentissage automatique ?",
+    "choices": {
+      "A": "Un modèle qui apprend trop bien les données d’entraînement.",
+      "B": "Un modèle qui généralise parfaitement à toutes les données possibles.",
+      "C": "Un modèle qui apprend très lentement.",
+      "D": "Un modèle qui ne parvient pas à capturer les motifs importants dans les données d’entraînement."
+    },
+    "correct": "D",
+    "explanation": "La sous-adaptation se produit quand un modèle est trop simple pour capturer la complexité des données.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q9",
+    "partie": "Machine Learning",
+    "q": "Que fait un algorithme de classification ?",
+    "choices": {
+      "A": "Il trie des fichiers par date",
+      "B": "Il regroupe des données dans des classes ou catégories",
+      "C": "Il ajoute des effets spéciaux aux données",
+      "D": "Il efface les doublons dans les données"
+    },
+    "correct": "B",
+    "explanation": "<p>Un algorithme de classification est conçu pour attribuer une étiquette ou une catégorie à chaque donnée. Ex : « chat » ou « chien », « positif » ou « négatif », etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q10",
+    "partie": "Machine Learning",
+    "q": "Que signifie “sur-apprentissage” (overfitting) ?",
+    "choices": {
+      "A": "L’IA apprend trop bien et dort mal",
+      "B": "L’IA apprend par cœur les données d’entraînement sans savoir généraliser",
+      "C": "L’IA fait de la musculation",
+      "D": "L’IA supprime ses données"
+    },
+    "correct": "B",
+    "explanation": "<p>Le sur-apprentissage arrive quand une IA mémorise trop bien les données d’entraînement, ce qui la rend moins efficace sur de nouvelles données, car elle n’a pas vraiment compris les règles générales.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q11",
+    "partie": "Machine Learning",
+    "q": "Que veut dire “extraire des caractéristiques” (feature extraction) ?",
+    "choices": {
+      "A": "Récupérer des morceaux de musique",
+      "B": "Voler des données",
+      "C": "Compresser un fichier",
+      "D": "Identifier les éléments importants d’une donnée (ex: taille, couleur, mots-clés)"
+    },
+    "correct": "D",
+    "explanation": "<p>L’extraction de caractéristiques est le fait de sélectionner les éléments les plus utiles d’une donnée pour que l’IA puisse mieux apprendre. Exemple: dans une image, les bords, les formes ou les couleurs.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q12",
+    "partie": "Machine Learning",
+    "q": "Quel algorithme est souvent utilisé en apprentissage supervisé ?",
+    "choices": {
+      "A": "Réseau de neurones",
+      "B": "K-means",
+      "C": "Algorithme génétique",
+      "D": "Algorithme de tri rapide"
+    },
+    "correct": "A",
+    "explanation": "Les réseaux de neurones sont souvent utilisés en apprentissage supervisé.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q13",
+    "partie": "Machine Learning",
+    "q": "Quel est l’objectif de l’apprentissage supervisé ?",
+    "choices": {
+      "A": "Créer une IA qui joue aux échecs",
+      "B": "Apprendre à prédire une sortie en utilisant des données étiquetées",
+      "C": "Apprendre sans données",
+      "D": "Corriger les fautes d’un humain"
+    },
+    "correct": "B",
+    "explanation": "<p>En apprentissage supervisé, les données d’entraînement ont des étiquettes, c’est-à-dire qu’on connaît la bonne réponse, ce qui permet à l’IA d’apprendre à faire des prédictions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q14",
+    "partie": "Machine Learning",
+    "q": "Quel est l’objectif principal de l’algorithme K-means ?",
+    "choices": {
+      "A": "Maximiser la précision d’un modèle supervisé",
+      "B": "Diviser un ensemble de données en groupes (clusters) similaires",
+      "C": "Réduire la taille des données d’entraînement",
+      "D": "Analyser les sentiments d’un texte"
+    },
+    "correct": "B",
+    "explanation": "<p>K-means est un algorithme d’apprentissage non supervisé utilisé pour regrouper des données similaires en clusters. Il cherche à minimiser la variance intra-cluster tout en maximisant la distance entre les clusters.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q15",
+    "partie": "Machine Learning",
+    "q": "Quel est le principal objectif du machine learning ?",
+    "choices": {
+      "A": "Créer des graphiques",
+      "B": "Permettre aux ordinateurs de concevoir des logiciels",
+      "C": "Permettre aux machines d’apprendre à partir de données",
+      "D": "Accélérer le matériel informatique"
+    },
+    "correct": "C",
+    "explanation": "Le machine learning vise à développer des algorithmes qui peuvent tirer des enseignements à partir de données.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q16",
+    "partie": "Machine Learning",
+    "q": "Quel type d’apprentissage automatique explore la structure cachée dans des données non étiquetées ?",
+    "choices": {
+      "A": "L’apprentissage supervisé",
+      "B": "L’apprentissage par renforcement",
+      "C": "L’apprentissage non supervisé",
+      "D": "L’apprentissage par transfert"
+    },
+    "correct": "C",
+    "explanation": "<p>L’apprentissage non supervisé travaille avec des données sans étiquettes et vise à découvrir des motifs, des regroupements (clustering) ou des réductions de dimensionnalité dans les données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q17",
+    "partie": "Machine Learning",
+    "q": "Quel type d’apprentissage automatique implique un agent qui apprend à prendre des décisions en interagissant avec un environnement et en recevant des récompenses ou des punitions ?",
+    "choices": {
+      "A": "L’apprentissage supervisé",
+      "B": "L’apprentissage par renforcement",
+      "C": "L’apprentissage profond (Deep Learning)",
+      "D": "L’apprentissage semi-supervisé"
+    },
+    "correct": "B",
+    "explanation": "<p>L’apprentissage par renforcement se concentre sur la manière dont un agent intelligent peut apprendre à se comporter dans un environnement afin de maximiser une notion de récompense cumulative.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q18",
+    "partie": "Machine Learning",
+    "q": "Quel type d’apprentissage automatique nécessite des données d’entraînement étiquetées (c’est-à-dire des entrées avec les sorties correctes correspondantes) ?",
+    "choices": {
+      "A": "L’apprentissage non supervisé",
+      "B": "L’apprentissage par renforcement",
+      "C": "L’apprentissage supervisé",
+      "D": "L’apprentissage profond (Deep Learning)"
+    },
+    "correct": "C",
+    "explanation": "<p>L’apprentissage supervisé utilise des données d’entraînement étiquetées pour apprendre une fonction qui mappe les entrées aux sorties. L’algorithme apprend à partir des exemples étiquetés et peut ensuite faire des prédictions sur de nouvelles données non étiquetées.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q19",
+    "partie": "Machine Learning",
+    "q": "Quel type d’apprentissage utilise la “récompense” comme méthode d’entraînement ?",
+    "choices": {
+      "A": "L’apprentissage supervisé",
+      "B": "L’apprentissage non supervisé",
+      "C": "L’apprentissage par renforcement",
+      "D": "L’apprentissage émotionnel"
+    },
+    "correct": "C",
+    "explanation": "<p>L’apprentissage par renforcement est basé sur un système de récompense/punition, un peu comme dresse un animal: l’agent apprend à choisir les actions qui donnent les meilleurs résultats.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q20",
+    "partie": "Machine Learning",
+    "q": "Quelle est la différence entre l’apprentissage supervisé et non supervisé ?",
+    "choices": {
+      "A": "L’apprentissage non supervisé utilise des données étiquetées",
+      "B": "L’apprentissage supervisé n’utilise pas de données",
+      "C": "L’apprentissage supervisé utilise des données étiquetées, le non supervisé non",
+      "D": "Il n’y a aucune différence"
+    },
+    "correct": "C",
+    "explanation": "En apprentissage supervisé, l’algorithme apprend à partir de données étiquetées. En non supervisé, il cherche des patterns cachés sans indication préalable.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q21",
+    "partie": "Machine Learning",
+    "q": "Quelle méthode permet de réduire l’overfitting ?",
+    "choices": {
+      "A": "Ajouter plus de bruit dans les données",
+      "B": "Utiliser des images plus grandes",
+      "C": "Faire de la régularisation ou utiliser des données supplémentaires",
+      "D": "Entraîner le modèle pendant plus longtemps"
+    },
+    "correct": "C",
+    "explanation": "<p>Pour éviter l’overfitting, on peut ajouter plus de données, faire de la régularisation (comme L1 ou L2), ou utiliser des techniques comme le dropout pour éviter que le modèle devienne trop « spécialiste » de l’ensemble d’entraînement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Méthodologie",
+    "q": "Quel est le rôle d’un “test set” dans un projet IA ?",
+    "choices": {
+      "A": "Donner des notes aux développeurs",
+      "B": "Vérifier les bugs dans le programme",
+      "C": "Évaluer la performance finale du modèle sur des données jamais vues",
+      "D": "Ajouter des effets visuels"
+    },
+    "correct": "C",
+    "explanation": "<p>Après l’entraînement, on utilise un jeu de test pour évaluer si le modèle est capable de bien se débrouiller avec des données qu’il n’a jamais vues. C’est l’épreuve finale du modèle.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "NLP",
+    "q": "En quoi consiste le traitement du langage naturel (NLP) ?",
+    "choices": {
+      "A": "Analyser des images pour extraire du texte",
+      "B": "Manipuler des données numériques pour faire des prédictions",
+      "C": "Traiter et analyser le langage humain pour en extraire des informations",
+      "D": "Analyser des signaux audio pour reconnaître des voix"
+    },
+    "correct": "C",
+    "explanation": "<p>Le traitement du langage naturel (NLP) est une sous-discipline de l’IA qui consiste à permettre aux ordinateurs de comprendre, interpréter et manipuler le langage humain, comme la traduction automatique, l’analyse de sentiments ou la réponse à des questions.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "NLP",
+    "q": "Quel domaine de l’IA permet la traduction automatique de texte ?",
+    "choices": {
+      "A": "Le clustering",
+      "B": "La vision par ordinateur",
+      "C": "L’analyse de sentiments",
+      "D": "Le traitement automatique du langage (NLP)"
+    },
+    "correct": "D",
+    "explanation": "<p>La traduction automatique (ex: Google Translate, DeepL) est une application du NLP, qui permet à l’IA de comprendre une langue et générer du texte dans une autre.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "NLP",
+    "q": "Quel est le rôle d’un “token” dans les modèles de traitement du langage (NLP) ?",
+    "choices": {
+      "A": "Une image miniature du texte",
+      "B": "Une variable qui mesure la vitesse de lecture",
+      "C": "Une unité de texte (mot, sous-mot ou caractère) utilisée comme entrée pour le modèle",
+      "D": "Un identifiant unique pour les utilisateurs"
+    },
+    "correct": "C",
+    "explanation": "<p>Un token est une unité de base du texte que le modèle traite : cela peut être un mot, une syllabe ou un caractère, selon la méthode de tokenisation. GPT, par exemple, utilise souvent des sous-mots.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "NLP",
+    "q": "Quelle est la principale utilité des modèles de type “transformer” ?",
+    "choices": {
+      "A": "Filtrer les images floues",
+      "B": "Convertir les modèles classiques en modèles profonds",
+      "C": "Capturer les relations dans des séquences (texte, audio…) plus efficacement que les RNN",
+      "D": "Générer des fonctions mathématiques"
+    },
+    "correct": "C",
+    "explanation": "<p>Les Transformers, comme ceux derrière GPT ou BERT, permettent de traiter des séquences entières en parallèle et de comprendre les relations entre mots même éloignés. C’est le top du NLP moderne.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Optimisation",
+    "q": "À quoi sert l’optimiseur “Adam” dans l’apprentissage d’un modèle ?",
+    "choices": {
+      "A": "À créer des images plus nettes",
+      "B": "À sauvegarder le modèle",
+      "C": "À ajuster les poids efficacement pour minimiser la perte",
+      "D": "À augmenter la mémoire"
+    },
+    "correct": "C",
+    "explanation": "<p>Adam est un algorithme d’optimisation qui ajuste les poids du modèle pendant l’apprentissage, en combinant les avantages de deux autres techniques : momentum et RMSprop. Rapide, efficace, souvent utilisé.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Outils et Bibliothèques",
+    "q": "Quel est le rôle de la bibliothèque Python “scikit-learn” ?",
+    "choices": {
+      "A": "Traitement d’images",
+      "B": "Traduction automatique",
+      "C": "Analyse audio",
+      "D": "Machine learning classique (régression, classification, clustering…)"
+    },
+    "correct": "D",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Outils et Bibliothèques",
+    "q": "Quelle bibliothèque Python est largement utilisée pour le deep learning ?",
+    "choices": {
+      "A": "NumPy",
+      "B": "Matplotlib",
+      "C": "TensorFlow",
+      "D": "BeautifulSoup"
+    },
+    "correct": "C",
+    "explanation": "<p>TensorFlow (ou PyTorch) sont les géants du deep learning en Python. NumPy est une brique de base pour le calcul, mais TensorFlow permet de créer, entraîner et déployer des modèles neuronaux puissants.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Outils et Bibliothèques",
+    "q": "Quelle est la langue principale utilisée pour développer des modèles IA ?",
+    "choices": {
+      "A": "Java",
+      "B": "Python",
+      "C": "HTML",
+      "D": "PHP"
+    },
+    "correct": "B",
+    "explanation": "<p>Python est le langage le plus utilisé en IA grâce à sa simplicité et la richesse de ses bibliothèques spécialisées (scikit-learn, TensorFlow, PyTorch…).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Outils IA",
+    "q": "Quel outil permet de visualiser la structure d’un modèle d’apprentissage profond ?",
+    "choices": {
+      "A": "Excel",
+      "B": "Matplotlib",
+      "C": "TensorBoard",
+      "D": "Visual Studio Code"
+    },
+    "correct": "C",
+    "explanation": "<p>TensorBoard est un outil de visualisation fourni avec TensorFlow qui montre les courbes de performance, le graphe du réseau, etc. Super pratique pour comprendre et débugger.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Preprocessing",
+    "q": "Quelle est l’utilité du “One-Hot Encoding” ?",
+    "choices": {
+      "A": "Crypter les données",
+      "B": "Prédire correctement sans avoir vu d’exemples de cette classe en entraînement",
+      "C": "Transformer des catégories textuelles en vecteurs binaires utilisables par les modèles",
+      "D": "Réduire le nombre de neurones"
+    },
+    "correct": "C",
+    "explanation": "<p>Le One-Hot Encoding convertit une valeur catégorielle (ex: “chat”, “chien”) en un vecteur où un seul élément vaut 1, les autres sont à 0. Les modèles ne comprennent que les nombres, donc c’est indispensable en prétraitement.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Prétraitement des données",
+    "q": "Que fait l’algorithme PCA (Principal Component Analysis) ?",
+    "choices": {
+      "A": "Il entraîne un réseau de neurones",
+      "B": "Il détecte les anomalies dans les séries temporelles",
+      "C": "Il réduit la dimensionnalité des données en conservant le plus de variance possible",
+      "D": "Il transforme un problème de classification en problème de régression"
+    },
+    "correct": "C",
+    "explanation": "<p>Le PCA est une technique de réduction de dimensionnalité qui projette les données dans un nouvel espace (composantes principales) tout en conservant l’essentiel de la variance. Très utile pour la visualisation ou l’accélération de modèles.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Prétraitement des données",
+    "q": "Quel est l’intérêt de normaliser les données avant l’entraînement ?",
+    "choices": {
+      "A": "Pour qu’elles soient toutes traduites en anglais",
+      "B": "Pour que les algorithmes ne privilégient pas certaines features à cause de leur échelle",
+      "C": "Pour qu’elles soient compressées",
+      "D": "Pour les rendre invisibles à l’humain"
+    },
+    "correct": "B",
+    "explanation": "<p>La normalisation ou standardisation est cruciale pour que le modèle traite toutes les caractéristiques à la même échelle, notamment pour les algorithmes sensibles aux distances. Sinon, une variable comme “salaire” pourrait dominer une autre comme “âge”.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Programmation",
+    "q": "Lequel de ces langages n’est pas couramment utilisé pour l’IA ?",
+    "choices": {
+      "A": "PROLOG",
+      "B": "LISP",
+      "C": "Python",
+      "D": "Perl"
+    },
+    "correct": "D",
+    "explanation": "Perl n'est pas un langage standard pour l'IA, contrairement à Lisp, Prolog ou Python.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Programmation",
+    "q": "Lequel des éléments suivants est le langage utilisé pour l’intelligence artificielle ?",
+    "choices": {
+      "A": "Lisp",
+      "B": "Java",
+      "C": "Python",
+      "D": "C++"
+    },
+    "correct": "C",
+    "explanation": "",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Régularisation",
+    "q": "Quel est le rôle de la “dropout” dans les réseaux de neurones ?",
+    "choices": {
+      "A": "Accélérer le GPU",
+      "B": "Supprimer des couches",
+      "C": "Ajouter des données bruitées",
+      "D": "Déconnecter aléatoirement des neurones pendant l’entraînement pour éviter l’overfitting"
+    },
+    "correct": "D",
+    "explanation": "<p>La dropout consiste à désactiver aléatoirement des neurones lors de l’entraînement, pour forcer le modèle à ne pas dépendre de neurones spécifiques. C’est un moyen efficace de régularisation.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Réseaux de Neurones",
+    "q": "Dans un réseau de neurones, qu’est-ce qu’un “poids” (weight) ?",
+    "choices": {
+      "A": "Une contrainte juridique",
+      "B": "Une mesure de performance",
+      "C": "Un nombre de lignes de code",
+      "D": "Une valeur qui influence la force du signal transmis entre deux neurones"
+    },
+    "correct": "D",
+    "explanation": "<p>Les poids dans un réseau de neurones déterminent l’influence d’une donnée sur la sortie. Pendant l’entraînement, le modèle ajuste ces poids pour mieux prédire. C’est le cœur du système d’apprentissage.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Réseaux de Neurones",
+    "q": "Dans un réseau de neurones, qu’est-ce qu’une “couche cachée” ?",
+    "choices": {
+      "A": "Une couche que l’on masque pour la sécurité",
+      "B": "Une couche qui relie directement l’entrée à la sortie",
+      "C": "Une couche contenant les données d’origine",
+      "D": "Une couche intermédiaire où les neurones font des calculs avant la sortie finale"
+    },
+    "correct": "D",
+    "explanation": "<p>Les couches cachées sont situées entre l’entrée et la sortie. C’est là que le traitement des informations se fait, et où le modèle apprend les représentations internes.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Réseaux de Neurones",
+    "q": "Quel est le rôle du “taux d’apprentissage” (learning rate) ?",
+    "choices": {
+      "A": "Définir la taille du modèle IA",
+      "B": "Calculer la vitesse du réseau Internet",
+      "C": "Contrôler à quelle vitesse le modèle ajuste ses poids",
+      "D": "Décider combien de données seront utilisées"
+    },
+    "correct": "C",
+    "explanation": "<p>Le taux d’apprentissage détermine l’amplitude des corrections que le modèle applique à chaque itération. Trop grand = instable. Trop petit = lent.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Réseaux de Neurones",
+    "q": "Quelle est la particularité d’un RNN (Recurrent Neural Network) ?",
+    "choices": {
+      "A": "Il est utilisé uniquement pour les images",
+      "B": "Il traite des séquences en utilisant la mémoire des états précédents",
+      "C": "Il fonctionne comme un réseau convolutif",
+      "D": "Il fonctionne uniquement avec des données non structurées"
+    },
+    "correct": "B",
+    "explanation": "<p>Un RNN (réseau de neurones récurrent) est conçu pour le traitement de données séquentielles (texte, audio, séries temporelles). Il conserve l’état précédent à chaque étape, ce qui lui permet de capturer le contexte dans le temps.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Systèmes Experts",
+    "q": "Le composant d’un système expert est_________.",
+    "choices": {
+      "A": "Base de connaissances",
+      "B": "Moteur d’inférence",
+      "C": "Interface utilisateur",
+      "D": "Tous les éléments ci-dessus"
+    },
+    "correct": "D",
+    "explanation": "Un système expert se compose d'une base de connaissances, d'un moteur d’inférence et d'une interface utilisateur.",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Traitement de données",
+    "q": "Qu’est-ce qu’un “dataset déséquilibré” ?",
+    "choices": {
+      "A": "Un dataset sans titre",
+      "B": "Un dataset avec trop de colonnes",
+      "C": "Un dataset où certaines classes sont très minoritaires par rapport à d’autres",
+      "D": "Un dataset mélangé avec du bruit"
+    },
+    "correct": "C",
+    "explanation": "<p>Un dataset déséquilibré contient beaucoup plus d’exemples d’une classe que d’une autre. Exemple: 95 % “non malade” vs 5 % “malade”. Problème: un modèle peut prédire “non malade” tout le temps et avoir 95 % de “précision” faussement élevée.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Traitement de données",
+    "q": "Que fait un algorithme de “réduction de bruit” (denoising) en IA ?",
+    "choices": {
+      "A": "Il supprime les doublons",
+      "B": "Il améliore la vitesse d’un modèle",
+      "C": "Il ajoute du son pour équilibrer",
+      "D": "Il apprend à nettoyer les données ou images bruitées pour restaurer l’original"
+    },
+    "correct": "D",
+    "explanation": "<p>Un denoising autoencoder ou tout autre algorithme de réduction de bruit permet à l’IA de deviner les données propres à partir de données altérées. Très utilisé en vision, audio, nettoyage de données.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Traitement du Langage Naturel (NLP)",
+    "q": "Quel type de modèle est BERT ?",
+    "choices": {
+      "A": "Un classificateur d’images basé sur CNN",
+      "B": "Un modèle de traitement du langage basé sur l’attention bidirectionnelle",
+      "C": "Un modèle de séries temporelles",
+      "D": "Un algorithme de clustering"
+    },
+    "correct": "B",
+    "explanation": "<p>BERT (Bidirectional Encoder Representations from Transformers) est un modèle de NLP basé sur les Transformers, qui lit les phrases dans les deux sens pour mieux comprendre le contexte des mots.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Traitement du Langage Naturel (NLP)",
+    "q": "Quelle est la particularité des modèles GPT (comme ChatGPT) ?",
+    "choices": {
+      "A": "Ce sont des modèles uniquement basés sur des règles",
+      "B": "Ils utilisent des réseaux convolutifs pour traiter des images",
+      "C": "Ce sont des modèles de langage basés sur l’architecture Transformer",
+      "D": "Ils sont conçus pour la classification d’images uniquement"
+    },
+    "correct": "C",
+    "explanation": "<p>Les GPT (Generative Pretrained Transformers) sont des modèles de langage basés sur l’architecture Transformer. Ils sont capables de générer du texte, de répondre à des questions, de résumer, de traduire, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Traitement du Langage Naturel (NLP)",
+    "q": "Quelle technologie permet à une IA de reconnaître une commande vocale ?",
+    "choices": {
+      "A": "La vision par ordinateur",
+      "B": "La compression de fichiers",
+      "C": "Le tri de texte alphabétique",
+      "D": "Le traitement automatique du langage (NLP) + la reconnaissance vocale"
+    },
+    "correct": "D",
+    "explanation": "<p>La reconnaissance vocale combine la conversion du son en texte et le traitement du langage naturel (NLP) pour comprendre la commande.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q1",
+    "partie": "Vision par ordinateur",
+    "q": "Dans le traitement d’images, que fait l’IA ?",
+    "choices": {
+      "A": "Elle modifie les couleurs au hasard",
+      "B": "Elle devine l’auteur de l’image",
+      "C": "Elle ajoute des filtres comme sur Instagram",
+      "D": "Elle analyse des pixels pour reconnaître des formes, objets ou visages"
+    },
+    "correct": "D",
+    "explanation": "<p>Les algorithmes d’IA (souvent en deep learning) analysent des pixels pour identifier des formes, objets, personnes, etc. C’est ce qui permet par exemple de déverrouiller un téléphone avec la reconnaissance faciale.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q2",
+    "partie": "Vision par ordinateur",
+    "q": "Qu’est-ce que la vision par ordinateur (Computer Vision) ?",
+    "choices": {
+      "A": "Un domaine de l’IA qui permet aux ordinateurs de comprendre et de générer du langage humain.",
+      "B": "Un domaine de l’IA qui permet aux ordinateurs d’apprendre à jouer à des jeux.",
+      "C": "Un domaine de l’IA qui permet aux ordinateurs d’acquérir, de traiter, d’analyser et de comprendre des images du monde réel.",
+      "D": "Un domaine de l’IA qui permet aux ordinateurs de prendre des décisions logiques basées sur des règles prédéfinies."
+    },
+    "correct": "C",
+    "explanation": "<p>La vision par ordinateur vise à doter les machines de la capacité de « voir » et d’interpréter des informations visuelles, comme le font les humains.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q3",
+    "partie": "Vision par ordinateur",
+    "q": "Quel type de données est utilisé dans la vision par ordinateur ?",
+    "choices": {
+      "A": "Texte",
+      "B": "Audio",
+      "C": "Images et vidéos",
+      "D": "Mots croisés"
+    },
+    "correct": "C",
+    "explanation": "<p>La vision par ordinateur est une branche de l’IA qui travaille avec des images ou vidéos pour détecter, analyser ou comprendre ce qu’elles contiennent (visage, objet, mouvement…).</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  },
+  {
+    "num": "Q4",
+    "partie": "Vision par ordinateur",
+    "q": "Quelle méthode est souvent utilisée en reconnaissance d’image ?",
+    "choices": {
+      "A": "Les transformeurs",
+      "B": "Les arbres de décision",
+      "C": "Les réseaux de neurones convolutionnels (CNN)",
+      "D": "Le clustering k-means"
+    },
+    "correct": "C",
+    "explanation": "<p>Les CNN (Convolutional Neural Networks) sont spécialement conçus pour analyser des images : ils détectent les bords, formes, textures, etc. et sont super efficaces en reconnaissance faciale, objets, etc.</p>",
+    "wrongAnalysis": [],
+    "examiner": "",
+    "summary": []
+  }
+];

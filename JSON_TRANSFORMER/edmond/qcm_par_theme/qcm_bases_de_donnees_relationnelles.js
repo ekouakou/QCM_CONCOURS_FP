@@ -440,5 +440,39 @@ const QCM = [
       "L'instruction UPDATE ne modifie jamais la structure (colonnes, types) d'une table.",
       "La suppression de la structure d'un objet se fait via DROP, non via ALTER."
     ]
+  },
+  {
+    "num": "Q14",
+    "partie": "Bases de données relationnelles",
+    "q": "Qu’est-ce qu’une base de données relationnelle ?",
+    "choices": {
+      "A": "Une base de données sans structure",
+      "B": "Une base de données qui organise les données sous forme de tables interconnectées",
+      "C": "Un système de stockage de fichiers non structurés",
+      "D": "Une base de données exclusivement utilisée pour les images"
+    },
+    "correct": "B",
+    "explanation": "<p>Une <strong>base de données relationnelle (SGBDR)</strong> est un système de gestion de données structurées basé sur le modèle relationnel, formalisé par Edgar F. Codd dans les années 1970. Contrairement aux systèmes de fichiers ou aux bases NoSQL, elle repose sur une organisation logique rigoureuse où les données sont stockées dans des <strong>tables</strong> (relations), composées de lignes (tuples) et de colonnes (attributs).</p><p>Les piliers fondamentaux incluent :</p><ul><li><strong>Schéma strict :</strong> Chaque table possède une structure définie avec des types de données précis (entiers, chaînes, dates), garantissant l'intégrité des données.</li><li><strong>Clés Primaires (Primary Keys) :</strong> Identifiant unique pour chaque ligne, garantissant l'unicité des enregistrements.</li><li><strong>Clés Étrangères (Foreign Keys) :</strong> Mécanisme assurant l'intégrité référentielle, permettant de lier logiquement une table à une autre et d'éviter les données orphelines.</li><li><strong>ACIDité :</strong> Les SGBDR garantissent l'atomicité, la cohérence, l'isolation et la durabilité, des propriétés essentielles pour les transactions financières ou les applications critiques.</li><li><strong>SQL (Structured Query Language) :</strong> Le langage standard pour interroger, manipuler et définir la structure de la base.</li></ul><p>Dans un contexte DevOps et Cloud, les SGBDR modernes comme PostgreSQL, MySQL ou SQL Server sont déployées via des services managés (AWS RDS, Azure SQL, Google Cloud SQL). Ces services automatisent les sauvegardes, le patching et la haute disponibilité, tout en demandant aux ingénieurs de concevoir des index optimisés pour éviter les goulots d'étranglement lors de requêtes complexes (JOINs).</p><p><strong>Erreurs courantes :</strong> Une erreur classique consiste à négliger la normalisation (ce qui entraîne de la redondance) ou à sur-normaliser (ce qui complexifie excessivement les jointures et dégrade les performances en lecture). Un autre piège est de sous-estimer l'impact des verrous (locks) lors d'écritures massives dans un environnement multi-utilisateurs.</p>",
+    "wrongAnalysis": [
+      {
+        "l": "A",
+        "t": "Une base de données sans structure définit le modèle 'NoSQL' ou 'Data Lake', qui est l'exact opposé du modèle relationnel rigide et normalisé."
+      },
+      {
+        "l": "C",
+        "t": "Le stockage de fichiers non structurés correspond aux 'Object Stores' (comme Amazon S3) ou aux systèmes de fichiers distribués, qui n'offrent pas de capacités de requêtage relationnel ou d'intégrité transactionnelle."
+      },
+      {
+        "l": "D",
+        "t": "C'est un piège restrictif. Si une base de données peut stocker des références vers des images, elle n'est pas exclusivement limitée à ce type de média ; les bases relationnelles sont polyvalentes et conçues pour gérer des données métiers transactionnelles."
+      }
+    ],
+    "examiner": "L'examinateur cherche à vérifier si vous comprenez la distinction fondamentale entre la rigueur du modèle relationnel (normalisation, ACID) et la flexibilité du monde non-relationnel (NoSQL, stockage objet). Le piège classique est de confondre la notion de 'base de données' avec celle de 'stockage', en oubliant que le modèle relationnel repose sur la logique des ensembles et des relations (JOINs).",
+    "summary": [
+      "Les bases relationnelles utilisent des tables, des lignes et des colonnes pour structurer les données.",
+      "L'intégrité référentielle est assurée par l'usage rigoureux des clés primaires et étrangères.",
+      "Elles garantissent les propriétés ACID, cruciales pour la fiabilité des transactions.",
+      "Le langage SQL est le standard universel pour manipuler ces structures de données normalisées."
+    ]
   }
 ];

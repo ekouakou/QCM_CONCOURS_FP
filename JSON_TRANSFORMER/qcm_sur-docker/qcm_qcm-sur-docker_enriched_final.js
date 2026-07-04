@@ -1,7 +1,7 @@
 const QCM = [
   {
     "num": "Q5",
-    "partie": "Partie 1",
+    "partie": "Concepts fondamentaux de Docker",
     "q": "Qu’est-ce qu’un Dockerfile ?",
     "choices": {
       "A": "Une image Docker qui est construite en exécutant une commande Docker.",
@@ -35,7 +35,7 @@ const QCM = [
   },
   {
     "num": "Q6",
-    "partie": "Partie 1",
+    "partie": "Concepts fondamentaux de Docker",
     "q": "Lequel des énoncés suivants décrit correctement un conteneur Docker ?",
     "choices": {
       "A": "Un fichier texte décrivant les dépendances d’une application.",
@@ -69,7 +69,7 @@ const QCM = [
   },
   {
     "num": "Q8",
-    "partie": "Partie 1",
+    "partie": "Concepts fondamentaux de Docker",
     "q": "Un conteneur Docker est une instance d’une image avec une configuration spécifique.",
     "choices": {
       "A": "Vrai",
@@ -93,7 +93,7 @@ const QCM = [
   },
   {
     "num": "Q10",
-    "partie": "Partie 1",
+    "partie": "Concepts fondamentaux de Docker",
     "q": "Laquelle des propositions suivantes explique la relation entre une image Docker et un conteneur Docker ?",
     "choices": {
       "A": "Un conteneur Docker est utilisé pour démarrer une image Docker.",
@@ -127,7 +127,7 @@ const QCM = [
   },
   {
     "num": "Q1",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Quelle instruction doit apparaître en premier dans le fichier Dockerfile ?",
     "choices": {
       "A": "IMAGE",
@@ -161,7 +161,7 @@ const QCM = [
   },
   {
     "num": "Q2",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Le registre Docker est un endroit où l’on peut stocker et distribuer des ________ Docker.",
     "choices": {
       "A": "fichiers",
@@ -190,7 +190,7 @@ const QCM = [
   },
   {
     "num": "Q3",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Quel est le but d’une image ?",
     "choices": {
       "A": "Fournir un processus traditionnel pour une application.",
@@ -224,7 +224,7 @@ const QCM = [
   },
   {
     "num": "Q4",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Laquelle des affirmations suivantes est vraie à propos de l’architecture de Docker?",
     "choices": {
       "A": "L’architecture est de type client-serveur.",
@@ -257,7 +257,7 @@ const QCM = [
   },
   {
     "num": "Q5",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Sur quels concepts de base Docker repose-t-il ?",
     "choices": {
       "A": "Images et conteneurs",
@@ -291,7 +291,7 @@ const QCM = [
   },
   {
     "num": "Q7",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Cette commande Dockerfile spécifie l’image de base à utiliser lors de la création d’une image Docker.",
     "choices": {
       "A": "BASE",
@@ -325,7 +325,7 @@ const QCM = [
   },
   {
     "num": "Q8",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Lequel des éléments suivants n’est pas une directive Dockerfile recommandée ?",
     "choices": {
       "A": "MAINTAINER",
@@ -359,7 +359,7 @@ const QCM = [
   },
   {
     "num": "Q9",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Laquelle des interfaces réseau suivantes est créée lorsque vous installez le runtime Docker sur l’hôte Docker ?",
     "choices": {
       "A": "Docker1",
@@ -393,7 +393,7 @@ const QCM = [
   },
   {
     "num": "Q10",
-    "partie": "Partie 2",
+    "partie": "Fondamentaux de Docker",
     "q": "Lequel des éléments suivants n’est pas un composant de l’architecture Docker?",
     "choices": {
       "A": "Docker Registry",
@@ -427,7 +427,7 @@ const QCM = [
   },
   {
     "num": "Q7",
-    "partie": "Partie 3",
+    "partie": "Fondamentaux des images Docker",
     "q": "Quel format Docker utilise-t-il pour exporter les images ?",
     "choices": {
       "A": "zip",
@@ -461,7 +461,7 @@ const QCM = [
   },
   {
     "num": "Q8",
-    "partie": "Partie 3",
+    "partie": "Fondamentaux des images Docker",
     "q": "Laquelle des propositions suivantes décrit le mieux une image Docker ?",
     "choices": {
       "A": "Une template en lecture seule pour démarrer un ou plusieurs conteneurs.",
@@ -495,7 +495,7 @@ const QCM = [
   },
   {
     "num": "Q6",
-    "partie": "Partie 4",
+    "partie": "Administration et manipulation Docker",
     "q": "A quoi sert la commande docker exec ?",
     "choices": {
       "A": "Permet d’exécuter des processus en dehors d’un conteneur.",
@@ -529,7 +529,7 @@ const QCM = [
   },
   {
     "num": "Q7",
-    "partie": "Partie 4",
+    "partie": "Administration et manipulation Docker",
     "q": "Quel option peut être utilisé pour définir un Dockerfile personnalisé (tel que mydockerfile.node) lors de la création d’une image personnalisée ?",
     "choices": {
       "A": "-customfile"
@@ -560,7 +560,7 @@ const QCM = [
   },
   {
     "num": "Q8",
-    "partie": "Partie 4",
+    "partie": "Administration et manipulation Docker",
     "q": "Commande pour créer un cluster dans Docker ?",
     "choices": {
       "A": "apache mesos",
@@ -593,7 +593,7 @@ const QCM = [
   },
   {
     "num": "Q1",
-    "partie": "Partie 5",
+    "partie": "Architecture et fonctionnement Docker",
     "q": "Quel service de Docker hébergé dans le nuage offre des capacités de registre pour le contenu public et privé ?",
     "choices": {
       "A": "Docker Images",
@@ -609,7 +609,7 @@ const QCM = [
   },
   {
     "num": "Q2",
-    "partie": "Partie 5",
+    "partie": "Architecture et fonctionnement Docker",
     "q": "Qu’est-ce qui est utilisé pour convertir un groupe d’hôtes Docker en un seul hôte Docker virtuel ?",
     "choices": {
       "A": "Docker Images",
@@ -643,7 +643,7 @@ const QCM = [
   },
   {
     "num": "Q3",
-    "partie": "Partie 5",
+    "partie": "Architecture et fonctionnement Docker",
     "q": "Quel est la template utilisé pour décrire le build d’une image ?",
     "choices": {
       "A": "Docker Logs",
@@ -677,7 +677,7 @@ const QCM = [
   },
   {
     "num": "Q4",
-    "partie": "Partie 5",
+    "partie": "Architecture et fonctionnement Docker",
     "q": "Plusieurs conteneurs fonctionnant sur une seule machine partagent tous les mêmes ressources(CPU, RAM, etc…)",
     "choices": {
       "A": "Vrai",
@@ -701,7 +701,7 @@ const QCM = [
   },
   {
     "num": "Q5",
-    "partie": "Partie 5",
+    "partie": "Architecture et fonctionnement Docker",
     "q": "Quelle est l’adresse IP par défaut de l’hôte Docker ?",
     "choices": {
       "A": "10.10.10.10",

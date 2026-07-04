@@ -1,135 +1,7 @@
 const QCM = [
   {
     "num": "Q1",
-    "partie": "Base de données",
-    "q": "Qu’est-ce qu’une base de données relationnelle ?",
-    "choices": {
-      "A": "Une base de données sans structure",
-      "B": "Une base de données qui organise les données sous forme de tables interconnectées",
-      "C": "Un système de stockage de fichiers non structurés",
-      "D": "Une base de données exclusivement utilisée pour les images"
-    },
-    "correct": "B",
-    "explanation": "<p>Une base de données relationnelle organise les données sous forme de tables, qui peuvent être reliées entre elles par des clés primaires et étrangères, permettant des relations entre les différentes données.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Cloud Computing",
-    "q": "Qu’est-ce que le cloud computing ?",
-    "choices": {
-      "A": "Un logiciel antivirus",
-      "B": "Un type de virus informatique",
-      "C": "L’utilisation de serveurs distants pour stocker et gérer des données",
-      "D": "Un type de disque dur"
-    },
-    "correct": "C",
-    "explanation": "<p>Le cloud computing fait référence à l’utilisation de serveurs distants (via Internet) pour stocker, gérer et traiter des données, au lieu de le faire localement sur un ordinateur personnel. Des exemples incluent Google Drive, Dropbox et iCloud.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Concepts de base",
-    "q": "ASCII signifie _______?",
-    "choices": {
-      "A": "American standard code for information interchange",
-      "B": "All purpose scientific code for information interchange",
-      "C": "American security code for information interchange",
-      "D": "American Scientific code for information interchange"
-    },
-    "correct": "A",
-    "explanation": "<p>ASCII(American standard code for information interchange) est le format le plus courant pour les fichiers texte dans les ordinateurs et sur Internet. Dans un fichier ASCII, chaque caractère alphabétique, numérique ou spécial est représenté par un nombre binaire de 7 bits.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q2",
-    "partie": "Concepts de base",
-    "q": "GUI signifie _______?",
-    "choices": {
-      "A": "Graph Use Interface",
-      "B": "Graphical Universal Interface",
-      "C": "Graphical User Interface",
-      "D": "Graphical Unique Interface"
-    },
-    "correct": "C",
-    "explanation": "<p>GUI(Graphical User Interface) est une interface graphique qui permet aux utilisateurs d’interagir avec des périphériques via des éléments graphiques tels que des images et des animations, à l’inverse de la console.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q3",
-    "partie": "Concepts de base",
-    "q": "La taille du mémoire des ordinateurs mainframe et de technologie avancée s’exprime en _________?",
-    "choices": {
-      "A": "Octets",
-      "B": "Kilo Octets",
-      "C": "Bits",
-      "D": "Mega Octets"
-    },
-    "correct": "D",
-    "explanation": "<p>Les ordinateurs mainframe et de technologie avancée ont généralement une grande capacité de mémoire, et celle-ci est souvent mesurée en mégaoctets (Mo), gigaoctets (Go) ou même téraoctets (To). Les mégaoctets sont une unité courante pour exprimer des tailles de mémoire relativement importantes.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q4",
-    "partie": "Concepts de base",
-    "q": "Le temps pendant lequel une tâche est traitée par l’ordinateur est appelé _______?",
-    "choices": {
-      "A": "Temps d’exécution",
-      "B": "Temporisation",
-      "C": "Temps réel",
-      "D": "Temps d’attente"
-    },
-    "correct": "A",
-    "explanation": "<p>Le temps d’exécution fait référence au temps total qu’un programme informatique met pour accomplir une tâche, depuis le moment où il commence à s’exécuter jusqu’à ce qu’il termine. Cela inclut toutes les étapes de traitement, comme le calcul, l’accès aux données, et la gestion des ressources.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q5",
-    "partie": "Concepts de base",
-    "q": "Qu’est-ce qu’un fichier « ZIP » ?",
-    "choices": {
-      "A": "Un programme de traitement de texte",
-      "B": "Un format de fichier compressé",
-      "C": "Un type de virus informatique",
-      "D": "Un périphérique de stockage"
-    },
-    "correct": "B",
-    "explanation": "<p>Un fichier ZIP est un format de compression qui permet de réduire la taille d’un ou plusieurs fichiers pour faciliter leur stockage ou leur transfert. Un logiciel de décompression est nécessaire pour l’ouvrir.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q6",
-    "partie": "Concepts de base",
-    "q": "Toute donnée ou instruction entrée dans la mémoire d’un ordinateur est considérée comme _____?",
-    "choices": {
-      "A": "Stockage",
-      "B": "Sortie",
-      "C": "Entrée",
-      "D": "Information"
-    },
-    "correct": "C",
-    "explanation": "<p>Tout ce qui est envoyé à l’ordinateur, que ce soit une information que vous tapez sur un clavier, un fichier que vous ouvrez, ou même une commande d’un programme, est appelé « entrée ». Ces entrées sont ensuite traitées par l’ordinateur pour donner des résultats (sorties), comme l’affichage d’un message ou l’exécution d’une tâche.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "______ est une technologie qui permet de passer des appels téléphoniques sur des réseaux informatiques comme Internet.",
     "choices": {
       "A": "Modem",
@@ -145,7 +17,7 @@ const QCM = [
   },
   {
     "num": "Q2",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "« www » signifie _______ _______ _______",
     "choices": {
       "A": "World Wide Web",
@@ -161,7 +33,7 @@ const QCM = [
   },
   {
     "num": "Q3",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "1 Giga-octet (GO) est égal à ________",
     "choices": {
       "A": "1024 octets",
@@ -177,7 +49,7 @@ const QCM = [
   },
   {
     "num": "Q4",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "A quoi sert la méthode addEventListener() en JavaScript ?",
     "choices": {
       "A": "Ajouter un élément dans un tableau",
@@ -193,7 +65,7 @@ const QCM = [
   },
   {
     "num": "Q5",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Apache Spark est principalement utilisé pour :",
     "choices": {
       "A": "Le stockage de données dans des systèmes distribués",
@@ -209,7 +81,7 @@ const QCM = [
   },
   {
     "num": "Q6",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "ARPANET, le précurseur de l’Internet, a été développé par _________",
     "choices": {
       "A": "FAA",
@@ -225,7 +97,7 @@ const QCM = [
   },
   {
     "num": "Q7",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Changer le langage informatique des 1 et des 0 en caractères qu’une personne peut comprendre, c’est ________",
     "choices": {
       "A": "Exécuter",
@@ -241,7 +113,7 @@ const QCM = [
   },
   {
     "num": "Q8",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Chaque ordinateur connecté à Internet est identifié par une chaîne unique en quatre parties, appelée ________",
     "choices": {
       "A": "adresse MAC",
@@ -257,7 +129,7 @@ const QCM = [
   },
   {
     "num": "Q9",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Combien de touches compte un clavier d’ordinateur standard ?",
     "choices": {
       "C": "104",
@@ -271,7 +143,7 @@ const QCM = [
   },
   {
     "num": "Q10",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Comment appelez-vous un ordinateur sur un réseau qui demande des fichiers à un autre ordinateur ?",
     "choices": {
       "A": "Un client",
@@ -287,7 +159,7 @@ const QCM = [
   },
   {
     "num": "Q11",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Comment appelle-t-on un réseau dont les éléments peuvent être séparés par une certaine distance ? Il s’agit généralement de deux ou plusieurs petits réseaux et de lignes téléphoniques dédiées à haut débit.",
     "choices": {
       "A": "URL (Universal Resource Locator)",
@@ -303,7 +175,7 @@ const QCM = [
   },
   {
     "num": "Q12",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Comment pouvez-vous attraper un virus informatique ?",
     "choices": {
       "A": "En envoyant des messages électroniques",
@@ -319,7 +191,7 @@ const QCM = [
   },
   {
     "num": "Q13",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Comment s’abonner à une mailing list sur Internet ?",
     "choices": {
       "A": "Contactez votre fournisseur d’accès Internet",
@@ -335,7 +207,7 @@ const QCM = [
   },
   {
     "num": "Q14",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans l’apprentissage supervisé, quel type de données est utilisé pour entraîner un modèle ?",
     "choices": {
       "A": "Données non étiquetées",
@@ -351,7 +223,7 @@ const QCM = [
   },
   {
     "num": "Q15",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans l’architecture d’un processeur, quelle est la principale fonction de l’unité de contrôle ?",
     "choices": {
       "A": "Exécuter des calculs arithmétiques et logiques",
@@ -367,7 +239,7 @@ const QCM = [
   },
   {
     "num": "Q16",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la gestion de la mémoire en informatique, quel est le rôle du « garbage collector » (collecteur de déchets) ?",
     "choices": {
       "A": "Libérer la mémoire allouée aux programmes exécutés",
@@ -383,7 +255,7 @@ const QCM = [
   },
   {
     "num": "Q17",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la gestion de projet, qu’est-ce qu’un « WBS » ?",
     "choices": {
       "A": "Une méthode de calcul des coûts du projet",
@@ -399,7 +271,7 @@ const QCM = [
   },
   {
     "num": "Q18",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la gestion de projet, quel est l’objectif principal de l’analyse SWOT ?",
     "choices": {
       "A": "Identifier les tâches à accomplir",
@@ -415,7 +287,7 @@ const QCM = [
   },
   {
     "num": "Q19",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la gestion de projet, quel est le principal objectif de la phase de planification ?",
     "choices": {
       "A": "Identifier les risques du projet",
@@ -431,7 +303,7 @@ const QCM = [
   },
   {
     "num": "Q20",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la méthode Scrum, quel est le rôle principal du Product Owner ?",
     "choices": {
       "A": "Développer le code",
@@ -447,7 +319,7 @@ const QCM = [
   },
   {
     "num": "Q21",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la méthodologie Agile, quel est le document qui décrit les exigences fonctionnelles du produit ?",
     "choices": {
       "A": "Le backlog produit",
@@ -463,7 +335,7 @@ const QCM = [
   },
   {
     "num": "Q22",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la POO, qu’est-ce que l’héritage ?",
     "choices": {
       "A": "Un mécanisme qui permet à une classe enfant de récupérer les propriétés et méthodes d’une classe parente",
@@ -479,7 +351,7 @@ const QCM = [
   },
   {
     "num": "Q23",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la programmation fonctionnelle, quel est le principal principe de la fonction pure ?",
     "choices": {
       "A": "Elle modifie l’état global du programme",
@@ -495,7 +367,7 @@ const QCM = [
   },
   {
     "num": "Q24",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la programmation orientée objet, que signifie le concept de « polymorphisme » ?",
     "choices": {
       "A": "Une classe peut hériter des méthodes et attributs d’une autre classe",
@@ -511,7 +383,7 @@ const QCM = [
   },
   {
     "num": "Q25",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans la programmation orientée objet, quel concept permet de définir une interface commune pour des objets de types différents ?",
     "choices": {
       "A": "L’héritage",
@@ -527,7 +399,7 @@ const QCM = [
   },
   {
     "num": "Q26",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le cadre d’un processeur, quel est le rôle des registres ?",
     "choices": {
       "A": "Stocker temporairement les données et instructions en cours de traitement",
@@ -543,7 +415,7 @@ const QCM = [
   },
   {
     "num": "Q27",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le cadre de la gestion de projet, quel est le but de la méthode PERT ?",
     "choices": {
       "A": "Gérer les relations avec le client",
@@ -559,7 +431,7 @@ const QCM = [
   },
   {
     "num": "Q28",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le cadre de la méthode Agile, quel est le rôle principal du Scrum Master ?",
     "choices": {
       "A": "Développer des fonctionnalités spécifiques",
@@ -575,7 +447,7 @@ const QCM = [
   },
   {
     "num": "Q29",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le cadre de MapReduce, quelle est la tâche du processus « Reduce » ?",
     "choices": {
       "A": "Mapper les données en paires clé-valeur",
@@ -591,7 +463,7 @@ const QCM = [
   },
   {
     "num": "Q30",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le cadre du Machine Learning, quel algorithme est principalement utilisé pour la régression ?",
     "choices": {
       "A": "K-means",
@@ -607,7 +479,7 @@ const QCM = [
   },
   {
     "num": "Q31",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le cadre du machine learning, quelle est la principale différence entre l’apprentissage supervisé et l’apprentissage non supervisé ?",
     "choices": {
       "A": "L’apprentissage supervisé ne nécessite aucune étiquette pour les données d’entraînement",
@@ -623,7 +495,7 @@ const QCM = [
   },
   {
     "num": "Q32",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le contexte de Hadoop, quel est le rôle du modèle MapReduce ?",
     "choices": {
       "A": "Exécuter des calculs en temps réel sur les données",
@@ -639,7 +511,7 @@ const QCM = [
   },
   {
     "num": "Q33",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle OSI (Open Systems Interconnection), quel est le rôle de la couche de transport ?",
     "choices": {
       "A": "Gérer l’envoi de paquets de données entre les appareils",
@@ -655,7 +527,7 @@ const QCM = [
   },
   {
     "num": "Q34",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle OSI, à quelle couche appartient le protocole HTTP ?",
     "choices": {
       "A": "Couche transport",
@@ -671,7 +543,7 @@ const QCM = [
   },
   {
     "num": "Q35",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle OSI, à quelle couche appartient le protocole TCP ?",
     "choices": {
       "A": "Couche application",
@@ -687,7 +559,7 @@ const QCM = [
   },
   {
     "num": "Q36",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle OSI, quelle couche est responsable de l’établissement, de la gestion et de la terminaison des connexions ?",
     "choices": {
       "A": "Couche application",
@@ -703,7 +575,7 @@ const QCM = [
   },
   {
     "num": "Q37",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle OSI, quelle couche est responsable de la transmission des données entre les appareils ?",
     "choices": {
       "A": "Couche application",
@@ -719,7 +591,7 @@ const QCM = [
   },
   {
     "num": "Q38",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle SaaS (Software as a Service), qui est responsable de la gestion des mises à jour et de la maintenance du logiciel ?",
     "choices": {
       "A": "L’utilisateur",
@@ -735,7 +607,7 @@ const QCM = [
   },
   {
     "num": "Q39",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle SaaS, qui est responsable de la gestion de l’infrastructure ?",
     "choices": {
       "A": "L’utilisateur final",
@@ -751,7 +623,7 @@ const QCM = [
   },
   {
     "num": "Q40",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans le modèle TCP/IP, quelle couche est responsable du routage des paquets entre différents réseaux ?",
     "choices": {
       "A": "Couche application",
@@ -767,7 +639,7 @@ const QCM = [
   },
   {
     "num": "Q41",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans quel but utilise-t-on la virtualisation dans un environnement informatique ?",
     "choices": {
       "A": "Pour réduire la taille des fichiers",
@@ -783,7 +655,7 @@ const QCM = [
   },
   {
     "num": "Q42",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans quel cas la méthode Kanban est-elle particulièrement utile ?",
     "choices": {
       "A": "Pour des projets avec des délais et des exigences précises",
@@ -799,7 +671,7 @@ const QCM = [
   },
   {
     "num": "Q43",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans quel cas serait-il plus pertinent d’utiliser une base de données NoSQL par rapport à une base de données relationnelle ?",
     "choices": {
       "A": "Lorsque les données sont très structurées et normalisées",
@@ -815,7 +687,7 @@ const QCM = [
   },
   {
     "num": "Q44",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans quel cas un programme peut-il provoquer une « erreur de segmentation » ?",
     "choices": {
       "A": "Lorsqu’une valeur dépasse la capacité maximale d’un entier",
@@ -831,7 +703,7 @@ const QCM = [
   },
   {
     "num": "Q45",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans quel cas utilise-t-on la fonction strcpy() en C ?",
     "choices": {
       "A": "Pour concaténer deux chaînes de caractères",
@@ -847,7 +719,7 @@ const QCM = [
   },
   {
     "num": "Q46",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un algorithme de recherche binaire, quel est le critère principal pour diviser la recherche ?",
     "choices": {
       "A": "La somme des éléments",
@@ -863,7 +735,7 @@ const QCM = [
   },
   {
     "num": "Q47",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un diagramme de Gantt, que représente une « barre » ?",
     "choices": {
       "A": "Le coût d’une tâche",
@@ -879,7 +751,7 @@ const QCM = [
   },
   {
     "num": "Q48",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un diagramme de Gantt, quelle information est généralement représentée sur l’axe vertical ?",
     "choices": {
       "A": "Les dates",
@@ -895,7 +767,7 @@ const QCM = [
   },
   {
     "num": "Q49",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un langage de programmation, quel est le rôle de la gestion des exceptions ?",
     "choices": {
       "A": "Optimiser la vitesse du programme",
@@ -911,7 +783,7 @@ const QCM = [
   },
   {
     "num": "Q50",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un langage orienté objet, quel terme désigne l’action d’encapsuler les données et les fonctions qui les manipulent dans une même entité ?",
     "choices": {
       "A": "Héritage",
@@ -927,7 +799,7 @@ const QCM = [
   },
   {
     "num": "Q51",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un programme C, qu’est-ce qu’un « Pointeur » ?",
     "choices": {
       "A": "Une variable qui contient l’adresse mémoire d’une autre variable",
@@ -943,7 +815,7 @@ const QCM = [
   },
   {
     "num": "Q52",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un projet agile, quel est le rôle d’un Scrum Master ?",
     "choices": {
       "A": "Assurer la communication entre les parties prenantes et l’équipe de développement",
@@ -959,7 +831,7 @@ const QCM = [
   },
   {
     "num": "Q53",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un réseau informatique, quel dispositif joue le rôle de policier du trafic ?",
     "choices": {
       "A": "Router",
@@ -975,7 +847,7 @@ const QCM = [
   },
   {
     "num": "Q54",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un réseau TCP/IP, quelle couche est responsable de la transmission des données entre deux hôtes ?",
     "choices": {
       "A": "Couche application",
@@ -991,7 +863,7 @@ const QCM = [
   },
   {
     "num": "Q55",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un réseau, les ressources HTTP sont localisées par______?",
     "choices": {
       "A": "Identificateur de Ressource Uniforme (URI)",
@@ -1006,7 +878,7 @@ const QCM = [
   },
   {
     "num": "Q56",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un système d’exploitation, qu’est-ce qu’un « démarrage à froid » ?",
     "choices": {
       "A": "L’arrêt et redémarrage du système sans perte de données",
@@ -1022,7 +894,7 @@ const QCM = [
   },
   {
     "num": "Q57",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un système d’exploitation, qu’est-ce qu’un « processus en arrière-plan » ?",
     "choices": {
       "A": "Un programme qui s’exécute avec une interface graphique",
@@ -1038,7 +910,7 @@ const QCM = [
   },
   {
     "num": "Q58",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un système d’exploitation, qu’est-ce qu’un « thread » ?",
     "choices": {
       "A": "Un processus principal exécuté par le système",
@@ -1054,7 +926,7 @@ const QCM = [
   },
   {
     "num": "Q59",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un système d’exploitation, que fait le « planificateur de tâches » ?",
     "choices": {
       "A": "Il exécute directement les programmes d’application",
@@ -1070,7 +942,7 @@ const QCM = [
   },
   {
     "num": "Q60",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans un système d’exploitation, que signifie la gestion de la mémoire virtuelle ?",
     "choices": {
       "A": "Limiter l’utilisation de la mémoire physique",
@@ -1086,7 +958,7 @@ const QCM = [
   },
   {
     "num": "Q61",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans une architecture client-serveur, quel rôle joue le serveur ?",
     "choices": {
       "A": "Il envoie des requêtes aux clients",
@@ -1102,7 +974,7 @@ const QCM = [
   },
   {
     "num": "Q62",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans une base de données relationnelle, qu’est-ce qu’une « jointure » ?",
     "choices": {
       "A": "Un processus permettant de fusionner plusieurs bases de données",
@@ -1118,7 +990,7 @@ const QCM = [
   },
   {
     "num": "Q63",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans une base de données relationnelle, que représente une « relation » ?",
     "choices": {
       "A": "Une clé primaire",
@@ -1134,7 +1006,7 @@ const QCM = [
   },
   {
     "num": "Q64",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dans WordPress, quel fichier est responsable de l’affichage du contenu d’un article dans le thème ?",
     "choices": {
       "A": "index.php",
@@ -1150,7 +1022,7 @@ const QCM = [
   },
   {
     "num": "Q65",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "DHCP est utilisé dans______?",
     "choices": {
       "A": "IPv6",
@@ -1165,7 +1037,7 @@ const QCM = [
   },
   {
     "num": "Q66",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "DHCP fournit __________ au client.",
     "choices": {
       "A": "Adresse IP",
@@ -1180,7 +1052,7 @@ const QCM = [
   },
   {
     "num": "Q67",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Dispositifs matériels qui ne font pas partie du système informatique principal et qui sont souvent ajoutés ultérieurement au système.",
     "choices": {
       "A": "Clip art",
@@ -1196,7 +1068,7 @@ const QCM = [
   },
   {
     "num": "Q68",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En C, que fait l’opérateur ++ lorsqu’il est utilisé avant une variable (par exemple, ++x) ?",
     "choices": {
       "A": "Incrémente la variable et retourne sa nouvelle valeur",
@@ -1212,7 +1084,7 @@ const QCM = [
   },
   {
     "num": "Q69",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Java, que fait l’opérateur == ?",
     "choices": {
       "A": "Vérifie l’égalité de deux objets",
@@ -1228,7 +1100,7 @@ const QCM = [
   },
   {
     "num": "Q70",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Java, quel est le rôle de la méthode main ?",
     "choices": {
       "A": "Elle crée de nouveaux objets",
@@ -1244,7 +1116,7 @@ const QCM = [
   },
   {
     "num": "Q71",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Java, quel est le type de la valeur retournée par la méthode System.currentTimeMillis() ?",
     "choices": {
       "A": "int",
@@ -1260,7 +1132,7 @@ const QCM = [
   },
   {
     "num": "Q72",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Java, quel mot-clé est utilisé pour hériter d’une classe ?",
     "choices": {
       "A": "extends",
@@ -1276,7 +1148,7 @@ const QCM = [
   },
   {
     "num": "Q73",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Java, quel type de données est utilisé pour représenter des nombres à virgule flottante ?",
     "choices": {
       "A": "int",
@@ -1292,7 +1164,7 @@ const QCM = [
   },
   {
     "num": "Q74",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Java, quelle est la valeur par défaut d’un booléen ?",
     "choices": {
       "A": "true",
@@ -1307,7 +1179,7 @@ const QCM = [
   },
   {
     "num": "Q75",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En JavaScript, quelle est la méthode pour créer un tableau vide ?",
     "choices": {
       "D": "A et C"
@@ -1320,7 +1192,7 @@ const QCM = [
   },
   {
     "num": "Q76",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En langage C, quel est le type de données d’une variable qui peut contenir un caractère ?",
     "choices": {
       "A": "int",
@@ -1336,7 +1208,7 @@ const QCM = [
   },
   {
     "num": "Q77",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En langage C, quelle est la taille d’un pointeur sur une machine 64 bits ?",
     "choices": {
       "A": "4 octets",
@@ -1352,7 +1224,7 @@ const QCM = [
   },
   {
     "num": "Q78",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En POO, qu’est-ce que l’encapsulation ?",
     "choices": {
       "A": "La création de classes héritées",
@@ -1368,7 +1240,7 @@ const QCM = [
   },
   {
     "num": "Q79",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En programmation orientée objet, qu’est-ce qu’un « Polymorphisme » ?",
     "choices": {
       "A": "La capacité d’une méthode à s’exécuter sur plusieurs types de données",
@@ -1384,7 +1256,7 @@ const QCM = [
   },
   {
     "num": "Q80",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En programmation orientée objet, qu’est-ce qu’un constructeur ?",
     "choices": {
       "A": "Une méthode qui est exécutée à la fin du programme",
@@ -1400,7 +1272,7 @@ const QCM = [
   },
   {
     "num": "Q81",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En programmation orientée objet, quel est le but principal de l’héritage ?",
     "choices": {
       "A": "Créer des objets qui n’ont aucune relation avec d’autres objets",
@@ -1416,7 +1288,7 @@ const QCM = [
   },
   {
     "num": "Q82",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Python, quel est l’objectif principal de l’instruction yield dans une fonction ?",
     "choices": {
       "A": "Retourner immédiatement une valeur et arrêter l’exécution de la fonction",
@@ -1432,7 +1304,7 @@ const QCM = [
   },
   {
     "num": "Q83",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Python, quel est le résultat de 5 / 2 ?",
     "choices": {
       "A": "2.0",
@@ -1447,7 +1319,7 @@ const QCM = [
   },
   {
     "num": "Q84",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En Python, quel est le résultat de l’expression suivante: 5 // 2 ?",
     "choices": {
       "A": "2.5",
@@ -1461,7 +1333,7 @@ const QCM = [
   },
   {
     "num": "Q85",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En quelle année l’Internet a-t-il été mis en œuvre pour la première fois ?",
     "choices": {
       "A": "1960",
@@ -1477,7 +1349,7 @@ const QCM = [
   },
   {
     "num": "Q86",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "En quelle année le « @ » a-t-il été choisi pour être utilisé dans les adresses électroniques ?",
     "choices": {
       "A": "1972",
@@ -1493,7 +1365,7 @@ const QCM = [
   },
   {
     "num": "Q87",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Google (www.google.com) est un ______________",
     "choices": {
       "A": "Répertoire d’images",
@@ -1509,7 +1381,7 @@ const QCM = [
   },
   {
     "num": "Q88",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "HBase est souvent utilisé pour quel type de cas d’utilisation dans le Big Data ?",
     "choices": {
       "A": "Stocker des données structurées dans des bases relationnelles",
@@ -1525,7 +1397,7 @@ const QCM = [
   },
   {
     "num": "Q89",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "HTML est utilisé pour _______________",
     "choices": {
       "A": "Tracer des graphiques compliqués",
@@ -1541,7 +1413,7 @@ const QCM = [
   },
   {
     "num": "Q90",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "HTTP est un protocole situé dans la ________?",
     "choices": {
       "A": "Couche d’application",
@@ -1556,7 +1428,7 @@ const QCM = [
   },
   {
     "num": "Q91",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "http://www.waytolearnx.com – est un exemple de quoi ?",
     "choices": {
       "A": "Un répertoire",
@@ -1572,7 +1444,7 @@ const QCM = [
   },
   {
     "num": "Q92",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Imaginez que l’IA est utilisée pour composer de la musique. Comment l’IA pourrait-elle améliorer le processus créatif d’un musicien ?",
     "choices": {
       "A": "En suggérant des accords ou des mélodies qui n’ont jamais été explorés",
@@ -1587,7 +1459,7 @@ const QCM = [
   },
   {
     "num": "Q93",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Imaginez que vous êtes un artiste numérique vendant vos créations via une plateforme en ligne utilisant la blockchain. Quel avantage cela vous apporterait-il ?",
     "choices": {
       "A": "La possibilité d’automatiser les transactions avec des contrats intelligents",
@@ -1602,7 +1474,7 @@ const QCM = [
   },
   {
     "num": "Q94",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Imaginez un hacker qui tente d’accéder à un réseau d’entreprise. Quelle technique utilise-t-il souvent pour tromper les employés et obtenir des informations sensibles ?",
     "choices": {
       "A": "Le phishing: en envoyant un e-mail qui semble provenir d’une source fiable pour inciter l’utilisateur à cliquer sur un lien malveillant",
@@ -1618,7 +1490,7 @@ const QCM = [
   },
   {
     "num": "Q95",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Internet Explorer est un ____________",
     "choices": {
       "A": "Un progiciel graphique",
@@ -1634,7 +1506,7 @@ const QCM = [
   },
   {
     "num": "Q96",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "ISP signifie ____________",
     "choices": {
       "A": "Internet Service Provider",
@@ -1650,7 +1522,7 @@ const QCM = [
   },
   {
     "num": "Q97",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’abréviation informatique « BD » signifie généralement ?",
     "choices": {
       "A": "Base de données",
@@ -1666,7 +1538,7 @@ const QCM = [
   },
   {
     "num": "Q98",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’abréviation informatique « CD » signifie généralement ?",
     "choices": {
       "A": "Compact Disc",
@@ -1682,7 +1554,7 @@ const QCM = [
   },
   {
     "num": "Q99",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’abréviation informatique « DTP » signifie généralement ?",
     "choices": {
       "A": "Document Type Processing",
@@ -1698,7 +1570,7 @@ const QCM = [
   },
   {
     "num": "Q100",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’abréviation informatique « SE » signifie généralement ?",
     "choices": {
       "A": "Software d’Exploitation",
@@ -1714,7 +1586,7 @@ const QCM = [
   },
   {
     "num": "Q101",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’adresse IP attribué à un client par le serveur DHCP est________?",
     "choices": {
       "A": "Pour une durée limitée",
@@ -1729,7 +1601,7 @@ const QCM = [
   },
   {
     "num": "Q102",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’algorithme de clustering est utilisé pour:",
     "choices": {
       "A": "Classer les données en catégories prédéfinies",
@@ -1745,7 +1617,7 @@ const QCM = [
   },
   {
     "num": "Q103",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’algorithme de recherche binaire est efficace pour rechercher un élément dans:?",
     "choices": {
       "A": "Une liste triée",
@@ -1761,7 +1633,7 @@ const QCM = [
   },
   {
     "num": "Q104",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’algorithme K-means est principalement utilisé pour quel type de tâche en machine learning ?",
     "choices": {
       "A": "Classification supervisée",
@@ -1777,7 +1649,7 @@ const QCM = [
   },
   {
     "num": "Q105",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’algorithme K-NN (K-Nearest Neighbors) est un algorithme de :",
     "choices": {
       "A": "Classification supervisée",
@@ -1793,7 +1665,7 @@ const QCM = [
   },
   {
     "num": "Q106",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.BAK’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Fichier d’animation/de film",
@@ -1809,7 +1681,7 @@ const QCM = [
   },
   {
     "num": "Q107",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.BAT’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Fichier d’archive compressé",
@@ -1825,7 +1697,7 @@ const QCM = [
   },
   {
     "num": "Q108",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.INI’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Fichier hypertexte",
@@ -1841,7 +1713,7 @@ const QCM = [
   },
   {
     "num": "Q109",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.JPG’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Un fichier d’archive compressé",
@@ -1857,7 +1729,7 @@ const QCM = [
   },
   {
     "num": "Q110",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.MOV’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Fichier image",
@@ -1873,7 +1745,7 @@ const QCM = [
   },
   {
     "num": "Q111",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.MPG’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Fichier image",
@@ -1889,7 +1761,7 @@ const QCM = [
   },
   {
     "num": "Q112",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.TMP’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Un fichier d’archive compressé",
@@ -1905,7 +1777,7 @@ const QCM = [
   },
   {
     "num": "Q113",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’extension ‘.TXT’ correspond généralement à quel type de fichier ?",
     "choices": {
       "A": "Un fichier de String",
@@ -1921,7 +1793,7 @@ const QCM = [
   },
   {
     "num": "Q114",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’Internet des objets (IoT) est l’avenir. Imaginez une maison intelligente qui gère automatiquement la température. Quel appareil pourrait être intégré à cette maison intelligente ?",
     "choices": {
       "A": "Un réfrigérateur qui ajuste sa température en fonction de la consommation d’énergie",
@@ -1937,7 +1809,7 @@ const QCM = [
   },
   {
     "num": "Q115",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’ordinateur principal qui stocke les fichiers pouvant être envoyés à des ordinateurs mis en réseau est ______",
     "choices": {
       "A": "Un client",
@@ -1953,7 +1825,7 @@ const QCM = [
   },
   {
     "num": "Q116",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’ordinateur que vous contrôlez ou que vous utilisez via un réseau est appelé ?",
     "choices": {
       "A": "Ordinateur distant",
@@ -1969,7 +1841,7 @@ const QCM = [
   },
   {
     "num": "Q117",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’unité arithmétique et logique ________?",
     "choices": {
       "A": "effectuer des opérations arithmétiques",
@@ -1985,7 +1857,7 @@ const QCM = [
   },
   {
     "num": "Q118",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’unité centrale de traitement est une puce intégrée qui fait fonction de « cerveau » d’un ordinateur. Quelle puce Intel était utilisée dans l’Altair (le premier véritable ordinateur personnel) ?",
     "choices": {
       "A": "8286",
@@ -2001,7 +1873,7 @@ const QCM = [
   },
   {
     "num": "Q119",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’unité du CPU qui sélectionne, interprète l’exécution des instructions d’un programme s’appelle______?",
     "choices": {
       "A": "Mémoire",
@@ -2017,7 +1889,7 @@ const QCM = [
   },
   {
     "num": "Q120",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "L’USB est un dispositif utilisé pour stocker des données et il signifie _________",
     "choices": {
       "A": "Username Service Bus",
@@ -2033,7 +1905,7 @@ const QCM = [
   },
   {
     "num": "Q121",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "La « page d’accueil » d’un site web est _______________",
     "choices": {
       "A": "La plus grande page",
@@ -2049,7 +1921,7 @@ const QCM = [
   },
   {
     "num": "Q122",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "La Blockchain garantit surtout ____________",
     "choices": {
       "A": "La confidentialité des données",
@@ -2065,7 +1937,7 @@ const QCM = [
   },
   {
     "num": "Q123",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "La fonction d’agrégation SQL COUNT() est utilisée pour:",
     "choices": {
       "A": "Calculer la moyenne d’une colonne",
@@ -2081,7 +1953,7 @@ const QCM = [
   },
   {
     "num": "Q124",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "La réalité augmentée (AR) permet _____________",
     "choices": {
       "A": "De créer des mondes virtuels entièrement immersifs",
@@ -2097,7 +1969,7 @@ const QCM = [
   },
   {
     "num": "Q125",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "La régression linéaire est un modèle supervisé utilisé pour prédire:",
     "choices": {
       "A": "Des classes discrètes",
@@ -2113,7 +1985,7 @@ const QCM = [
   },
   {
     "num": "Q126",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "La vitesse de votre accès au réseau est définie en termes de ___________",
     "choices": {
       "A": "RAM",
@@ -2129,7 +2001,7 @@ const QCM = [
   },
   {
     "num": "Q127",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle de ces adresses est une adresse électronique valide ?",
     "choices": {
       "A": "support.at.waytolearnx",
@@ -2144,7 +2016,7 @@ const QCM = [
   },
   {
     "num": "Q128",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle des affirmations suivantes est correcte ?",
     "choices": {
       "A": "1 Ko = 1024 octets",
@@ -2160,7 +2032,7 @@ const QCM = [
   },
   {
     "num": "Q129",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle des mémoires suivantes doit être rafraîchie plusieurs fois par seconde ?",
     "choices": {
       "A": "SRAM (RAM statique)",
@@ -2176,7 +2048,7 @@ const QCM = [
   },
   {
     "num": "Q130",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle des mémoires suivantes est non volatile?",
     "choices": {
       "A": "SRAM",
@@ -2191,7 +2063,7 @@ const QCM = [
   },
   {
     "num": "Q131",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle des parties suivantes d’un processeur contient le matériel nécessaire pour effectuer toutes les opérations requises par un ordinateur ?",
     "choices": {
       "A": "Contrôleur",
@@ -2207,7 +2079,7 @@ const QCM = [
   },
   {
     "num": "Q132",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle des propositions suivantes correspond à la définition correcte d’un ordinateur ?",
     "choices": {
       "A": "Un ordinateur est une machine ou un dispositif qui peut être programmé pour exécuter automatiquement des séquences d’opérations arithmétiques ou logiques.",
@@ -2222,7 +2094,7 @@ const QCM = [
   },
   {
     "num": "Q133",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Laquelle des propositions suivantes est l’abréviation correcte de COMPUTER ?",
     "choices": {
       "A": "Commonly Occupied Machines Used in Technical and Educational Research",
@@ -2238,7 +2110,7 @@ const QCM = [
   },
   {
     "num": "Q134",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le « bureau » d’un ordinateur fait référence à _________",
     "choices": {
       "A": "La zone autour du moniteur",
@@ -2254,7 +2126,7 @@ const QCM = [
   },
   {
     "num": "Q135",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le « http » que vous tapez au début de l’adresse d’un site signifie _________",
     "choices": {
       "A": "HTML Transfer Technology Process",
@@ -2270,7 +2142,7 @@ const QCM = [
   },
   {
     "num": "Q136",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le chiffrement asymétrique utilise:",
     "choices": {
       "A": "Une seule clé pour chiffrer et déchiffrer les données",
@@ -2286,7 +2158,7 @@ const QCM = [
   },
   {
     "num": "Q137",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le circuit imprimé principal d’un ordinateur est ____________",
     "choices": {
       "A": "Décodeur",
@@ -2302,7 +2174,7 @@ const QCM = [
   },
   {
     "num": "Q138",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le client DNS s’appelle______?",
     "choices": {
       "A": "DNS updater",
@@ -2317,7 +2189,7 @@ const QCM = [
   },
   {
     "num": "Q139",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le dispositif suivant est utilisé pour connecter deux systèmes utilisant des protocoles différents.",
     "choices": {
       "A": "Pont",
@@ -2333,7 +2205,7 @@ const QCM = [
   },
   {
     "num": "Q140",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le microprocesseur a été introduit dans quelle génération d’ordinateur?",
     "choices": {
       "A": "Deuxième génération",
@@ -2349,7 +2221,7 @@ const QCM = [
   },
   {
     "num": "Q141",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le nom appliqué par Intel corp. à la technologie haute vitesse MOS est appelée______?",
     "choices": {
       "A": "HDLC",
@@ -2365,7 +2237,7 @@ const QCM = [
   },
   {
     "num": "Q142",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le pipelining dans les architectures des processeurs permet de _______",
     "choices": {
       "A": "Augmenter la fréquence d’horloge du processeur",
@@ -2381,7 +2253,7 @@ const QCM = [
   },
   {
     "num": "Q143",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le pipelining dans un processeur est utilisé pour:",
     "choices": {
       "A": "Accélérer l’exécution des instructions en permettant l’exécution simultanée de plusieurs étapes d’une instruction",
@@ -2397,7 +2269,7 @@ const QCM = [
   },
   {
     "num": "Q144",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le processeur qui effectue des opérations arithmétiques et logiques est appelée ______?",
     "choices": {
       "A": "Contrôle",
@@ -2413,7 +2285,7 @@ const QCM = [
   },
   {
     "num": "Q145",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le processus de hachage (hashing) est utilisé principalement pour:",
     "choices": {
       "A": "Encrypter les données afin qu’elles ne soient pas accessibles par des utilisateurs non autorisés",
@@ -2429,7 +2301,7 @@ const QCM = [
   },
   {
     "num": "Q146",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le serveur DHCP peut _______ des adresses IP.",
     "choices": {
       "A": "allouer dynamiquement",
@@ -2444,7 +2316,7 @@ const QCM = [
   },
   {
     "num": "Q147",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Le temps pendant lequel une pièce d’équipement fonctionne est appelé ________?",
     "choices": {
       "A": "Temps de recherche",
@@ -2460,7 +2332,7 @@ const QCM = [
   },
   {
     "num": "Q148",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel de ces éléments est un moteur de recherche ?",
     "choices": {
       "A": "ARPANET",
@@ -2476,7 +2348,7 @@ const QCM = [
   },
   {
     "num": "Q149",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des dispositifs suivants assure la communication entre un ordinateur et le monde extérieur ?",
     "choices": {
       "A": "Processeur",
@@ -2492,7 +2364,7 @@ const QCM = [
   },
   {
     "num": "Q150",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des dispositifs suivants est utilisé pour convertir des maps, des images et des dessins en format numérique afin de les stocker dans des ordinateurs ?",
     "choices": {
       "A": "Numériseur",
@@ -2508,7 +2380,7 @@ const QCM = [
   },
   {
     "num": "Q151",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants est la plus petite unité de données d’un ordinateur ?",
     "choices": {
       "A": "Bit",
@@ -2523,7 +2395,7 @@ const QCM = [
   },
   {
     "num": "Q152",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants est le complément à 1 de 10?",
     "choices": {
       "B": "110"
@@ -2536,7 +2408,7 @@ const QCM = [
   },
   {
     "num": "Q153",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants maintient les informations qu’il stocke lorsque l’alimentation du système est coupée ?",
     "choices": {
       "A": "DIMM",
@@ -2552,7 +2424,7 @@ const QCM = [
   },
   {
     "num": "Q154",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants n’est pas un disque magnétique ?",
     "choices": {
       "A": "FLASH",
@@ -2567,7 +2439,7 @@ const QCM = [
   },
   {
     "num": "Q155",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants n’est pas un langage de programmation ?",
     "choices": {
       "A": "Basic",
@@ -2583,7 +2455,7 @@ const QCM = [
   },
   {
     "num": "Q156",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants n’est pas un langage informatique ?",
     "choices": {
       "A": "PASCAL",
@@ -2599,7 +2471,7 @@ const QCM = [
   },
   {
     "num": "Q157",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants n’est pas un nom de domaine valide ?",
     "choices": {
       "A": "www.waytolearnx.com",
@@ -2615,7 +2487,7 @@ const QCM = [
   },
   {
     "num": "Q158",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants n’est pas un type de codage informatique ?",
     "choices": {
       "A": "EDIC",
@@ -2631,7 +2503,7 @@ const QCM = [
   },
   {
     "num": "Q159",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants n’est pas une méthode d’accès au Web ?",
     "choices": {
       "A": "RNIS",
@@ -2647,7 +2519,7 @@ const QCM = [
   },
   {
     "num": "Q160",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants ne fait pas partie de l’Internet ?",
     "choices": {
       "A": "CD-ROM",
@@ -2663,7 +2535,7 @@ const QCM = [
   },
   {
     "num": "Q161",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des éléments suivants peut accéder au serveur ?",
     "choices": {
       "A": "Client Web",
@@ -2679,7 +2551,7 @@ const QCM = [
   },
   {
     "num": "Q162",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des langages informatiques suivants est utilisé pour l’intelligence artificielle?",
     "choices": {
       "B": "COBOL",
@@ -2694,7 +2566,7 @@ const QCM = [
   },
   {
     "num": "Q163",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des langages suivants est mieux adapté au programmation structuré?",
     "choices": {
       "A": "PL/SQL",
@@ -2710,7 +2582,7 @@ const QCM = [
   },
   {
     "num": "Q164",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des langages suivants est un langage de programmation orienté objet ?",
     "choices": {
       "A": "HTML",
@@ -2726,7 +2598,7 @@ const QCM = [
   },
   {
     "num": "Q165",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des langages suivants l’ordinateur comprend-il ?",
     "choices": {
       "A": "Langage BASIC",
@@ -2742,7 +2614,7 @@ const QCM = [
   },
   {
     "num": "Q166",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des logiciel de traitements de texte suivants est apparu en premier ?",
     "choices": {
       "A": "Word Perfect",
@@ -2758,7 +2630,7 @@ const QCM = [
   },
   {
     "num": "Q167",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des services suivants permet à un utilisateur de se connecter à un autre ordinateur quelque part sur Internet ?",
     "choices": {
       "A": "E-mails",
@@ -2774,7 +2646,7 @@ const QCM = [
   },
   {
     "num": "Q168",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel des systèmes d’exploitation suivants est produit par IBM?",
     "choices": {
       "A": "OS-2",
@@ -2790,7 +2662,7 @@ const QCM = [
   },
   {
     "num": "Q169",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel est le premier processeur Intel a été introduit?",
     "choices": {
       "A": "3080",
@@ -2806,7 +2678,7 @@ const QCM = [
   },
   {
     "num": "Q170",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lequel n’est pas un protocole Internet ?",
     "choices": {
       "B": "STP",
@@ -2821,7 +2693,7 @@ const QCM = [
   },
   {
     "num": "Q171",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Les experts disent que la façon la plus saine de regarder un écran d’ordinateur est ___________",
     "choices": {
       "A": "Le placer à une distance de 18 à 30 pouces de vos yeux.",
@@ -2837,7 +2709,7 @@ const QCM = [
   },
   {
     "num": "Q172",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Les lettres, « DOS » signifient _____________",
     "choices": {
       "A": "Data Out System",
@@ -2853,7 +2725,7 @@ const QCM = [
   },
   {
     "num": "Q173",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Les ordinateurs calculent les nombres dans quel mode ?",
     "choices": {
       "A": "Décimal",
@@ -2868,7 +2740,7 @@ const QCM = [
   },
   {
     "num": "Q174",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Les ordinateurs de quatrième génération sont basés sur ________",
     "choices": {
       "A": "Transistor",
@@ -2884,7 +2756,7 @@ const QCM = [
   },
   {
     "num": "Q175",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Les paramètres Windows sont enregistrés dans________?",
     "choices": {
       "A": "WINDOWS.INI",
@@ -2900,7 +2772,7 @@ const QCM = [
   },
   {
     "num": "Q176",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Les pistes d’un disque accessibles sans repositionner les têtes R/W sont appelés ______?",
     "choices": {
       "A": "Surface",
@@ -2915,7 +2787,7 @@ const QCM = [
   },
   {
     "num": "Q177",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lorsqu’on parle de technologie, un HotSpot est __________",
     "choices": {
       "A": "Une petite zone surchauffée sur un processeur.",
@@ -2931,7 +2803,7 @@ const QCM = [
   },
   {
     "num": "Q178",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Lorsqu’un attaquant utilise un « phishing », il tente de _________",
     "choices": {
       "A": "Voler des informations personnelles par un faux site ou une fausse communication",
@@ -2947,7 +2819,7 @@ const QCM = [
   },
   {
     "num": "Q179",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Machine Learning est une branche de l’intelligence artificielle qui permet à un ordinateur _________",
     "choices": {
       "A": "De résoudre des problèmes uniquement avec des algorithmes fixes",
@@ -2963,7 +2835,7 @@ const QCM = [
   },
   {
     "num": "Q180",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Malware est un logiciel malveillant et fait référence à ___________",
     "choices": {
       "A": "Un logiciels espions",
@@ -2978,7 +2850,7 @@ const QCM = [
   },
   {
     "num": "Q181",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Modem signifie _______________",
     "choices": {
       "A": "Modulateur Démodulateur",
@@ -2994,7 +2866,7 @@ const QCM = [
   },
   {
     "num": "Q182",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "On appel aussi une puce d’ordinateur un(e) _________",
     "choices": {
       "A": "Microprocesseur",
@@ -3010,7 +2882,7 @@ const QCM = [
   },
   {
     "num": "Q183",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Où est indexé le contenu du disque dur de votre ordinateur ?",
     "choices": {
       "A": "Google",
@@ -3025,7 +2897,7 @@ const QCM = [
   },
   {
     "num": "Q184",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Parmi les supports de stockage suivants, lequel est un stockage non-volatile ?",
     "choices": {
       "A": "Mémoire vive (RAM)",
@@ -3041,7 +2913,7 @@ const QCM = [
   },
   {
     "num": "Q185",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Pour identifier les erreurs TCP/IP telles que les problèmes de connexion, on peut utiliser la commande ______.",
     "choices": {
       "A": "STP",
@@ -3057,7 +2929,7 @@ const QCM = [
   },
   {
     "num": "Q186",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Pourquoi Apache Spark est-il souvent préféré à Hadoop pour certains traitements Big Data ?",
     "choices": {
       "A": "Il est plus facile à configurer",
@@ -3073,7 +2945,7 @@ const QCM = [
   },
   {
     "num": "Q187",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Pourquoi les bases de données NoSQL sont-elles souvent utilisées dans les environnements de Big Data ?",
     "choices": {
       "A": "Elles sont plus rapides que les bases de données relationnelles pour les calculs complexes",
@@ -3089,7 +2961,7 @@ const QCM = [
   },
   {
     "num": "Q188",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Algorithme » ?",
     "choices": {
       "A": "Un langage de programmation pour créer des applications",
@@ -3105,7 +2977,7 @@ const QCM = [
   },
   {
     "num": "Q189",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « algorithme de recherche » ?",
     "choices": {
       "A": "Un algorithme utilisé pour organiser les données dans un ordre spécifique",
@@ -3121,7 +2993,7 @@ const QCM = [
   },
   {
     "num": "Q190",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Algorithme de Recherche Binaire » ?",
     "choices": {
       "A": "Un algorithme qui recherche un élément dans une liste triée en divisant la liste en deux à chaque étape",
@@ -3137,7 +3009,7 @@ const QCM = [
   },
   {
     "num": "Q191",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Algorithme de tri » ?",
     "choices": {
       "A": "Un programme pour analyser la sécurité des données",
@@ -3153,7 +3025,7 @@ const QCM = [
   },
   {
     "num": "Q192",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « API » ?",
     "choices": {
       "A": "Une application mobile",
@@ -3169,7 +3041,7 @@ const QCM = [
   },
   {
     "num": "Q193",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « API REST » ?",
     "choices": {
       "A": "Un langage de programmation pour les applications web",
@@ -3185,7 +3057,7 @@ const QCM = [
   },
   {
     "num": "Q194",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Backdoor » (porte dérobée) ?",
     "choices": {
       "A": "Une méthode utilisée pour crypter les données d’un système",
@@ -3201,7 +3073,7 @@ const QCM = [
   },
   {
     "num": "Q195",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « backlog » dans une méthode Agile ?",
     "choices": {
       "A": "Un tableau pour suivre l’avancement des tâches",
@@ -3217,7 +3089,7 @@ const QCM = [
   },
   {
     "num": "Q196",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Backup » (sauvegarde) ?",
     "choices": {
       "A": "Un programme qui crypte les données",
@@ -3233,7 +3105,7 @@ const QCM = [
   },
   {
     "num": "Q197",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « bit » ?",
     "choices": {
       "A": "Unité de mesure de la vitesse de traitement des données",
@@ -3249,7 +3121,7 @@ const QCM = [
   },
   {
     "num": "Q198",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « bot » en informatique ?",
     "choices": {
       "A": "Un type de virus informatique",
@@ -3265,7 +3137,7 @@ const QCM = [
   },
   {
     "num": "Q199",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Botnet » ?",
     "choices": {
       "A": "Un réseau d’ordinateurs utilisés pour la gestion des bases de données",
@@ -3281,7 +3153,7 @@ const QCM = [
   },
   {
     "num": "Q200",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « BUG » en informatique ?",
     "choices": {
       "A": "Un outil pour détecter les erreurs dans les programmes",
@@ -3297,7 +3169,7 @@ const QCM = [
   },
   {
     "num": "Q201",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Byte » en informatique ?",
     "choices": {
       "A": "L’unité de stockage la plus grande dans un système informatique",
@@ -3313,7 +3185,7 @@ const QCM = [
   },
   {
     "num": "Q202",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « chemin d’accès » dans un système informatique ?",
     "choices": {
       "A": "Un protocole pour sécuriser les données",
@@ -3329,7 +3201,7 @@ const QCM = [
   },
   {
     "num": "Q203",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Cloud Computing » hybride ?",
     "choices": {
       "A": "Un modèle de cloud où les données sont uniquement stockées sur des serveurs locaux",
@@ -3345,7 +3217,7 @@ const QCM = [
   },
   {
     "num": "Q204",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Cloud Privé » ?",
     "choices": {
       "A": "Un réseau informatique privé utilisé pour héberger des services cloud internes à une organisation",
@@ -3361,7 +3233,7 @@ const QCM = [
   },
   {
     "num": "Q205",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Compilateur » dans le développement logiciel ?",
     "choices": {
       "A": "Un logiciel qui débogue automatiquement le code",
@@ -3377,7 +3249,7 @@ const QCM = [
   },
   {
     "num": "Q206",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Compte utilisateur » ?",
     "choices": {
       "A": "Un identifiant utilisé pour accéder à Internet",
@@ -3393,7 +3265,7 @@ const QCM = [
   },
   {
     "num": "Q207",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « cookie » sur Internet ?",
     "choices": {
       "A": "Un logiciel malveillant",
@@ -3409,7 +3281,7 @@ const QCM = [
   },
   {
     "num": "Q208",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Cookie HTTP » ?",
     "choices": {
       "A": "Un virus informatique qui infecte un ordinateur via un navigateur",
@@ -3425,7 +3297,7 @@ const QCM = [
   },
   {
     "num": "Q209",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Data Lake » dans le contexte du Big Data ?",
     "choices": {
       "A": "Un entrepôt de données structuré pour stocker uniquement des données numériques",
@@ -3441,7 +3313,7 @@ const QCM = [
   },
   {
     "num": "Q210",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « deadlock » dans un système informatique ?",
     "choices": {
       "A": "Une condition où un programme fonctionne trop lentement",
@@ -3457,7 +3329,7 @@ const QCM = [
   },
   {
     "num": "Q211",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Diagramme de Gantt » dans la gestion de projet ?",
     "choices": {
       "A": "Un outil pour planifier les ressources humaines nécessaires à un projet",
@@ -3473,7 +3345,7 @@ const QCM = [
   },
   {
     "num": "Q212",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « dispositif de stockage en réseau » (NAS) ?",
     "choices": {
       "A": "Un disque dur externe utilisé pour sauvegarder des fichiers",
@@ -3489,7 +3361,7 @@ const QCM = [
   },
   {
     "num": "Q213",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « DNS spoofing » ?",
     "choices": {
       "A": "Une méthode pour accélérer la connexion à un site web",
@@ -3505,7 +3377,7 @@ const QCM = [
   },
   {
     "num": "Q214",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « DOS » (Denial of Service) ?",
     "choices": {
       "A": "Un type de logiciel qui protège contre les intrusions réseau",
@@ -3521,7 +3393,7 @@ const QCM = [
   },
   {
     "num": "Q215",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Dossier » dans un système informatique ?",
     "choices": {
       "A": "Un programme qui permet de gérer les fichiers",
@@ -3537,7 +3409,7 @@ const QCM = [
   },
   {
     "num": "Q216",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « firewall » (pare-feu) dans un réseau informatique ?",
     "choices": {
       "A": "Un outil permettant de crypter des données",
@@ -3553,7 +3425,7 @@ const QCM = [
   },
   {
     "num": "Q217",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « framework » en développement logiciel ?",
     "choices": {
       "A": "Un ensemble d’outils pour crypter des données",
@@ -3569,7 +3441,7 @@ const QCM = [
   },
   {
     "num": "Q218",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « framework » en programmation ?",
     "choices": {
       "A": "Un langage de programmation spécifique à un domaine",
@@ -3585,7 +3457,7 @@ const QCM = [
   },
   {
     "num": "Q219",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Hack » en informatique ?",
     "choices": {
       "A": "La récupération illégale de données personnelles",
@@ -3601,7 +3473,7 @@ const QCM = [
   },
   {
     "num": "Q220",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Hacker éthique » ?",
     "choices": {
       "A": "Une personne qui crée des virus pour nuire à la sécurité",
@@ -3617,7 +3489,7 @@ const QCM = [
   },
   {
     "num": "Q221",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Hash » dans le domaine de la sécurité informatique ?",
     "choices": {
       "A": "Un processus de déchiffrement des données",
@@ -3633,7 +3505,7 @@ const QCM = [
   },
   {
     "num": "Q222",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « hash » en cryptographie ?",
     "choices": {
       "A": "Un algorithme permettant de déchiffrer des messages secrets",
@@ -3649,7 +3521,7 @@ const QCM = [
   },
   {
     "num": "Q223",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « hyperviseur » ?",
     "choices": {
       "A": "Un logiciel qui crypte les données",
@@ -3665,7 +3537,7 @@ const QCM = [
   },
   {
     "num": "Q224",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Intégrateur Système » ?",
     "choices": {
       "A": "Une personne qui répare des composants matériels dans un ordinateur",
@@ -3681,7 +3553,7 @@ const QCM = [
   },
   {
     "num": "Q225",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « IPV6 » ?",
     "choices": {
       "A": "Un type de protocole pour sécuriser les connexions Internet",
@@ -3697,7 +3569,7 @@ const QCM = [
   },
   {
     "num": "Q226",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « LAN » et un « WAN » dans le contexte des réseaux ?",
     "choices": {
       "A": "LAN désigne un réseau local, tandis que WAN désigne un réseau étendu",
@@ -3713,7 +3585,7 @@ const QCM = [
   },
   {
     "num": "Q227",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « logiciel de traitement de texte » ?",
     "choices": {
       "A": "Un programme permettant d’écrire, modifier et imprimer des documents",
@@ -3729,7 +3601,7 @@ const QCM = [
   },
   {
     "num": "Q228",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « logiciel libre » ?",
     "choices": {
       "A": "Un logiciel qui est gratuit à télécharger, mais nécessite un abonnement pour l’utiliser",
@@ -3745,7 +3617,7 @@ const QCM = [
   },
   {
     "num": "Q229",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « logiciel propriétaire » ?",
     "choices": {
       "A": "Un logiciel dont le code source est ouvert et modifiable par tout le monde",
@@ -3761,7 +3633,7 @@ const QCM = [
   },
   {
     "num": "Q230",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « malware » ?",
     "choices": {
       "A": "Un type de programme de sécurité",
@@ -3777,7 +3649,7 @@ const QCM = [
   },
   {
     "num": "Q231",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « milestone » dans la gestion de projet ?",
     "choices": {
       "A": "Un rapport détaillant l’état du projet",
@@ -3793,7 +3665,7 @@ const QCM = [
   },
   {
     "num": "Q232",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « modèle supervisé » en machine learning ?",
     "choices": {
       "A": "Un modèle qui ne nécessite aucune donnée d’entraînement",
@@ -3809,7 +3681,7 @@ const QCM = [
   },
   {
     "num": "Q233",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « moteur de recherche » ?",
     "choices": {
       "A": "Un logiciel qui protège les données des utilisateurs",
@@ -3825,7 +3697,7 @@ const QCM = [
   },
   {
     "num": "Q234",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « noyau » (kernel) d’un système d’exploitation ?",
     "choices": {
       "A": "La partie graphique du système d’exploitation",
@@ -3841,7 +3713,7 @@ const QCM = [
   },
   {
     "num": "Q235",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « phishing » ?",
     "choices": {
       "A": "Une méthode de cryptage des données",
@@ -3857,7 +3729,7 @@ const QCM = [
   },
   {
     "num": "Q236",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « plug-in » (ou extension) dans le domaine du développement web ?",
     "choices": {
       "A": "Un outil permettant de créer des bases de données",
@@ -3873,7 +3745,7 @@ const QCM = [
   },
   {
     "num": "Q237",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « port » dans le contexte des réseaux informatiques ?",
     "choices": {
       "A": "Un périphérique physique pour connecter un ordinateur à Internet",
@@ -3889,7 +3761,7 @@ const QCM = [
   },
   {
     "num": "Q238",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « processus » dans un système d’exploitation ?",
     "choices": {
       "A": "Un programme qui est en cours d’exécution",
@@ -3905,7 +3777,7 @@ const QCM = [
   },
   {
     "num": "Q239",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Processus Zombie » dans un système d’exploitation ?",
     "choices": {
       "A": "Un processus qui fonctionne correctement mais consomme beaucoup de ressources",
@@ -3921,7 +3793,7 @@ const QCM = [
   },
   {
     "num": "Q240",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « protocole de communication » dans le contexte des réseaux ?",
     "choices": {
       "A": "Un logiciel permettant d’améliorer la sécurité d’un réseau",
@@ -3937,7 +3809,7 @@ const QCM = [
   },
   {
     "num": "Q241",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Protocole de Communication » en informatique ?",
     "choices": {
       "A": "Un ensemble de règles qui régissent l’échange de données entre les appareils sur un réseau",
@@ -3953,7 +3825,7 @@ const QCM = [
   },
   {
     "num": "Q242",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « proxy » ?",
     "choices": {
       "A": "Un serveur intermédiaire qui relaye les requêtes entre un client et un autre serveur.",
@@ -3969,7 +3841,7 @@ const QCM = [
   },
   {
     "num": "Q243",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « ransomware » ?",
     "choices": {
       "A": "Un type de malware qui chiffre les données et demande une rançon pour les déchiffrer",
@@ -3985,7 +3857,7 @@ const QCM = [
   },
   {
     "num": "Q244",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Raspberry Pi » ?",
     "choices": {
       "A": "Un langage de programmation",
@@ -4001,7 +3873,7 @@ const QCM = [
   },
   {
     "num": "Q245",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « répertoire » dans un système de fichiers ?",
     "choices": {
       "A": "Un type de fichier exécutable dans le système",
@@ -4017,7 +3889,7 @@ const QCM = [
   },
   {
     "num": "Q246",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « réseau local » (LAN) ?",
     "choices": {
       "A": "Un réseau de télécommunications à l’échelle d’un pays",
@@ -4033,7 +3905,7 @@ const QCM = [
   },
   {
     "num": "Q247",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Réseau Privé Virtuel » (VPN) ?",
     "choices": {
       "A": "Un type de serveur sécurisé utilisé pour héberger des données",
@@ -4049,7 +3921,7 @@ const QCM = [
   },
   {
     "num": "Q248",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Rootkit » ?",
     "choices": {
       "A": "Un type de logiciel de surveillance de l’activité Internet",
@@ -4065,7 +3937,7 @@ const QCM = [
   },
   {
     "num": "Q249",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « script » dans le développement informatique ?",
     "choices": {
       "A": "Un langage de programmation de bas niveau utilisé pour manipuler directement le matériel",
@@ -4081,7 +3953,7 @@ const QCM = [
   },
   {
     "num": "Q250",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Serveur » dans le contexte des réseaux ?",
     "choices": {
       "A": "Un programme qui gère la sécurité du réseau",
@@ -4097,7 +3969,7 @@ const QCM = [
   },
   {
     "num": "Q251",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « serveur » en informatique ?",
     "choices": {
       "A": "Un appareil utilisé pour stocker des fichiers de manière locale",
@@ -4113,7 +3985,7 @@ const QCM = [
   },
   {
     "num": "Q252",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Sprint » dans la méthode Scrum de gestion de projet ?",
     "choices": {
       "A": "Un projet complet avec toutes les fonctionnalités demandées",
@@ -4129,7 +4001,7 @@ const QCM = [
   },
   {
     "num": "Q253",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « SQL injection » ?",
     "choices": {
       "A": "Une technique de cryptage des bases de données",
@@ -4145,7 +4017,7 @@ const QCM = [
   },
   {
     "num": "Q254",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « SSD » (Solid State Drive) ?",
     "choices": {
       "A": "Un type de mémoire volatile utilisée dans les processeurs",
@@ -4161,7 +4033,7 @@ const QCM = [
   },
   {
     "num": "Q255",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Switch » dans un réseau informatique ?",
     "choices": {
       "A": "Un dispositif qui connecte différents réseaux",
@@ -4177,7 +4049,7 @@ const QCM = [
   },
   {
     "num": "Q256",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « système d’exploitation multitâche » ?",
     "choices": {
       "A": "Un système qui ne permet d’exécuter qu’une seule tâche à la fois",
@@ -4193,7 +4065,7 @@ const QCM = [
   },
   {
     "num": "Q257",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Système de Contrôle de Version » ?",
     "choices": {
       "A": "Un système permettant de créer une copie de sauvegarde d’un fichier",
@@ -4209,7 +4081,7 @@ const QCM = [
   },
   {
     "num": "Q258",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « système de fichiers » ?",
     "choices": {
       "A": "Un type de virus",
@@ -4225,7 +4097,7 @@ const QCM = [
   },
   {
     "num": "Q259",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « système de gestion de base de données » (SGBD) ?",
     "choices": {
       "A": "Un système permettant de manipuler et organiser des données",
@@ -4241,7 +4113,7 @@ const QCM = [
   },
   {
     "num": "Q260",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « système de gestion de contenu » (CMS) ?",
     "choices": {
       "A": "Un logiciel qui permet de gérer et de publier des contenus web sans avoir à coder",
@@ -4257,7 +4129,7 @@ const QCM = [
   },
   {
     "num": "Q261",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « système de virtualisation » ?",
     "choices": {
       "A": "Un programme pour crypter des données",
@@ -4273,7 +4145,7 @@ const QCM = [
   },
   {
     "num": "Q262",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Système Embarqué » ?",
     "choices": {
       "A": "Un ordinateur principal utilisé pour gérer un réseau local",
@@ -4289,7 +4161,7 @@ const QCM = [
   },
   {
     "num": "Q263",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Trojan Horse » (cheval de Troie) ?",
     "choices": {
       "A": "Un type de logiciel antivirus",
@@ -4305,7 +4177,7 @@ const QCM = [
   },
   {
     "num": "Q264",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « tunnel VPN » ?",
     "choices": {
       "A": "Un moyen de crypter les données pendant leur transfert",
@@ -4321,7 +4193,7 @@ const QCM = [
   },
   {
     "num": "Q265",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Type de donnée » en programmation ?",
     "choices": {
       "A": "Un ensemble de variables utilisées dans un programme",
@@ -4337,7 +4209,7 @@ const QCM = [
   },
   {
     "num": "Q266",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un « Zéro-day » (zero-day) en sécurité informatique ?",
     "choices": {
       "A": "Une faille de sécurité qui a été corrigée et pour laquelle un patch est disponible",
@@ -4353,7 +4225,7 @@ const QCM = [
   },
   {
     "num": "Q267",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un bus dans un ordinateur ?",
     "choices": {
       "A": "Un type de mémoire utilisé pour le stockage des données",
@@ -4369,7 +4241,7 @@ const QCM = [
   },
   {
     "num": "Q268",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un constructeur dans une classe en programmation orientée objet ?",
     "choices": {
       "A": "Une méthode qui est appelée chaque fois qu’une instance de la classe est créée",
@@ -4385,7 +4257,7 @@ const QCM = [
   },
   {
     "num": "Q269",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un Data Lake dans l’architecture Big Data ?",
     "choices": {
       "A": "Un système de gestion de bases de données relationnelles",
@@ -4401,7 +4273,7 @@ const QCM = [
   },
   {
     "num": "Q270",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un hyperviseur dans le contexte de la virtualisation ?",
     "choices": {
       "A": "Un outil pour créer des réseaux virtuels",
@@ -4417,7 +4289,7 @@ const QCM = [
   },
   {
     "num": "Q271",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un navigateur web ?",
     "choices": {
       "A": "Un moteur de recherche",
@@ -4433,7 +4305,7 @@ const QCM = [
   },
   {
     "num": "Q272",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un objet en programmation orientée objet (POO) ?",
     "choices": {
       "A": "Une fonction qui exécute une tâche spécifique",
@@ -4449,7 +4321,7 @@ const QCM = [
   },
   {
     "num": "Q273",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un processeur à « multi-cœurs » ?",
     "choices": {
       "A": "Un processeur qui fonctionne à une température plus basse",
@@ -4465,7 +4337,7 @@ const QCM = [
   },
   {
     "num": "Q274",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un processus en informatique ?",
     "choices": {
       "A": "Un fichier qui contient des instructions à exécuter",
@@ -4481,7 +4353,7 @@ const QCM = [
   },
   {
     "num": "Q275",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un RAID (Redundant Array of Independent Disks) ?",
     "choices": {
       "A": "Un type de disque dur solide (SSD)",
@@ -4497,7 +4369,7 @@ const QCM = [
   },
   {
     "num": "Q276",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu'est-ce qu'un RAID 0 ?",
     "choices": {
       "A": "Un type de configuration de stockage qui offre redondance et sécurité",
@@ -4513,7 +4385,7 @@ const QCM = [
   },
   {
     "num": "Q277",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un réseau de neurones artificiels dans le domaine de l’IA ?",
     "choices": {
       "A": "Un système conçu pour imiter la structure du cerveau humain pour résoudre des problèmes complexes",
@@ -4529,7 +4401,7 @@ const QCM = [
   },
   {
     "num": "Q278",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un Spider dans le contexte d’Internet?",
     "choices": {
       "A": "Un virus informatique",
@@ -4545,7 +4417,7 @@ const QCM = [
   },
   {
     "num": "Q279",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un système expert en intelligence artificielle ?",
     "choices": {
       "A": "Un système capable de traiter des informations non structurées",
@@ -4561,7 +4433,7 @@ const QCM = [
   },
   {
     "num": "Q280",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’un VLAN (Virtual Local Area Network) ?",
     "choices": {
       "A": "Un protocole de sécurité pour les réseaux sans fil",
@@ -4577,7 +4449,7 @@ const QCM = [
   },
   {
     "num": "Q281",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « adresse MAC » ?",
     "choices": {
       "A": "Un identifiant unique attribué à un réseau sans fil",
@@ -4593,7 +4465,7 @@ const QCM = [
   },
   {
     "num": "Q282",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « application mobile » ?",
     "choices": {
       "A": "Un programme installé uniquement sur des serveurs",
@@ -4609,7 +4481,7 @@ const QCM = [
   },
   {
     "num": "Q283",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « attaque Man-in-the-Middle » (MITM) ?",
     "choices": {
       "A": "Une attaque où l’attaquant intercepte et manipule les communications entre deux parties",
@@ -4625,7 +4497,7 @@ const QCM = [
   },
   {
     "num": "Q284",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « attaque par déni de service » (DDoS) ?",
     "choices": {
       "A": "Une méthode de cryptage des informations sensibles",
@@ -4641,7 +4513,7 @@ const QCM = [
   },
   {
     "num": "Q285",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « clé primaire » dans une base de données relationnelle ?",
     "choices": {
       "A": "Un identifiant unique pour chaque ligne d’une table",
@@ -4657,7 +4529,7 @@ const QCM = [
   },
   {
     "num": "Q286",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « Clé publique » en cryptographie ?",
     "choices": {
       "A": "Une clé utilisée pour chiffrer des données et qui peut être partagée publiquement",
@@ -4673,7 +4545,7 @@ const QCM = [
   },
   {
     "num": "Q287",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « extension de fichier » ?",
     "choices": {
       "A": "Un type de fichier compressé",
@@ -4689,7 +4561,7 @@ const QCM = [
   },
   {
     "num": "Q288",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « fonction » en programmation ?",
     "choices": {
       "A": "Une structure de données utilisée pour organiser des informations",
@@ -4705,7 +4577,7 @@ const QCM = [
   },
   {
     "num": "Q289",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « Interface de Ligne de Commande » (CLI) ?",
     "choices": {
       "A": "Un environnement graphique permettant d’interagir avec le système d’exploitation",
@@ -4721,7 +4593,7 @@ const QCM = [
   },
   {
     "num": "Q290",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « interface graphique » (GUI) ?",
     "choices": {
       "A": "Un langage de programmation pour créer des interfaces utilisateur",
@@ -4737,7 +4609,7 @@ const QCM = [
   },
   {
     "num": "Q291",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « machine virtuelle » (VM) ?",
     "choices": {
       "A": "Un ordinateur physique capable de faire tourner plusieurs systèmes d’exploitation",
@@ -4753,7 +4625,7 @@ const QCM = [
   },
   {
     "num": "Q292",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « pile » en informatique ?",
     "choices": {
       "A": "Une zone de mémoire utilisée pour le stockage des fichiers",
@@ -4769,7 +4641,7 @@ const QCM = [
   },
   {
     "num": "Q293",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « table » dans une base de données relationnelle ?",
     "choices": {
       "A": "Un programme qui organise les fichiers dans un répertoire",
@@ -4785,7 +4657,7 @@ const QCM = [
   },
   {
     "num": "Q294",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une « vue » dans une base de données relationnelle ?",
     "choices": {
       "A": "Un type spécial de table qui est seulement en lecture",
@@ -4801,7 +4673,7 @@ const QCM = [
   },
   {
     "num": "Q295",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une adresse IP dynamique ?",
     "choices": {
       "A": "Une adresse IP qui ne change jamais",
@@ -4817,7 +4689,7 @@ const QCM = [
   },
   {
     "num": "Q296",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une attaque par « phishing » ?",
     "choices": {
       "A": "Une attaque visant à intercepter des communications sans que l’utilisateur en soit conscient",
@@ -4833,7 +4705,7 @@ const QCM = [
   },
   {
     "num": "Q297",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une attaque par déni de service distribué (DDoS) ?",
     "choices": {
       "A": "Une attaque visant à espionner les communications réseau",
@@ -4849,7 +4721,7 @@ const QCM = [
   },
   {
     "num": "Q298",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une base de données NoSQL ?",
     "choices": {
       "A": "Une base de données utilisée pour stocker uniquement des données relationnelles",
@@ -4865,7 +4737,7 @@ const QCM = [
   },
   {
     "num": "Q299",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une classe abstraite en Java ?",
     "choices": {
       "A": "Une classe qui ne peut pas être instanciée et qui contient des méthodes abstraites à implémenter par des classes dérivées",
@@ -4881,7 +4753,7 @@ const QCM = [
   },
   {
     "num": "Q300",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une classe en programmation orientée objet ?",
     "choices": {
       "A": "Un type de variable utilisé pour stocker des données",
@@ -4897,7 +4769,7 @@ const QCM = [
   },
   {
     "num": "Q301",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une clé étrangère dans une base de données relationnelle ?",
     "choices": {
       "A": "Une clé qui identifie de manière unique un enregistrement dans une table",
@@ -4913,7 +4785,7 @@ const QCM = [
   },
   {
     "num": "Q302",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une image Docker ?",
     "choices": {
       "A": "Un conteneur Docker en cours d’exécution.",
@@ -4929,7 +4801,7 @@ const QCM = [
   },
   {
     "num": "Q303",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une instance dans un environnement Cloud comme AWS ou Azure ?",
     "choices": {
       "A": "Un composant réseau qui connecte les serveurs",
@@ -4945,7 +4817,7 @@ const QCM = [
   },
   {
     "num": "Q304",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une interface en programmation orientée objet ?",
     "choices": {
       "A": "Un type de classe qui peut avoir des méthodes, mais ne contient aucune implémentation",
@@ -4961,7 +4833,7 @@ const QCM = [
   },
   {
     "num": "Q305",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une jointure (JOIN) dans une base de données relationnelle ?",
     "choices": {
       "A": "Une méthode pour trier les résultats d’une requête",
@@ -4977,7 +4849,7 @@ const QCM = [
   },
   {
     "num": "Q306",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une machine virtuelle ?",
     "choices": {
       "A": "Un programme qui permet de gérer l’accès réseau",
@@ -4993,7 +4865,7 @@ const QCM = [
   },
   {
     "num": "Q307",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une URL ?",
     "choices": {
       "A": "Un logiciel informatique",
@@ -5009,7 +4881,7 @@ const QCM = [
   },
   {
     "num": "Q308",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qu’une vue (view) dans une base de données relationnelle ?",
     "choices": {
       "A": "Une table temporaire pour stocker des données",
@@ -5025,7 +4897,7 @@ const QCM = [
   },
   {
     "num": "Q309",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « DNS spoofing » ?",
     "choices": {
       "A": "Un type d’attaque où des informations sur le réseau sont falsifiées pour rediriger le trafic vers un serveur malveillant",
@@ -5041,7 +4913,7 @@ const QCM = [
   },
   {
     "num": "Q310",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « Git » ?",
     "choices": {
       "A": "Un langage de programmation",
@@ -5057,7 +4929,7 @@ const QCM = [
   },
   {
     "num": "Q311",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « JavaScript » ?",
     "choices": {
       "A": "Un langage de programmation principalement utilisé pour la création de sites web dynamiques",
@@ -5073,7 +4945,7 @@ const QCM = [
   },
   {
     "num": "Q312",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « l’intelligence artificielle » (IA) ?",
     "choices": {
       "A": "Une technique pour programmer les ordinateurs à exécuter des tâches spécifiques",
@@ -5089,7 +4961,7 @@ const QCM = [
   },
   {
     "num": "Q313",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « OpenSSL » ?",
     "choices": {
       "A": "Un système d’exploitation open-source",
@@ -5105,7 +4977,7 @@ const QCM = [
   },
   {
     "num": "Q314",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « PHP » ?",
     "choices": {
       "A": "Un logiciel de gestion de base de données",
@@ -5121,7 +4993,7 @@ const QCM = [
   },
   {
     "num": "Q315",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « SQL » ?",
     "choices": {
       "A": "Un langage de programmation utilisé pour créer des applications web",
@@ -5137,7 +5009,7 @@ const QCM = [
   },
   {
     "num": "Q316",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « SSH » ?",
     "choices": {
       "A": "Un logiciel antivirus pour sécuriser les réseaux",
@@ -5153,7 +5025,7 @@ const QCM = [
   },
   {
     "num": "Q317",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « Ubuntu » ?",
     "choices": {
       "A": "Un type de langage de programmation",
@@ -5169,7 +5041,7 @@ const QCM = [
   },
   {
     "num": "Q318",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que « Wi-Fi » ?",
     "choices": {
       "A": "Un type de virus informatique",
@@ -5185,7 +5057,7 @@ const QCM = [
   },
   {
     "num": "Q319",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que l’authentification à deux facteurs (2FA) ?",
     "choices": {
       "A": "Un moyen de chiffrer les données de l’utilisateur",
@@ -5201,7 +5073,7 @@ const QCM = [
   },
   {
     "num": "Q320",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que l’auto-scaling dans un environnement Cloud ?",
     "choices": {
       "A": "La capacité de mettre à l’échelle un réseau physique",
@@ -5217,7 +5089,7 @@ const QCM = [
   },
   {
     "num": "Q321",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que l’héritage en programmation orientée objet ?",
     "choices": {
       "A": "Une méthode permettant de masquer les détails internes d’un objet",
@@ -5233,7 +5105,7 @@ const QCM = [
   },
   {
     "num": "Q322",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « bande passante » d’un réseau ?",
     "choices": {
       "A": "La quantité de données transférées dans un réseau en une période donnée",
@@ -5249,7 +5121,7 @@ const QCM = [
   },
   {
     "num": "Q323",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « Cryptographie » ?",
     "choices": {
       "A": "Une méthode pour accélérer la transmission des données sur un réseau",
@@ -5265,7 +5137,7 @@ const QCM = [
   },
   {
     "num": "Q324",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « latence » en informatique ?",
     "choices": {
       "A": "La vitesse de traitement des données par un serveur",
@@ -5281,7 +5153,7 @@ const QCM = [
   },
   {
     "num": "Q325",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « mémoire cache » ?",
     "choices": {
       "A": "Une mémoire rapide utilisée pour stocker des données temporairement afin d’accélérer l’accès aux informations",
@@ -5297,7 +5169,7 @@ const QCM = [
   },
   {
     "num": "Q326",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « programmation orientée objet » (POO) ?",
     "choices": {
       "A": "Une méthode de programmation qui se concentre sur la manipulation de données sous forme de listes",
@@ -5313,7 +5185,7 @@ const QCM = [
   },
   {
     "num": "Q327",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « réalité virtuelle » (VR) ?",
     "choices": {
       "A": "Une technologie permettant de créer des simulations immersives en 3D",
@@ -5329,7 +5201,7 @@ const QCM = [
   },
   {
     "num": "Q328",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « synchronisation » dans le contexte des systèmes informatiques ?",
     "choices": {
       "A": "La gestion des ressources matérielles dans un réseau",
@@ -5345,7 +5217,7 @@ const QCM = [
   },
   {
     "num": "Q329",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la « virtualisation » en informatique ?",
     "choices": {
       "A": "Un processus de réduction de la taille des fichiers",
@@ -5361,7 +5233,7 @@ const QCM = [
   },
   {
     "num": "Q330",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la fréquence d’horloge d’un processeur ?",
     "choices": {
       "A": "La quantité de mémoire cachée qu’il peut utiliser",
@@ -5377,7 +5249,7 @@ const QCM = [
   },
   {
     "num": "Q331",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que la mémoire « virtuelle » dans un système informatique ?",
     "choices": {
       "A": "Une mémoire de sauvegarde externe",
@@ -5393,7 +5265,7 @@ const QCM = [
   },
   {
     "num": "Q332",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Bash » ?",
     "choices": {
       "A": "Un logiciel de sécurité informatique",
@@ -5409,7 +5281,7 @@ const QCM = [
   },
   {
     "num": "Q333",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Big Data » ?",
     "choices": {
       "A": "Un format de fichier compressé",
@@ -5425,7 +5297,7 @@ const QCM = [
   },
   {
     "num": "Q334",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « blockchain » ?",
     "choices": {
       "A": "Un type de fichier utilisé pour stocker des images",
@@ -5441,7 +5313,7 @@ const QCM = [
   },
   {
     "num": "Q335",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « cloud » (nuage) en informatique ?",
     "choices": {
       "A": "Un logiciel de protection contre les virus",
@@ -5457,7 +5329,7 @@ const QCM = [
   },
   {
     "num": "Q336",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Code Source » d’un programme ?",
     "choices": {
       "A": "Le langage machine utilisé pour exécuter un programme",
@@ -5473,7 +5345,7 @@ const QCM = [
   },
   {
     "num": "Q337",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « cryptage » des données ?",
     "choices": {
       "A": "Une technique de compression des fichiers",
@@ -5489,7 +5361,7 @@ const QCM = [
   },
   {
     "num": "Q338",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « cycle de vie d’un logiciel » ?",
     "choices": {
       "A": "La durée d’utilisation d’un logiciel",
@@ -5505,7 +5377,7 @@ const QCM = [
   },
   {
     "num": "Q339",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Deep Learning » ?",
     "choices": {
       "A": "Une méthode de compression des images",
@@ -5521,7 +5393,7 @@ const QCM = [
   },
   {
     "num": "Q340",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « HTML5 » ?",
     "choices": {
       "A": "Un framework JavaScript pour la création de sites web",
@@ -5537,7 +5409,7 @@ const QCM = [
   },
   {
     "num": "Q341",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « langage HTML » ?",
     "choices": {
       "A": "Un langage utilisé pour créer des bases de données",
@@ -5553,7 +5425,7 @@ const QCM = [
   },
   {
     "num": "Q342",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « machine learning » ?",
     "choices": {
       "A": "Un type d’algorithme qui permet aux ordinateurs d’apprendre et de s’améliorer sans être explicitement programmés",
@@ -5569,7 +5441,7 @@ const QCM = [
   },
   {
     "num": "Q343",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « machine learning » (apprentissage automatique) ?",
     "choices": {
       "A": "Un type de stockage de données dans des serveurs distants",
@@ -5585,7 +5457,7 @@ const QCM = [
   },
   {
     "num": "Q344",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Machine Learning supervisé » ?",
     "choices": {
       "A": "Une méthode d’apprentissage où l’algorithme apprend à partir de données étiquetées",
@@ -5601,7 +5473,7 @@ const QCM = [
   },
   {
     "num": "Q345",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « MapReduce » dans le cadre de Hadoop ?",
     "choices": {
       "A": "Un langage de programmation pour traiter les données distribuées",
@@ -5617,7 +5489,7 @@ const QCM = [
   },
   {
     "num": "Q346",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « multitâche » en informatique ?",
     "choices": {
       "A": "La capacité d’un processeur à effectuer plusieurs calculs simultanément",
@@ -5633,7 +5505,7 @@ const QCM = [
   },
   {
     "num": "Q347",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « phishing » ?",
     "choices": {
       "A": "Un type de programme antivirus",
@@ -5649,7 +5521,7 @@ const QCM = [
   },
   {
     "num": "Q348",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Principle of least privilege » (principe du moindre privilège) ?",
     "choices": {
       "A": "Assurer qu’un utilisateur ait accès à toutes les ressources nécessaires",
@@ -5665,7 +5537,7 @@ const QCM = [
   },
   {
     "num": "Q349",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Protocol HTTP/2 » ?",
     "choices": {
       "A": "Un protocole de compression des fichiers web",
@@ -5681,7 +5553,7 @@ const QCM = [
   },
   {
     "num": "Q350",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « RAID » (Redundant Array of Independent Disks) ?",
     "choices": {
       "A": "Un système de sauvegarde pour les bases de données",
@@ -5697,7 +5569,7 @@ const QCM = [
   },
   {
     "num": "Q351",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « référencement » (SEO) ?",
     "choices": {
       "A": "Un processus permettant de sécuriser un site web contre les attaques",
@@ -5713,7 +5585,7 @@ const QCM = [
   },
   {
     "num": "Q352",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « SaaS » (Software as a Service) ?",
     "choices": {
       "A": "Un type de serveur permettant de stocker des fichiers",
@@ -5729,7 +5601,7 @@ const QCM = [
   },
   {
     "num": "Q353",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « SEO » en marketing numérique ?",
     "choices": {
       "A": "Search Encryption Online",
@@ -5745,7 +5617,7 @@ const QCM = [
   },
   {
     "num": "Q354",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « streaming » ?",
     "choices": {
       "A": "Un type de fichier compressé",
@@ -5761,7 +5633,7 @@ const QCM = [
   },
   {
     "num": "Q355",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Système Binaire » ?",
     "choices": {
       "A": "Un système de numérotation utilisé uniquement pour les dates",
@@ -5777,7 +5649,7 @@ const QCM = [
   },
   {
     "num": "Q356",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Système de gestion des identités » (Identity Management) ?",
     "choices": {
       "A": "Un ensemble de politiques et de technologies permettant de gérer les informations d’identification et les autorisations d’accès des utilisateurs",
@@ -5793,7 +5665,7 @@ const QCM = [
   },
   {
     "num": "Q357",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « TCP/IP » ?",
     "choices": {
       "A": "Un type de protocole pour la gestion des bases de données",
@@ -5809,7 +5681,7 @@ const QCM = [
   },
   {
     "num": "Q358",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « version control » (contrôle de version) ?",
     "choices": {
       "A": "Un processus pour suivre les modifications apportées à des fichiers ou à du code source",
@@ -5825,7 +5697,7 @@ const QCM = [
   },
   {
     "num": "Q359",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Versionning » dans le développement logiciel ?",
     "choices": {
       "A": "Un processus de modification d’un fichier pour en améliorer la performance",
@@ -5841,7 +5713,7 @@ const QCM = [
   },
   {
     "num": "Q360",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le « Web 2.0 » ?",
     "choices": {
       "A": "Une version améliorée du protocole HTTP utilisée pour le transfert de fichiers",
@@ -5857,7 +5729,7 @@ const QCM = [
   },
   {
     "num": "Q361",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le chiffrement symétrique ?",
     "choices": {
       "A": "Un chiffrement qui utilise une paire de clés (publique et privée)",
@@ -5873,7 +5745,7 @@ const QCM = [
   },
   {
     "num": "Q362",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que le NAT (Network Address Translation) ?",
     "choices": {
       "A": "Une méthode pour attribuer des adresses IP publiques à des appareils dans un réseau privé",
@@ -5889,7 +5761,7 @@ const QCM = [
   },
   {
     "num": "Q363",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce que Python ?",
     "choices": {
       "A": "Un logiciel antivirus",
@@ -5905,7 +5777,7 @@ const QCM = [
   },
   {
     "num": "Q364",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qui distingue HTTPS de HTTP ?",
     "choices": {
       "A": "HTTPS est une version plus lente de HTTP",
@@ -5921,7 +5793,7 @@ const QCM = [
   },
   {
     "num": "Q365",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qui est garanti par les propriétés ACID d’une transaction en base de données ?",
     "choices": {
       "A": "L’intégrité des données, même en cas de défaillance système",
@@ -5937,7 +5809,7 @@ const QCM = [
   },
   {
     "num": "Q366",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Qu’est-ce qui n’est pas toujours nécessaire pour accéder au Web ?",
     "choices": {
       "A": "Un navigateur Web",
@@ -5953,7 +5825,7 @@ const QCM = [
   },
   {
     "num": "Q367",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait Git lorsqu’il rencontre un conflit lors d’une fusion de branches ?",
     "choices": {
       "A": "Il résout automatiquement le conflit",
@@ -5969,7 +5841,7 @@ const QCM = [
   },
   {
     "num": "Q368",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait l’instruction print() en Python ?",
     "choices": {
       "A": "Elle termine le programme",
@@ -5985,7 +5857,7 @@ const QCM = [
   },
   {
     "num": "Q369",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait l’opérateur && en C ?",
     "choices": {
       "A": "Il effectue une addition",
@@ -6001,7 +5873,7 @@ const QCM = [
   },
   {
     "num": "Q370",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait l’opérateur ++ en langage C ?",
     "choices": {
       "A": "Il incrémente une variable de 1",
@@ -6017,7 +5889,7 @@ const QCM = [
   },
   {
     "num": "Q371",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait l’opérateur instanceof en Java ?",
     "choices": {
       "A": "Vérifie si un objet est une instance d’une classe spécifique",
@@ -6033,7 +5905,7 @@ const QCM = [
   },
   {
     "num": "Q372",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la clause DISTINCT dans une requête SQL ?",
     "choices": {
       "A": "Elle permet de trier les résultats de manière croissante",
@@ -6049,7 +5921,7 @@ const QCM = [
   },
   {
     "num": "Q373",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la commande chmod sous Linux ?",
     "choices": {
       "A": "Change la date de modification d’un fichier",
@@ -6065,7 +5937,7 @@ const QCM = [
   },
   {
     "num": "Q374",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la commande git commit dans GIT ?",
     "choices": {
       "A": "Annule toutes les modifications locales effectuées sur un fichier",
@@ -6081,7 +5953,7 @@ const QCM = [
   },
   {
     "num": "Q375",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la commande git merge ?",
     "choices": {
       "A": "Crée une nouvelle branche",
@@ -6097,7 +5969,7 @@ const QCM = [
   },
   {
     "num": "Q376",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la commande ps sous Linux ?",
     "choices": {
       "A": "Elle affiche les processus en cours d’exécution",
@@ -6113,7 +5985,7 @@ const QCM = [
   },
   {
     "num": "Q377",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la commande rm sous Linux ?",
     "choices": {
       "A": "Elle déplace un fichier vers la corbeille",
@@ -6129,7 +6001,7 @@ const QCM = [
   },
   {
     "num": "Q378",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la commande SQL ALTER TABLE ?",
     "choices": {
       "A": "Supprime une table existante",
@@ -6145,7 +6017,7 @@ const QCM = [
   },
   {
     "num": "Q379",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la fonction append() en Python ?",
     "choices": {
       "A": "Ajoute un élément à la fin d’une liste",
@@ -6161,7 +6033,7 @@ const QCM = [
   },
   {
     "num": "Q380",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la fonction len() en Python ?",
     "choices": {
       "A": "Elle calcule la longueur d’un fichier",
@@ -6177,7 +6049,7 @@ const QCM = [
   },
   {
     "num": "Q381",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la fonction map() en Python ?",
     "choices": {
       "A": "Elle applique une fonction à tous les éléments d’un itérable et retourne un itérable des résultats",
@@ -6193,7 +6065,7 @@ const QCM = [
   },
   {
     "num": "Q382",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la fonction range() en Python ?",
     "choices": {
       "A": "Génère une liste de nombres entre deux valeurs données",
@@ -6209,7 +6081,7 @@ const QCM = [
   },
   {
     "num": "Q383",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait la méthode substring() en Java ?",
     "choices": {
       "A": "Elle divise une chaîne en sous-chaînes",
@@ -6225,7 +6097,7 @@ const QCM = [
   },
   {
     "num": "Q384",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait le code suivant en Python ?",
     "choices": {
       "A": "Ajoute l’élément 5 à la fin de la liste x",
@@ -6241,7 +6113,7 @@ const QCM = [
   },
   {
     "num": "Q385",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait le protocole HTTP dans les échanges sur le web ?",
     "choices": {
       "A": "Assure la connexion réseau entre le client et le serveur",
@@ -6257,7 +6129,7 @@ const QCM = [
   },
   {
     "num": "Q386",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait un gestionnaire d’exceptions dans un langage de programmation ?",
     "choices": {
       "A": "Empêche les erreurs de se produire",
@@ -6273,7 +6145,7 @@ const QCM = [
   },
   {
     "num": "Q387",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que fait une « clé USB » ?",
     "choices": {
       "A": "Permet d’afficher des documents sur un écran",
@@ -6289,7 +6161,7 @@ const QCM = [
   },
   {
     "num": "Q388",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que permet de faire la commande SELECT en SQL ?",
     "choices": {
       "A": "Insérer de nouvelles données dans une table",
@@ -6305,7 +6177,7 @@ const QCM = [
   },
   {
     "num": "Q389",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que permet de faire la commande SQL UPDATE ?",
     "choices": {
       "A": "Supprimer des données dans une table",
@@ -6321,7 +6193,7 @@ const QCM = [
   },
   {
     "num": "Q390",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que permet de faire le « subnetting » dans un réseau IP ?",
     "choices": {
       "A": "Réduire le nombre de périphériques connectés à un réseau",
@@ -6337,7 +6209,7 @@ const QCM = [
   },
   {
     "num": "Q391",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que renvoie la fonction len() en Python lorsqu’elle est appliquée à une chaîne de caractères ?",
     "choices": {
       "A": "Le premier caractère de la chaîne",
@@ -6353,7 +6225,7 @@ const QCM = [
   },
   {
     "num": "Q392",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie « gestion dynamique de la mémoire » ?",
     "choices": {
       "A": "Réallouer de la mémoire uniquement au moment où elle est nécessaire",
@@ -6369,7 +6241,7 @@ const QCM = [
   },
   {
     "num": "Q393",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie « HTTP » dans une URL ?",
     "choices": {
       "A": "HyperText Transfer Protocol",
@@ -6385,7 +6257,7 @@ const QCM = [
   },
   {
     "num": "Q394",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie « IoT » (Internet of Things) ?",
     "choices": {
       "A": "Un réseau d’ordinateurs utilisés pour les communications",
@@ -6401,7 +6273,7 @@ const QCM = [
   },
   {
     "num": "Q395",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie « IP » dans le contexte des réseaux ?",
     "choices": {
       "A": "Internet Protocol",
@@ -6417,7 +6289,7 @@ const QCM = [
   },
   {
     "num": "Q396",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie « Pointeur » en langage C ?",
     "choices": {
       "A": "Un type de variable qui permet de stocker des chaînes de caractères",
@@ -6433,7 +6305,7 @@ const QCM = [
   },
   {
     "num": "Q397",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie CPU ?",
     "choices": {
       "A": "Calculating Processing Unit",
@@ -6449,7 +6321,7 @@ const QCM = [
   },
   {
     "num": "Q398",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie EPROM ?",
     "choices": {
       "A": "Electric Programmable Read Only Memory",
@@ -6465,7 +6337,7 @@ const QCM = [
   },
   {
     "num": "Q399",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie l’acronyme « IP » dans une adresse IP ?",
     "choices": {
       "A": "Internet Protocol",
@@ -6481,7 +6353,7 @@ const QCM = [
   },
   {
     "num": "Q400",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie l’acronyme « RAM » ?",
     "choices": {
       "A": "Random Access Memory",
@@ -6497,7 +6369,7 @@ const QCM = [
   },
   {
     "num": "Q401",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie l’acronyme « URL » ?",
     "choices": {
       "A": "Uniform Resource Locator",
@@ -6513,7 +6385,7 @@ const QCM = [
   },
   {
     "num": "Q402",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie l’acronyme ALU dans l’architecture des ordinateurs ?",
     "choices": {
       "A": "Arithmetic Logic Unit (Unité arithmétique et logique)",
@@ -6529,7 +6401,7 @@ const QCM = [
   },
   {
     "num": "Q403",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie l’opérateur & en C ?",
     "choices": {
       "A": "Additionner deux variables",
@@ -6545,7 +6417,7 @@ const QCM = [
   },
   {
     "num": "Q404",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie la gestion de la mémoire « Dynamique » en informatique ?",
     "choices": {
       "A": "L’allocation de la mémoire à des processus à des moments spécifiques",
@@ -6561,7 +6433,7 @@ const QCM = [
   },
   {
     "num": "Q405",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie LCP?",
     "choices": {
       "A": "Local Connection Protocol",
@@ -6577,7 +6449,7 @@ const QCM = [
   },
   {
     "num": "Q406",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie le terme « hameçonnage » (phishing) en informatique ?",
     "choices": {
       "A": "L’attaque par déni de service (DoS) d’un serveur",
@@ -6593,7 +6465,7 @@ const QCM = [
   },
   {
     "num": "Q407",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie le terme « index » dans une base de données relationnelle ?",
     "choices": {
       "A": "Un type de clé primaire",
@@ -6609,7 +6481,7 @@ const QCM = [
   },
   {
     "num": "Q408",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie RAID ?",
     "choices": {
       "A": "Redundant Array of independent Disks",
@@ -6625,7 +6497,7 @@ const QCM = [
   },
   {
     "num": "Q409",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Que signifie SSL ?",
     "choices": {
       "A": "Secure System Login",
@@ -6641,7 +6513,7 @@ const QCM = [
   },
   {
     "num": "Q410",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel a été le premier message ARPANET ?",
     "choices": {
       "A": "« hello world »",
@@ -6657,7 +6529,7 @@ const QCM = [
   },
   {
     "num": "Q411",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme cryptographique est principalement utilisé dans la sécurité des transactions de Bitcoin ?",
     "choices": {
       "A": "RSA",
@@ -6673,7 +6545,7 @@ const QCM = [
   },
   {
     "num": "Q412",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme de machine learning est utilisé pour la réduction de dimensionnalité des données ?",
     "choices": {
       "A": "Régression linéaire",
@@ -6689,7 +6561,7 @@ const QCM = [
   },
   {
     "num": "Q413",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme de tri est basé sur l’idée de diviser un tableau en sous-tableaux plus petits, de les trier, puis de les fusionner ?",
     "choices": {
       "A": "Tri à bulles",
@@ -6705,7 +6577,7 @@ const QCM = [
   },
   {
     "num": "Q414",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme de tri est basé sur le principe de diviser pour régner ?",
     "choices": {
       "A": "Tri rapide",
@@ -6721,7 +6593,7 @@ const QCM = [
   },
   {
     "num": "Q415",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme de tri est considéré comme ayant la meilleure complexité moyenne parmi les algorithmes de tri classiques ?",
     "choices": {
       "A": "Tri à bulles",
@@ -6737,7 +6609,7 @@ const QCM = [
   },
   {
     "num": "Q416",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est couramment utilisé pour effectuer un clustering (regroupement) des données ?",
     "choices": {
       "A": "Régression logistique",
@@ -6753,7 +6625,7 @@ const QCM = [
   },
   {
     "num": "Q417",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est couramment utilisé pour la classification des données ?",
     "choices": {
       "A": "K-means",
@@ -6769,7 +6641,7 @@ const QCM = [
   },
   {
     "num": "Q418",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est couramment utilisé pour le « clustering » (regroupement) dans le Machine Learning ?",
     "choices": {
       "A": "K-means",
@@ -6785,7 +6657,7 @@ const QCM = [
   },
   {
     "num": "Q419",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est le plus adapté pour rechercher un élément dans une liste triée ?",
     "choices": {
       "A": "Recherche linéaire",
@@ -6801,7 +6673,7 @@ const QCM = [
   },
   {
     "num": "Q420",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est le plus couramment utilisé pour sécuriser les échanges de données sur Internet ?",
     "choices": {
       "A": "AES (Advanced Encryption Standard)",
@@ -6817,7 +6689,7 @@ const QCM = [
   },
   {
     "num": "Q421",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est un exemple de cryptographie asymétrique ?",
     "choices": {
       "A": "AES",
@@ -6833,7 +6705,7 @@ const QCM = [
   },
   {
     "num": "Q422",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est utilisé pour la reconnaissance de formes en apprentissage automatique ?",
     "choices": {
       "A": "Régression linéaire",
@@ -6849,7 +6721,7 @@ const QCM = [
   },
   {
     "num": "Q423",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est utilisé pour trier une liste d’éléments en ordre croissant de manière la plus efficace en termes de temps ?",
     "choices": {
       "A": "Tri à bulles",
@@ -6865,7 +6737,7 @@ const QCM = [
   },
   {
     "num": "Q424",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel algorithme est utilisé pour trouver un chemin optimal dans un graphe ?",
     "choices": {
       "A": "Algorithme de Dijkstra",
@@ -6881,7 +6753,7 @@ const QCM = [
   },
   {
     "num": "Q425",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel attribut HTML est utilisé pour spécifier l’URL de la ressource à afficher dans une balise <img> ?",
     "choices": {
       "A": "href",
@@ -6897,7 +6769,7 @@ const QCM = [
   },
   {
     "num": "Q426",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel composant est responsable de l’exécution des instructions dans un ordinateur ?",
     "choices": {
       "A": "L’unité centrale de traitement (CPU)",
@@ -6913,7 +6785,7 @@ const QCM = [
   },
   {
     "num": "Q427",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel concept de la POO permet de « cacher » les détails d’implémentation à l’utilisateur d’une classe ?",
     "choices": {
       "A": "Abstraction",
@@ -6929,7 +6801,7 @@ const QCM = [
   },
   {
     "num": "Q428",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel concept de la programmation orientée objet permet de créer une nouvelle classe à partir d’une classe existante ?",
     "choices": {
       "A": "Encapsulation",
@@ -6945,7 +6817,7 @@ const QCM = [
   },
   {
     "num": "Q429",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’algorithme de recherche qui a une complexité de O(log n) ?",
     "choices": {
       "A": "Recherche linéaire",
@@ -6961,7 +6833,7 @@ const QCM = [
   },
   {
     "num": "Q430",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’algorithme de recherche qui divise de manière répétée un tableau trié en deux jusqu’à ce que l’élément recherché soit trouvé ?",
     "choices": {
       "A": "Recherche linéaire",
@@ -6977,7 +6849,7 @@ const QCM = [
   },
   {
     "num": "Q431",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’algorithme de tri ayant la meilleure complexité dans le pire des cas ?",
     "choices": {
       "A": "Tri par insertion",
@@ -6993,7 +6865,7 @@ const QCM = [
   },
   {
     "num": "Q432",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’algorithme de tri le plus simple à implémenter, mais le moins efficace pour de grandes quantités de données ?",
     "choices": {
       "A": "Tri rapide",
@@ -7009,7 +6881,7 @@ const QCM = [
   },
   {
     "num": "Q433",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’algorithme de tri qui est particulièrement inefficace pour de grands ensembles de données et possède une complexité de O(n²) ?",
     "choices": {
       "A": "Tri rapide",
@@ -7025,7 +6897,7 @@ const QCM = [
   },
   {
     "num": "Q434",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage d’un processeur multicœur ?",
     "choices": {
       "A": "Augmenter la taille de la mémoire vive",
@@ -7041,7 +6913,7 @@ const QCM = [
   },
   {
     "num": "Q435",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage d’un service de cloud computing « IaaS » (Infrastructure as a Service) ?",
     "choices": {
       "A": "Il permet d’acheter des logiciels en ligne",
@@ -7057,7 +6929,7 @@ const QCM = [
   },
   {
     "num": "Q436",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage d’utiliser des services cloud par rapport à des infrastructures locales ?",
     "choices": {
       "A": "L’absence de coûts",
@@ -7073,7 +6945,7 @@ const QCM = [
   },
   {
     "num": "Q437",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage d’utiliser un CMS comme WordPress pour créer un site web ?",
     "choices": {
       "A": "Il n’est pas nécessaire d’avoir de compétences en programmation",
@@ -7089,7 +6961,7 @@ const QCM = [
   },
   {
     "num": "Q438",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage majeur du cloud computing pour une entreprise ?",
     "choices": {
       "A": "Réduire le coût des infrastructures matérielles et logicielles",
@@ -7105,7 +6977,7 @@ const QCM = [
   },
   {
     "num": "Q439",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal d’une base de données NoSQL par rapport à une base de données relationnelle ?",
     "choices": {
       "A": "Une structure plus rigide",
@@ -7121,7 +6993,7 @@ const QCM = [
   },
   {
     "num": "Q440",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal d’utiliser des services cloud IaaS (Infrastructure as a Service) ?",
     "choices": {
       "A": "Les utilisateurs peuvent accéder à des logiciels préinstallés",
@@ -7137,7 +7009,7 @@ const QCM = [
   },
   {
     "num": "Q441",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal d’utiliser le Cloud Computing ?",
     "choices": {
       "A": "Possibilité d’acheter plus de serveurs physiques",
@@ -7153,7 +7025,7 @@ const QCM = [
   },
   {
     "num": "Q442",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal d’utiliser une solution IaaS (Infrastructure as a Service) ?",
     "choices": {
       "A": "Possibilité de louer des applications logicielles à la demande",
@@ -7169,7 +7041,7 @@ const QCM = [
   },
   {
     "num": "Q443",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal de Java par rapport à d’autres langages de programmation ?",
     "choices": {
       "A": "Il est utilisé uniquement pour le développement web",
@@ -7185,7 +7057,7 @@ const QCM = [
   },
   {
     "num": "Q444",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal de l’architecture « Serverless » dans le Cloud ?",
     "choices": {
       "A": "Le coût est directement proportionnel à l’infrastructure physique utilisée",
@@ -7201,7 +7073,7 @@ const QCM = [
   },
   {
     "num": "Q445",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal de l’édition collaborative en ligne (comme Google Docs) ?",
     "choices": {
       "A": "Elle permet de travailler sur un document sans connexion Internet",
@@ -7217,7 +7089,7 @@ const QCM = [
   },
   {
     "num": "Q446",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal de l’utilisation d’index en SQL ?",
     "choices": {
       "A": "Accélérer les requêtes de mise à jour",
@@ -7233,7 +7105,7 @@ const QCM = [
   },
   {
     "num": "Q447",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal de la virtualisation des serveurs ?",
     "choices": {
       "A": "Simplifier le processus d’achat des serveurs",
@@ -7249,7 +7121,7 @@ const QCM = [
   },
   {
     "num": "Q448",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal des réseaux de neurones convolutifs (CNN) pour le traitement des images ?",
     "choices": {
       "A": "Ils sont capables de traiter des images à haute résolution sans perte de performance",
@@ -7265,7 +7137,7 @@ const QCM = [
   },
   {
     "num": "Q449",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal des réseaux de neurones profonds (Deep Learning) par rapport aux réseaux de neurones classiques ?",
     "choices": {
       "A": "Ils sont plus rapides à entraîner",
@@ -7281,7 +7153,7 @@ const QCM = [
   },
   {
     "num": "Q450",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’avantage principal du langage de programmation C par rapport à d’autres langages comme Python ou Java ?",
     "choices": {
       "A": "Il est beaucoup plus facile à apprendre",
@@ -7297,7 +7169,7 @@ const QCM = [
   },
   {
     "num": "Q451",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’effet de l’instruction free() en C ?",
     "choices": {
       "A": "Allouer de la mémoire pour une variable",
@@ -7313,7 +7185,7 @@ const QCM = [
   },
   {
     "num": "Q452",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’effet de l’instruction return dans une fonction en langage C ?",
     "choices": {
       "A": "Elle arrête l’exécution du programme",
@@ -7329,7 +7201,7 @@ const QCM = [
   },
   {
     "num": "Q453",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’équivalent binaire du nombre décimal 10 ?",
     "choices": {
       "A": "1011",
@@ -7345,7 +7217,7 @@ const QCM = [
   },
   {
     "num": "Q454",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’exemple le plus couramment utilisé de CMS ?",
     "choices": {
       "A": "HTML",
@@ -7361,7 +7233,7 @@ const QCM = [
   },
   {
     "num": "Q455",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif d’un test de pénétration (pen test) ?",
     "choices": {
       "A": "Tester la vitesse de réseau d’un serveur",
@@ -7377,7 +7249,7 @@ const QCM = [
   },
   {
     "num": "Q456",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif d’une « table de hachage » dans les structures de données ?",
     "choices": {
       "A": "Gérer les relations entre les éléments d’une base de données",
@@ -7393,7 +7265,7 @@ const QCM = [
   },
   {
     "num": "Q457",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif d’une transaction en SQL ?",
     "choices": {
       "A": "Augmenter la vitesse de traitement des requêtes",
@@ -7409,7 +7281,7 @@ const QCM = [
   },
   {
     "num": "Q458",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de « Docker » dans le développement d’applications ?",
     "choices": {
       "A": "Créer des serveurs web pour héberger des applications",
@@ -7425,7 +7297,7 @@ const QCM = [
   },
   {
     "num": "Q459",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de l’algorithme de tri par sélection ?",
     "choices": {
       "A": "Organiser les éléments dans un ordre décroissant",
@@ -7441,7 +7313,7 @@ const QCM = [
   },
   {
     "num": "Q460",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de l’encapsulation en programmation orientée objet ?",
     "choices": {
       "A": "Masquer la complexité interne d’un objet et exposer uniquement ce qui est nécessaire",
@@ -7457,7 +7329,7 @@ const QCM = [
   },
   {
     "num": "Q461",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de la clause GROUP BY dans une requête SQL ?",
     "choices": {
       "A": "Trier les résultats d’une requête selon un ou plusieurs critères",
@@ -7473,7 +7345,7 @@ const QCM = [
   },
   {
     "num": "Q462",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l'objectif de la commande ALTER dans SQL ?",
     "choices": {
       "A": "Créer une nouvelle base de données",
@@ -7489,7 +7361,7 @@ const QCM = [
   },
   {
     "num": "Q463",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de la gestion des processus dans un système d’exploitation ?",
     "choices": {
       "A": "Optimiser l’utilisation des ressources mémoire",
@@ -7505,7 +7377,7 @@ const QCM = [
   },
   {
     "num": "Q464",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de la méthode main() en Java ?",
     "choices": {
       "A": "Exécuter le programme",
@@ -7521,7 +7393,7 @@ const QCM = [
   },
   {
     "num": "Q465",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif de la méthode public static void main(String[] args) en Java ?",
     "choices": {
       "A": "Exécuter le code de la classe à la demande",
@@ -7537,7 +7409,7 @@ const QCM = [
   },
   {
     "num": "Q466",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif du langage de programmation Python ?",
     "choices": {
       "A": "Créer des sites web dynamiques",
@@ -7553,7 +7425,7 @@ const QCM = [
   },
   {
     "num": "Q467",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif du Machine Learning ?",
     "choices": {
       "A": "Créer des applications mobiles",
@@ -7569,7 +7441,7 @@ const QCM = [
   },
   {
     "num": "Q468",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif du polymorphisme en programmation orientée objet ?",
     "choices": {
       "A": "Permettre à une même méthode de se comporter différemment selon l’objet appelant",
@@ -7585,7 +7457,7 @@ const QCM = [
   },
   {
     "num": "Q469",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif du protocole FTP (File Transfer Protocol) ?",
     "choices": {
       "A": "Compresser des fichiers pour les rendre plus légers",
@@ -7601,7 +7473,7 @@ const QCM = [
   },
   {
     "num": "Q470",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal d’un « algorithme » ?",
     "choices": {
       "A": "Identifier et corriger les erreurs dans le code",
@@ -7617,7 +7489,7 @@ const QCM = [
   },
   {
     "num": "Q471",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal d’un fichier Dockerfile ?",
     "choices": {
       "A": "Décrire l’ensemble des instructions pour créer une image Docker personnalisée.",
@@ -7633,7 +7505,7 @@ const QCM = [
   },
   {
     "num": "Q472",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal d’un système de détection d’intrusion (IDS) ?",
     "choices": {
       "A": "Bloquer les intrusions en temps réel",
@@ -7649,7 +7521,7 @@ const QCM = [
   },
   {
     "num": "Q473",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal d’une « réunion de rétrospective » dans la méthode Scrum ?",
     "choices": {
       "A": "Planifier les sprints futurs",
@@ -7665,7 +7537,7 @@ const QCM = [
   },
   {
     "num": "Q474",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal d’une interface homme-machine (IHM) ?",
     "choices": {
       "A": "Simplifier l’interaction entre l’utilisateur et la machine",
@@ -7681,7 +7553,7 @@ const QCM = [
   },
   {
     "num": "Q475",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de Apache Spark ?",
     "choices": {
       "A": "Effectuer des analyses en temps réel sur des petits volumes de données",
@@ -7697,7 +7569,7 @@ const QCM = [
   },
   {
     "num": "Q476",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de Joomla dans la création de sites web ?",
     "choices": {
       "A": "Créer des sites web dynamiques et interactifs sans avoir besoin de coder",
@@ -7713,7 +7585,7 @@ const QCM = [
   },
   {
     "num": "Q477",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de l’algorithme « Tri par insertion » ?",
     "choices": {
       "A": "Réorganiser les éléments d’un tableau en fonction de leur ordre alphabétique",
@@ -7729,7 +7601,7 @@ const QCM = [
   },
   {
     "num": "Q478",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de l’algorithme de « tri par fusion » (Merge Sort) ?",
     "choices": {
       "A": "Minimiser le nombre de comparaisons",
@@ -7745,7 +7617,7 @@ const QCM = [
   },
   {
     "num": "Q479",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de l’algorithme de tri « QuickSort » ?",
     "choices": {
       "A": "Optimiser les requêtes de bases de données",
@@ -7761,7 +7633,7 @@ const QCM = [
   },
   {
     "num": "Q480",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de l’analyse SWOT dans la gestion de projet ?",
     "choices": {
       "A": "Identifier les ressources nécessaires pour le projet",
@@ -7777,7 +7649,7 @@ const QCM = [
   },
   {
     "num": "Q481",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de l’intégration continue (CI) dans une approche DevOps ?",
     "choices": {
       "A": "Accélérer la vitesse de déploiement des applications en production.",
@@ -7793,7 +7665,7 @@ const QCM = [
   },
   {
     "num": "Q482",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de l’Internet des objets (IoT) ?",
     "choices": {
       "A": "Connecter les appareils entre eux pour qu’ils puissent échanger des données",
@@ -7809,7 +7681,7 @@ const QCM = [
   },
   {
     "num": "Q483",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de la méthode Kanban ?",
     "choices": {
       "A": "Organiser les tâches en cycles courts",
@@ -7825,7 +7697,7 @@ const QCM = [
   },
   {
     "num": "Q484",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de la méthode Kanban dans la gestion de projet ?",
     "choices": {
       "A": "Organiser des réunions quotidiennes pour suivre l’avancement",
@@ -7841,7 +7713,7 @@ const QCM = [
   },
   {
     "num": "Q485",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de la méthode Scrum dans la gestion de projet ?",
     "choices": {
       "A": "Déléguer toutes les décisions à un seul chef de projet",
@@ -7857,7 +7729,7 @@ const QCM = [
   },
   {
     "num": "Q486",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de la normalisation dans une base de données relationnelle ?",
     "choices": {
       "A": "Optimiser l’utilisation de la mémoire",
@@ -7873,7 +7745,7 @@ const QCM = [
   },
   {
     "num": "Q487",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal de la virtualisation dans l’informatique ?",
     "choices": {
       "A": "Accélérer le traitement des données sur un seul serveur",
@@ -7889,7 +7761,7 @@ const QCM = [
   },
   {
     "num": "Q488",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal des expressions régulières (regex) ?",
     "choices": {
       "A": "Rechercher et manipuler des chaînes de caractères selon des motifs spécifiques",
@@ -7905,7 +7777,7 @@ const QCM = [
   },
   {
     "num": "Q489",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal des réseaux neuronaux dans l’intelligence artificielle ?",
     "choices": {
       "A": "Augmenter la vitesse de calcul des processeurs",
@@ -7921,7 +7793,7 @@ const QCM = [
   },
   {
     "num": "Q490",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal des services de stockage en ligne comme Google Drive ou Dropbox ?",
     "choices": {
       "A": "Fournir une protection contre les attaques DDoS",
@@ -7937,7 +7809,7 @@ const QCM = [
   },
   {
     "num": "Q491",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal des systèmes de streaming dans le Big Data ?",
     "choices": {
       "A": "Analyser les données en temps réel",
@@ -7953,7 +7825,7 @@ const QCM = [
   },
   {
     "num": "Q492",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal du « cloud computing » ?",
     "choices": {
       "A": "Fournir des services antivirus en ligne",
@@ -7969,7 +7841,7 @@ const QCM = [
   },
   {
     "num": "Q493",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal du Big Data ?",
     "choices": {
       "A": "Collecter de grandes quantités de données pour analyser des tendances et prendre des décisions",
@@ -7985,7 +7857,7 @@ const QCM = [
   },
   {
     "num": "Q494",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objectif principal du chiffrement asymétrique ?",
     "choices": {
       "A": "Utiliser la même clé pour le chiffrement et le déchiffrement",
@@ -8001,7 +7873,7 @@ const QCM = [
   },
   {
     "num": "Q495",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’objet retourné par la fonction range(3) en Python ?",
     "choices": {
       "A": "Un objet de type list contenant les éléments [0, 1, 2]",
@@ -8017,7 +7889,7 @@ const QCM = [
   },
   {
     "num": "Q496",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’outil utilisé pour naviguer sur Internet ?",
     "choices": {
       "A": "Un antivirus",
@@ -8033,7 +7905,7 @@ const QCM = [
   },
   {
     "num": "Q497",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’un des meilleurs moyens de renforcer la sécurité des mots de passe ?",
     "choices": {
       "A": "Utiliser un mot de passe simple et facile à mémoriser",
@@ -8049,7 +7921,7 @@ const QCM = [
   },
   {
     "num": "Q498",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’un des principaux avantages de Joomla par rapport à WordPress ?",
     "choices": {
       "A": "Joomla est plus facile à utiliser pour les débutants",
@@ -8065,7 +7937,7 @@ const QCM = [
   },
   {
     "num": "Q499",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’un des principaux avantages de l’utilisation de Joomla en tant que CMS ?",
     "choices": {
       "A": "Il est entièrement basé sur l’IA",
@@ -8081,7 +7953,7 @@ const QCM = [
   },
   {
     "num": "Q500",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est l’usage principal de « Linux » ?",
     "choices": {
       "A": "Un navigateur web",
@@ -8097,7 +7969,7 @@ const QCM = [
   },
   {
     "num": "Q501",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but d’une attaque par « phishing » ?",
     "choices": {
       "A": "Casser un mot de passe",
@@ -8113,7 +7985,7 @@ const QCM = [
   },
   {
     "num": "Q502",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but de l’algorithme de hachage dans le stockage des mots de passe ?",
     "choices": {
       "A": "Crypter les mots de passe afin qu’ils soient illisibles",
@@ -8129,7 +8001,7 @@ const QCM = [
   },
   {
     "num": "Q503",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but de la commande git merge ?",
     "choices": {
       "A": "Créer une nouvelle branche",
@@ -8145,7 +8017,7 @@ const QCM = [
   },
   {
     "num": "Q504",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but de la méthode addEventListener() en JavaScript ?",
     "choices": {
       "A": "Ajouter un événement à un élément DOM",
@@ -8161,7 +8033,7 @@ const QCM = [
   },
   {
     "num": "Q505",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but principal d’un certificat SSL/TLS ?",
     "choices": {
       "A": "Protéger contre les attaques par déni de service",
@@ -8177,7 +8049,7 @@ const QCM = [
   },
   {
     "num": "Q506",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but principal d’un diagramme de Gantt dans la gestion de projet ?",
     "choices": {
       "A": "Visualiser les tâches du projet et leur progression dans le temps",
@@ -8193,7 +8065,7 @@ const QCM = [
   },
   {
     "num": "Q507",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but principal de l’algorithme SSL/TLS ?",
     "choices": {
       "A": "Crypter les mots de passe des utilisateurs",
@@ -8209,7 +8081,7 @@ const QCM = [
   },
   {
     "num": "Q508",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but principal de l’authentification multifactorielle (MFA) ?",
     "choices": {
       "A": "Crypter les données",
@@ -8225,7 +8097,7 @@ const QCM = [
   },
   {
     "num": "Q509",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but principal de la stéganographie en cybersécurité ?",
     "choices": {
       "A": "Chiffrer les données de manière à ce qu’elles soient illisibles",
@@ -8241,7 +8113,7 @@ const QCM = [
   },
   {
     "num": "Q510",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le but principal du « cryptage » des données ?",
     "choices": {
       "A": "Augmenter la vitesse des transmissions de données",
@@ -8257,7 +8129,7 @@ const QCM = [
   },
   {
     "num": "Q511",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le concept fondamental de la programmation fonctionnelle ?",
     "choices": {
       "A": "Modifier l’état de l’application à travers des fonctions",
@@ -8273,7 +8145,7 @@ const QCM = [
   },
   {
     "num": "Q512",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le concept qui permet de créer des objets à partir de classes dans la programmation orientée objet ?",
     "choices": {
       "A": "Encapsulation",
@@ -8289,7 +8161,7 @@ const QCM = [
   },
   {
     "num": "Q513",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le domaine principal de l’intelligence artificielle (IA) ?",
     "choices": {
       "A": "Développer des programmes pour gérer le matériel d’un ordinateur",
@@ -8305,7 +8177,7 @@ const QCM = [
   },
   {
     "num": "Q514",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le meilleur moyen de protéger les données de votre disque dur ?",
     "choices": {
       "A": "Backup",
@@ -8321,7 +8193,7 @@ const QCM = [
   },
   {
     "num": "Q515",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le modèle de déploiement du cloud qui combine à la fois des ressources locales et des ressources cloud publiques ?",
     "choices": {
       "A": "Cloud privé",
@@ -8337,7 +8209,7 @@ const QCM = [
   },
   {
     "num": "Q516",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le modèle de service cloud dans lequel l’utilisateur gère uniquement les applications et les données, tandis que le fournisseur gère le reste ?",
     "choices": {
       "A": "IaaS (Infrastructure as a Service)",
@@ -8353,7 +8225,7 @@ const QCM = [
   },
   {
     "num": "Q517",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le mot-clé utilisé en Java pour définir une classe ?",
     "choices": {
       "A": "function",
@@ -8369,7 +8241,7 @@ const QCM = [
   },
   {
     "num": "Q518",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le pire cas du tri par insertion en termes de complexité ?",
     "choices": {
       "A": "O(n)",
@@ -8385,7 +8257,7 @@ const QCM = [
   },
   {
     "num": "Q519",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage d’un réseau privé virtuel (VPN) ?",
     "choices": {
       "A": "Accélérer la vitesse de connexion internet",
@@ -8401,7 +8273,7 @@ const QCM = [
   },
   {
     "num": "Q520",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage de l’utilisation du Cloud Computing pour une entreprise ?",
     "choices": {
       "A": "La réduction des coûts d’infrastructure",
@@ -8417,7 +8289,7 @@ const QCM = [
   },
   {
     "num": "Q521",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage de la cryptographie asymétrique par rapport à la cryptographie symétrique ?",
     "choices": {
       "A": "Elle est plus rapide",
@@ -8433,7 +8305,7 @@ const QCM = [
   },
   {
     "num": "Q522",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage de la programmation orientée objet (POO) en Java ?",
     "choices": {
       "A": "Facilite la gestion des entrées/sorties",
@@ -8449,7 +8321,7 @@ const QCM = [
   },
   {
     "num": "Q523",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage de la technologie Blockchain ?",
     "choices": {
       "A": "Elle permet des transactions instantanées et sans frais",
@@ -8465,7 +8337,7 @@ const QCM = [
   },
   {
     "num": "Q524",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage de la virtualisation des machines ?",
     "choices": {
       "A": "Diminuer la capacité de stockage",
@@ -8481,7 +8353,7 @@ const QCM = [
   },
   {
     "num": "Q525",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage des disques SSD par rapport aux disques HDD ?",
     "choices": {
       "A": "Les SSD ont une capacité de stockage plus grande",
@@ -8497,7 +8369,7 @@ const QCM = [
   },
   {
     "num": "Q526",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage des réseaux sans fil (Wi-Fi) par rapport aux réseaux câblés ?",
     "choices": {
       "A": "Ils offrent des vitesses de connexion plus rapides",
@@ -8513,7 +8385,7 @@ const QCM = [
   },
   {
     "num": "Q527",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal avantage du cloud public par rapport au cloud privé ?",
     "choices": {
       "A": "Il est plus sécurisé",
@@ -8529,7 +8401,7 @@ const QCM = [
   },
   {
     "num": "Q528",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal composant de Hadoop qui permet de stocker de grandes quantités de données sur plusieurs nœuds d’un cluster ?",
     "choices": {
       "A": "HBase",
@@ -8545,7 +8417,7 @@ const QCM = [
   },
   {
     "num": "Q529",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal inconvénient du chiffrement symétrique ?",
     "choices": {
       "A": "La clé utilisée pour chiffrer et déchiffrer les données est partagée entre l’expéditeur et le destinataire",
@@ -8561,7 +8433,7 @@ const QCM = [
   },
   {
     "num": "Q530",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal objectif d’un réseau de neurones artificiels ?",
     "choices": {
       "A": "Apprendre des modèles prédictifs à partir de données d’entrée",
@@ -8577,7 +8449,7 @@ const QCM = [
   },
   {
     "num": "Q531",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal objectif d’une attaque de type « phishing » ?",
     "choices": {
       "A": "Créer un virus pour infecter un système",
@@ -8593,7 +8465,7 @@ const QCM = [
   },
   {
     "num": "Q532",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal objectif d’une attaque par « ransomware » ?",
     "choices": {
       "A": "Voler des informations sensibles",
@@ -8609,7 +8481,7 @@ const QCM = [
   },
   {
     "num": "Q533",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal objectif de la méthode Lean dans la gestion de projet ?",
     "choices": {
       "A": "Augmenter le temps de développement",
@@ -8625,7 +8497,7 @@ const QCM = [
   },
   {
     "num": "Q534",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principal objectif du polymorphisme en programmation orientée objet ?",
     "choices": {
       "A": "Permettre à une classe de partager des méthodes et des propriétés avec d’autres classes",
@@ -8641,7 +8513,7 @@ const QCM = [
   },
   {
     "num": "Q535",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principe de l’authentification multifactorielle (MFA) ?",
     "choices": {
       "A": "Utiliser un seul mot de passe complexe pour l’authentification",
@@ -8657,7 +8529,7 @@ const QCM = [
   },
   {
     "num": "Q536",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le principe de la cryptographie symétrique ?",
     "choices": {
       "A": "Utiliser une clé privée pour chiffrer les données et une clé publique pour les déchiffrer",
@@ -8673,7 +8545,7 @@ const QCM = [
   },
   {
     "num": "Q537",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le problème associé au surapprentissage (overfitting) dans le Machine Learning ?",
     "choices": {
       "A": "Le modèle est trop simple et sous-performe sur les nouvelles données",
@@ -8689,7 +8561,7 @@ const QCM = [
   },
   {
     "num": "Q538",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le résultat de l’exécution du code suivant en JavaScript ?",
     "choices": {
       "C": "NaN",
@@ -8703,7 +8575,7 @@ const QCM = [
   },
   {
     "num": "Q539",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le résultat de l’exécution du code suivant en langage C ?",
     "choices": {
       "C": "x > y",
@@ -8717,7 +8589,7 @@ const QCM = [
   },
   {
     "num": "Q540",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le résultat de l’exécution du code suivant en Python ?",
     "choices": {
       "A": "Pyt",
@@ -8731,7 +8603,7 @@ const QCM = [
   },
   {
     "num": "Q541",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le résultat de l’expression suivante en C: sizeof(char) ?",
     "choices": {
       "D": "Dépend de la machine"
@@ -8744,7 +8616,7 @@ const QCM = [
   },
   {
     "num": "Q542",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le résultat de l’expression typeof \"hello\" en JavaScript ?",
     "choices": {
       "A": "string",
@@ -8760,7 +8632,7 @@ const QCM = [
   },
   {
     "num": "Q543",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le résultat du code suivant en JavaScript ?",
     "choices": {
       "A": "true",
@@ -8776,7 +8648,7 @@ const QCM = [
   },
   {
     "num": "Q544",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « compresseur de fichiers » ?",
     "choices": {
       "A": "Protéger les fichiers contre les virus",
@@ -8792,7 +8664,7 @@ const QCM = [
   },
   {
     "num": "Q545",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « Comutateur » (Switch) dans un réseau local ?",
     "choices": {
       "A": "Fournir une connexion Internet sans fil",
@@ -8808,7 +8680,7 @@ const QCM = [
   },
   {
     "num": "Q546",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « Daemon » dans un système Unix/Linux ?",
     "choices": {
       "A": "Fournir une interface graphique à l’utilisateur",
@@ -8824,7 +8696,7 @@ const QCM = [
   },
   {
     "num": "Q547",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « dépôt Git » ?",
     "choices": {
       "A": "Un serveur de stockage des fichiers systèmes",
@@ -8840,7 +8712,7 @@ const QCM = [
   },
   {
     "num": "Q548",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « gestionnaire de tâches » dans un système d’exploitation ?",
     "choices": {
       "A": "Gérer les périphériques connectés à l’ordinateur",
@@ -8856,7 +8728,7 @@ const QCM = [
   },
   {
     "num": "Q549",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « Hub » dans un réseau local ?",
     "choices": {
       "A": "Filtrer les paquets réseau",
@@ -8872,7 +8744,7 @@ const QCM = [
   },
   {
     "num": "Q550",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « port » dans les communications réseau ?",
     "choices": {
       "A": "Un type de câble utilisé pour connecter des ordinateurs entre eux",
@@ -8888,7 +8760,7 @@ const QCM = [
   },
   {
     "num": "Q551",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « processus parent » dans un système d’exploitation ?",
     "choices": {
       "A": "Il est responsable de l’exécution d’un autre processus",
@@ -8904,7 +8776,7 @@ const QCM = [
   },
   {
     "num": "Q552",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « protocole HTTP » ?",
     "choices": {
       "A": "Assurer la communication sécurisée entre un client et un serveur web",
@@ -8919,7 +8791,7 @@ const QCM = [
   },
   {
     "num": "Q553",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « routeur » dans un réseau informatique ?",
     "choices": {
       "A": "Convertir les signaux analogiques en numériques",
@@ -8935,7 +8807,7 @@ const QCM = [
   },
   {
     "num": "Q554",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un « Scheduler » (planificateur) dans un système d’exploitation ?",
     "choices": {
       "A": "Crypter les données des utilisateurs",
@@ -8951,7 +8823,7 @@ const QCM = [
   },
   {
     "num": "Q555",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un chef de projet agile ?",
     "choices": {
       "A": "Développer le code des applications",
@@ -8967,7 +8839,7 @@ const QCM = [
   },
   {
     "num": "Q556",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’un système de fichiers dans un ordinateur ?",
     "choices": {
       "A": "Contrôler les périphériques externes",
@@ -8983,7 +8855,7 @@ const QCM = [
   },
   {
     "num": "Q557",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle d’une « transaction » dans une base de données ?",
     "choices": {
       "A": "Sauvegarder les données",
@@ -8999,7 +8871,7 @@ const QCM = [
   },
   {
     "num": "Q558",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de « DNS » (Domain Name System) ?",
     "choices": {
       "A": "Stocker des fichiers à distance",
@@ -9015,7 +8887,7 @@ const QCM = [
   },
   {
     "num": "Q559",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de l’attribut alt dans la balise <img> en HTML ?",
     "choices": {
       "A": "Il définit le titre de l’image",
@@ -9031,7 +8903,7 @@ const QCM = [
   },
   {
     "num": "Q560",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de l’opérateur * en C ?",
     "choices": {
       "A": "Déclaration d’un tableau",
@@ -9047,7 +8919,7 @@ const QCM = [
   },
   {
     "num": "Q561",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de l’opérateur & en langage C ?",
     "choices": {
       "A": "Il permet d’additionner deux valeurs",
@@ -9063,7 +8935,7 @@ const QCM = [
   },
   {
     "num": "Q562",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la « carte graphique » dans un ordinateur ?",
     "choices": {
       "A": "Gérer les connexions réseau",
@@ -9079,7 +8951,7 @@ const QCM = [
   },
   {
     "num": "Q563",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la « pile » (stack) en gestion de la mémoire ?",
     "choices": {
       "A": "Stocker les données de manière permanente",
@@ -9095,7 +8967,7 @@ const QCM = [
   },
   {
     "num": "Q564",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la balise <form> en HTML ?",
     "choices": {
       "A": "Afficher un formulaire de contact",
@@ -9111,7 +8983,7 @@ const QCM = [
   },
   {
     "num": "Q565",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la carte mère d’un ordinateur ?",
     "choices": {
       "A": "Gérer la mémoire de l’ordinateur",
@@ -9127,7 +8999,7 @@ const QCM = [
   },
   {
     "num": "Q566",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la commande mv sous Linux ?",
     "choices": {
       "A": "Déplacer ou renommer un fichier",
@@ -9143,7 +9015,7 @@ const QCM = [
   },
   {
     "num": "Q567",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la cryptographie dans la sécurité informatique ?",
     "choices": {
       "A": "Empêcher les attaques par déni de service",
@@ -9159,7 +9031,7 @@ const QCM = [
   },
   {
     "num": "Q568",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la fonction scanf() en C ?",
     "choices": {
       "A": "Afficher des données à l’écran",
@@ -9175,7 +9047,7 @@ const QCM = [
   },
   {
     "num": "Q569",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la mémoire cache dans un processeur ?",
     "choices": {
       "A": "Stocker de manière permanente les données",
@@ -9191,7 +9063,7 @@ const QCM = [
   },
   {
     "num": "Q570",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la mémoire cache dans un système informatique ?",
     "choices": {
       "A": "Stocker des fichiers volumineux à long terme",
@@ -9207,7 +9079,7 @@ const QCM = [
   },
   {
     "num": "Q571",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la mémoire cache de niveau 2 (L2) dans un processeur ?",
     "choices": {
       "A": "Stocker les instructions du programme en cours d’exécution",
@@ -9223,7 +9095,7 @@ const QCM = [
   },
   {
     "num": "Q572",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de la méthode addEventListener() en JavaScript ?",
     "choices": {
       "A": "Ajouter un élément à une liste",
@@ -9238,7 +9110,7 @@ const QCM = [
   },
   {
     "num": "Q573",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle de MapReduce dans le traitement des données avec Hadoop ?",
     "choices": {
       "A": "Diviser les données en petites unités et les traiter en parallèle",
@@ -9254,7 +9126,7 @@ const QCM = [
   },
   {
     "num": "Q574",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle des arbres de décision dans le machine learning ?",
     "choices": {
       "A": "Regrouper les données similaires",
@@ -9270,7 +9142,7 @@ const QCM = [
   },
   {
     "num": "Q575",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle des réseaux de neurones dans le machine learning ?",
     "choices": {
       "A": "Classer les données en groupes distincts",
@@ -9286,7 +9158,7 @@ const QCM = [
   },
   {
     "num": "Q576",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle des volumes dans Docker ?",
     "choices": {
       "A": "Ils permettent de stocker des données de manière persistante, même après la suppression d’un conteneur.",
@@ -9302,7 +9174,7 @@ const QCM = [
   },
   {
     "num": "Q577",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du « protocole HTTPS » ?",
     "choices": {
       "A": "Permet de crypter les emails envoyés",
@@ -9318,7 +9190,7 @@ const QCM = [
   },
   {
     "num": "Q578",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du « Protocole TCP/IP » ?",
     "choices": {
       "A": "Permet de gérer la transmission des vidéos en streaming",
@@ -9334,7 +9206,7 @@ const QCM = [
   },
   {
     "num": "Q579",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du « shell » dans un système d’exploitation ?",
     "choices": {
       "A": "Exécuter des applications graphiques",
@@ -9350,7 +9222,7 @@ const QCM = [
   },
   {
     "num": "Q580",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du bus dans l’architecture d’un ordinateur ?",
     "choices": {
       "A": "Effectuer des calculs mathématiques",
@@ -9366,7 +9238,7 @@ const QCM = [
   },
   {
     "num": "Q581",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du disque dur (HDD) dans un ordinateur ?",
     "choices": {
       "A": "Exécuter des programmes",
@@ -9382,7 +9254,7 @@ const QCM = [
   },
   {
     "num": "Q582",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du MapReduce dans le cadre de Hadoop ?",
     "choices": {
       "A": "Il permet de stocker les données de manière distribuée",
@@ -9398,7 +9270,7 @@ const QCM = [
   },
   {
     "num": "Q583",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du mot-clé #include dans un programme C ?",
     "choices": {
       "A": "Déclarer une fonction",
@@ -9414,7 +9286,7 @@ const QCM = [
   },
   {
     "num": "Q584",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du mot-clé static en Java ?",
     "choices": {
       "A": "Il définit une variable qui peut être modifiée par tous les objets d’une classe",
@@ -9430,7 +9302,7 @@ const QCM = [
   },
   {
     "num": "Q585",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du mot-clé this en Java ?",
     "choices": {
       "A": "Il désigne une variable locale",
@@ -9446,7 +9318,7 @@ const QCM = [
   },
   {
     "num": "Q586",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du NAT (Network Address Translation) dans un réseau informatique ?",
     "choices": {
       "A": "Permettre la communication entre différents protocoles",
@@ -9462,7 +9334,7 @@ const QCM = [
   },
   {
     "num": "Q587",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du protocole ARP (Address Resolution Protocol) dans un réseau informatique ?",
     "choices": {
       "A": "Résoudre les noms de domaine en adresses IP",
@@ -9478,7 +9350,7 @@ const QCM = [
   },
   {
     "num": "Q588",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du protocole DHCP (Dynamic Host Configuration Protocol) ?",
     "choices": {
       "A": "Assigner des adresses IP dynamiques aux appareils sur un réseau",
@@ -9494,7 +9366,7 @@ const QCM = [
   },
   {
     "num": "Q589",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du protocole SSL/TLS dans les communications sur Internet ?",
     "choices": {
       "A": "Créer un tunnel privé et sécurisé",
@@ -9510,7 +9382,7 @@ const QCM = [
   },
   {
     "num": "Q590",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle du protocole TCP dans le modèle TCP/IP ?",
     "choices": {
       "A": "Assurer la sécurité des données",
@@ -9526,7 +9398,7 @@ const QCM = [
   },
   {
     "num": "Q591",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’Apache Kafka dans l’architecture des systèmes de Big Data ?",
     "choices": {
       "A": "Fournir un moteur de traitement parallèle pour des données en temps réel",
@@ -9542,7 +9414,7 @@ const QCM = [
   },
   {
     "num": "Q592",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’un « modem » ?",
     "choices": {
       "A": "Stocker des données",
@@ -9558,7 +9430,7 @@ const QCM = [
   },
   {
     "num": "Q593",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’un « serveur » dans un réseau informatique ?",
     "choices": {
       "A": "Permettre la communication entre deux ordinateurs",
@@ -9574,7 +9446,7 @@ const QCM = [
   },
   {
     "num": "Q594",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’un certificat SSL ?",
     "choices": {
       "A": "Authentifier un utilisateur lors de sa connexion",
@@ -9590,7 +9462,7 @@ const QCM = [
   },
   {
     "num": "Q595",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’un certificat SSL dans une communication réseau ?",
     "choices": {
       "A": "Crypter les données échangées entre le client et le serveur",
@@ -9606,7 +9478,7 @@ const QCM = [
   },
   {
     "num": "Q596",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’un pare-feu informatique ?",
     "choices": {
       "A": "Crypter les données échangées entre les ordinateurs",
@@ -9622,7 +9494,7 @@ const QCM = [
   },
   {
     "num": "Q597",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal d’un protocole de communication réseau ?",
     "choices": {
       "A": "Garantir la sécurité des données",
@@ -9638,7 +9510,7 @@ const QCM = [
   },
   {
     "num": "Q598",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal de Hadoop dans l’écosystème Big Data ?",
     "choices": {
       "A": "Optimiser les bases de données relationnelles",
@@ -9654,7 +9526,7 @@ const QCM = [
   },
   {
     "num": "Q599",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal de HDFS dans l’écosystème Big Data ?",
     "choices": {
       "A": "Stocker des données sous forme structurée",
@@ -9670,7 +9542,7 @@ const QCM = [
   },
   {
     "num": "Q600",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal de l’algorithme de « Chiffrement » ?",
     "choices": {
       "A": "Assurer l’intégrité des données échangées",
@@ -9686,7 +9558,7 @@ const QCM = [
   },
   {
     "num": "Q601",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal de l’ALU (Unité Arithmétique et Logique) dans un processeur ?",
     "choices": {
       "A": "Gérer les interruptions",
@@ -9702,7 +9574,7 @@ const QCM = [
   },
   {
     "num": "Q602",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal de la balise <meta> dans un document HTML ?",
     "choices": {
       "A": "Ajouter un lien vers une feuille de style",
@@ -9718,7 +9590,7 @@ const QCM = [
   },
   {
     "num": "Q603",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du « Gestionnaire de mémoire » dans un système d’exploitation ?",
     "choices": {
       "A": "Gérer les connexions réseau des utilisateurs",
@@ -9734,7 +9606,7 @@ const QCM = [
   },
   {
     "num": "Q604",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du CSS dans le développement web ?",
     "choices": {
       "A": "Créer des bases de données",
@@ -9750,7 +9622,7 @@ const QCM = [
   },
   {
     "num": "Q605",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du fichier .htaccess dans un serveur web Apache ?",
     "choices": {
       "A": "Gérer la configuration du serveur et les règles de redirection",
@@ -9766,7 +9638,7 @@ const QCM = [
   },
   {
     "num": "Q606",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du fichier index.html dans une application web ?",
     "choices": {
       "A": "Définir les styles CSS de la page",
@@ -9782,7 +9654,7 @@ const QCM = [
   },
   {
     "num": "Q607",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du fichier robots.txt sur un site web ?",
     "choices": {
       "A": "Il définit les styles CSS du site",
@@ -9798,7 +9670,7 @@ const QCM = [
   },
   {
     "num": "Q608",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du framework Hadoop dans le traitement des Big Data ?",
     "choices": {
       "A": "Fournir un stockage distribué pour de grandes quantités de données",
@@ -9814,7 +9686,7 @@ const QCM = [
   },
   {
     "num": "Q609",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du langage CSS dans le développement web ?",
     "choices": {
       "A": "Structurer le contenu de la page",
@@ -9830,7 +9702,7 @@ const QCM = [
   },
   {
     "num": "Q610",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le rôle principal du protocole HTTP dans les communications réseau ?",
     "choices": {
       "A": "Chiffrer les données envoyées sur Internet",
@@ -9846,7 +9718,7 @@ const QCM = [
   },
   {
     "num": "Q611",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le système de numération utilisé par les ordinateurs pour représenter les données ?",
     "choices": {
       "A": "Système décimal",
@@ -9862,7 +9734,7 @@ const QCM = [
   },
   {
     "num": "Q612",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le temps de complexité de l’algorithme de recherche binaire dans un tableau trié ?",
     "choices": {
       "A": "O(n)",
@@ -9878,7 +9750,7 @@ const QCM = [
   },
   {
     "num": "Q613",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le terme pour demander à l’ordinateur de classer les informations par ordre numérique ou alphabétique ?",
     "choices": {
       "A": "Sort",
@@ -9894,7 +9766,7 @@ const QCM = [
   },
   {
     "num": "Q614",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le type de données d’une variable qui a pour valeur null en JavaScript ?",
     "choices": {
       "A": "undefined",
@@ -9910,7 +9782,7 @@ const QCM = [
   },
   {
     "num": "Q615",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le type de données retourné par la fonction type() en Python ?",
     "choices": {
       "A": "Le nom de la fonction appelée",
@@ -9926,7 +9798,7 @@ const QCM = [
   },
   {
     "num": "Q616",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est le type de données utilisé en Java pour représenter un caractère unique ?",
     "choices": {
       "A": "String",
@@ -9942,7 +9814,7 @@ const QCM = [
   },
   {
     "num": "Q617",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel est un exemple de service de Cloud Computing de type PaaS ?",
     "choices": {
       "A": "Amazon EC2",
@@ -9958,7 +9830,7 @@ const QCM = [
   },
   {
     "num": "Q618",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel était l’un des premiers ordinateurs mainframe ?",
     "choices": {
       "A": "UNIC",
@@ -9974,7 +9846,7 @@ const QCM = [
   },
   {
     "num": "Q619",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage de programmation est couramment utilisé pour développer des applications Android ?",
     "choices": {
       "A": "Swift",
@@ -9990,7 +9862,7 @@ const QCM = [
   },
   {
     "num": "Q620",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage de programmation est principalement utilisé pour le développement d’applications iOS ?",
     "choices": {
       "A": "Java",
@@ -10006,7 +9878,7 @@ const QCM = [
   },
   {
     "num": "Q621",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage de programmation serait le plus adapté pour créer un jeu vidéo interactif en 3D ?",
     "choices": {
       "A": "Python",
@@ -10022,7 +9894,7 @@ const QCM = [
   },
   {
     "num": "Q622",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage est principalement utilisé pour développer des applications Android ?",
     "choices": {
       "A": "Swift",
@@ -10037,7 +9909,7 @@ const QCM = [
   },
   {
     "num": "Q623",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage est principalement utilisé pour la programmation côté client dans les pages web ?",
     "choices": {
       "A": "Python",
@@ -10053,7 +9925,7 @@ const QCM = [
   },
   {
     "num": "Q624",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage est utilisé pour ajouter de l’interactivité sur les pages web ?",
     "choices": {
       "A": "HTML",
@@ -10069,7 +9941,7 @@ const QCM = [
   },
   {
     "num": "Q625",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage est utilisé pour interagir avec une base de données relationnelle ?",
     "choices": {
       "A": "Java",
@@ -10085,7 +9957,7 @@ const QCM = [
   },
   {
     "num": "Q626",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel langage est utilisé pour structurer le contenu d’une page web ?",
     "choices": {
       "A": "CSS",
@@ -10101,7 +9973,7 @@ const QCM = [
   },
   {
     "num": "Q627",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel logiciel permet de créer des machines virtuelles sur un ordinateur physique ?",
     "choices": {
       "A": "Microsoft Word",
@@ -10117,7 +9989,7 @@ const QCM = [
   },
   {
     "num": "Q628",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel mécanisme est couramment utilisé pour authentifier un utilisateur sur un site web ?",
     "choices": {
       "A": "Mot de passe et nom d’utilisateur",
@@ -10133,7 +10005,7 @@ const QCM = [
   },
   {
     "num": "Q629",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel modèle de Cloud Computing fournit des ressources matérielles telles que des serveurs et du stockage en fonction de la demande, mais sans gestion directe de l’utilisateur ?",
     "choices": {
       "A": "SaaS (Software as a Service)",
@@ -10149,7 +10021,7 @@ const QCM = [
   },
   {
     "num": "Q630",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel modèle de Cloud Computing permet aux utilisateurs de louer des ressources matérielles telles que des serveurs et du stockage, tout en ayant la liberté d’installer et de gérer leurs propres logiciels ?",
     "choices": {
       "A": "SaaS (Software as a Service)",
@@ -10165,7 +10037,7 @@ const QCM = [
   },
   {
     "num": "Q631",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel modèle de cloud computing permet aux utilisateurs de louer uniquement les logiciels nécessaires à leurs tâches ?",
     "choices": {
       "A": "IaaS",
@@ -10181,7 +10053,7 @@ const QCM = [
   },
   {
     "num": "Q632",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel modèle de cloud est utilisé lorsque les ressources informatiques sont partagées entre plusieurs organisations ?",
     "choices": {
       "A": "Cloud privé",
@@ -10197,7 +10069,7 @@ const QCM = [
   },
   {
     "num": "Q633",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel modèle de service cloud permet aux utilisateurs de louer des ressources matérielles comme des serveurs ou du stockage ?",
     "choices": {
       "A": "IaaS (Infrastructure as a Service)",
@@ -10213,7 +10085,7 @@ const QCM = [
   },
   {
     "num": "Q634",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel mot-clé est utilisé en Python pour définir une fonction ?",
     "choices": {
       "A": "func",
@@ -10229,7 +10101,7 @@ const QCM = [
   },
   {
     "num": "Q635",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel outil de gestion de projet est principalement utilisé pour établir un calendrier de projet et attribuer des tâches à différents membres de l’équipe ?",
     "choices": {
       "A": "SWOT",
@@ -10245,7 +10117,7 @@ const QCM = [
   },
   {
     "num": "Q636",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel outil est principalement utilisé pour stocker et traiter de grandes quantités de données dans un environnement Big Data ?",
     "choices": {
       "A": "SQL Server",
@@ -10261,7 +10133,7 @@ const QCM = [
   },
   {
     "num": "Q637",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel outil est souvent utilisé pour suivre l’avancement des tâches dans un projet Agile ?",
     "choices": {
       "A": "Diagramme de Gantt",
@@ -10277,7 +10149,7 @@ const QCM = [
   },
   {
     "num": "Q638",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel principe de la programmation orientée objet (POO) permet de cacher les détails d’implémentation et d’exposer uniquement les fonctionnalités essentielles ?",
     "choices": {
       "A": "Abstraction",
@@ -10293,7 +10165,7 @@ const QCM = [
   },
   {
     "num": "Q639",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole de routage utilise l’algorithme de distance-vector pour déterminer les meilleures routes dans un réseau ?",
     "choices": {
       "A": "OSPF",
@@ -10309,7 +10181,7 @@ const QCM = [
   },
   {
     "num": "Q640",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole est principalement utilisé pour la communication dans un réseau local (LAN) ?",
     "choices": {
       "A": "HTTP",
@@ -10325,7 +10197,7 @@ const QCM = [
   },
   {
     "num": "Q641",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole est utilisé pour envoyer des emails ?",
     "choices": {
       "A": "FTP",
@@ -10341,7 +10213,7 @@ const QCM = [
   },
   {
     "num": "Q642",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole est utilisé pour garantir une transmission fiable des données dans un réseau ?",
     "choices": {
       "A": "HTTP",
@@ -10357,7 +10229,7 @@ const QCM = [
   },
   {
     "num": "Q643",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole est utilisé pour la communication entre le client et le serveur dans les applications web modernes ?",
     "choices": {
       "A": "SMTP",
@@ -10373,7 +10245,7 @@ const QCM = [
   },
   {
     "num": "Q644",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole est utilisé pour sécuriser les connexions sur Internet ?",
     "choices": {
       "A": "HTTP",
@@ -10389,7 +10261,7 @@ const QCM = [
   },
   {
     "num": "Q645",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole est utilisé pour transférer des fichiers sur Internet ?",
     "choices": {
       "A": "FTP",
@@ -10405,7 +10277,7 @@ const QCM = [
   },
   {
     "num": "Q646",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole fournit un service de messagerie entre différents hôtes?",
     "choices": {
       "A": "FTP",
@@ -10421,7 +10293,7 @@ const QCM = [
   },
   {
     "num": "Q647",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole permet d’envoyer du courrier électronique ?",
     "choices": {
       "A": "Gmail",
@@ -10437,7 +10309,7 @@ const QCM = [
   },
   {
     "num": "Q648",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel protocole réseau est utilisé pour envoyer un courrier électronique?",
     "choices": {
       "A": "FTP",
@@ -10453,7 +10325,7 @@ const QCM = [
   },
   {
     "num": "Q649",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel serveur web est le plus utilisé pour héberger des sites web dynamiques en PHP ?",
     "choices": {
       "A": "Apache",
@@ -10469,7 +10341,7 @@ const QCM = [
   },
   {
     "num": "Q650",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel service cloud est principalement utilisé pour stocker et récupérer des données sous forme de fichiers ?",
     "choices": {
       "A": "IaaS",
@@ -10485,7 +10357,7 @@ const QCM = [
   },
   {
     "num": "Q651",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel service Cloud permet de gérer et de stocker des bases de données ?",
     "choices": {
       "A": "IaaS",
@@ -10501,7 +10373,7 @@ const QCM = [
   },
   {
     "num": "Q652",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel service cloud permet de stocker des fichiers en ligne et d’y accéder depuis n’importe quel appareil connecté à Internet ?",
     "choices": {
       "A": "IaaS",
@@ -10517,7 +10389,7 @@ const QCM = [
   },
   {
     "num": "Q653",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel service de Cloud permet de stocker et de gérer des bases de données relationnelles dans le cloud ?",
     "choices": {
       "A": "Amazon S3",
@@ -10533,7 +10405,7 @@ const QCM = [
   },
   {
     "num": "Q654",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel système d’exploitation est un logiciel libre et basé sur le noyau Linux ?",
     "choices": {
       "A": "Windows",
@@ -10549,7 +10421,7 @@ const QCM = [
   },
   {
     "num": "Q655",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel système de fichiers est principalement utilisé sous Linux ?",
     "choices": {
       "A": "NTFS",
@@ -10565,7 +10437,7 @@ const QCM = [
   },
   {
     "num": "Q656",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel système de gestion de versions décentralisé est largement utilisé dans le développement logiciel ?",
     "choices": {
       "A": "CVS",
@@ -10581,7 +10453,7 @@ const QCM = [
   },
   {
     "num": "Q657",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type d’algorithme est principalement utilisé pour prédire une valeur numérique continue dans un problème de machine learning ?",
     "choices": {
       "A": "Régression",
@@ -10597,7 +10469,7 @@ const QCM = [
   },
   {
     "num": "Q658",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type d’attaque consiste à envoyer un grand nombre de requêtes à un serveur pour le rendre inaccessibile ?",
     "choices": {
       "A": "Phishing",
@@ -10613,7 +10485,7 @@ const QCM = [
   },
   {
     "num": "Q659",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type d’attaque consiste à envoyer un grand nombre de requêtes simultanées à un serveur pour le surcharger ?",
     "choices": {
       "A": "Phishing",
@@ -10629,7 +10501,7 @@ const QCM = [
   },
   {
     "num": "Q660",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type d’attaque informatique consiste à intercepter et manipuler les communications entre deux parties sans leur consentement ?",
     "choices": {
       "A": "Phishing",
@@ -10645,7 +10517,7 @@ const QCM = [
   },
   {
     "num": "Q661",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type d’attaque informatique consiste à saturer un serveur avec des requêtes pour le rendre indisponible ?",
     "choices": {
       "A": "Phishing",
@@ -10661,7 +10533,7 @@ const QCM = [
   },
   {
     "num": "Q662",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type d’attaque utilise des milliers d’ordinateurs infectés pour saturer un serveur avec des requêtes ?",
     "choices": {
       "A": "Phishing",
@@ -10677,7 +10549,7 @@ const QCM = [
   },
   {
     "num": "Q663",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de base de données est conçu pour gérer de grandes quantités de données non structurées ?",
     "choices": {
       "A": "Relationnelle",
@@ -10693,7 +10565,7 @@ const QCM = [
   },
   {
     "num": "Q664",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de chiffrement est utilisé pour sécuriser les communications sur le protocole HTTPS ?",
     "choices": {
       "A": "RSA",
@@ -10709,7 +10581,7 @@ const QCM = [
   },
   {
     "num": "Q665",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de clé est généralement utilisée pour relier deux tables dans une base de données relationnelle ?",
     "choices": {
       "A": "Clé primaire",
@@ -10725,7 +10597,7 @@ const QCM = [
   },
   {
     "num": "Q666",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de clé est utilisée pour garantir l’unicité de chaque ligne dans une table de base de données relationnelle ?",
     "choices": {
       "A": "Clé étrangère",
@@ -10741,7 +10613,7 @@ const QCM = [
   },
   {
     "num": "Q667",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de connecteur est utilisé pour brancher une ligne téléphonique sur un modem ?",
     "choices": {
       "A": "COM1",
@@ -10757,7 +10629,7 @@ const QCM = [
   },
   {
     "num": "Q668",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de cryptage est utilisé pour sécuriser les communications HTTPS ?",
     "choices": {
       "A": "Cryptage symétrique",
@@ -10773,7 +10645,7 @@ const QCM = [
   },
   {
     "num": "Q669",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de cryptage est utilisé pour sécuriser les mots de passe stockés dans une base de données ?",
     "choices": {
       "A": "Cryptage symétrique",
@@ -10789,7 +10661,7 @@ const QCM = [
   },
   {
     "num": "Q670",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de CSS est utilisé pour appliquer des styles directement dans le fichier HTML ?",
     "choices": {
       "A": "CSS interne",
@@ -10805,7 +10677,7 @@ const QCM = [
   },
   {
     "num": "Q671",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de données est utilisé pour représenter un nombre à virgule flottante en langage C ?",
     "choices": {
       "A": "char",
@@ -10821,7 +10693,7 @@ const QCM = [
   },
   {
     "num": "Q672",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de données est utilisé pour représenter une valeur numérique entière en langage C ?",
     "choices": {
       "A": "float",
@@ -10837,7 +10709,7 @@ const QCM = [
   },
   {
     "num": "Q673",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de données pouvez-vous envoyer par e-mail ?",
     "choices": {
       "A": "Audio",
@@ -10852,7 +10724,7 @@ const QCM = [
   },
   {
     "num": "Q674",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de données représente int en Java ?",
     "choices": {
       "A": "Une chaîne de caractères",
@@ -10868,7 +10740,7 @@ const QCM = [
   },
   {
     "num": "Q675",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de fichier est utilisé par un système de gestion de base de données relationnelle (SGBDR) pour stocker les données ?",
     "choices": {
       "A": "Fichier texte",
@@ -10884,7 +10756,7 @@ const QCM = [
   },
   {
     "num": "Q676",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de fichier est utilisé pour les styles CSS ?",
     "choices": {
       "A": ".js",
@@ -10900,7 +10772,7 @@ const QCM = [
   },
   {
     "num": "Q677",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de jointure permet de récupérer les enregistrements de deux tables même si certaines valeurs n’ont pas de correspondance dans l’autre table ?",
     "choices": {
       "A": "Jointure interne (INNER JOIN)",
@@ -10916,7 +10788,7 @@ const QCM = [
   },
   {
     "num": "Q678",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de jointure permet de retourner toutes les lignes de la première table, ainsi que celles qui correspondent de la deuxième table dans une base de données SQL ?",
     "choices": {
       "A": "INNER JOIN",
@@ -10932,7 +10804,7 @@ const QCM = [
   },
   {
     "num": "Q679",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de langage est Python ?",
     "choices": {
       "A": "Langage compilé",
@@ -10948,7 +10820,7 @@ const QCM = [
   },
   {
     "num": "Q680",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de logiciel est le système d’exploitation ?",
     "choices": {
       "A": "Logiciel système",
@@ -10964,7 +10836,7 @@ const QCM = [
   },
   {
     "num": "Q681",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de logiciel est principalement utilisé pour manipuler des images ?",
     "choices": {
       "A": "Logiciel de traitement de texte",
@@ -10980,7 +10852,7 @@ const QCM = [
   },
   {
     "num": "Q682",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de malware est conçu pour se propager d’un ordinateur à un autre sans interaction humaine ?",
     "choices": {
       "A": "Virus",
@@ -10996,7 +10868,7 @@ const QCM = [
   },
   {
     "num": "Q683",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de malware est spécifiquement conçu pour bloquer l’accès à un système et demander une rançon pour le débloquer ?",
     "choices": {
       "A": "Virus",
@@ -11012,7 +10884,7 @@ const QCM = [
   },
   {
     "num": "Q684",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de malware se cache souvent dans une pièce jointe d’un email et se déclenche lorsqu’un utilisateur l’ouvre ?",
     "choices": {
       "A": "Virus",
@@ -11028,7 +10900,7 @@ const QCM = [
   },
   {
     "num": "Q685",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de malware se cache souvent sous l’apparence d’un logiciel légitime et peut prendre le contrôle d’un ordinateur à distance ?",
     "choices": {
       "A": "Un virus",
@@ -11044,7 +10916,7 @@ const QCM = [
   },
   {
     "num": "Q686",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de mémoire est non-volatile et peut être réécrit par l’utilisateur, mais nécessite une alimentation continue pour conserver les données ?",
     "choices": {
       "A": "RAM",
@@ -11060,7 +10932,7 @@ const QCM = [
   },
   {
     "num": "Q687",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de mémoire est utilisé dans les SSD (Solid State Drives) ?",
     "choices": {
       "A": "Mémoire flash",
@@ -11076,7 +10948,7 @@ const QCM = [
   },
   {
     "num": "Q688",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de mémoire est utilisé pour stocker des données temporairement pendant l’exécution d’un programme ?",
     "choices": {
       "A": "Mémoire ROM",
@@ -11092,7 +10964,7 @@ const QCM = [
   },
   {
     "num": "Q689",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de mémoire est volatile, c’est-à-dire qu’elle perd son contenu lorsqu’elle est déconnectée de l’alimentation ?",
     "choices": {
       "A": "RAM",
@@ -11108,7 +10980,7 @@ const QCM = [
   },
   {
     "num": "Q690",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de pare-feu (firewall) filtre les paquets de données en fonction de l’adresse source, de l’adresse de destination et des ports utilisés ?",
     "choices": {
       "A": "Pare-feu de type « stateless »",
@@ -11124,7 +10996,7 @@ const QCM = [
   },
   {
     "num": "Q691",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de périphérique est un disque dur externe ?",
     "choices": {
       "A": "Périphérique d’entrée",
@@ -11140,7 +11012,7 @@ const QCM = [
   },
   {
     "num": "Q692",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de problème peut être résolu par une régression linéaire en Machine Learning ?",
     "choices": {
       "A": "Classification des données en catégories",
@@ -11156,7 +11028,7 @@ const QCM = [
   },
   {
     "num": "Q693",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de programmation se concentre sur l’exécution d’instructions étape par étape dans un ordre séquentiel ?",
     "choices": {
       "A": "La programmation orientée objet",
@@ -11172,7 +11044,7 @@ const QCM = [
   },
   {
     "num": "Q694",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de relation est généralement représenté par une clé étrangère dans une base de données relationnelle ?",
     "choices": {
       "A": "Relation un-à-un",
@@ -11187,7 +11059,7 @@ const QCM = [
   },
   {
     "num": "Q695",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de relation existe entre deux tables dans une base de données relationnelle lorsqu’une clé primaire d’une table est associée à une clé étrangère dans une autre table ?",
     "choices": {
       "A": "Relation un à un",
@@ -11203,7 +11075,7 @@ const QCM = [
   },
   {
     "num": "Q696",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de réseau est utilisé pour connecter des appareils sur une petite zone géographique, comme une maison ou un bureau ?",
     "choices": {
       "A": "WAN (Wide Area Network)",
@@ -11219,7 +11091,7 @@ const QCM = [
   },
   {
     "num": "Q697",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de réseau permet à deux ordinateurs de se connecter directement sans utiliser de matériel réseau intermédiaire ?",
     "choices": {
       "A": "Réseau local (LAN)",
@@ -11235,7 +11107,7 @@ const QCM = [
   },
   {
     "num": "Q698",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de service cloud offre une plateforme prête à l’emploi pour développer, tester et déployer des applications ?",
     "choices": {
       "A": "IaaS",
@@ -11251,7 +11123,7 @@ const QCM = [
   },
   {
     "num": "Q699",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de structure est une liste en Python ?",
     "choices": {
       "A": "Immutable",
@@ -11267,7 +11139,7 @@ const QCM = [
   },
   {
     "num": "Q700",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quel type de verrouillage en SQL empêche une autre transaction d’accéder à une ligne donnée jusqu’à ce qu’une transaction soit terminée ?",
     "choices": {
       "A": "Verrouillage partagé",
@@ -11283,7 +11155,7 @@ const QCM = [
   },
   {
     "num": "Q701",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle balise HTML est utilisée pour définir une zone de saisie de texte ?",
     "choices": {
       "A": "<input>",
@@ -11299,7 +11171,7 @@ const QCM = [
   },
   {
     "num": "Q702",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle balise HTML est utilisée pour inclure un fichier JavaScript dans une page web ?",
     "choices": {
       "A": "<script>",
@@ -11315,7 +11187,7 @@ const QCM = [
   },
   {
     "num": "Q703",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle balise HTML permet de spécifier un lien vers un fichier CSS externe ?",
     "choices": {
       "A": "<link>",
@@ -11331,7 +11203,7 @@ const QCM = [
   },
   {
     "num": "Q704",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle caractéristique définit un agent intelligent en IA ?",
     "choices": {
       "A": "Il peut apprendre et s’adapter à son environnement",
@@ -11347,7 +11219,7 @@ const QCM = [
   },
   {
     "num": "Q705",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle commande SQL est utilisée pour supprimer une ligne dans une table ?",
     "choices": {
       "A": "DELETE",
@@ -11363,7 +11235,7 @@ const QCM = [
   },
   {
     "num": "Q706",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle couche du modèle OSI est responsable de la communication entre les applications ?",
     "choices": {
       "A": "Couche de transport",
@@ -11379,7 +11251,7 @@ const QCM = [
   },
   {
     "num": "Q707",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle couche du modèle OSI est responsable du routage des paquets sur le réseau ?",
     "choices": {
       "A": "Couche de transport",
@@ -11395,7 +11267,7 @@ const QCM = [
   },
   {
     "num": "Q708",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle cryptomonnaie est la plus connue et utilise la technologie blockchain ?",
     "choices": {
       "A": "Ethereum",
@@ -11411,7 +11283,7 @@ const QCM = [
   },
   {
     "num": "Q709",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’adresse IP de boucle locale (localhost) ?",
     "choices": {
       "A": "192.168.1.1",
@@ -11427,7 +11299,7 @@ const QCM = [
   },
   {
     "num": "Q710",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’objectif principal d’une analyse de vulnérabilité dans un système informatique ?",
     "choices": {
       "A": "Identifier les failles de sécurité potentielles",
@@ -11443,7 +11315,7 @@ const QCM = [
   },
   {
     "num": "Q711",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’option correcte pour utiliser un service de calcul à la demande dans le Cloud ?",
     "choices": {
       "A": "IaaS",
@@ -11459,7 +11331,7 @@ const QCM = [
   },
   {
     "num": "Q712",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’une des caractéristiques de Swift, le langage de programmation d’Apple ?",
     "choices": {
       "A": "Il est conçu pour être utilisé exclusivement pour les applications web",
@@ -11475,7 +11347,7 @@ const QCM = [
   },
   {
     "num": "Q713",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’une des principales caractéristiques du « Cloud Privé » ?",
     "choices": {
       "A": "Il est accessible uniquement par Internet public",
@@ -11491,7 +11363,7 @@ const QCM = [
   },
   {
     "num": "Q714",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’une des principales caractéristiques du Cloud Computing ?",
     "choices": {
       "A": "Le stockage des données sur des serveurs locaux uniquement",
@@ -11507,7 +11379,7 @@ const QCM = [
   },
   {
     "num": "Q715",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’une des principales raisons pour lesquelles IPv6 a été introduit ?",
     "choices": {
       "A": "Augmenter la sécurité du réseau",
@@ -11523,7 +11395,7 @@ const QCM = [
   },
   {
     "num": "Q716",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’une des principales raisons pour lesquelles Spark est souvent préféré à Hadoop MapReduce pour le traitement des données ?",
     "choices": {
       "A": "Spark est plus adapté pour le traitement en temps réel et interactif",
@@ -11539,7 +11411,7 @@ const QCM = [
   },
   {
     "num": "Q717",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est l’utilisation de la clause HAVING en SQL ?",
     "choices": {
       "A": "Filtrer les résultats d’une requête avant l’agrégation des données",
@@ -11555,7 +11427,7 @@ const QCM = [
   },
   {
     "num": "Q718",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la classe d’adresse IP la plus couramment utilisée pour les réseaux privés ?",
     "choices": {
       "A": "Classe A",
@@ -11571,7 +11443,7 @@ const QCM = [
   },
   {
     "num": "Q719",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la complexité de l’algorithme de tri à bulles dans le pire des cas ?",
     "choices": {
       "A": "O(n)",
@@ -11587,7 +11459,7 @@ const QCM = [
   },
   {
     "num": "Q720",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la complexité du tri par insertion dans le meilleur des cas ?",
     "choices": {
       "A": "O(n)",
@@ -11603,7 +11475,7 @@ const QCM = [
   },
   {
     "num": "Q721",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la complexité en temps de l’algorithme de recherche linéaire dans une liste non triée ?",
     "choices": {
       "A": "O(1)",
@@ -11619,7 +11491,7 @@ const QCM = [
   },
   {
     "num": "Q722",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la complexité temporelle de l’algorithme de tri à bulles dans le pire des cas ?",
     "choices": {
       "A": "O(n log n)",
@@ -11635,7 +11507,7 @@ const QCM = [
   },
   {
     "num": "Q723",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence entre l’Internet et un intranet ?",
     "choices": {
       "A": "L’un est public, l’autre est privé.",
@@ -11650,7 +11522,7 @@ const QCM = [
   },
   {
     "num": "Q724",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence entre la mémoire RAM et la mémoire ROM ?",
     "choices": {
       "A": "La mémoire ROM est plus rapide que la RAM",
@@ -11666,7 +11538,7 @@ const QCM = [
   },
   {
     "num": "Q725",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence entre les commandes JOIN et UNION en SQL ?",
     "choices": {
       "A": "JOIN combine plusieurs tables, tandis que UNION combine plusieurs résultats de requêtes",
@@ -11682,7 +11554,7 @@ const QCM = [
   },
   {
     "num": "Q726",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence entre une clé primaire et une clé étrangère dans une base de données relationnelle ?",
     "choices": {
       "A": "La clé primaire est utilisée pour relier deux tables, la clé étrangère est utilisée pour identifier un enregistrement de manière unique",
@@ -11698,7 +11570,7 @@ const QCM = [
   },
   {
     "num": "Q727",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence entre une jointure « INNER JOIN » et une jointure « LEFT JOIN » en SQL ?",
     "choices": {
       "A": "« INNER JOIN » récupère toutes les lignes de la première table",
@@ -11714,7 +11586,7 @@ const QCM = [
   },
   {
     "num": "Q728",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence entre une liste et un tuple en Python ?",
     "choices": {
       "A": "Les listes sont immutables, tandis que les tuples sont modifiables",
@@ -11730,7 +11602,7 @@ const QCM = [
   },
   {
     "num": "Q729",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre le IaaS (Infrastructure as a Service) et le PaaS (Platform as a Service) ?",
     "choices": {
       "A": "IaaS fournit des serveurs et des réseaux, tandis que PaaS fournit des outils de développement pour créer des applications",
@@ -11746,7 +11618,7 @@ const QCM = [
   },
   {
     "num": "Q730",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre le SaaS et le PaaS dans le Cloud Computing ?",
     "choices": {
       "A": "SaaS fournit des applications prêtes à l’emploi, tandis que PaaS offre une plateforme pour développer et déployer des applications",
@@ -11762,7 +11634,7 @@ const QCM = [
   },
   {
     "num": "Q731",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre SQL et NoSQL ?",
     "choices": {
       "A": "SQL est utilisé pour les bases de données relationnelles, tandis que NoSQL est utilisé pour les bases de données non relationnelles",
@@ -11778,7 +11650,7 @@ const QCM = [
   },
   {
     "num": "Q732",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre un « pointeur » et une « référence » en C++ ?",
     "choices": {
       "A": "Un pointeur peut être réaffecté pour pointer vers une autre adresse mémoire, tandis qu’une référence ne peut pas être modifiée après son initialisation",
@@ -11794,7 +11666,7 @@ const QCM = [
   },
   {
     "num": "Q733",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre un système d’exploitation Windows et un système d’exploitation Linux ?",
     "choices": {
       "A": "Windows est open-source, tandis que Linux est propriétaire",
@@ -11810,7 +11682,7 @@ const QCM = [
   },
   {
     "num": "Q734",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre une « classe » et un « objet » en programmation orientée objet ?",
     "choices": {
       "A": "La classe est une instance, tandis que l’objet est une définition",
@@ -11826,7 +11698,7 @@ const QCM = [
   },
   {
     "num": "Q735",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre une classe abstraite et une interface en Java ?",
     "choices": {
       "A": "Une classe abstraite ne peut pas avoir de méthodes abstraites",
@@ -11842,7 +11714,7 @@ const QCM = [
   },
   {
     "num": "Q736",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la différence principale entre une clé primaire et une clé unique dans une base de données ?",
     "choices": {
       "A": "Une clé primaire peut avoir des valeurs nulles, tandis qu’une clé unique ne peut pas",
@@ -11858,7 +11730,7 @@ const QCM = [
   },
   {
     "num": "Q737",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la durée typique d’un sprint dans la méthodologie Scrum ?",
     "choices": {
       "A": "1 mois",
@@ -11874,7 +11746,7 @@ const QCM = [
   },
   {
     "num": "Q738",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction d’un « plugin » dans WordPress ?",
     "choices": {
       "A": "Ajouter des fonctionnalités supplémentaires à un site Web",
@@ -11890,7 +11762,7 @@ const QCM = [
   },
   {
     "num": "Q739",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction d’une contrainte d’intégrité en SQL ?",
     "choices": {
       "A": "Optimiser les requêtes pour améliorer les performances",
@@ -11906,7 +11778,7 @@ const QCM = [
   },
   {
     "num": "Q740",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction d’une sous-requête dans SQL ?",
     "choices": {
       "A": "Fusionner des tables",
@@ -11922,7 +11794,7 @@ const QCM = [
   },
   {
     "num": "Q741",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction de la clause WHERE en SQL ?",
     "choices": {
       "A": "Ajouter de nouvelles colonnes à une table",
@@ -11938,7 +11810,7 @@ const QCM = [
   },
   {
     "num": "Q742",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction de la commande SQL GROUP BY ?",
     "choices": {
       "A": "Trier les résultats d’une requête",
@@ -11954,7 +11826,7 @@ const QCM = [
   },
   {
     "num": "Q743",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction du BIOS dans un ordinateur ?",
     "choices": {
       "A": "Contrôler la température des composants internes",
@@ -11970,7 +11842,7 @@ const QCM = [
   },
   {
     "num": "Q744",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale d’un VLAN (Virtual Local Area Network) ?",
     "choices": {
       "A": "Segmenter un réseau en plusieurs sous-réseaux logiques",
@@ -11986,7 +11858,7 @@ const QCM = [
   },
   {
     "num": "Q745",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale de CSS dans le développement web ?",
     "choices": {
       "A": "Ajouter de l’interactivité aux pages web",
@@ -12002,7 +11874,7 @@ const QCM = [
   },
   {
     "num": "Q746",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale de Git dans le développement logiciel ?",
     "choices": {
       "A": "Créer des bases de données",
@@ -12018,7 +11890,7 @@ const QCM = [
   },
   {
     "num": "Q747",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale de l’Unité Arithmétique et Logique (ALU) dans un processeur ?",
     "choices": {
       "A": "Gérer la mémoire",
@@ -12034,7 +11906,7 @@ const QCM = [
   },
   {
     "num": "Q748",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale de l’unité de contrôle (CU) dans un processeur ?",
     "choices": {
       "A": "Exécuter des instructions arithmétiques et logiques",
@@ -12050,7 +11922,7 @@ const QCM = [
   },
   {
     "num": "Q749",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale du bus dans l’architecture d’un ordinateur ?",
     "choices": {
       "A": "Fournir l’alimentation électrique aux composants internes",
@@ -12066,7 +11938,7 @@ const QCM = [
   },
   {
     "num": "Q750",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la fonction principale du protocole DHCP (Dynamic Host Configuration Protocol) dans un réseau ?",
     "choices": {
       "A": "Protéger les données du réseau",
@@ -12082,7 +11954,7 @@ const QCM = [
   },
   {
     "num": "Q751",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la meilleure pratique pour créer un mot de passe sécurisé ?",
     "choices": {
       "A": "Utiliser un mot courant et l’associer à votre nom",
@@ -12098,7 +11970,7 @@ const QCM = [
   },
   {
     "num": "Q752",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la meilleure pratique pour stocker un mot de passe de manière sécurisée dans une base de données ?",
     "choices": {
       "A": "Le stocker en texte clair dans la base de données",
@@ -12114,7 +11986,7 @@ const QCM = [
   },
   {
     "num": "Q753",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la méthode Agile qui repose sur un tableau de tâches visuelles avec des colonnes comme « À faire », « En cours » et « Terminé » ?",
     "choices": {
       "A": "Scrum",
@@ -12130,7 +12002,7 @@ const QCM = [
   },
   {
     "num": "Q754",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la méthode de cryptage la plus utilisée pour sécuriser les transactions sur Internet ?",
     "choices": {
       "A": "AES",
@@ -12146,7 +12018,7 @@ const QCM = [
   },
   {
     "num": "Q755",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la méthode principale pour se protéger contre les attaques par injection SQL ?",
     "choices": {
       "A": "Utiliser un pare-feu",
@@ -12162,7 +12034,7 @@ const QCM = [
   },
   {
     "num": "Q756",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la méthode principale utilisée dans le domaine de l’IA pour faire des prédictions à partir de données historiques ?",
     "choices": {
       "A": "Apprentissage supervisé",
@@ -12178,7 +12050,7 @@ const QCM = [
   },
   {
     "num": "Q757",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la partie d’une base de données qui ne contient qu’un seul type d’information ?",
     "choices": {
       "A": "Enregistrement",
@@ -12194,7 +12066,7 @@ const QCM = [
   },
   {
     "num": "Q758",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la plage d’adresses IP privées pour un réseau local (LAN) selon la norme IPv4 ?",
     "choices": {
       "A": "10.0.0.0 à 10.255.255.255",
@@ -12209,7 +12081,7 @@ const QCM = [
   },
   {
     "num": "Q759",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la portée d’une variable déclarée comme private en Java ?",
     "choices": {
       "A": "Elle est accessible uniquement dans la méthode où elle est déclarée",
@@ -12225,7 +12097,7 @@ const QCM = [
   },
   {
     "num": "Q760",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la première étape du processus de gestion de projet ?",
     "choices": {
       "A": "Planification du projet",
@@ -12241,7 +12113,7 @@ const QCM = [
   },
   {
     "num": "Q761",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la première étape du processus de gestion de projet selon le modèle PMI (Project Management Institute) ?",
     "choices": {
       "A": "Lancement du projet",
@@ -12257,7 +12129,7 @@ const QCM = [
   },
   {
     "num": "Q762",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la première phase du cycle de vie d’un projet dans la méthode Agile ?",
     "choices": {
       "A": "Planification",
@@ -12273,7 +12145,7 @@ const QCM = [
   },
   {
     "num": "Q763",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’un modèle IaaS (Infrastructure as a Service) ?",
     "choices": {
       "A": "L’utilisateur contrôle l’infrastructure matérielle",
@@ -12289,7 +12161,7 @@ const QCM = [
   },
   {
     "num": "Q764",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’un service IaaS (Infrastructure as a Service) ?",
     "choices": {
       "A": "Il fournit des applications prêtes à l’emploi via Internet",
@@ -12305,7 +12177,7 @@ const QCM = [
   },
   {
     "num": "Q765",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’une attaque de type « Cross-Site Scripting » (XSS) ?",
     "choices": {
       "A": "Injection de code malveillant dans une base de données",
@@ -12321,7 +12193,7 @@ const QCM = [
   },
   {
     "num": "Q766",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’une attaque par « Cross-Site Scripting » (XSS) ?",
     "choices": {
       "A": "Voler les identifiants de l’utilisateur",
@@ -12337,7 +12209,7 @@ const QCM = [
   },
   {
     "num": "Q767",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’une base de données NoSQL ?",
     "choices": {
       "A": "Elle utilise des tables pour organiser les données",
@@ -12353,7 +12225,7 @@ const QCM = [
   },
   {
     "num": "Q768",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’une méthode de gestion de projet Agile ?",
     "choices": {
       "A": "Respect strict des délais",
@@ -12369,7 +12241,7 @@ const QCM = [
   },
   {
     "num": "Q769",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique d’une planification en cascade dans la gestion de projet ?",
     "choices": {
       "A": "Les tâches sont réalisées simultanément",
@@ -12385,7 +12257,7 @@ const QCM = [
   },
   {
     "num": "Q770",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique de l’encapsulation en programmation orientée objet ?",
     "choices": {
       "A": "La possibilité d’hériter des propriétés et comportements d’une autre classe",
@@ -12401,7 +12273,7 @@ const QCM = [
   },
   {
     "num": "Q771",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique de la méthode Agile en gestion de projet ?",
     "choices": {
       "A": "Elle met l’accent sur une planification détaillée en amont du projet",
@@ -12417,7 +12289,7 @@ const QCM = [
   },
   {
     "num": "Q772",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique de la méthode Waterfall dans la gestion de projet ??",
     "choices": {
       "A": "Les tâches sont exécutées en parallèle",
@@ -12433,7 +12305,7 @@ const QCM = [
   },
   {
     "num": "Q773",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique des bases de données NoSQL ?",
     "choices": {
       "A": "Elles utilisent un modèle relationnel pour stocker les données",
@@ -12449,7 +12321,7 @@ const QCM = [
   },
   {
     "num": "Q774",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique des méthodes agiles de gestion de projet ?",
     "choices": {
       "A": "Elles privilégient la planification rigide et le suivi strict des délais",
@@ -12465,7 +12337,7 @@ const QCM = [
   },
   {
     "num": "Q775",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique du cloud public ?",
     "choices": {
       "A": "Il est utilisé uniquement par des entreprises",
@@ -12481,7 +12353,7 @@ const QCM = [
   },
   {
     "num": "Q776",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique du langage de programmation C ?",
     "choices": {
       "A": "Il est utilisé uniquement pour le développement web",
@@ -12497,7 +12369,7 @@ const QCM = [
   },
   {
     "num": "Q777",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale caractéristique du modèle SaaS (Software as a Service) ?",
     "choices": {
       "A": "L’utilisateur gère entièrement l’infrastructure sous-jacente",
@@ -12513,7 +12385,7 @@ const QCM = [
   },
   {
     "num": "Q778",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre == et .equals() en Java ?",
     "choices": {
       "A": "== compare les valeurs, tandis que .equals() compare les références d’objet",
@@ -12529,7 +12401,7 @@ const QCM = [
   },
   {
     "num": "Q779",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre Drupal et WordPress ?",
     "choices": {
       "A": "WordPress est plus flexible que Drupal en termes de personnalisation",
@@ -12545,7 +12417,7 @@ const QCM = [
   },
   {
     "num": "Q780",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre Hadoop et Spark ?",
     "choices": {
       "A": "Hadoop est plus rapide pour le traitement en temps réel, tandis que Spark est plus lent",
@@ -12561,7 +12433,7 @@ const QCM = [
   },
   {
     "num": "Q781",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre HTTP et HTTPS ?",
     "choices": {
       "A": "HTTPS est plus rapide que HTTP",
@@ -12577,7 +12449,7 @@ const QCM = [
   },
   {
     "num": "Q782",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre IPv4 et IPv6 ?",
     "choices": {
       "A": "IPv6 utilise des adresses de 32 bits, tandis qu’IPv4 utilise des adresses de 128 bits",
@@ -12593,7 +12465,7 @@ const QCM = [
   },
   {
     "num": "Q783",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre la mémoire cache L1 et L2 ?",
     "choices": {
       "A": "L1 est plus grande que L2",
@@ -12609,7 +12481,7 @@ const QCM = [
   },
   {
     "num": "Q784",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre la mémoire Flash et la mémoire RAM ?",
     "choices": {
       "A": "La mémoire Flash est plus rapide que la RAM",
@@ -12625,7 +12497,7 @@ const QCM = [
   },
   {
     "num": "Q785",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre le chiffrement symétrique et asymétrique ?",
     "choices": {
       "A": "Le chiffrement symétrique utilise une clé publique, tandis que l’asymétrique utilise une clé secrète",
@@ -12641,7 +12513,7 @@ const QCM = [
   },
   {
     "num": "Q786",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre LEFT OUTER JOIN et RIGHT OUTER JOIN ?",
     "choices": {
       "D": "Il n’y a aucune différence entre les deux"
@@ -12654,7 +12526,7 @@ const QCM = [
   },
   {
     "num": "Q787",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre les balises <div> et <span> en HTML ?",
     "choices": {
       "A": "<div> est une balise de conteneur en ligne, tandis que <span> est une balise de conteneur en bloc",
@@ -12670,7 +12542,7 @@ const QCM = [
   },
   {
     "num": "Q788",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un class et un struct en C++ ?",
     "choices": {
       "A": "Les",
@@ -12686,7 +12558,7 @@ const QCM = [
   },
   {
     "num": "Q789",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un conteneur Docker et une machine virtuelle (VM) ?",
     "choices": {
       "A": "Les conteneurs Docker utilisent un système d’exploitation distinct, tandis que les machines virtuelles partagent le même noyau d’hôte.",
@@ -12702,7 +12574,7 @@ const QCM = [
   },
   {
     "num": "Q790",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un disque dur (HDD) et un disque SSD ?",
     "choices": {
       "A": "Le disque SSD est plus lent que le disque HDD",
@@ -12718,7 +12590,7 @@ const QCM = [
   },
   {
     "num": "Q791",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un langage compilé et un langage interprété ?",
     "choices": {
       "A": "Le langage compilé s’exécute directement, tandis que le langage interprété nécessite une étape de compilation.",
@@ -12734,7 +12606,7 @@ const QCM = [
   },
   {
     "num": "Q792",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un processeur à architecture CISC et un processeur à architecture RISC ?",
     "choices": {
       "A": "CISC et RISC sont identiques, ils ne diffèrent que par la vitesse d’exécution",
@@ -12750,7 +12622,7 @@ const QCM = [
   },
   {
     "num": "Q793",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un processeur monocœur et un processeur multicœur ?",
     "choices": {
       "A": "Un processeur multicœur peut exécuter plusieurs instructions simultanément",
@@ -12766,7 +12638,7 @@ const QCM = [
   },
   {
     "num": "Q794",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un switch et un hub dans un réseau local (LAN) ?",
     "choices": {
       "A": "Un hub a une capacité de transfert plus élevée qu’un switch",
@@ -12782,7 +12654,7 @@ const QCM = [
   },
   {
     "num": "Q795",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un virus et un ver informatique ?",
     "choices": {
       "A": "Un virus nécessite une intervention de l’utilisateur pour se propager, tandis qu’un ver peut se propager de manière autonome",
@@ -12798,7 +12670,7 @@ const QCM = [
   },
   {
     "num": "Q796",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre un virus informatique et un cheval de Troie (Trojan) ?",
     "choices": {
       "A": "Un virus se propage automatiquement, tandis qu’un cheval de Troie se cache dans un programme légitime",
@@ -12814,7 +12686,7 @@ const QCM = [
   },
   {
     "num": "Q797",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale différence entre une méthode static et une méthode d’instance en Java ?",
     "choices": {
       "A": "Une méthode static appartient à l’instance de la classe, tandis qu’une méthode d’instance appartient à la classe",
@@ -12830,7 +12702,7 @@ const QCM = [
   },
   {
     "num": "Q798",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale fonction d’un « product backlog » dans la méthode Scrum ?",
     "choices": {
       "A": "Définir les objectifs à long terme du projet",
@@ -12846,7 +12718,7 @@ const QCM = [
   },
   {
     "num": "Q799",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale fonction d’un DNS (Domain Name System) ??",
     "choices": {
       "A": "Convertir les adresses IP en noms de domaine",
@@ -12862,7 +12734,7 @@ const QCM = [
   },
   {
     "num": "Q800",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale fonction d’un système de détection d’intrusion (IDS) ?",
     "choices": {
       "A": "Crypter les données des utilisateurs",
@@ -12878,7 +12750,7 @@ const QCM = [
   },
   {
     "num": "Q801",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale fonction de la mémoire RAM dans un ordinateur ?",
     "choices": {
       "A": "Stocker les données à long terme",
@@ -12894,7 +12766,7 @@ const QCM = [
   },
   {
     "num": "Q802",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale fonction du noyau d’un système d’exploitation ?",
     "choices": {
       "A": "Gérer les périphériques externes",
@@ -12910,7 +12782,7 @@ const QCM = [
   },
   {
     "num": "Q803",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale raison d’optimiser le code d’un programme ?",
     "choices": {
       "A": "Réduire le temps d’exécution du programme",
@@ -12926,7 +12798,7 @@ const QCM = [
   },
   {
     "num": "Q804",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la principale vulnérabilité des attaques de type « Phishing » ?",
     "choices": {
       "A": "Vol de données de carte bancaire",
@@ -12942,7 +12814,7 @@ const QCM = [
   },
   {
     "num": "Q805",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la sortie de l’expression suivante en Java: System.out.println(5 + 3 + \"Hello\"); ?",
     "choices": {
       "A": "8Hello",
@@ -12958,7 +12830,7 @@ const QCM = [
   },
   {
     "num": "Q806",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la sortie du code Python suivant ??",
     "choices": {
       "C": "2.0",
@@ -12972,7 +12844,7 @@ const QCM = [
   },
   {
     "num": "Q807",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la sortie du code suivant en C ?",
     "choices": {
       "C": "Error"
@@ -12985,7 +12857,7 @@ const QCM = [
   },
   {
     "num": "Q808",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle est la sortie du code suivant en Java ?",
     "choices": {
       "B": "2.5",
@@ -12999,7 +12871,7 @@ const QCM = [
   },
   {
     "num": "Q809",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle exception est levée lorsqu’une tentative d’accès à un élément hors des limites d’un tableau est effectuée en Java ?",
     "choices": {
       "A": "ArrayIndexOutOfBoundsException",
@@ -13015,7 +12887,7 @@ const QCM = [
   },
   {
     "num": "Q810",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle fonction dans WordPress est utilisée pour ajouter un nouvel article ?",
     "choices": {
       "A": "wp_add_post()",
@@ -13031,7 +12903,7 @@ const QCM = [
   },
   {
     "num": "Q811",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle fonction en Python est utilisée pour obtenir l’entrée de l’utilisateur à partir de la console ?",
     "choices": {
       "A": "input()",
@@ -13047,7 +12919,7 @@ const QCM = [
   },
   {
     "num": "Q812",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle fonction SQL est utilisée pour obtenir la moyenne des valeurs d’une colonne ?",
     "choices": {
       "A": "AVG()",
@@ -13063,7 +12935,7 @@ const QCM = [
   },
   {
     "num": "Q813",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode Agile est la plus utilisée pour organiser les projets en sprints et améliorer continuellement les processus ?",
     "choices": {
       "A": "Lean",
@@ -13079,7 +12951,7 @@ const QCM = [
   },
   {
     "num": "Q814",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode Agile permet de diviser un projet en petites itérations appelées « Sprints » ?",
     "choices": {
       "A": "Scrum",
@@ -13095,7 +12967,7 @@ const QCM = [
   },
   {
     "num": "Q815",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode d’authentification est la plus sécurisée ?",
     "choices": {
       "A": "Authentification par mot de passe seul",
@@ -13111,7 +12983,7 @@ const QCM = [
   },
   {
     "num": "Q816",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode d’intelligence artificielle est utilisée dans les systèmes de recommandation, comme ceux de Netflix ou Amazon ?",
     "choices": {
       "A": "Apprentissage par renforcement",
@@ -13127,7 +12999,7 @@ const QCM = [
   },
   {
     "num": "Q817",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de cryptographie est utilisée pour sécuriser les connexions HTTPS ?",
     "choices": {
       "A": "RSA",
@@ -13143,7 +13015,7 @@ const QCM = [
   },
   {
     "num": "Q818",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de gestion de projet est la mieux adaptée pour des projets qui nécessitent une planification détaillée et des livrables à des étapes spécifiques ?",
     "choices": {
       "A": "Méthode Agile",
@@ -13159,7 +13031,7 @@ const QCM = [
   },
   {
     "num": "Q819",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de gestion de projet permet de s’adapter à des changements fréquents et à des demandes évolutives ?",
     "choices": {
       "A": "La méthode Waterfall",
@@ -13175,7 +13047,7 @@ const QCM = [
   },
   {
     "num": "Q820",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de gestion de projet privilégie une approche itérative et incrémentale ?",
     "choices": {
       "A": "Agile",
@@ -13191,7 +13063,7 @@ const QCM = [
   },
   {
     "num": "Q821",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de gestion de projet se concentre sur la livraison incrémentale de petites fonctionnalités au lieu de projets de grande envergure ?",
     "choices": {
       "A": "Méthode Waterfall",
@@ -13207,7 +13079,7 @@ const QCM = [
   },
   {
     "num": "Q822",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de gestion de projet utilise des « sprints » pour livrer régulièrement des versions fonctionnelles du produit ?",
     "choices": {
       "A": "Waterfall",
@@ -13223,7 +13095,7 @@ const QCM = [
   },
   {
     "num": "Q823",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode de sécurité permet de s’assurer qu’un message n’a pas été altéré pendant sa transmission ?",
     "choices": {
       "A": "Le chiffrement",
@@ -13239,7 +13111,7 @@ const QCM = [
   },
   {
     "num": "Q824",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode est souvent utilisée dans la gestion de projet pour identifier les tâches et les responsabilités des membres de l’équipe ?",
     "choices": {
       "A": "Méthode du diagramme de Gantt",
@@ -13255,7 +13127,7 @@ const QCM = [
   },
   {
     "num": "Q825",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode est utilisée dans la gestion de projet pour organiser les tâches et les ressources en fonction des priorités et des dépendances ?",
     "choices": {
       "A": "La méthode Agile",
@@ -13271,7 +13143,7 @@ const QCM = [
   },
   {
     "num": "Q826",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode est utilisée pour protéger un mot de passe stocké sur un serveur afin qu’il ne soit pas lisible en cas de piratage ?",
     "choices": {
       "A": "Hachage",
@@ -13287,7 +13159,7 @@ const QCM = [
   },
   {
     "num": "Q827",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthode HTTP est utilisée pour envoyer des données à un serveur ?",
     "choices": {
       "A": "GET",
@@ -13303,7 +13175,7 @@ const QCM = [
   },
   {
     "num": "Q828",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle méthodologie de gestion de projet se concentre sur la livraison rapide et continue de petites fonctionnalités ?",
     "choices": {
       "A": "Waterfall",
@@ -13319,7 +13191,7 @@ const QCM = [
   },
   {
     "num": "Q829",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle partie interprète les instructions du programme et lance les opérations de contrôle?",
     "choices": {
       "A": "Unité de stockage",
@@ -13334,7 +13206,7 @@ const QCM = [
   },
   {
     "num": "Q830",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle propriété CSS permet d’ajuster l’espacement entre les lignes de texte ?",
     "choices": {
       "A": "line-height",
@@ -13350,7 +13222,7 @@ const QCM = [
   },
   {
     "num": "Q831",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle propriété CSS permet de définir l’espacement entre les lignes de texte dans un élément ?",
     "choices": {
       "A": "line-height",
@@ -13366,7 +13238,7 @@ const QCM = [
   },
   {
     "num": "Q832",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle société a créé le logiciel de réseaux de PC le plus utilisé dans les années 1980 ?",
     "choices": {
       "A": "Microsoft",
@@ -13382,7 +13254,7 @@ const QCM = [
   },
   {
     "num": "Q833",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle solution Cloud est le plus couramment utilisée pour héberger des sites web statiques ?",
     "choices": {
       "A": "IaaS (Infrastructure as a Service)",
@@ -13398,7 +13270,7 @@ const QCM = [
   },
   {
     "num": "Q834",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle structure de données est idéale pour implémenter une pile (LIFO – Last In, First Out) ?",
     "choices": {
       "A": "Tableau",
@@ -13414,7 +13286,7 @@ const QCM = [
   },
   {
     "num": "Q835",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technique consiste à masquer des informations sensibles à l’aide d’un code ou d’un algorithme ?",
     "choices": {
       "A": "Cryptographie",
@@ -13430,7 +13302,7 @@ const QCM = [
   },
   {
     "num": "Q836",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technique de gestion de projet est utilisée pour identifier les risques potentiels et élaborer des stratégies pour les atténuer ?",
     "choices": {
       "A": "Brainstorming",
@@ -13446,7 +13318,7 @@ const QCM = [
   },
   {
     "num": "Q837",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technique est utilisée pour se défendre contre les attaques par injection SQL ?",
     "choices": {
       "A": "Utiliser des requêtes SQL dynamiques",
@@ -13462,7 +13334,7 @@ const QCM = [
   },
   {
     "num": "Q838",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technique est utilisée pour tester la sécurité d’un réseau en simulant des attaques réelles ?",
     "choices": {
       "A": "Penetration Testing",
@@ -13478,7 +13350,7 @@ const QCM = [
   },
   {
     "num": "Q839",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technique est utilisée pour tromper un utilisateur afin qu’il divulgue des informations sensibles, comme des identifiants ou des informations bancaires ?",
     "choices": {
       "A": "Ransomware",
@@ -13494,7 +13366,7 @@ const QCM = [
   },
   {
     "num": "Q840",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technique peut être utilisée pour éviter le sur-apprentissage (overfitting) dans un modèle de Machine Learning ?",
     "choices": {
       "A": "Augmenter la complexité du modèle",
@@ -13510,7 +13382,7 @@ const QCM = [
   },
   {
     "num": "Q841",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technologie de stockage est la plus rapide ?",
     "choices": {
       "A": "Disque dur HDD",
@@ -13526,7 +13398,7 @@ const QCM = [
   },
   {
     "num": "Q842",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technologie est couramment utilisée pour traiter de grandes quantités de données en temps réel ?",
     "choices": {
       "A": "Hadoop",
@@ -13542,7 +13414,7 @@ const QCM = [
   },
   {
     "num": "Q843",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quelle technologie permet de créer un réseau local virtuel (VLAN) ?",
     "choices": {
       "A": "Les routeurs",
@@ -13558,7 +13430,7 @@ const QCM = [
   },
   {
     "num": "Q844",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Quels appareils sont typiquement connectés dans l’Internet des objets (IoT) ?",
     "choices": {
       "A": "Montres, réfrigérateurs, et caméras de surveillance",
@@ -13574,7 +13446,7 @@ const QCM = [
   },
   {
     "num": "Q845",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "ROM signifie _______________",
     "choices": {
       "A": "Real Only Memory",
@@ -13590,7 +13462,7 @@ const QCM = [
   },
   {
     "num": "Q846",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Si l’Internet était une ville, quelle rue représenterait le Dark Web ?",
     "choices": {
       "A": "Une rue animée avec des magasins de produits rares",
@@ -13606,7 +13478,7 @@ const QCM = [
   },
   {
     "num": "Q847",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Terme désignant la manière dont les nœuds d’un réseau sont reliés entre eux.",
     "choices": {
       "A": "Interconnectivité",
@@ -13622,7 +13494,7 @@ const QCM = [
   },
   {
     "num": "Q848",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Tous les éléments suivants sont des périphériques d’entrée d’ordinateur, à l’exception de ________",
     "choices": {
       "A": "clavier",
@@ -13638,7 +13510,7 @@ const QCM = [
   },
   {
     "num": "Q849",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un autre mot pour désigner le CPU est _______________",
     "choices": {
       "A": "Micro puce",
@@ -13654,7 +13526,7 @@ const QCM = [
   },
   {
     "num": "Q850",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un JPG est _________",
     "choices": {
       "A": "Un graphique programmé par blockchains",
@@ -13670,7 +13542,7 @@ const QCM = [
   },
   {
     "num": "Q851",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un logiciel Open source est un logiciel dont le code source est disponible pour être modifié ou amélioré par quiconque. Lequel des logiciels suivants est un exemple de logiciel Open source?",
     "choices": {
       "A": "Adobe Photoshop",
@@ -13686,7 +13558,7 @@ const QCM = [
   },
   {
     "num": "Q852",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un programme qui convertit le langage assembleur en langage machine est appelé _______?",
     "choices": {
       "A": "Assembleur",
@@ -13702,7 +13574,7 @@ const QCM = [
   },
   {
     "num": "Q853",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un programme qui fonctionne en arrière-plan sur votre ordinateur et qui envoie des informations sur vos activités de navigation à la société qui l’a installé sur votre ordinateur est appelé ________",
     "choices": {
       "A": "Spyware",
@@ -13718,7 +13590,7 @@ const QCM = [
   },
   {
     "num": "Q854",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un programme qui nous permet d’effectuer des tâches spécifiques est ________",
     "choices": {
       "A": "Une application",
@@ -13734,7 +13606,7 @@ const QCM = [
   },
   {
     "num": "Q855",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un registre dans un processeur est utilisé pour:",
     "choices": {
       "A": "Stocker de grandes quantités de données à long terme",
@@ -13750,7 +13622,7 @@ const QCM = [
   },
   {
     "num": "Q856",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un réseau d’ordinateurs et d’autres dispositifs qui est confiné à un espace relativement petit est appelé _______",
     "choices": {
       "A": "Réseau étendu",
@@ -13766,7 +13638,7 @@ const QCM = [
   },
   {
     "num": "Q857",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Un virus informatique qui attaque activement un ou plusieurs programmes anti-virus dans le but d’empêcher sa détection est____________",
     "choices": {
       "A": "Trojan",
@@ -13782,7 +13654,7 @@ const QCM = [
   },
   {
     "num": "Q858",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Une carte SD est une carte mémoire utilisée dans les équipements électroniques, notamment les appareils photo numériques et les téléphones portables. Que signifie SD ?",
     "choices": {
       "A": "Secure Digital",
@@ -13798,7 +13670,7 @@ const QCM = [
   },
   {
     "num": "Q859",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Une sous-requête en SQL est _________",
     "choices": {
       "A": "Une requête qui est incluse dans une autre requête, généralement dans une clause WHERE, SELECT ou FROM",
@@ -13814,7 +13686,7 @@ const QCM = [
   },
   {
     "num": "Q860",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Votre ordinateur s’est progressivement ralenti. Quelle est la cause la plus probable ?",
     "choices": {
       "A": "Une surchauffe",
@@ -13830,7 +13702,7 @@ const QCM = [
   },
   {
     "num": "Q861",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "Vous êtes un designer UX (expérience utilisateur) et vous créez une interface pour un site web. Quel principe devriez-vous suivre pour rendre l’interface la plus accessible possible ?",
     "choices": {
       "A": "Utiliser des couleurs vibrantes et saturées pour attirer l’attention",
@@ -13846,7 +13718,7 @@ const QCM = [
   },
   {
     "num": "Q862",
-    "partie": "Concepts Généraux",
+    "partie": "Culture générale informatique",
     "q": "WYSIWYG est un acronyme pour _________",
     "choices": {
       "A": "What You Saw Is What You Got",
@@ -13856,342 +13728,6 @@ const QCM = [
     },
     "correct": "B",
     "explanation": "<p>WYSIWYG est un acronyme qui signifie que ce que vous voyez à l’écran est exactement ce que vous obtiendrez une fois le document ou la page publié(e), imprimé(e) ou enregistré(e). Cela est couramment utilisé dans les éditeurs de texte, les logiciels de création de sites web, et d’autres outils de conception.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Cybersécurité",
-    "q": "Qu’est-ce qu’un « virus informatique » ?",
-    "choices": {
-      "A": "Un programme utile qui protège l’ordinateur",
-      "B": "Un programme qui permet de naviguer sur Internet",
-      "C": "Un programme malveillant qui peut endommager un ordinateur",
-      "D": "Un périphérique externe"
-    },
-    "correct": "C",
-    "explanation": "<p>Un virus informatique est un programme malveillant conçu pour se propager d’un ordinateur à un autre et endommager les fichiers, les programmes ou le système de l’ordinateur.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q2",
-    "partie": "Cybersécurité",
-    "q": "Quel est le rôle d’un logiciel antivirus ?",
-    "choices": {
-      "A": "Optimiser la performance de l’ordinateur",
-      "B": "Protéger l’ordinateur contre les logiciels malveillants",
-      "C": "Organiser les fichiers sur l’ordinateur",
-      "D": "Gérer la connexion à Internet"
-    },
-    "correct": "B",
-    "explanation": "<p>Un logiciel antivirus est conçu pour détecter, prévenir et éliminer les virus et autres types de logiciels malveillants afin de protéger les données et la sécurité de l’ordinateur.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q3",
-    "partie": "Cybersécurité",
-    "q": "Quelle est la principale fonction d’un pare-feu (firewall) ?",
-    "choices": {
-      "A": "Crypter les données sensibles",
-      "B": "Bloquer les logiciels malveillants",
-      "C": "Filtrer le trafic réseau pour empêcher les connexions non autorisées",
-      "D": "Gérer les mots de passe des utilisateurs"
-    },
-    "correct": "C",
-    "explanation": "<p>Un pare-feu est un dispositif de sécurité réseau qui filtre et contrôle le trafic entrant et sortant d’un réseau pour empêcher les attaques, les intrusions et les connexions non autorisées.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Développement",
-    "q": "Une erreur est aussi appelée _________?",
-    "choices": {
-      "A": "Bug",
-      "B": "Debug",
-      "C": "Curseur",
-      "D": "Icon"
-    },
-    "correct": "A",
-    "explanation": "<p>Une erreur dans un programme informatique est appelée « Bug » et le processus de correction des « Bugs » est appelé « Débogage ».</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Intelligence Artificielle",
-    "q": "Un chatbot est un exemple de ____________",
-    "choices": {
-      "A": "Système expert",
-      "B": "Intelligence artificielle",
-      "C": "Application mobile",
-      "D": "Système de gestion de bases de données"
-    },
-    "correct": "B",
-    "explanation": "<p>Un chatbot est un programme qui utilise des techniques d’intelligence artificielle pour simuler une conversation avec un utilisateur. Ces systèmes peuvent comprendre des questions et répondre de manière appropriée, souvent avec des algorithmes de traitement du langage naturel.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Logiciels",
-    "q": "Lequel des éléments suivants n’est pas un package d’application?",
-    "choices": {
-      "A": "Open Office",
-      "B": "Adobe Pagemaker",
-      "C": "Microsoft Office",
-      "D": "Red Hat Linux"
-    },
-    "correct": "D",
-    "explanation": "<p>Red Hat Linux est un système d’exploitation, pas un package d’application. En revanche, Open Office, Adobe Pagemaker, et Microsoft Office sont des suites d’applications utilisées pour des tâches comme la bureautique, etc.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q2",
-    "partie": "Logiciels",
-    "q": "Lequel des énoncés suivants est faux?",
-    "choices": {
-      "A": "Photoshop est un outil de conception graphique par Adobe",
-      "B": "Linux est un logiciel libre et open source",
-      "C": "Linux est vendu par Microsoft",
-      "D": "Windows XP est un système d’exploitation"
-    },
-    "correct": "C",
-    "explanation": "<p>Linux est un System gratuit et open source, il n’est pas vendu par Microsoft ni par aucune autre société.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q3",
-    "partie": "Logiciels",
-    "q": "Microsoft Word est un exemple de _________?",
-    "choices": {
-      "A": "Système d’exploitation",
-      "B": "Dispositif de traitement",
-      "C": "Logiciel applicatif",
-      "D": "Périphérique d’entrée",
-      "E": "Logiciel système"
-    },
-    "correct": "C",
-    "explanation": "<p>Microsoft Word ou MS-WORD (souvent appelé Word) est un programme de traitement de texte graphique avec lequel les utilisateurs peuvent taper des textes. Il est fabriqué par la société informatique Microsoft. Son but est de permettre aux utilisateurs de taper et de sauvegarder des documents.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q4",
-    "partie": "Logiciels",
-    "q": "Qu’est-ce qu’un « logiciel open source » ?",
-    "choices": {
-      "A": "Un logiciel dont le code source est librement accessible et modifiable",
-      "B": "Un logiciel gratuit et sans licence",
-      "C": "Un logiciel payant avec des fonctionnalités avancées",
-      "D": "Un logiciel uniquement disponible en ligne"
-    },
-    "correct": "A",
-    "explanation": "",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Matériel",
-    "q": "Le cerveau de tout système informatique est _________?",
-    "choices": {
-      "A": "CPU",
-      "B": "Mémoire",
-      "C": "Unité de contrôle",
-      "D": "Unité arithmétique et logique – ALU"
-    },
-    "correct": "A",
-    "explanation": "<p>Le cerveau de tout système informatique est le CPU(Unité centrale de traitement). Le processeur est une puce contenant des millions de transistors. Le travail du CPU consiste à effectuer les calculs nécessaires au bon fonctionnement de l’ordinateur.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q2",
-    "partie": "Matériel",
-    "q": "Lequel des circuits suivants est utilisé comme « Périphériques de mémoire » sur les ordinateurs?",
-    "choices": {
-      "A": "Bascules",
-      "B": "Comparator",
-      "C": "Attenuator"
-    },
-    "correct": "A",
-    "explanation": "<p>Les bascules sont utilisés comme éléments de stockage de données pour stocker un seul bit (chiffre binaire) de données; l’un de ses deux états représente un « un » et l’autre un « zéro ». Ce type de stockage de données peut être utilisé pour le stockage d’un état, et un tel circuit est décrit comme une logique séquentielle en électronique.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q3",
-    "partie": "Matériel",
-    "q": "Qu’est-ce que le BIOS dans un ordinateur ?",
-    "choices": {
-      "A": "Un type de système d’exploitation",
-      "B": "Un logiciel de gestion des fichiers",
-      "C": "Un programme qui permet de configurer les composants matériels avant le démarrage du système d’exploitation",
-      "D": "Un périphérique externe"
-    },
-    "correct": "C",
-    "explanation": "<p>Le BIOS (Basic Input/Output System) est un programme intégré dans la carte mère qui permet d’effectuer des tests matériels et de configurer certains paramètres avant le démarrage du système d’exploitation.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q4",
-    "partie": "Matériel",
-    "q": "Que signifie l’acronyme « USB » ?",
-    "choices": {
-      "A": "Universal Serial Bus",
-      "B": "Unified System Base",
-      "C": "Universal Service Block",
-      "D": "Un System Bus"
-    },
-    "correct": "A",
-    "explanation": "<p>L’USB (Universal Serial Bus) est un standard de connexion permettant de connecter des périphériques externes à un ordinateur (clés USB, souris, imprimantes, etc.) via un port USB.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q5",
-    "partie": "Matériel",
-    "q": "Quel est le type de mémoire le plus rapide ?",
-    "choices": {
-      "A": "Mémoire cache",
-      "B": "Disque dur (HDD)",
-      "C": "Mémoire flash (SSD)",
-      "D": "Mémoire RAM"
-    },
-    "correct": "A",
-    "explanation": "<p>La mémoire cache est la plus rapide car elle est directement connectée au processeur et utilisée pour stocker temporairement les données les plus fréquemment accédées, ce qui permet une exécution très rapide des processus.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q6",
-    "partie": "Matériel",
-    "q": "Quelle est la fonction de la mémoire vive (RAM) dans un ordinateur ?",
-    "choices": {
-      "A": "Stocker les fichiers à long terme",
-      "B": "Exécuter les applications",
-      "C": "Stocker temporairement les données utilisées par le processeur",
-      "D": "Connecter l’ordinateur à Internet"
-    },
-    "correct": "C",
-    "explanation": "<p>La mémoire vive (RAM) est utilisée pour stocker temporairement les données et instructions qui sont utilisées par le processeur pendant l’exécution des applications. Plus la RAM est grande, plus l’ordinateur peut gérer de données simultanément.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Réseau",
-    "q": "La communication offerte par TCP est _________?",
-    "choices": {
-      "A": "Full-duplex",
-      "B": "Half-duplex",
-      "C": "Semi-duplex",
-      "D": "Octet par octet"
-    },
-    "correct": "A",
-    "explanation": "<p>En effet, TCP (Transmission Control Protocol) permet une communication bidirectionnelle simultanée entre deux hôtes, c’est-à-dire que les deux parties peuvent envoyer et recevoir des données en même temps. C’est pourquoi on parle de communication full-duplex.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q2",
-    "partie": "Réseau",
-    "q": "Qu’est-ce qu’une adresse IP ?",
-    "choices": {
-      "A": "Une unité de mesure de la vitesse de connexion",
-      "B": "Un identifiant unique pour un appareil sur un réseau",
-      "C": "Un protocole de communication utilisé sur Internet",
-      "D": "Une méthode de sécurité pour les réseaux sans fil"
-    },
-    "correct": "B",
-    "explanation": "<p>Une adresse IP (Internet Protocol) est une suite de chiffres qui identifie de manière unique un appareil sur un réseau. Elle permet aux appareils de se localiser et de communiquer entre eux sur Internet.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q3",
-    "partie": "Réseau",
-    "q": "Que signifie l’acronyme « HTTP » ?",
-    "choices": {
-      "A": "Hyper Text Transfer Protocol",
-      "B": "High Tech Transfer Program",
-      "C": "Hyper Type Transfer Protocol",
-      "D": "High Time Transfer Protocol"
-    },
-    "correct": "A",
-    "explanation": "<p>HTTP est le protocole de communication utilisé pour transférer des documents sur le Web. Il permet la récupération de pages web via des navigateurs.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Système d'exploitation",
-    "q": "Quel est le rôle d’un système d’exploitation ?",
-    "choices": {
-      "A": "Exécuter les applications",
-      "B": "Gérer le matériel et les ressources de l’ordinateur",
-      "C": "Créer des fichiers de données",
-      "D": "Gérer la sécurité du réseau"
-    },
-    "correct": "B",
-    "explanation": "<p>Le système d’exploitation est responsable de la gestion du matériel (comme la mémoire, le disque dur, les périphériques) et des ressources pour assurer que les programmes puissent s’exécuter correctement et de manière efficace.</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q1",
-    "partie": "Web",
-    "q": "Quel est le rôle de HTML dans le développement web ?",
-    "choices": {
-      "A": "Il gère les bases de données",
-      "B": "Il est utilisé pour les calculs mathématiques dans les pages web",
-      "C": "Il permet d’ajouter des animations aux pages web",
-      "D": "Il structure le contenu d’une page web"
-    },
-    "correct": "D",
-    "explanation": "<p>HTML (HyperText Markup Language) est utilisé pour structurer le contenu d’une page web. Il définit les éléments de la page (titres, paragraphes, images, liens, etc.), mais ne gère pas la mise en forme, ce qui est réservé à CSS (Cascading Style Sheets).</p>",
-    "wrongAnalysis": [],
-    "examiner": "",
-    "summary": []
-  },
-  {
-    "num": "Q2",
-    "partie": "Web",
-    "q": "Quel langage de programmation est principalement utilisé pour le développement web côté serveur ?",
-    "choices": {
-      "A": "Python",
-      "B": "JavaScript",
-      "C": "HTML",
-      "D": "PHP"
-    },
-    "correct": "D",
-    "explanation": "<p>PHP est un langage de programmation principalement utilisé pour le développement côté serveur des sites web. Il permet de générer dynamiquement des pages web et d’interagir avec les bases de données.</p>",
     "wrongAnalysis": [],
     "examiner": "",
     "summary": []

@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import path from 'path';
 
-const inputFile = './qcm_ed_parsed_enriched.js';
-const outputDir = './qcm_par_theme';
+const inputFile = './qcm_qcm-en-informatique-generale_enriched_deduplicated.js';
+const outputDir = './qcm_par_theme_informatique_generale';
 
 if (!existsSync(inputFile)) {
   console.error("Le fichier d'entrée est introuvable : " + inputFile);
@@ -26,7 +26,7 @@ try {
 const grouped = {};
 qcmArray.forEach(qcm => {
   let partie = qcm.partie || 'Non_Classe';
-  
+
   // Normalisation du nom de la partie pour créer un nom de fichier propre
   let safeName = partie
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Enlève les accents
@@ -43,7 +43,7 @@ qcmArray.forEach(qcm => {
       questions: []
     };
   }
-  
+
   grouped[safeName].questions.push(qcm);
 });
 
@@ -61,7 +61,7 @@ for (const [safeName, data] of Object.entries(grouped)) {
 
   const fileName = path.join(outputDir, `qcm_${safeName}.js`);
   const fileContent = `const QCM = ${JSON.stringify(data.questions, null, 2)};\n`;
-  
+
   writeFileSync(fileName, fileContent, 'utf8');
   console.log(`- Créé : ${fileName} (${data.questions.length} questions, Thème original : "${data.title}")`);
   totalFiles++;
